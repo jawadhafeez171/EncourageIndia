@@ -9,7 +9,7 @@ import EnrollmentModal from './EnrollmentModal';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       <TopBar />
       <Header />
       <SecondaryHeader />

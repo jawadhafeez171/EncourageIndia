@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { secondaryNavLinks } from '../constants';
@@ -7,7 +8,7 @@ const SecondaryHeader: React.FC = () => {
   return (
     <nav className="sticky top-[72px] md:top-[88px] z-40 bg-empower-blue text-white shadow-md">
       <div className="container mx-auto px-4">
-        <ul className="flex flex-wrap items-center justify-center space-x-2 md:space-x-8 py-2 text-sm md:text-base font-montserrat font-medium">
+        <ul className="flex flex-wrap items-center justify-center gap-2 md:gap-8 py-2 text-sm md:text-base font-montserrat font-medium">
           <li role="presentation" className="font-bold whitespace-nowrap">Quick links &gt;</li>
           {secondaryNavLinks.map((link) => (
             <li key={link.name} className="relative group">

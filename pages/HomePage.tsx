@@ -98,14 +98,14 @@ const HomePage: React.FC = () => {
               <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
                   <img src={slide.image} alt={slide.badge} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/60"></div>
-                  <div className="absolute inset-0 container mx-auto px-8 flex flex-col justify-center items-start text-left">
+                  <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center items-start text-left">
                       <span className="bg-sunrise-orange text-white text-sm font-bold uppercase px-4 py-1 rounded-full mb-4">{slide.badge}</span>
-                      <h1 className="text-4xl md:text-6xl font-extrabold font-montserrat max-w-3xl leading-tight">{slide.headline}</h1>
-                      <p className="text-lg md:text-xl mt-4 max-w-2xl text-soft-gray">{slide.subheadline}</p>
+                      <h1 className="text-3xl md:text-6xl font-extrabold font-montserrat max-w-3xl leading-tight">{slide.headline}</h1>
+                      <p className="text-base md:text-xl mt-4 max-w-2xl text-soft-gray">{slide.subheadline}</p>
                       <ul className="mt-6 space-y-2">
-                        {slide.points.map(point => <li key={point} className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/>{point}</li>)}
+                        {slide.points.map(point => <li key={point} className="flex items-center text-sm md:text-base"><CheckCircleIcon className="w-5 h-5 md:w-6 md:h-6 text-sunrise-orange mr-2"/>{point}</li>)}
                       </ul>
-                      <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                      <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
                           <CTAButton variant="primary" {...slide.cta1Link}>{slide.cta1}</CTAButton>
                           <CTAButton variant="secondary" {...slide.cta2Link}>{slide.cta2}</CTAButton>
                       </div>
@@ -117,13 +117,13 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Announcement Bar */}
-      <div className="bg-sunrise-orange text-white text-center py-3 font-semibold font-montserrat text-lg">
+      <div className="bg-sunrise-orange text-white text-center py-3 font-semibold font-montserrat text-lg px-4">
         Admissions Open for Civil Judge Mains
       </div>
 
       {/* Program Highlights */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-8 text-center">
+        <div className="container mx-auto px-4 md:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Our Flagship Programs</h2>
             <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80">Tailored programs designed by experts to ensure your success in competitive exams.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-12 text-left">
@@ -153,7 +153,7 @@ const HomePage: React.FC = () => {
 
       {/* Testimonials */}
       <section className="py-20">
-         <div className="container mx-auto px-8 text-center">
+         <div className="container mx-auto px-4 md:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">What Our Achievers Say</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
                 {testimonials.map((testimonial) => (
@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
       
       {/* Talk to a Mentor */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-8 text-center">
+        <div className="container mx-auto px-4 md:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
             <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
             
@@ -221,7 +221,7 @@ const HomePage: React.FC = () => {
 
       {/* App Promotion */}
       <section className="py-20">
-        <div className="container mx-auto px-8 grid md:grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10 items-center">
             <div>
                 <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Learn on the Go</h2>
                 <p className="mt-4 text-charcoal-gray/80">Download our app for access to daily quizzes, current affairs, video lectures, and more, right at your fingertips.</p>
@@ -243,7 +243,7 @@ const HomePage: React.FC = () => {
 
       {/* Final CTA */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-8 text-center">
+        <div className="container mx-auto px-4 md:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Ready to Start Your Success Story?</h2>
             <p className="mt-4 max-w-2xl mx-auto">Join thousands of successful aspirants who trusted Encourage India to guide them.</p>
             <CTAButton requiresAuth variant="primary" className="mt-8 text-lg">Enroll in a Program Today</CTAButton>
