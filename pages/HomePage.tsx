@@ -251,7 +251,7 @@ const HomePage: React.FC = () => {
                 </div>
             </div>
             <div>
-                <img src="/app-mockup-playstore.png" alt="Encourage India App Mockup" className="max-w-sm mx-auto"/>
+                <img src="/app-mockup-playstore.png" alt="Encourage India App Mockup" className="w-2/3 md:w-full md:max-w-sm mx-auto"/>
             </div>
         </div>
       </section>
