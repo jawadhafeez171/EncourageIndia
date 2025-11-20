@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import CTAButton from '../components/CTAButton';
 import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
 import { testimonials } from '../constants';
+import { submitToGoogleSheet } from '../services/googleSheetService';
 
 const carouselSlides = [
     {
@@ -52,6 +54,8 @@ const carouselSlides = [
 
 const HomePage: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [mentorForm, setMentorForm] = useState({ name: '', phone: '' });
+    const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -66,6 +70,23 @@ const HomePage: React.FC = () => {
 
     const prevSlide = () => {
       setCurrentSlide((prev) => (prev === 0 ? carouselSlides.length - 1 : prev - 1));
+    };
+
+    const handleMentorSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setMentorStatus('loading');
+        try {
+            await submitToGoogleSheet({
+                FormType: 'Talk to Mentor',
+                ...mentorForm
+            });
+            setMentorStatus('success');
+            setMentorForm({ name: '', phone: '' });
+            setTimeout(() => setMentorStatus('idle'), 5000);
+        } catch (error) {
+            console.error(error);
+            setMentorStatus('error');
+        }
     };
 
 
@@ -157,11 +178,44 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
             <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
-            <form className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-                <input type="text" placeholder="Your Name" className="flex-grow p-3 rounded-lg text-charcoal-gray"/>
-                <input type="tel" placeholder="Phone Number" className="flex-grow p-3 rounded-lg text-charcoal-gray"/>
-                <CTAButton type="submit" variant="primary" className="shrink-0">Request a Call</CTAButton>
-            </form>
+            
+            {mentorStatus === 'success' ? (
+                <div className="mt-8 bg-white/10 border border-white/20 rounded-lg p-6 max-w-lg mx-auto animate-fade-in">
+                    <CheckCircleIcon className="w-12 h-12 text-green-400 mx-auto mb-2" />
+                    <h3 className="text-xl font-bold">Request Received!</h3>
+                    <p className="text-soft-gray">Our mentor will call you shortly.</p>
+                </div>
+            ) : (
+                <form onSubmit={handleMentorSubmit} className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <input 
+                        type="text" 
+                        placeholder="Your Name" 
+                        className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200"
+                        value={mentorForm.name}
+                        onChange={(e) => setMentorForm({...mentorForm, name: e.target.value})}
+                        required
+                        disabled={mentorStatus === 'loading'}
+                    />
+                    <input 
+                        type="tel" 
+                        placeholder="Phone Number" 
+                        className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200"
+                        value={mentorForm.phone}
+                        onChange={(e) => setMentorForm({...mentorForm, phone: e.target.value})}
+                        pattern="[0-9]{10}"
+                        required
+                        disabled={mentorStatus === 'loading'}
+                    />
+                    <CTAButton 
+                        type="submit" 
+                        variant="primary" 
+                        className={`shrink-0 ${mentorStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                        {mentorStatus === 'loading' ? 'Sending...' : 'Request a Call'}
+                    </CTAButton>
+                </form>
+            )}
+             {mentorStatus === 'error' && <p className="mt-2 text-red-300">Something went wrong. Please try again.</p>}
         </div>
       </section>
 
