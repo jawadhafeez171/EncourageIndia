@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import CTAButton from '../components/CTAButton';
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon } from '../components/Icons';
 import { testimonials } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
@@ -98,7 +98,7 @@ const HomePage: React.FC = () => {
               <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
                   <img src={slide.image} alt={slide.badge} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/60"></div>
-                  <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center items-start text-left">
+                  <div className="absolute inset-0 container mx-auto px-4 md:px-4 flex flex-col justify-center items-start text-left">
                       <span className="bg-sunrise-orange text-white text-sm font-bold uppercase px-4 py-1 rounded-full mb-4">{slide.badge}</span>
                       <h1 className="text-3xl md:text-6xl font-extrabold font-montserrat max-w-3xl leading-tight">{slide.headline}</h1>
                       <p className="text-base md:text-xl mt-4 max-w-2xl text-soft-gray">{slide.subheadline}</p>
@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
 
       {/* Program Highlights */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-8 text-center">
+        <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Our Flagship Programs</h2>
             <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80">Tailored programs designed by experts to ensure your success in competitive exams.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-12 text-left">
@@ -153,7 +153,7 @@ const HomePage: React.FC = () => {
 
       {/* Testimonials */}
       <section className="py-20">
-         <div className="container mx-auto px-4 md:px-8 text-center">
+         <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">What Our Achievers Say</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
                 {testimonials.map((testimonial) => (
@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
       
       {/* Talk to a Mentor */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-4 md:px-8 text-center">
+        <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
             <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
             
@@ -221,7 +221,7 @@ const HomePage: React.FC = () => {
 
       {/* App Promotion */}
       <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto px-4 md:px-4 grid md:grid-cols-2 gap-10 items-center">
             <div>
                 <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Learn on the Go</h2>
                 <p className="mt-4 text-charcoal-gray/80">Download our app for access to daily quizzes, current affairs, video lectures, and more, right at your fingertips.</p>
@@ -231,8 +231,22 @@ const HomePage: React.FC = () => {
                     <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> High-Quality Video Lectures</li>
                 </ul>
                 <div className="mt-8 flex items-center gap-6">
-                    <a href="#"><img src="/google-play-badge.png" alt="Get it on Google Play" className="h-14"/></a>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com" alt="QR Code for App" />
+                    <a 
+                        href="https://play.google.com/store/apps/details?id=co.barney.yflbb" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center bg-black text-white px-4 py-2 rounded-lg transition-transform hover:scale-105 border border-gray-700"
+                    >
+                        <GooglePlayIcon className="w-8 h-8 mr-3 text-white" />
+                        <div className="flex flex-col items-start">
+                            <span className="text-[10px] uppercase font-sans leading-none">Get it on</span>
+                            <span className="text-xl font-bold font-sans leading-none">Google Play</span>
+                        </div>
+                    </a>
+                    <img 
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" 
+                        alt="QR Code for App" 
+                    />
                 </div>
             </div>
             <div>
@@ -243,7 +257,7 @@ const HomePage: React.FC = () => {
 
       {/* Final CTA */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-4 md:px-8 text-center">
+        <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Ready to Start Your Success Story?</h2>
             <p className="mt-4 max-w-2xl mx-auto">Join thousands of successful aspirants who trusted Encourage India to guide them.</p>
             <CTAButton requiresAuth variant="primary" className="mt-8 text-lg">Enroll in a Program Today</CTAButton>

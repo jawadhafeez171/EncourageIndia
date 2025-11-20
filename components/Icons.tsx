@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 type IconProps = { className?: string };
@@ -214,4 +215,10 @@ export const LightningBoltIcon: React.FC<IconProps> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
   </svg>
+);
+
+export const GooglePlayIcon: React.FC<IconProps> = ({ className }) => (
+    <svg viewBox="0 0 512 512" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-37.5 37.5 39.7 39.7 56.7-32.8c8.9-5.2 14.8-14.7 14.8-25.1s-5.9-19.9-14.8-25.1zM385.4 267.9L104.6 486l220.7-127.5 60.1-90.6z"/>
+    </svg>
 );
