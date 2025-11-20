@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon } from '../components/Icons';
 
@@ -44,18 +45,18 @@ const AboutUsPage: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
             <PageHeader title="About Encourage India IAS Academy" />
             
             <section className="py-20">
                 <div className="container mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-4">Our Vision & Mission</h2>
+                        <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-4">Our Vision & Mission</h2>
                         <h3 className="text-xl font-semibold font-montserrat text-sunrise-orange mb-2 flex items-center"><EyeIcon className="w-6 h-6 mr-2" /> Vision</h3>
-                        <p className="text-charcoal-gray/80 mb-6">To be India's most trusted and result-oriented institution for Civil Services and Judiciary coaching, empowering aspirants from all backgrounds to achieve their dreams.</p>
+                        <p className="text-charcoal-gray/80 dark:text-gray-300 mb-6">To be India's most trusted and result-oriented institution for Civil Services and Judiciary coaching, empowering aspirants from all backgrounds to achieve their dreams.</p>
                         
                         <h3 className="text-xl font-semibold font-montserrat text-sunrise-orange mb-2 flex items-center"><TargetIcon className="w-6 h-6 mr-2" /> Mission</h3>
-                        <p className="text-charcoal-gray/80">To provide high-quality, accessible, and personalized education through innovative teaching methodologies, expert mentorship, and a commitment to student success.</p>
+                        <p className="text-charcoal-gray/80 dark:text-gray-300">To provide high-quality, accessible, and personalized education through innovative teaching methodologies, expert mentorship, and a commitment to student success.</p>
                     </div>
                     <div>
                         <img src="https://picsum.photos/seed/vision/600/400" alt="Vision & Mission" className="rounded-lg shadow-xl" />
@@ -63,24 +64,24 @@ const AboutUsPage: React.FC = () => {
                 </div>
             </section>
 
-            <section className="py-20 bg-soft-gray">
+            <section className="py-20 bg-soft-gray dark:bg-slate-800 transition-colors duration-300">
                 <div className="container mx-auto px-8 text-center">
-                    <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-12">Our Core Values</h2>
+                    <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-12">Our Core Values</h2>
                     <div className="grid md:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-lg text-center transition-colors duration-300">
                             <BookOpenIcon className="w-16 h-16 text-sunrise-orange mx-auto mb-4" />
-                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue">Integrity</h3>
-                            <p className="mt-2 text-charcoal-gray/80">Upholding the highest ethical standards in all our actions and teachings.</p>
+                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-300">Integrity</h3>
+                            <p className="mt-2 text-charcoal-gray/80 dark:text-gray-200">Upholding the highest ethical standards in all our actions and teachings.</p>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-lg text-center transition-colors duration-300">
                             <UsersIcon className="w-16 h-16 text-sunrise-orange mx-auto mb-4" />
-                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue">Empowerment</h3>
-                            <p className="mt-2 text-charcoal-gray/80">Equipping students with the knowledge, skills, and confidence to succeed.</p>
+                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-300">Empowerment</h3>
+                            <p className="mt-2 text-charcoal-gray/80 dark:text-gray-200">Equipping students with the knowledge, skills, and confidence to succeed.</p>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-lg text-center transition-colors duration-300">
                             <HeartIcon className="w-16 h-16 text-sunrise-orange mx-auto mb-4" />
-                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue">Mentorship</h3>
-                            <p className="mt-2 text-charcoal-gray/80">Providing personalized guidance and support throughout the preparation journey.</p>
+                            <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-300">Mentorship</h3>
+                            <p className="mt-2 text-charcoal-gray/80 dark:text-gray-200">Providing personalized guidance and support throughout the preparation journey.</p>
                         </div>
                     </div>
                 </div>
@@ -89,32 +90,32 @@ const AboutUsPage: React.FC = () => {
             <section className="py-20">
                 <div className="container mx-auto px-8 grid md:grid-cols-3 gap-12 items-center">
                     <div className="md:col-span-1 flex justify-center">
-                        <img src="https://picsum.photos/seed/founder/300/300" alt="Founder" className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-empower-blue" />
+                        <img src="https://picsum.photos/seed/founder/300/300" alt="Founder" className="w-64 h-64 rounded-full object-cover shadow-2xl border-4 border-empower-blue dark:border-blue-400" />
                     </div>
                     <div className="md:col-span-2">
-                        <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-4">A Note from Our Founder</h2>
-                        <p className="text-lg font-semibold text-charcoal-gray mb-4">"Success in competitive exams is not just about hard work; it's about smart work, guided by those who have walked the path. At Encourage India, we have built a community of dedicated mentors and aspiring leaders. Our single-minded focus is to provide you with the best possible platform to realize your potential. We believe in your dreams, and we are here to help you turn them into reality."</p>
-                        <p className="font-montserrat font-bold text-xl mt-6">- John Doe</p>
+                        <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-4">A Note from Our Founder</h2>
+                        <p className="text-lg font-semibold text-charcoal-gray dark:text-gray-200 mb-4">"Success in competitive exams is not just about hard work; it's about smart work, guided by those who have walked the path. At Encourage India, we have built a community of dedicated mentors and aspiring leaders. Our single-minded focus is to provide you with the best possible platform to realize your potential. We believe in your dreams, and we are here to help you turn them into reality."</p>
+                        <p className="font-montserrat font-bold text-xl mt-6 dark:text-white">- John Doe</p>
                         <p className="text-sunrise-orange">Founder & Chief Mentor</p>
                     </div>
                 </div>
             </section>
 
-             <section className="py-20 bg-soft-gray">
+             <section className="py-20 bg-soft-gray dark:bg-slate-800 transition-colors duration-300">
                 <div className="container mx-auto px-8">
-                    <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-12 text-center">Frequently Asked Questions</h2>
+                    <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-12 text-center">Frequently Asked Questions</h2>
                     <div className="max-w-3xl mx-auto">
                         {faqs.map((faq, index) => (
-                            <div key={index} className="border-b border-gray-300">
+                            <div key={index} className="border-b border-gray-300 dark:border-gray-600">
                                 <button
                                     onClick={() => handleFaqToggle(index)}
                                     className="w-full flex justify-between items-center text-left py-5 px-2 focus:outline-none"
                                 >
-                                    <span className="text-lg font-montserrat font-semibold text-charcoal-gray">{faq.question}</span>
-                                    <ChevronDownIcon className={`w-6 h-6 text-empower-blue transform transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                                    <span className="text-lg font-montserrat font-semibold text-charcoal-gray dark:text-gray-200">{faq.question}</span>
+                                    <ChevronDownIcon className={`w-6 h-6 text-empower-blue dark:text-blue-400 transform transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
                                 </button>
                                 <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-screen' : 'max-h-0'}`}>
-                                    <div className="pb-5 px-2 text-charcoal-gray/80">
+                                    <div className="pb-5 px-2 text-charcoal-gray/80 dark:text-gray-300">
                                         <p>{faq.answer}</p>
                                     </div>
                                 </div>

@@ -18,11 +18,11 @@ const SecondaryHeader: React.FC = () => {
                     <span>{link.name}</span>
                     <ChevronDownIcon className="w-4 h-4" />
                   </button>
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white text-charcoal-gray rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-slate-800 text-charcoal-gray dark:text-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
                     <ul className="py-2">
                       {link.dropdown.map(item => (
                         <li key={item.name}>
-                          <Link to={item.path} className="block px-4 py-2 hover:bg-soft-gray hover:text-empower-blue transition-colors duration-200">
+                          <Link to={item.path} className="block px-4 py-2 hover:bg-soft-gray dark:hover:bg-slate-700 hover:text-empower-blue dark:hover:text-blue-400 transition-colors duration-200">
                             {item.name}
                           </Link>
                         </li>

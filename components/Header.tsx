@@ -2,7 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { navLinks, coursesData, downloadCategories, editorialSummaries } from '../constants';
-import { MenuIcon, XIcon, SearchIcon } from './Icons';
+import { MenuIcon, XIcon, SearchIcon, SunIcon, MoonIcon } from './Icons';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface SearchResult {
   title: string;
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,19 +103,19 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+    <header className={`sticky top-0 z-50 bg-white dark:bg-slate-900 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
           <img src="/logo.png" alt="Encourage India IAS Academy" className="h-12 md:h-16 w-auto" />
            <div className="flex flex-col">
-             <span className="font-montserrat font-bold text-empower-blue text-lg md:text-2xl leading-none group-hover:text-sunrise-orange transition-colors duration-300">Encourage India</span>
-             <span className="font-lato font-bold text-charcoal-gray text-xs md:text-sm tracking-wider uppercase">IAS Academy</span>
+             <span className="font-montserrat font-bold text-empower-blue dark:text-blue-400 text-lg md:text-2xl leading-none group-hover:text-sunrise-orange transition-colors duration-300">Encourage India</span>
+             <span className="font-lato font-bold text-charcoal-gray dark:text-gray-300 text-xs md:text-sm tracking-wider uppercase">IAS Academy</span>
           </div>
         </Link>
         
         <div className="flex items-center">
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6 font-montserrat text-charcoal-gray">
+            <nav className="hidden md:flex items-center space-x-6 font-montserrat text-charcoal-gray dark:text-gray-200">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
@@ -134,22 +136,22 @@ const Header: React.FC = () => {
                   value={searchQuery}
                   onChange={handleSearchChange}
                   onFocus={handleSearchChange}
-                  className="border-2 border-soft-gray rounded-full py-2 px-4 pl-10 w-48 focus:w-64 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-empower-blue"
+                  className="border-2 border-soft-gray dark:border-gray-700 rounded-full py-2 px-4 pl-10 w-48 focus:w-64 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-empower-blue dark:bg-slate-800 dark:text-white dark:focus:ring-blue-400"
                   aria-label="Search content"
                 />
                 <SearchIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
 
                 {searchResults.length > 0 && searchQuery.trim().length > 1 && (
-                  <div className="absolute top-full mt-2 w-80 max-h-96 overflow-y-auto bg-white rounded-lg shadow-xl border border-soft-gray z-50 right-0">
+                  <div className="absolute top-full mt-2 w-80 max-h-96 overflow-y-auto bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-soft-gray dark:border-gray-700 z-50 right-0">
                     <ul>
                       {searchResults.map((result, index) => (
-                        <li key={index} className="border-b border-soft-gray last:border-b-0">
+                        <li key={index} className="border-b border-soft-gray dark:border-gray-700 last:border-b-0">
                           <Link
                             to={result.path}
                             onClick={clearSearch}
-                            className="block px-4 py-3 hover:bg-soft-gray transition-colors duration-200"
+                            className="block px-4 py-3 hover:bg-soft-gray dark:hover:bg-slate-700 transition-colors duration-200"
                           >
-                            <p className="font-semibold text-charcoal-gray text-sm mb-1">{result.title}</p>
+                            <p className="font-semibold text-charcoal-gray dark:text-gray-100 text-sm mb-1">{result.title}</p>
                             <span className="text-xs font-bold uppercase tracking-wider text-white bg-sunrise-orange px-2 py-0.5 rounded-full">{result.type}</span>
                           </Link>
                         </li>
@@ -159,9 +161,18 @@ const Header: React.FC = () => {
                 )}
             </div>
             
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="ml-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'light' ? <MoonIcon className="w-6 h-6 text-empower-blue" /> : <SunIcon className="w-6 h-6 text-yellow-400" />}
+            </button>
+            
             {/* Mobile Menu Button */}
-            <div className="md:hidden ml-4">
-              <button onClick={() => setIsOpen(!isOpen)} aria-label="Open menu">
+            <div className="md:hidden ml-2">
+              <button onClick={() => setIsOpen(!isOpen)} aria-label="Open menu" className="text-charcoal-gray dark:text-white">
                 {isOpen ? <XIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
               </button>
             </div>
@@ -170,8 +181,8 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-lg z-50">
-          <nav className="flex flex-col items-center space-y-4 p-4 font-montserrat">
+        <div className="md:hidden bg-white dark:bg-slate-900 absolute top-full left-0 w-full shadow-lg z-50 border-t dark:border-gray-700">
+          <nav className="flex flex-col items-center space-y-4 p-4 font-montserrat text-charcoal-gray dark:text-gray-200">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}

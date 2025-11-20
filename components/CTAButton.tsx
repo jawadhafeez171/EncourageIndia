@@ -21,7 +21,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ children, onClick, variant = 'pri
   const variantClasses = {
     primary: 'bg-encourage-red text-white hover:bg-red-700',
     secondary: 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-charcoal-gray',
-    'secondary-blue': 'bg-transparent text-empower-blue border-2 border-empower-blue hover:bg-empower-blue hover:text-white',
+    'secondary-blue': 'bg-transparent text-empower-blue border-2 border-empower-blue hover:bg-empower-blue hover:text-white dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-white',
   };
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;

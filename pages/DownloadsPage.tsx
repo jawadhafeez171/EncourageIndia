@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { downloadCategories } from '../constants';
 import { DownloadIcon } from '../components/Icons';
@@ -12,19 +13,19 @@ const PageHeader = ({ title }: { title: string }) => (
 
 const DownloadsPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
             <PageHeader title="Downloads & Resources" />
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-gray-50 dark:bg-slate-900">
                 <div className="container mx-auto px-8 space-y-16">
                     {downloadCategories.map((category, index) => (
                         <div key={index}>
-                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-8 border-l-4 border-sunrise-orange pl-4">{category.category}</h2>
+                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-8 border-l-4 border-sunrise-orange pl-4">{category.category}</h2>
                             <ul className="space-y-4">
                                 {category.items.map((item, itemIndex) => (
-                                    <li key={itemIndex} className="bg-white p-4 rounded-lg shadow-md border border-soft-gray flex flex-col sm:flex-row items-center justify-between hover:border-empower-blue transition-colors duration-300">
+                                    <li key={itemIndex} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md border border-soft-gray dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between hover:border-empower-blue dark:hover:border-blue-400 transition-colors duration-300">
                                         <div className="flex-grow mb-4 sm:mb-0 sm:mr-4 text-center sm:text-left">
-                                            <h3 className="font-bold font-montserrat text-charcoal-gray">{item.title}</h3>
-                                            <p className="text-sm text-charcoal-gray/70">{item.description}</p>
+                                            <h3 className="font-bold font-montserrat text-charcoal-gray dark:text-gray-200">{item.title}</h3>
+                                            <p className="text-sm text-charcoal-gray/70 dark:text-gray-400">{item.description}</p>
                                         </div>
                                         <a 
                                             href={item.fileUrl} 

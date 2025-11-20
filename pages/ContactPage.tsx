@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
             <PageHeader title="Contact Us" />
 
             <section className="py-20">
@@ -55,10 +55,10 @@ const ContactPage: React.FC = () => {
                     <div className="grid lg:grid-cols-2 gap-12">
                         {/* Left Column: Info & Map */}
                         <div>
-                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6">Get in Touch</h2>
-                            <p className="text-charcoal-gray/80 mb-8">We're here to help you on your journey to success. Reach out to us with your queries, and our team will get back to you at the earliest.</p>
+                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-6">Get in Touch</h2>
+                            <p className="text-charcoal-gray/80 dark:text-gray-300 mb-8">We're here to help you on your journey to success. Reach out to us with your queries, and our team will get back to you at the earliest.</p>
                             
-                            <div className="space-y-6">
+                            <div className="space-y-6 text-charcoal-gray dark:text-gray-200">
                                 <div className="flex items-start space-x-4">
                                     <LocationPinIcon className="w-8 h-8 text-sunrise-orange mt-1"/>
                                     <div>
@@ -90,17 +90,17 @@ const ContactPage: React.FC = () => {
                         </div>
 
                         {/* Right Column: Form */}
-                        <div className="bg-soft-gray p-8 rounded-lg">
-                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6">Send us a Message</h2>
+                        <div className="bg-soft-gray dark:bg-slate-800 p-8 rounded-lg transition-colors duration-300">
+                            <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-6">Send us a Message</h2>
                             
                             {status === 'success' ? (
-                                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-8 rounded relative text-center">
+                                <div className="bg-green-100 border border-green-400 text-green-700 dark:bg-green-900/50 dark:text-green-200 px-4 py-8 rounded relative text-center">
                                     <CheckCircleIcon className="w-12 h-12 mx-auto mb-2" />
                                     <strong className="font-bold block text-lg">Message Sent!</strong>
                                     <span className="block sm:inline">Thank you for contacting us. We will get back to you shortly.</span>
                                     <button 
                                         onClick={() => setStatus('idle')} 
-                                        className="mt-4 underline font-semibold hover:text-green-800"
+                                        className="mt-4 underline font-semibold hover:text-green-800 dark:hover:text-green-100"
                                     >
                                         Send another message
                                     </button>
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
                             ) : (
                                 <form className="space-y-6" onSubmit={handleSubmit}>
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-charcoal-gray">Name</label>
+                                        <label htmlFor="name" className="block text-sm font-medium text-charcoal-gray dark:text-gray-300">Name</label>
                                         <input 
                                             type="text" 
                                             id="name" 
@@ -116,11 +116,11 @@ const ContactPage: React.FC = () => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue" 
+                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue bg-white dark:bg-slate-700 text-charcoal-gray dark:text-white" 
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-charcoal-gray">Email Address</label>
+                                        <label htmlFor="email" className="block text-sm font-medium text-charcoal-gray dark:text-gray-300">Email Address</label>
                                         <input 
                                             type="email" 
                                             id="email" 
@@ -128,11 +128,11 @@ const ContactPage: React.FC = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue" 
+                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue bg-white dark:bg-slate-700 text-charcoal-gray dark:text-white" 
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-charcoal-gray">Phone Number</label>
+                                        <label htmlFor="phone" className="block text-sm font-medium text-charcoal-gray dark:text-gray-300">Phone Number</label>
                                         <input 
                                             type="tel" 
                                             id="phone" 
@@ -141,11 +141,11 @@ const ContactPage: React.FC = () => {
                                             onChange={handleChange}
                                             required
                                             pattern="[0-9]{10}"
-                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue" 
+                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue bg-white dark:bg-slate-700 text-charcoal-gray dark:text-white" 
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="message" className="block text-sm font-medium text-charcoal-gray">Message</label>
+                                        <label htmlFor="message" className="block text-sm font-medium text-charcoal-gray dark:text-gray-300">Message</label>
                                         <textarea 
                                             id="message" 
                                             name="message" 
@@ -153,11 +153,11 @@ const ContactPage: React.FC = () => {
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
-                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue"
+                                            className="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-empower-blue focus:border-empower-blue bg-white dark:bg-slate-700 text-charcoal-gray dark:text-white"
                                         ></textarea>
                                     </div>
                                     {status === 'error' && (
-                                        <p className="text-red-600 text-sm">Failed to send message. Please try again.</p>
+                                        <p className="text-red-600 dark:text-red-400 text-sm">Failed to send message. Please try again.</p>
                                     )}
                                     <div>
                                         <CTAButton 

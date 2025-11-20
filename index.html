@@ -18,6 +18,7 @@
     <!-- Custom Tailwind Config -->
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -46,9 +47,8 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="font-lato bg-white text-charcoal-gray">
+  <body class="font-lato bg-white text-charcoal-gray dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
