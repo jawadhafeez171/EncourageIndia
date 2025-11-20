@@ -8,16 +8,18 @@ const FloatingCallButton: React.FC = () => {
 
   return (
     <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50 flex flex-col items-end space-y-2">
-      {/* Call Us Button */}
+      {/* YouTube Button */}
       <a 
-        href="tel:+919611621195" 
-        className={`${buttonStyle} bg-sunrise-orange hover:bg-orange-600`}
-        aria-label="Call Us"
+        href="https://youtube.com/@encourage_india_ias?si=hxuXWNFGTXPfQm0y" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${buttonStyle} bg-red-600 hover:bg-red-700`}
+        aria-label="Subscribe to our YouTube Channel"
       >
-        <PhoneIcon className="w-6 h-6 animate-pulse flex-shrink-0" />
-        <span className={spanStyle}>Call Us</span>
+        <YouTubeIcon className="w-6 h-6 flex-shrink-0" />
+        <span className={spanStyle}>YouTube</span>
       </a>
-      
+
       {/* WhatsApp Button */}
       <a 
         href="https://wa.me/919611621195"
@@ -41,17 +43,15 @@ const FloatingCallButton: React.FC = () => {
         <TelegramIcon className="w-6 h-6 flex-shrink-0" />
         <span className={spanStyle}>Telegram</span>
       </a>
-      
-      {/* YouTube Button */}
+
+      {/* Call Us Button */}
       <a 
-        href="https://youtube.com/@encourage_india_ias?si=hxuXWNFGTXPfQm0y" 
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${buttonStyle} bg-red-600 hover:bg-red-700`}
-        aria-label="Subscribe to our YouTube Channel"
+        href="tel:+919611621195" 
+        className={`${buttonStyle} bg-sunrise-orange hover:bg-orange-600`}
+        aria-label="Call Us"
       >
-        <YouTubeIcon className="w-6 h-6 flex-shrink-0" />
-        <span className={spanStyle}>YouTube</span>
+        <PhoneIcon className="w-6 h-6 animate-pulse flex-shrink-0" />
+        <span className={spanStyle}>Call Us</span>
       </a>
     </div>
   );
