@@ -245,7 +245,8 @@ const HomePage: React.FC = () => {
                     </a>
                     <img 
                         src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" 
-                        alt="QR Code for App" 
+                        alt="QR Code for App"
+                        className="hidden md:block" 
                     />
                 </div>
             </div>
