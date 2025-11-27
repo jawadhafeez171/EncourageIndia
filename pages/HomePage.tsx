@@ -29,15 +29,15 @@ const carouselSlides = [
         cta2Link: { to: '/courses/kpsc-ao-aao' },
     },
     {
-        badge: "Civil Judge Mains",
-        headline: <>Empower Your Judicial Journey — <span className="text-sunrise-orange">Civil Judge Mains</span></>,
-        subheadline: "Comprehensive coaching with expert faculty and personalized mentorship.",
-        points: ["In-depth Syllabus Coverage", "Answer Writing Practice", "Mock Interviews"],
-        image: "https://picsum.photos/seed/judge/1920/1080",
+        badge: "KPCL Recruitment",
+        headline: <>Power Your Career: <span className="text-sunrise-orange">KPCL AE/JE</span> Recruitment</>,
+        subheadline: "Comprehensive coaching for Assistant Engineer and Junior Engineer posts in Karnataka Power Corporation Limited.",
+        points: ["Technical Syllabus Coverage", "General Awareness & Aptitude", "Expert Engineering Faculty"],
+        image: "https://picsum.photos/seed/kpcl/1920/1080",
         cta1: "Enroll Now",
-        cta2: "Download Brochure",
+        cta2: "View Details",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/karnataka-judiciary' },
+        cta2Link: { to: '/courses/kpcl' },
     },
     {
         badge: "UPSC CSE 2026",
@@ -118,33 +118,33 @@ const HomePage: React.FC = () => {
 
       {/* Announcement Bar */}
       <div className="bg-sunrise-orange text-white text-center py-3 font-semibold font-montserrat text-lg px-4">
-        Admissions Open for Civil Judge Mains
+        Admissions Open for KPCL AE/JE Recruitment
       </div>
 
       {/* Program Highlights */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Our Flagship Programs</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80">Tailored programs designed by experts to ensure your success in competitive exams.</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">Our Flagship Programs</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80 dark:text-gray-300">Tailored programs designed by experts to ensure your success in competitive exams.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-12 text-left">
-                <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
                     <h3 className="text-2xl font-bold font-montserrat text-encourage-red">UPSC Civil Services Program</h3>
-                    <p className="mt-4 text-charcoal-gray/80">A comprehensive program covering Prelims, Mains, and Interview stages with personalized mentorship and extensive test series.</p>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">A comprehensive program covering Prelims, Mains, and Interview stages with personalized mentorship and extensive test series.</p>
                     <CTAButton to="/courses/upsc-cse" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
-                <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
                     <h3 className="text-2xl font-bold font-montserrat text-encourage-red">Karnataka Civil Judge Program</h3>
-                    <p className="mt-4 text-charcoal-gray/80">Specialized coaching for the Karnataka Judiciary exams, focusing on legal subjects, answer writing, and interview skills.</p>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized coaching for the Karnataka Judiciary exams, focusing on legal subjects, answer writing, and interview skills.</p>
                     <CTAButton to="/courses/karnataka-judiciary" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
-                <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
                     <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KMF SHIMUL Recruitment</h3>
-                    <p className="mt-4 text-charcoal-gray/80">A dedicated course for the 194 vacancies in SHIMUL, covering the complete syllabus, co-operative laws, and mock tests.</p>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">A dedicated course for the 194 vacancies in SHIMUL, covering the complete syllabus, co-operative laws, and mock tests.</p>
                     <CTAButton to="/courses/kmf-shimul" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
-                 <div className="bg-white p-8 rounded-lg shadow-lg">
+                 <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
                     <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC Agriculture Officer</h3>
-                    <p className="mt-4 text-charcoal-gray/80">Specialized coaching for AO & AAO exams, focusing on agricultural science, Karnataka-specific agronomy, and general studies.</p>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized coaching for AO & AAO exams, focusing on agricultural science, Karnataka-specific agronomy, and general studies.</p>
                     <CTAButton to="/courses/kpsc-ao-aao" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
             </div>
@@ -152,18 +152,18 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
          <div className="container mx-auto px-4 md:px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">What Our Achievers Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
                 {testimonials.map((testimonial) => (
-                    <div key={testimonial.name} className="bg-soft-gray p-8 rounded-lg text-left relative">
-                        <QuoteIcon className="w-16 h-16 text-empower-blue/10 absolute top-4 right-4" />
-                        <p className="text-charcoal-gray/90 italic">"{testimonial.quote}"</p>
+                    <div key={testimonial.name} className="bg-soft-gray dark:bg-slate-800 p-8 rounded-lg text-left relative transition-colors duration-300">
+                        <QuoteIcon className="w-16 h-16 text-empower-blue/10 dark:text-white/10 absolute top-4 right-4" />
+                        <p className="text-charcoal-gray/90 dark:text-gray-200 italic">"{testimonial.quote}"</p>
                         <div className="mt-6 flex items-center">
                             <img src={testimonial.image} alt={testimonial.name} className="w-14 h-14 rounded-full object-cover mr-4"/>
                             <div>
-                                <h4 className="font-bold font-montserrat">{testimonial.name}</h4>
+                                <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-white">{testimonial.name}</h4>
                                 <p className="text-sm text-sunrise-orange">{testimonial.achievement}</p>
                             </div>
                         </div>
@@ -220,12 +220,12 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* App Promotion */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-4 grid md:grid-cols-2 gap-10 items-center">
             <div>
-                <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue">Learn on the Go</h2>
-                <p className="mt-4 text-charcoal-gray/80">Download our app for access to daily quizzes, current affairs, video lectures, and more, right at your fingertips.</p>
-                <ul className="mt-6 space-y-2">
+                <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">Learn on the Go</h2>
+                <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Download our app for access to daily quizzes, current affairs, video lectures, and more, right at your fingertips.</p>
+                <ul className="mt-6 space-y-2 text-charcoal-gray dark:text-gray-200">
                     <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> Daily Current Affairs Updates</li>
                     <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> Interactive Quizzes & Tests</li>
                     <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> High-Quality Video Lectures</li>
@@ -246,7 +246,7 @@ const HomePage: React.FC = () => {
                     <img 
                         src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" 
                         alt="QR Code for App"
-                        className="hidden md:block" 
+                        className="hidden md:block rounded-lg bg-white p-1" 
                     />
                 </div>
             </div>
