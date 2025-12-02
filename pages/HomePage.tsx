@@ -1,54 +1,62 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import CTAButton from '../components/CTAButton';
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon } from '../components/Icons';
 import { testimonials } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
 const carouselSlides = [
     {
-        badge: "KPCL Recruitment",
-        headline: <>Power Your Career: <span className="text-sunrise-orange">KPCL AE/JE</span> Recruitment</>,
-        subheadline: "Comprehensive coaching for Assistant Engineer and Junior Engineer posts in Karnataka Power Corporation Limited.",
-        points: ["Technical Syllabus Coverage", "General Awareness & Aptitude", "Expert Engineering Faculty"],
+        badge: "Recruitment Alert",
+        headline: <>Power Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">KPCL AE/JE</span></>,
+        subheadline: "Comprehensive coaching for Assistant & Junior Engineer posts. Master technical concepts with Karnataka's top engineering faculty.",
+        points: ["Complete Technical Syllabus", "General Awareness Module", "Mock Tests & Analysis"],
         image: "https://picsum.photos/seed/kpcl/1920/1080",
         cta1: "Enroll Now",
-        cta2: "View Details",
+        cta2: "Course Details",
+        cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
         cta2Link: { to: '/courses/kpcl' },
+        cta3Link: { to: '/courses/kpcl' },
     },
     {
-        badge: "KPSC AO & AAO Recruitment",
-        headline: <>Cultivate Your Career: <span className="text-sunrise-orange">KPSC Agriculture Officer</span> Recruitment!</>,
-        subheadline: "Join our specialized program for Agriculture Officer (AO) and Assistant Agriculture Officer (AAO) roles.",
-        points: ["In-depth Agriculture Science Syllabus", "Focus on Karnataka's Agronomy", "General Studies & Current Affairs"],
+        badge: "Admissions Open",
+        headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Agriculture (AO/AAO)</span></>,
+        subheadline: "Specialized program for KPSC Agriculture Officer posts. Detailed coverage of B.Sc (Agri) syllabus and GK paper.",
+        points: ["Expert Agriculture Faculty", "Bilingual Study Material", "Focused Test Series"],
         image: "https://picsum.photos/seed/agriculture/1920/1080",
-        cta1: "Enroll in AO/AAO Course",
-        cta2: "Learn More",
+        cta1: "Enroll Now",
+        cta2: "Course Details",
+        cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
         cta2Link: { to: '/courses/kpsc-ao-aao' },
+        cta3Link: { to: '/courses/kpsc-ao-aao' },
     },
     {
-        badge: "KMF SHIMUL Recruitment 2024",
-        headline: <>Secure Your Future with <span className="text-sunrise-orange">KMF SHIMUL</span>: 194 Vacancies!</>,
-        subheadline: "Join our new flagship course for Assistant Managers, Technical Officers, and more.",
-        points: ["Comprehensive Syllabus Coverage", "Special Focus on Co-operative Laws", "Extensive Mock Test Series"],
+        badge: "Mass Recruitment",
+        headline: <>Secure a Govt Job in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">KMF SHIMUL</span></>,
+        subheadline: "Targeting 194+ Vacancies. A focused crash course covering Co-operative Laws, General Kannada/English, and Computer knowledge.",
+        points: ["Co-operative Act Coverage", "Exam-Oriented Approach", "Daily Quizzes"],
         image: "https://picsum.photos/seed/kmf/1920/1080",
-        cta1: "Enroll in SHIMUL Course",
-        cta2: "View Details",
+        cta1: "Enroll Now",
+        cta2: "Course Details",
+        cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
         cta2Link: { to: '/courses/kmf-shimul' },
+        cta3Link: { to: '/courses/kmf-shimul' },
     },
     {
-        badge: "UPSC CSE 2026",
-        headline: "Prepare for UPSC CSE — Foundation to Interview (2026 Batch)",
-        subheadline: "An integrated program designed for holistic preparation from scratch.",
-        points: ["Structured Curriculum", "Daily Current Affairs", "Personalized Mentorship"],
+        badge: "Foundation Batch 2026",
+        headline: <>Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">UPSC CSE</span> with Confidence</>,
+        subheadline: "An integrated Prelims-to-Interview roadmap designed for beginners. Build a rock-solid foundation with personal mentorship.",
+        points: ["NCERT to Advanced Level", "Daily Answer Writing", "Current Affairs Magazine"],
         image: "https://picsum.photos/seed/upsc/1920/1080",
-        cta1: "Apply for UPSC Program",
-        cta2: "View Course Details",
+        cta1: "Enroll Now",
+        cta2: "Course Details",
+        cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
         cta2Link: { to: '/courses/upsc-cse' },
+        cta3Link: { to: '/courses/upsc-cse' },
     },
 ];
 
@@ -174,11 +182,12 @@ const HomePage: React.FC = () => {
     const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const SLIDE_DURATION = 6000;
 
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev === carouselSlides.length - 1 ? 0 : prev + 1));
-        }, 5000);
+        }, SLIDE_DURATION);
         return () => clearInterval(timer);
     }, []);
 
@@ -220,7 +229,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      {/* Inject global styles for this page to hide scrollbars cleanly */}
+      {/* Inject global styles for this page to hide scrollbars cleanly and add animations */}
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -229,36 +238,133 @@ const HomePage: React.FC = () => {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .animate-ken-burns {
+            animation: kenburns 10s ease-out infinite alternate;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-600 { animation-delay: 0.6s; }
       `}</style>
 
-      {/* Hero Carousel Section */}
-      <section className="relative h-[80vh] w-full overflow-hidden text-white">
+      {/* Cinematic Hero Section */}
+      <section className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900">
           {carouselSlides.map((slide, index) => (
-              <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
-                  <img src={slide.image} alt={slide.badge} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/60"></div>
-                  <div className="absolute inset-0 container mx-auto px-4 md:px-4 flex flex-col justify-center items-start text-left">
-                      <span className="bg-sunrise-orange text-white text-sm font-bold uppercase px-4 py-1 rounded-full mb-4">{slide.badge}</span>
-                      <h1 className="text-3xl md:text-6xl font-extrabold font-montserrat max-w-3xl leading-tight">{slide.headline}</h1>
-                      <p className="text-base md:text-xl mt-4 max-w-2xl text-soft-gray">{slide.subheadline}</p>
-                      <ul className="mt-6 space-y-2">
-                        {slide.points.map(point => <li key={point} className="flex items-center text-sm md:text-base"><CheckCircleIcon className="w-5 h-5 md:w-6 md:h-6 text-sunrise-orange mr-2"/>{point}</li>)}
-                      </ul>
-                      <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-                          <CTAButton variant="primary" {...slide.cta1Link}>{slide.cta1}</CTAButton>
-                          <CTAButton variant="secondary" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+              <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+                  {/* Background Image with Ken Burns Effect */}
+                  <div className="absolute inset-0 overflow-hidden">
+                      <img 
+                        src={slide.image} 
+                        alt={slide.badge} 
+                        className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} 
+                      />
+                  </div>
+                  
+                  {/* Gradient Overlay - Better visibility for text */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
+                  
+                  {/* Content Container */}
+                  <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
+                      {/* Added pb-24 to prevent overlap with bottom bar on small screens */}
+                      <div className="max-w-3xl space-y-6 pl-2 md:pl-0 pb-24 md:pb-0">
+                          {/* Animated Badge */}
+                          <div className={`inline-block ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">
+                                  {slide.badge}
+                              </span>
+                          </div>
+
+                          {/* Animated Headline */}
+                          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>
+                              {slide.headline}
+                          </h1>
+
+                          {/* Animated Subheadline */}
+                          <p className={`text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>
+                              {slide.subheadline}
+                          </p>
+
+                          {/* Animated Bullet Points (Desktop only for cleanliness) */}
+                          <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                            {slide.points.map(point => (
+                                <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
+                                    <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2"/>
+                                    <span className="text-sm font-semibold">{point}</span>
+                                </li>
+                            ))}
+                          </ul>
+
+                          {/* Animated Buttons - Flex Wrap for Mobile */}
+                          <div className={`flex flex-wrap gap-3 pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                              <CTAButton variant="primary" className="shadow-orange-500/30 shadow-lg" {...slide.cta1Link}>{slide.cta1}</CTAButton>
+                              <CTAButton variant="secondary" className="backdrop-blur-sm hover:bg-white/10" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+                              <CTAButton 
+                                {...slide.cta3Link}
+                                className="flex items-center font-montserrat font-semibold text-white/90 hover:text-sunrise-orange transition-colors px-4 py-3"
+                              >
+                                {slide.cta3}
+                                <ChevronRightIcon className="w-4 h-4 ml-1" />
+                              </CTAButton>
+                          </div>
                       </div>
                   </div>
               </div>
           ))}
-            <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/20 rounded-full hover:bg-white/40 transition"><ArrowLeftIcon className="w-6 h-6"/></button>
-            <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/20 rounded-full hover:bg-white/40 transition"><ArrowRightIcon className="w-6 h-6"/></button>
-      </section>
 
-      {/* Announcement Bar */}
-      <div className="bg-sunrise-orange text-white text-center py-3 font-semibold font-montserrat text-lg px-4">
-        Admissions Open for KPCL AE/JE Recruitment
-      </div>
+            {/* Navigation Arrows */}
+            <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group hidden md:block">
+                <ArrowLeftIcon className="w-6 h-6 group-hover:scale-110 transition-transform"/>
+            </button>
+            <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group hidden md:block">
+                <ArrowRightIcon className="w-6 h-6 group-hover:scale-110 transition-transform"/>
+            </button>
+
+            {/* Bottom Info Bar & Progress */}
+            <div className="absolute bottom-0 left-0 w-full z-20 bg-black/60 backdrop-blur-md border-t border-white/10">
+                <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-3 text-xs md:text-sm text-gray-300">
+                    
+                    {/* Quick Stats */}
+                    <div className="flex space-x-6 mb-2 md:mb-0">
+                        <div className="flex items-center">
+                            <UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
+                            <span><strong className="text-white">Trusted</strong> by Aspirants</span>
+                        </div>
+                        <div className="flex items-center">
+                            <AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
+                            <span><strong className="text-white">50+</strong> Expert Faculty</span>
+                        </div>
+                        <div className="flex items-center hidden sm:flex">
+                            <GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
+                            <span>Online & Offline</span>
+                        </div>
+                    </div>
+
+                    {/* Progress Indicators */}
+                    <div className="flex space-x-2">
+                        {carouselSlides.map((_, index) => (
+                            <div key={index} className="relative h-1 w-12 bg-gray-600 rounded-full overflow-hidden">
+                                <div 
+                                    className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${
+                                        index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'
+                                    }`}
+                                    style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}
+                                ></div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+      </section>
 
       {/* Flagship Programs - Compact & Beautified */}
       <section className="py-20 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
