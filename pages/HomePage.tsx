@@ -7,15 +7,15 @@ import { submitToGoogleSheet } from '../services/googleSheetService';
 
 const carouselSlides = [
     {
-        badge: "KMF SHIMUL Recruitment 2024",
-        headline: <>Secure Your Future with <span className="text-sunrise-orange">KMF SHIMUL</span>: 194 Vacancies!</>,
-        subheadline: "Join our new flagship course for Assistant Managers, Technical Officers, and more.",
-        points: ["Comprehensive Syllabus Coverage", "Special Focus on Co-operative Laws", "Extensive Mock Test Series"],
-        image: "https://picsum.photos/seed/kmf/1920/1080",
-        cta1: "Enroll in SHIMUL Course",
+        badge: "KPCL Recruitment",
+        headline: <>Power Your Career: <span className="text-sunrise-orange">KPCL AE/JE</span> Recruitment</>,
+        subheadline: "Comprehensive coaching for Assistant Engineer and Junior Engineer posts in Karnataka Power Corporation Limited.",
+        points: ["Technical Syllabus Coverage", "General Awareness & Aptitude", "Expert Engineering Faculty"],
+        image: "https://picsum.photos/seed/kpcl/1920/1080",
+        cta1: "Enroll Now",
         cta2: "View Details",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kmf-shimul' },
+        cta2Link: { to: '/courses/kpcl' },
     },
     {
         badge: "KPSC AO & AAO Recruitment",
@@ -29,15 +29,15 @@ const carouselSlides = [
         cta2Link: { to: '/courses/kpsc-ao-aao' },
     },
     {
-        badge: "KPCL Recruitment",
-        headline: <>Power Your Career: <span className="text-sunrise-orange">KPCL AE/JE</span> Recruitment</>,
-        subheadline: "Comprehensive coaching for Assistant Engineer and Junior Engineer posts in Karnataka Power Corporation Limited.",
-        points: ["Technical Syllabus Coverage", "General Awareness & Aptitude", "Expert Engineering Faculty"],
-        image: "https://picsum.photos/seed/kpcl/1920/1080",
-        cta1: "Enroll Now",
+        badge: "KMF SHIMUL Recruitment 2024",
+        headline: <>Secure Your Future with <span className="text-sunrise-orange">KMF SHIMUL</span>: 194 Vacancies!</>,
+        subheadline: "Join our new flagship course for Assistant Managers, Technical Officers, and more.",
+        points: ["Comprehensive Syllabus Coverage", "Special Focus on Co-operative Laws", "Extensive Mock Test Series"],
+        image: "https://picsum.photos/seed/kmf/1920/1080",
+        cta1: "Enroll in SHIMUL Course",
         cta2: "View Details",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kpcl' },
+        cta2Link: { to: '/courses/kmf-shimul' },
     },
     {
         badge: "UPSC CSE 2026",
@@ -126,26 +126,33 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">Our Flagship Programs</h2>
             <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80 dark:text-gray-300">Tailored programs designed by experts to ensure your success in competitive exams.</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-12 text-left">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-12 text-left">
+                {/* UPSC */}
                 <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
                     <h3 className="text-2xl font-bold font-montserrat text-encourage-red">UPSC Civil Services Program</h3>
                     <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">A comprehensive program covering Prelims, Mains, and Interview stages with personalized mentorship and extensive test series.</p>
                     <CTAButton to="/courses/upsc-cse" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
+
+                {/* KPSC KAS */}
                 <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">Karnataka Civil Judge Program</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized coaching for the Karnataka Judiciary exams, focusing on legal subjects, answer writing, and interview skills.</p>
-                    <CTAButton to="/courses/karnataka-judiciary" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC KAS Foundation</h3>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Integrated coaching for Karnataka Administrative Service (KAS) exams, focusing on General Studies and Karnataka-specific topics.</p>
+                    <CTAButton to="/courses/kas" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
+
+                {/* KPSC AC-SAAD */}
                 <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KMF SHIMUL Recruitment</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">A dedicated course for the 194 vacancies in SHIMUL, covering the complete syllabus, co-operative laws, and mock tests.</p>
-                    <CTAButton to="/courses/kmf-shimul" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC AC-SAAD</h3>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized course for Assistant Controller (State Accounts Dept) covering Commerce, Management, and General Studies papers.</p>
+                    <CTAButton to="/courses/ac-saad" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
-                 <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC Agriculture Officer</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized coaching for AO & AAO exams, focusing on agricultural science, Karnataka-specific agronomy, and general studies.</p>
-                    <CTAButton to="/courses/kpsc-ao-aao" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+
+                {/* PSI & PC */}
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
+                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">PSI & PC Program</h3>
+                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Rigorous training for Police Sub-Inspector and Constable exams, including physical guidance and written test preparation.</p>
+                    <CTAButton to="/courses/psi" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
                 </div>
             </div>
         </div>
