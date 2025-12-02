@@ -126,33 +126,117 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">Our Flagship Programs</h2>
             <p className="mt-4 max-w-2xl mx-auto text-charcoal-gray/80 dark:text-gray-300">Tailored programs designed by experts to ensure your success in competitive exams.</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-12 text-left">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12 text-left">
                 {/* UPSC */}
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">UPSC Civil Services Program</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">A comprehensive program covering Prelims, Mains, and Interview stages with personalized mentorship and extensive test series.</p>
-                    <CTAButton to="/courses/upsc-cse" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+                    <div className="h-1.5 w-16 bg-encourage-red rounded mb-6"></div>
+                    <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-2">UPSC Civil Services</h3>
+                    <p className="text-charcoal-gray/80 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+                        Comprehensive foundation course designed to take you from basics to advanced levels for IAS/IPS/IFS.
+                    </p>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Integrated Prelims & Mains Prep</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Comprehensive Test Series</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">1-on-1 Personalized Mentorship</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Daily Answer Writing Practice</span>
+                        </li>
+                    </ul>
+                    <CTAButton to="/courses/upsc-cse" variant="secondary-blue" className="w-full">View Program</CTAButton>
                 </div>
 
                 {/* KPSC KAS */}
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC KAS Foundation</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Integrated coaching for Karnataka Administrative Service (KAS) exams, focusing on General Studies and Karnataka-specific topics.</p>
-                    <CTAButton to="/courses/kas" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+                    <div className="h-1.5 w-16 bg-encourage-red rounded mb-6"></div>
+                    <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-2">KPSC KAS Foundation</h3>
+                    <p className="text-charcoal-gray/80 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+                        Holistic coaching for Karnataka Administrative Service exams with deep focus on state-specific subjects.
+                    </p>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Prelims-Mains-Interview Coverage</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">State-Level Mock Test Series</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Bilingual (Kannada & English)</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Karnataka-Specific Focus</span>
+                        </li>
+                    </ul>
+                    <CTAButton to="/courses/kas" variant="secondary-blue" className="w-full">View Program</CTAButton>
                 </div>
 
                 {/* KPSC AC-SAAD */}
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">KPSC AC-SAAD</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Specialized course for Assistant Controller (State Accounts Dept) covering Commerce, Management, and General Studies papers.</p>
-                    <CTAButton to="/courses/ac-saad" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+                    <div className="h-1.5 w-16 bg-encourage-red rounded mb-6"></div>
+                    <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-2">KPSC AC-SAAD</h3>
+                    <p className="text-charcoal-gray/80 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+                        Specialized program for Assistant Controller (State Accounts Dept) targeting Commerce & Management.
+                    </p>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Focused Commerce/Mgmt Classes</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Bilingual (Kannada & English)</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Complete Coverage of Papers V-VIII</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Exclusive Test Series</span>
+                        </li>
+                    </ul>
+                    <CTAButton to="/courses/ac-saad" variant="secondary-blue" className="w-full">View Program</CTAButton>
                 </div>
 
                 {/* PSI & PC */}
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg transition-colors duration-300">
-                    <h3 className="text-2xl font-bold font-montserrat text-encourage-red">PSI & PC Program</h3>
-                    <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Rigorous training for Police Sub-Inspector and Constable exams, including physical guidance and written test preparation.</p>
-                    <CTAButton to="/courses/psi" variant="secondary-blue" className="mt-6">Learn More</CTAButton>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+                    <div className="h-1.5 w-16 bg-encourage-red rounded mb-6"></div>
+                    <h3 className="text-2xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-2">PSI & PC Program</h3>
+                    <p className="text-charcoal-gray/80 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+                        Rigorous training for Police Sub-Inspector and Constable exams with equal focus on physical & written tests.
+                    </p>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Bilingual (Kannada & English)</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Weekly Mock Test Series</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Physical Standards Training</span>
+                        </li>
+                        <li className="flex items-start">
+                            <CheckCircleIcon className="w-5 h-5 text-sunrise-orange mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-charcoal-gray dark:text-gray-200">Translation & Essay Practice</span>
+                        </li>
+                    </ul>
+                    <CTAButton to="/courses/psi" variant="secondary-blue" className="w-full">View Program</CTAButton>
                 </div>
             </div>
         </div>
