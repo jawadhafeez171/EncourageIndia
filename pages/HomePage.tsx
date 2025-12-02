@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import CTAButton from '../components/CTAButton';
 import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon } from '../components/Icons';
@@ -21,7 +20,7 @@ const carouselSlides = [
     },
     {
         badge: "Admissions Open",
-        headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Agriculture (AO/AAO)</span></>,
+        headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 whitespace-nowrap">Agriculture (AO/AAO)</span></>,
         subheadline: "Specialized program for KPSC Agriculture Officer posts. Detailed coverage of B.Sc (Agri) syllabus and GK paper.",
         points: ["Expert Agriculture Faculty", "Bilingual Study Material", "Focused Test Series"],
         image: "https://picsum.photos/seed/agriculture/1920/1080",
