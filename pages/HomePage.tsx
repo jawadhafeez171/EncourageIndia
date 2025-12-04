@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import CTAButton from '../components/CTAButton';
 import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon } from '../components/Icons';
@@ -7,6 +8,7 @@ import { submitToGoogleSheet } from '../services/googleSheetService';
 const carouselSlides = [
     {
         badge: "Recruitment Alert",
+        medium: "English / ಕನ್ನಡ",
         headline: <>Power Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">KPCL AE/JE</span></>,
         subheadline: "Comprehensive coaching for Assistant & Junior Engineer posts. Master technical concepts with Karnataka's top engineering faculty.",
         points: ["Complete Technical Syllabus", "General Awareness Module", "Mock Tests & Analysis"],
@@ -19,7 +21,22 @@ const carouselSlides = [
         cta3Link: { to: '/courses/kpcl' },
     },
     {
+        badge: "Multiple Vacancies",
+        medium: "English / ಕನ್ನಡ",
+        headline: <>KEA Group <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">A, B, C & D</span> Exams</>,
+        subheadline: "One-stop coaching solution for all KEA Technical (AE/JE) and Non-Technical (FDA/SDA/Group-C) posts.",
+        points: ["Technical & Non-Tech Batches", "General Kannada/English", "Subject Experts"],
+        image: "https://picsum.photos/seed/kea_hero/1920/1080",
+        cta1: "Enroll Now",
+        cta2: "Technical Courses",
+        cta3: "Non-Technical Courses",
+        cta1Link: { requiresAuth: true },
+        cta2Link: { to: '/courses/kea-tech' },
+        cta3Link: { to: '/courses/kea-group-b-c' },
+    },
+    {
         badge: "Admissions Open",
+        medium: "English / ಕನ್ನಡ",
         headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 whitespace-nowrap">Agriculture (AO/AAO)</span></>,
         subheadline: "Specialized program for KPSC Agriculture Officer posts. Detailed coverage of B.Sc (Agri) syllabus and GK paper.",
         points: ["Expert Agriculture Faculty", "Bilingual Study Material", "Focused Test Series"],
@@ -33,6 +50,7 @@ const carouselSlides = [
     },
     {
         badge: "Mass Recruitment",
+        medium: "English / ಕನ್ನಡ",
         headline: <>Secure a Govt Job in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">KMF SHIMUL</span></>,
         subheadline: "Targeting 194+ Vacancies. A focused crash course covering Co-operative Laws, General Kannada/English, and Computer knowledge.",
         points: ["Co-operative Act Coverage", "Exam-Oriented Approach", "Daily Quizzes"],
@@ -43,6 +61,20 @@ const carouselSlides = [
         cta1Link: { requiresAuth: true },
         cta2Link: { to: '/courses/kmf-shimul' },
         cta3Link: { to: '/courses/kmf-shimul' },
+    },
+    {
+        badge: "Uniformed Services",
+        medium: "English / ಕನ್ನಡ",
+        headline: <>Wear the Khaki with Pride: <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">PSI & PC</span></>,
+        subheadline: "Rigorous training for Karnataka State Police recruitment. Master both Physical and Written challenges with our expert guidance.",
+        points: ["Physical Training Guidance", "Bilingual Classes", "Weekly Mock Tests"],
+        image: "https://picsum.photos/seed/police_hero/1920/1080",
+        cta1: "Enroll Now",
+        cta2: "Course Details",
+        cta3: "About the Exam",
+        cta1Link: { requiresAuth: true },
+        cta2Link: { to: '/courses/psi' },
+        cta3Link: { to: '/courses/psi' },
     },
     {
         badge: "Foundation Batch 2026",
@@ -99,7 +131,7 @@ const flagshipPrograms = [
             batch: "July 2025"
         },
         tags: [
-            { text: "Bilingual", color: "bg-purple-500/20 text-purple-100" },
+            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
             { text: "State Focus", color: "bg-yellow-500/20 text-yellow-100" },
             { text: "Test Series", color: "bg-red-500/20 text-red-100" }
         ],
@@ -127,7 +159,7 @@ const flagshipPrograms = [
             batch: "Admissions Open"
         },
         tags: [
-            { text: "Bilingual", color: "bg-purple-500/20 text-purple-100" },
+            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
             { text: "Commerce Special", color: "bg-orange-500/20 text-orange-100" },
             { text: "Test Series", color: "bg-red-500/20 text-red-100" }
         ],
@@ -155,7 +187,7 @@ const flagshipPrograms = [
             batch: "New Batch Soon"
         },
         tags: [
-            { text: "Bilingual", color: "bg-purple-500/20 text-purple-100" },
+            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
             { text: "Physical Training", color: "bg-teal-500/20 text-teal-100" },
             { text: "Test Series", color: "bg-red-500/20 text-red-100" }
         ],
@@ -276,11 +308,17 @@ const HomePage: React.FC = () => {
                   <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
                       {/* Added pb-24 to prevent overlap with bottom bar on small screens */}
                       <div className="max-w-3xl space-y-6 pl-2 md:pl-0 pb-24 md:pb-0">
-                          {/* Animated Badge */}
-                          <div className={`inline-block ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                          {/* Animated Badge & Language Tag */}
+                          <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
                               <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">
                                   {slide.badge}
                               </span>
+                              {/* Conditionally render medium tag */}
+                              {slide.medium && (
+                                <span className="bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">
+                                    {slide.medium}
+                                </span>
+                              )}
                           </div>
 
                           {/* Animated Headline */}
