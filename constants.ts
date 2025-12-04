@@ -87,20 +87,17 @@ export const coursesData = [
     title: 'UPSC Civil Services',
     courses: [
       {
-        image: 'https://picsum.photos/seed/upsc1/400/300',
         title: 'UPSC CSE Foundation Program',
         description: 'A comprehensive 2-year program for undergraduates, covering the entire syllabus from scratch.',
         features: ['Integrated Prelims & Mains', 'Personalized Mentorship', 'Daily Answer Writing'],
         path: '/courses/upsc-cse',
       },
       {
-        image: 'https://picsum.photos/seed/upsc2/400/300',
         title: 'UPSC Prelims Test Series',
         description: 'An extensive test series designed to cover the entire prelims syllabus with detailed explanations.',
         features: ['40+ Sectional & Full Tests', 'Performance Analysis', 'All India Ranking'],
       },
        {
-        image: 'https://picsum.photos/seed/upsc3/400/300',
         title: 'UPSC Mains Mentorship',
         description: 'A dedicated program for mains preparation with focus on answer writing and ethics.',
         features: ['Daily Writing Targets', 'One-on-One Feedback', 'Essay & Ethics Classes'],
@@ -112,14 +109,12 @@ export const coursesData = [
     title: 'Karnataka Judiciary',
     courses: [
        {
-        image: 'https://picsum.photos/seed/judge1/400/300',
         title: 'Civil Judge Foundation Course',
         description: 'A complete course for aspiring Civil Judges covering all law subjects and procedural laws.',
         features: ['Expert Faculty (Judges)', 'Bare Act Analysis', 'Judgment Writing Practice'],
         path: '/courses/karnataka-judiciary',
       },
        {
-        image: 'https://picsum.photos/seed/judge2/400/300',
         title: 'Judiciary Mains Test Series',
         description: 'Simulate the real exam environment with our mains test series, evaluated by experts.',
         features: ['10 Full-Length Tests', 'Model Answers Provided', 'Detailed Evaluation'],
@@ -131,14 +126,12 @@ export const coursesData = [
     title: 'KPSC Examinations',
     courses: [
        {
-        image: 'https://picsum.photos/seed/kpsc1/400/300',
         title: 'KPSC KAS Foundation',
         description: 'An integrated program for Karnataka Administrative Service (KAS) covering all papers.',
         features: ['Karnataka Specific GK', 'Kannada Language Paper', 'Interview Guidance'],
         path: '/courses/kas',
       },
       {
-        image: 'https://picsum.photos/seed/kpsc2/400/300',
         title: 'KPSC Agriculture Officer (AO/AAO)',
         description: 'Specialized coaching for the KPSC Agriculture Officer examination with focus on the optional subject.',
         features: ['Subject Matter Experts', 'Updated Study Material', 'Extensive Mock Tests'],
@@ -151,7 +144,6 @@ export const coursesData = [
     title: 'Karnataka Milk Federation (KMF)',
     courses: [
       {
-        image: 'https://picsum.photos/seed/kmf-shimul/400/300',
         title: 'KMF SHIMUL Recruitment',
         description: 'A dedicated course for the 194 vacancies in SHIMUL, covering the complete syllabus for various technical and non-technical posts.',
         features: ['Complete Syllabus Coverage', 'Focus on Co-operative Laws', 'Extensive Mock Test Series'],
@@ -164,7 +156,6 @@ export const coursesData = [
     title: 'KEA Examinations',
     courses: [
        {
-        image: 'https://picsum.photos/seed/kea1/400/300',
         title: 'KEA Village Accountant Program',
         description: 'Targeted coaching for the Village Accountant (VA) recruitment by KEA.',
         features: ['Computer Literacy Classes', 'General Kannada/English', 'Comprehensive Test Series'],
@@ -176,7 +167,6 @@ export const coursesData = [
     title: 'Police Exams',
     courses: [
       {
-        image: 'https://picsum.photos/seed/police1/400/300',
         title: 'PSI/PC Foundation Course',
         description: 'A rigorous training program for Police Sub-Inspector (PSI) and Police Constable (PC) exams.',
         features: ['Physical Fitness Guidance', 'Mental Ability & Aptitude', 'Essay & Translation Practice'],
