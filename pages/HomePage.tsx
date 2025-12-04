@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import CTAButton from '../components/CTAButton';
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon } from '../components/Icons';
 import { testimonials } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
@@ -205,6 +205,23 @@ const flagshipPrograms = [
         popular: false,
         live: true
     }
+];
+
+const courseFeatures = [
+    { icon: <VideoCameraIcon className="w-6 h-6 text-sunrise-orange" />, title: "Live & Recorded Classes", description: "Flexible learning with live interaction and unlimited recorded access." },
+    { icon: <ChatAlt2Icon className="w-6 h-6 text-sunrise-orange" />, title: "English / ಕನ್ನಡ Medium", description: "Complete instruction available in both English and Kannada." },
+    { icon: <DownloadIcon className="w-6 h-6 text-sunrise-orange" />, title: "Offline App Access", description: "Download lectures and study without internet connectivity." },
+    { icon: <DocumentTextIcon className="w-6 h-6 text-sunrise-orange" />, title: "Comprehensive Notes", description: "Detailed, high-quality notes covering every syllabus topic." },
+    { icon: <LightBulbIcon className="w-6 h-6 text-sunrise-orange" />, title: "Doubt Solving", description: "Dedicated sessions to clear concepts and queries instantly." },
+    { icon: <AcademicCapIcon className="w-6 h-6 text-sunrise-orange" />, title: "Expert Faculty", description: "Learn from experienced educators and subject matter experts." },
+    { icon: <StarIcon className="w-6 h-6 text-sunrise-orange" />, title: "Topper Guidance", description: "Exclusive interaction sessions with previous rank holders." },
+    { icon: <ClipboardListIcon className="w-6 h-6 text-sunrise-orange" />, title: "Test Series", description: " rigorous full-length and sectional mock tests with analysis." },
+    { icon: <BookOpenIcon className="w-6 h-6 text-sunrise-orange" />, title: "NCERT Foundation", description: "Strong emphasis on building basics through NCERTs." },
+    { icon: <RefreshIcon className="w-6 h-6 text-sunrise-orange" />, title: "Revision Modules", description: "Structured revision classes to consolidate learning before exams." },
+    { icon: <UserIcon className="w-6 h-6 text-sunrise-orange" />, title: "1-on-1 Mentorship", description: "Personalized guidance to track progress and strategy." },
+    { icon: <UsersIcon className="w-6 h-6 text-sunrise-orange" />, title: "Peer Learning", description: "A competitive yet collaborative environment for aspirants." },
+    { icon: <CogIcon className="w-6 h-6 text-sunrise-orange" />, title: "Structured Curriculum", description: "Systematically designed course flow for timely syllabus completion." },
+    { icon: <GlobeAltIcon className="w-6 h-6 text-sunrise-orange" />, title: "Current Affairs", description: "Free access to our monthly magazine and daily updates." },
 ];
 
 const HomePage: React.FC = () => {
@@ -530,6 +547,38 @@ const HomePage: React.FC = () => {
                         key={index} 
                         className={`h-2 rounded-full transition-all duration-300 ${activeCardIndex === index ? 'w-6 bg-sunrise-orange' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
                     />
+                ))}
+            </div>
+        </div>
+      </section>
+
+      {/* Why Choose Encourage India? - Compact Tile Layout */}
+      <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
+        <div className="container mx-auto px-4 md:px-4">
+            <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-extrabold font-montserrat text-charcoal-gray dark:text-white">
+                    Why Choose Encourage India?
+                </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                {courseFeatures.map((feature, index) => (
+                    <div 
+                        key={index} 
+                        className="flex items-center p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-slate-700/50 border border-gray-100 dark:border-gray-700 hover:border-empower-blue/50 hover:shadow-md transition-all duration-300 group cursor-default"
+                        title={feature.description} // Native tooltip for details
+                    >
+                        <div className="flex-shrink-0 mr-3">
+                            <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                {feature.icon}
+                            </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <h3 className="text-xs md:text-sm font-bold text-charcoal-gray dark:text-gray-100 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors leading-snug">
+                                {feature.title}
+                            </h3>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
