@@ -173,7 +173,7 @@ export const AcademicCapIcon: React.FC<IconProps> = ({ className }) => (
 
 export const ShieldCheckIcon: React.FC<IconProps> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.417l5.611-1.377a12.018 12.018 0 001.442-.655l.01-.01c.203-.133.407-.27.618-.408l.366-.244a12.016 12.016 0 003.956 0l.366.244c.21.138.415.275.618.408l.01.01a12.018 12.018 0 001.442.655L21 20.417A12.02 12.02 0 0017.618 7.984z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.417l5.611-1.377a12.018 12.018 0 001.442-.655l.01-.01c.203-.133.407-.27.618-.408l.366-.244a12.016 12.016 0 003.956 0l.366.244c.21.138.415.27.618.408l.01.01a12.018 12.018 0 001.442.655L21 20.417A12.02 12.02 0 0017.618 7.984z" />
   </svg>
 );
 
@@ -265,5 +265,11 @@ export const LightBulbIcon: React.FC<IconProps> = ({ className }) => (
 export const RefreshIcon: React.FC<IconProps> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+  </svg>
+);
+
+export const HomeIcon: React.FC<IconProps> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={className} width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
   </svg>
 );
