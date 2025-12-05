@@ -85,6 +85,7 @@ export const coursesData = [
   {
     id: 'upsc',
     title: 'UPSC Civil Services',
+    shortTitle: 'UPSC',
     courses: [
       {
         title: 'UPSC CSE Foundation Program',
@@ -105,8 +106,132 @@ export const coursesData = [
     ],
   },
   {
+    id: 'kas',
+    title: 'KPSC - KAS',
+    shortTitle: 'KAS',
+    courses: [
+       {
+        title: 'KPSC KAS Foundation',
+        description: 'An integrated program for Karnataka Administrative Service (KAS) covering all papers for Prelims and Mains.',
+        features: ['Karnataka Specific GK', 'Kannada Language Paper', 'Interview Guidance', 'Economic Survey Analysis'],
+        path: '/courses/kas',
+      },
+      {
+        title: 'KAS Prelims Crash Course',
+        description: 'A fast-track course focusing on high-yield topics and revision for the upcoming KAS Prelims.',
+        features: ['Subject-wise Revision', 'Mock Tests', 'Current Affairs Capsule'],
+      }
+    ]
+  },
+  {
+    id: 'kpsc',
+    title: 'Other KPSC Exams',
+    shortTitle: 'KPSC',
+    courses: [
+      {
+        title: 'KPSC AC-SAAD',
+        description: 'Targeted preparation for Assistant Controller in State Accounts Department.',
+        features: ['Commerce & Management Focus', 'Paper 2 Specialization', 'General Studies Coverage'],
+        path: '/courses/ac-saad',
+      },
+      {
+        title: 'Assistant Conservator of Forests (ACF)',
+        description: 'Specialized coaching for the prestigious Karnataka Forest Service examination.',
+        features: ['Forestry & Environment', 'General Science Focus', 'Aptitude Training'],
+        path: '/courses/acf',
+      },
+      {
+        title: 'Agriculture Officer (AO/AAO)',
+        description: 'Comprehensive course for Agriculture graduates aspiring for AO/AAO posts.',
+        features: ['Subject Matter Experts', 'B.Sc Agri Syllabus', 'GK Paper Coverage'],
+        path: '/courses/kpsc-ao-aao',
+      },
+      {
+        title: 'Group B Posts',
+        description: 'Coaching for various Group B technical and non-technical posts.',
+        features: ['Specific Paper Guidance', 'General Knowledge', 'Test Series'],
+        path: '/courses/group-b',
+      },
+      {
+        title: 'Technical Exams (AE/AEE)',
+        description: 'For Engineering graduates (Civil/Mech/Elec) aspiring for PWD, WRD, and RDPR roles.',
+        features: ['Core Engineering Subjects', 'General Studies', 'Previous Year QPs'],
+        path: '/courses/kpsc-tech',
+      },
+      {
+        title: 'FDA / SDA',
+        description: 'Focused preparation for First and Second Division Assistant recruitment.',
+        features: ['General Kannada/English', 'General Knowledge', 'Mental Ability'],
+        path: '/courses/fda-sda',
+      },
+    ],
+  },
+  {
+    id: 'kea',
+    title: 'KEA Examinations',
+    shortTitle: 'KEA',
+    courses: [
+       {
+        title: 'KPCL Recruitment',
+        description: 'Coaching for Assistant Engineer, Junior Engineer, and other posts in Karnataka Power Corporation Ltd.',
+        features: ['Technical & Non-Tech', 'General Awareness', 'Kannada Language'],
+        path: '/courses/kpcl',
+      },
+      {
+        title: 'Karnataka SET (K-SET)',
+        description: 'Preparation for Assistant Professor eligibility test.',
+        features: ['Paper 1 (General)', 'Paper 2 (Subject)', 'Teaching Aptitude'],
+        path: '/courses/k-set',
+      },
+      {
+        title: 'KEA Technical Exams',
+        description: 'For various board/corporation technical recruitments conducted by KEA.',
+        features: ['JE / AE Syllabus', 'Computer Literacy', 'General English'],
+        path: '/courses/kea-tech',
+      },
+      {
+        title: 'KEA Group B & C (Non-Tech)',
+        description: 'Coaching for administrative and assistant posts in various boards.',
+        features: ['Communication Papers', 'GK & Current Affairs', 'Reasoning'],
+        path: '/courses/kea-group-b-c',
+      },
+      {
+        title: 'KMF SHIMUL Recruitment',
+        description: 'Dedicated batch for SHIMUL and other milk union recruitments.',
+        features: ['Co-operative Laws', 'Computer Knowledge', 'General Syllabus'],
+        path: '/courses/kmf-shimul',
+      }
+    ],
+  },
+  {
+    id: 'police',
+    title: 'Police Examinations',
+    shortTitle: 'Police',
+    courses: [
+      {
+        title: 'PSI & PC Integrated Program',
+        description: 'Comprehensive coaching for both Police Sub-Inspector and Constable exams.',
+        features: ['Physical Training Guide', 'Translation (PSI)', 'Mental Ability (PC)'],
+        path: '/courses/psi-pc',
+      },
+      {
+        title: 'Police Sub-Inspector (PSI)',
+        description: 'Focused preparation for the PSI written examination and physical tests.',
+        features: ['Essay & Translation', 'General Studies', 'Current Events'],
+        path: '/courses/psi',
+      },
+      {
+        title: 'Police Constable (PC)',
+        description: 'Dedicated batch for Police Constable recruitment.',
+        features: ['General Knowledge', 'Psychology', 'Indian Constitution'],
+        path: '/courses/pc',
+      },
+    ]
+  },
+  {
     id: 'judiciary',
     title: 'Karnataka Judiciary',
+    shortTitle: 'Judiciary',
     courses: [
        {
         title: 'Civil Judge Foundation Course',
@@ -122,55 +247,20 @@ export const coursesData = [
     ],
   },
   {
-    id: 'kpsc',
-    title: 'KPSC Examinations',
+    id: 'others',
+    title: 'Other Programs',
+    shortTitle: 'Others',
     courses: [
-       {
-        title: 'KPSC KAS Foundation',
-        description: 'An integrated program for Karnataka Administrative Service (KAS) covering all papers.',
-        features: ['Karnataka Specific GK', 'Kannada Language Paper', 'Interview Guidance'],
-        path: '/courses/kas',
-      },
-      {
-        title: 'KPSC Agriculture Officer (AO/AAO)',
-        description: 'Specialized coaching for the KPSC Agriculture Officer examination with focus on the optional subject.',
-        features: ['Subject Matter Experts', 'Updated Study Material', 'Extensive Mock Tests'],
-        path: '/courses/kpsc-ao-aao',
-      },
-    ],
-  },
-  {
-    id: 'kmf',
-    title: 'Karnataka Milk Federation (KMF)',
-    courses: [
-      {
-        title: 'KMF SHIMUL Recruitment',
-        description: 'A dedicated course for the 194 vacancies in SHIMUL, covering the complete syllabus for various technical and non-technical posts.',
-        features: ['Complete Syllabus Coverage', 'Focus on Co-operative Laws', 'Extensive Mock Test Series'],
-        path: '/courses/kmf-shimul',
-      },
-    ]
-  },
-   {
-    id: 'kea',
-    title: 'KEA Examinations',
-    courses: [
-       {
-        title: 'KEA Village Accountant Program',
-        description: 'Targeted coaching for the Village Accountant (VA) recruitment by KEA.',
-        features: ['Computer Literacy Classes', 'General Kannada/English', 'Comprehensive Test Series'],
-      },
-    ],
-  },
-  {
-    id: 'police',
-    title: 'Police Exams',
-    courses: [
-      {
-        title: 'PSI/PC Foundation Course',
-        description: 'A rigorous training program for Police Sub-Inspector (PSI) and Police Constable (PC) exams.',
-        features: ['Physical Fitness Guidance', 'Mental Ability & Aptitude', 'Essay & Translation Practice'],
-      },
+        {
+            title: 'Personal Mentorship Program',
+            description: 'One-on-one guidance for students who need strategic intervention in their preparation.',
+            features: ['Weekly Progress Check', 'Strategy Planning', 'Doubt Resolution'],
+        },
+        {
+            title: 'Interview Guidance Program',
+            description: 'Specialized sessions for candidates who have cleared Mains and are appearing for the interview.',
+            features: ['Mock Interviews', 'DAF Analysis', 'Personality Grooming'],
+        }
     ]
   }
 ];

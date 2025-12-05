@@ -199,7 +199,7 @@ const flagshipPrograms = [
             "Weekly Full Mocks",
             "Test Series Included"
         ],
-        link: "/courses/psi",
+        link: "/courses/psi-pc",
         syllabusUrl: "/downloads/psi-pc-syllabus.pdf",
         gradient: "from-gray-700 to-gray-900",
         popular: false,

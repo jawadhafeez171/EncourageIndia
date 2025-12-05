@@ -4,17 +4,18 @@ import { useLocation } from 'react-router-dom';
 import CourseCard from '../components/CourseCard';
 import CTAButton from '../components/CTAButton';
 import { coursesData } from '../constants';
-import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, LightningBoltIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon } from '../components/Icons';
+import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, LightningBoltIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon } from '../components/Icons';
 
 // Helper to map category IDs to icons
 const getCategoryIcon = (id: string) => {
     switch (id) {
         case 'upsc': return <AcademicCapIcon className="w-5 h-5" />;
+        case 'kas': return <StarIcon className="w-5 h-5" />;
         case 'judiciary': return <ScaleIcon className="w-5 h-5" />;
         case 'kpsc': return <BriefcaseIcon className="w-5 h-5" />;
-        case 'kmf': return <LightningBoltIcon className="w-5 h-5" />;
         case 'kea': return <LightningBoltIcon className="w-5 h-5" />;
         case 'police': return <ShieldCheckIcon className="w-5 h-5" />;
+        case 'others': return <GlobeAltIcon className="w-5 h-5" />;
         default: return <AcademicCapIcon className="w-5 h-5" />;
     }
 };
@@ -119,7 +120,7 @@ const CoursesPage: React.FC = () => {
                                 }`}
                             >
                                 {getCategoryIcon(category.id)}
-                                <span>{category.title.split(' ')[0]}</span> {/* Show Short Name */}
+                                <span>{category.shortTitle}</span>
                             </button>
                         ))}
                     </div>
@@ -179,7 +180,7 @@ const CoursesPage: React.FC = () => {
                         <div className="relative z-10 flex flex-col gap-4 w-full md:w-auto">
                             <CTAButton 
                                 requiresAuth 
-                                className="bg-white text-empower-blue hover:bg-gray-50 border-none shadow-xl hover:shadow-2xl px-10 py-4 text-xl font-extrabold transform hover:-translate-y-1 transition-all duration-300 w-full md:w-auto text-center"
+                                className="bg-white !text-empower-blue hover:bg-gray-50 border-none shadow-xl hover:shadow-2xl px-10 py-4 text-xl font-extrabold transform hover:-translate-y-1 transition-all duration-300 w-full md:w-auto text-center"
                             >
                                 Talk to a Mentor
                             </CTAButton>

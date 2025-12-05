@@ -18,6 +18,7 @@ import KasPage from './pages/courses/KasPage';
 import AcSaadPage from './pages/courses/AcSaadPage';
 import PsiPage from './pages/courses/PsiPage';
 import PcPage from './pages/courses/PcPage';
+import PsiPcPage from './pages/courses/PsiPcPage';
 import UPSCPage from './pages/courses/UPSCPage';
 import JudiciaryPage from './pages/courses/JudiciaryPage';
 import AcfPage from './pages/courses/AcfPage';
@@ -71,6 +72,7 @@ const App: React.FC = () => {
               <Route path="/courses/fda-sda" element={<FdaSdaPage />} />
               <Route path="/courses/psi" element={<PsiPage />} />
               <Route path="/courses/pc" element={<PcPage />} />
+              <Route path="/courses/psi-pc" element={<PsiPcPage />} />
               <Route path="/courses/kpcl" element={<KpclPage />} />
               <Route path="/courses/k-set" element={<KsetPage />} />
               <Route path="/courses/kea-tech" element={<KeaTechPage />} />
