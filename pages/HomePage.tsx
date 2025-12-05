@@ -68,7 +68,7 @@ const carouselSlides = [
         headline: <>Wear the Khaki with Pride: <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">PSI & PC</span></>,
         subheadline: "Rigorous training for Karnataka State Police recruitment. Master both Physical and Written challenges with our expert guidance.",
         points: ["Physical Training Guidance", "Bilingual Classes", "Weekly Mock Tests"],
-        image: "https://picsum.photos/seed/police_hero/1920/1080",
+        image: "https://picsum.photos/seed/ksp_police/1920/1080",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
