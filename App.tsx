@@ -10,6 +10,7 @@ import DownloadsPage from './pages/DownloadsPage';
 import ResultsPage from './pages/ResultsPage';
 import ContactPage from './pages/ContactPage';
 import PhysicalTrainingPage from './pages/PhysicalTrainingPage';
+import NotFoundPage from './pages/NotFoundPage';
 import { EnrollmentProvider } from './contexts/EnrollmentContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 
@@ -78,6 +79,9 @@ const App: React.FC = () => {
               <Route path="/courses/kea-tech" element={<KeaTechPage />} />
               <Route path="/courses/kea-group-b-c" element={<KeaGroupBCPage />} />
               <Route path="/courses/kmf-shimul" element={<ShimulPage />} />
+
+              {/* 404 Route */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Layout>
         </HashRouter>
