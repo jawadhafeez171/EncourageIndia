@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -13,6 +12,7 @@ import PhysicalTrainingPage from './pages/PhysicalTrainingPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { EnrollmentProvider } from './contexts/EnrollmentContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import AnalyticsTracker from './components/AnalyticsTracker';
 
 // New Exam Pages
 import KasPage from './pages/courses/KasPage';
@@ -49,6 +49,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       <EnrollmentProvider>
         <HashRouter>
+          <AnalyticsTracker />
           <ScrollToTop />
           <Layout>
             <Routes>
