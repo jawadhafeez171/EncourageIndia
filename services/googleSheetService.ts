@@ -19,11 +19,26 @@ export const submitToGoogleSheet = async (data: Record<string, string>) => {
   // Append timestamp
   formData.append('SubmissionDate', new Date().toLocaleString());
 
-  // Using no-cors mode because Google Apps Script redirects often cause CORS issues in browsers
-  // This means we won't get a readable response, but the request will go through.
-  return fetch(GOOGLE_SCRIPT_URL, {
-    method: 'POST',
-    body: formData,
-    mode: 'no-cors'
-  });
+  try {
+    // Using no-cors mode because Google Apps Script redirects often cause CORS issues in browsers
+    // This means we won't get a readable response, but the request will go through.
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    });
+    
+    // Log for debugging (response will be opaque in no-cors mode)
+    console.log('Form submitted to Google Sheets:', {
+      url: GOOGLE_SCRIPT_URL,
+      data: Object.fromEntries(formData.entries()),
+      timestamp: new Date().toISOString()
+    });
+    
+    return response;
+  } catch (error) {
+    console.error('Error submitting to Google Sheets:', error);
+    // Still throw error so calling code can handle it
+    throw error;
+  }
 };
