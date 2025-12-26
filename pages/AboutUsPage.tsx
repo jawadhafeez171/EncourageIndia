@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
 import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon, CheckCircleIcon, StarIcon, LightBulbIcon, LightningBoltIcon, ShieldCheckIcon } from '../components/Icons';
+import { placeholderImages } from '../utils/placeholders';
+import { SEOHead } from '../components/SEOHead';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -134,7 +136,7 @@ const AboutUsPage: React.FC = () => {
                     </div>
                     <div className="relative">
                         <div className="absolute inset-0 bg-empower-blue/10 rounded-lg transform translate-x-4 translate-y-4"></div>
-                        <img src="https://picsum.photos/seed/mission/600/400" alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
+                        <img src={placeholderImages.mission} alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
                     </div>
                 </div>
             </section>

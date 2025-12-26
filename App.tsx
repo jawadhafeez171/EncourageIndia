@@ -13,6 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import { EnrollmentProvider } from './contexts/EnrollmentContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import AnalyticsTracker from './components/AnalyticsTracker';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // New Exam Pages
 import KasPage from './pages/courses/KasPage';
@@ -46,13 +47,15 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <EnrollmentProvider>
-        <HashRouter>
-          <AnalyticsTracker />
-          <ScrollToTop />
-          <Layout>
-            <Routes>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <EnrollmentProvider>
+          <HashRouter>
+            <AnalyticsTracker />
+            <ScrollToTop />
+            <Layout>
+              <ErrorBoundary>
+                <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/courses" element={<CoursesPage />} />
@@ -83,11 +86,13 @@ const App: React.FC = () => {
 
               {/* 404 Route */}
               <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Layout>
-        </HashRouter>
-      </EnrollmentProvider>
-    </ThemeProvider>
+                </Routes>
+              </ErrorBoundary>
+            </Layout>
+          </HashRouter>
+        </EnrollmentProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 };
 

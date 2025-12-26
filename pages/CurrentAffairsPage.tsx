@@ -2,6 +2,8 @@
 import React from 'react';
 import CTAButton from '../components/CTAButton';
 import { editorialSummaries } from '../constants';
+import { placeholderImages } from '../utils/placeholders';
+import { SEOHead } from '../components/SEOHead';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -21,7 +23,7 @@ const CurrentAffairsPage: React.FC = () => {
                     <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-8 border-l-4 border-sunrise-orange pl-4">Monthly Magazine</h2>
                     <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 grid md:grid-cols-3 gap-8 items-center transition-colors duration-300">
                         <div className="md:col-span-1">
-                            <img src="https://picsum.photos/seed/magazine/400/500" alt="Current Affairs Magazine Cover" className="rounded-md shadow-md w-full max-w-xs mx-auto" />
+                            <img src={placeholderImages.magazine} alt="Current Affairs Magazine Cover" className="rounded-md shadow-md w-full max-w-xs mx-auto" />
                         </div>
                         <div className="md:col-span-2">
                             <h3 className="text-2xl font-bold font-montserrat text-encourage-red">Encourage Today - {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}</h3>

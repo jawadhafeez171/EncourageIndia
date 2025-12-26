@@ -1,5 +1,6 @@
 
 import { TelegramIcon, InstagramIcon, YouTubeIcon, FacebookIcon, WhatsAppIcon, XIcon } from './components/Icons';
+import { placeholderImages } from './utils/placeholders';
 
 export const navLinks = [
   { name: 'Home', path: '/' },
@@ -65,19 +66,19 @@ export const testimonials = [
     name: 'Priya Sharma',
     achievement: 'UPSC CSE, AIR 45',
     quote: 'The personalized mentorship and structured curriculum at Encourage India were instrumental in my success. The faculty is incredibly supportive.',
-    image: 'https://picsum.photos/seed/priya/100/100',
+    image: placeholderImages.testimonials.priya,
   },
   {
     name: 'Arjun Singh',
     achievement: 'Karnataka Civil Judge, Rank 5',
     quote: "Encourage India's focus on answer writing and mock interviews gave me the confidence I needed to crack the judicial services exam.",
-    image: 'https://picsum.photos/seed/arjun/100/100',
+    image: placeholderImages.testimonials.arjun,
   },
   {
     name: 'Sneha Reddy',
     achievement: 'KPSC, Deputy Superintendent',
     quote: 'The current affairs coverage and test series are top-notch. I highly recommend Encourage India to all state PSC aspirants.',
-    image: 'https://picsum.photos/seed/sneha/100/100',
+    image: placeholderImages.testimonials.sneha,
   },
 ];
 
@@ -266,17 +267,17 @@ export const coursesData = [
 ];
 
 export const achievers = [
-    { name: 'Amit Kumar', rank: 'UPSC CSE, AIR 22', photo: 'https://picsum.photos/seed/amit/400/400', quote: 'Consistent guidance and high-quality test series were the key factors in my success.' },
-    { name: 'Sunita Patil', rank: 'Karnataka Civil Judge, Rank 3', photo: 'https://picsum.photos/seed/sunita/400/400', quote: 'The mentorship for judgment writing was invaluable. I am grateful to the entire team.' },
-    { name: 'Ravi Gowda', rank: 'KPSC KAS, Rank 8', photo: 'https://picsum.photos/seed/ravi/400/400', quote: 'Excellent coverage of Karnataka-specific topics and current affairs.' },
-    { name: 'Deepa Iyer', rank: 'UPSC CSE, AIR 98', photo: 'https://picsum.photos/seed/deepa/400/400', quote: 'The one-on-one sessions helped me identify and work on my weak areas effectively.' },
-    { name: 'Kiran Kumar', rank: 'PSI, Karnataka Police', photo: 'https://picsum.photos/seed/kiran/400/400', quote: 'The holistic preparation, including physical guidance, was a game-changer for me.' },
-    { name: 'Megha Desai', rank: 'UPSC CSE, AIR 150', photo: 'https://picsum.photos/seed/megha/400/400', quote: 'I could always count on the faculty for doubt clearing and motivation.' },
+    { name: 'Amit Kumar', rank: 'UPSC CSE, AIR 22', photo: placeholderImages.achievers.amit, quote: 'Consistent guidance and high-quality test series were the key factors in my success.' },
+    { name: 'Sunita Patil', rank: 'Karnataka Civil Judge, Rank 3', photo: placeholderImages.achievers.sunita, quote: 'The mentorship for judgment writing was invaluable. I am grateful to the entire team.' },
+    { name: 'Ravi Gowda', rank: 'KPSC KAS, Rank 8', photo: placeholderImages.achievers.ravi, quote: 'Excellent coverage of Karnataka-specific topics and current affairs.' },
+    { name: 'Deepa Iyer', rank: 'UPSC CSE, AIR 98', photo: placeholderImages.achievers.deepa, quote: 'The one-on-one sessions helped me identify and work on my weak areas effectively.' },
+    { name: 'Kiran Kumar', rank: 'PSI, Karnataka Police', photo: placeholderImages.achievers.kiran, quote: 'The holistic preparation, including physical guidance, was a game-changer for me.' },
+    { name: 'Megha Desai', rank: 'UPSC CSE, AIR 150', photo: placeholderImages.achievers.megha, quote: 'I could always count on the faculty for doubt clearing and motivation.' },
 ];
 
 export const mentors = [
-    { name: 'Rajesh Gupta', role: 'Chief Mentor, UPSC', photo: 'https://picsum.photos/seed/mentor1/200/200', message: 'Our mission is to democratize quality education. We believe every determined student deserves a chance to serve the nation.' },
-    { name: 'Anjali Menon', role: 'Lead Mentor, Judiciary', photo: 'https://picsum.photos/seed/mentor2/200/200', message: 'The path to the judiciary demands precision and perseverance. We are here to help you at every step of this noble journey.' },
+    { name: 'Rajesh Gupta', role: 'Chief Mentor, UPSC', photo: placeholderImages.mentors.mentor1, message: 'Our mission is to democratize quality education. We believe every determined student deserves a chance to serve the nation.' },
+    { name: 'Anjali Menon', role: 'Lead Mentor, Judiciary', photo: placeholderImages.mentors.mentor2, message: 'The path to the judiciary demands precision and perseverance. We are here to help you at every step of this noble journey.' },
 ];
 
 export const downloadCategories = [

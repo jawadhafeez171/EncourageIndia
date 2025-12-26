@@ -3,6 +3,8 @@ import React, { useState, FormEvent } from 'react';
 import CTAButton from '../components/CTAButton';
 import { LocationPinIcon, PhoneIcon, MailIcon, WhatsAppIcon, CheckCircleIcon } from '../components/Icons';
 import { submitToGoogleSheet } from '../services/googleSheetService';
+import { placeholderImages } from '../utils/placeholders';
+import { SEOHead } from '../components/SEOHead';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -84,7 +86,7 @@ const ContactPage: React.FC = () => {
 
                             <div className="mt-10">
                                 <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://picsum.photos/seed/map/800/400" alt="Location map" className="rounded-lg shadow-md hover:shadow-xl transition-shadow"/>
+                                    <img src={placeholderImages.map} alt="Location map" className="rounded-lg shadow-md hover:shadow-xl transition-shadow"/>
                                 </a>
                             </div>
                         </div>

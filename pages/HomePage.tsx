@@ -4,6 +4,8 @@ import CTAButton from '../components/CTAButton';
 import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon } from '../components/Icons';
 import { testimonials } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
+import { placeholderImages } from '../utils/placeholders';
+import { SEOHead } from '../components/SEOHead';
 
 const carouselSlides = [
     {
@@ -12,7 +14,7 @@ const carouselSlides = [
         headline: <>Power Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">KPCL AE/JE</span></>,
         subheadline: "Comprehensive coaching for Assistant & Junior Engineer posts. Master technical concepts with Karnataka's top engineering faculty.",
         points: ["Complete Technical Syllabus", "General Awareness Module", "Mock Tests & Analysis"],
-        image: "https://picsum.photos/seed/kpcl/1920/1080",
+        image: placeholderImages.hero.kpcl,
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -26,7 +28,7 @@ const carouselSlides = [
         headline: <>KEA Group <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">A, B, C & D</span> Exams</>,
         subheadline: "One-stop coaching solution for all KEA Technical (AE/JE) and Non-Technical (FDA/SDA/Group-C) posts.",
         points: ["Technical & Non-Tech Batches", "General Kannada/English", "Subject Experts"],
-        image: "https://picsum.photos/seed/kea_hero/1920/1080",
+        image: placeholderImages.hero.kea,
         cta1: "Enroll Now",
         cta2: "Technical Courses",
         cta3: "Non-Technical Courses",
@@ -40,7 +42,7 @@ const carouselSlides = [
         headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 whitespace-nowrap">Agriculture (AO/AAO)</span></>,
         subheadline: "Specialized program for KPSC Agriculture Officer posts. Detailed coverage of B.Sc (Agri) syllabus and GK paper.",
         points: ["Expert Agriculture Faculty", "Bilingual Study Material", "Focused Test Series"],
-        image: "https://picsum.photos/seed/agriculture/1920/1080",
+        image: placeholderImages.hero.agriculture,
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -54,7 +56,7 @@ const carouselSlides = [
         headline: <>Secure a Govt Job in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">KMF SHIMUL</span></>,
         subheadline: "Targeting 194+ Vacancies. A focused crash course covering Co-operative Laws, General Kannada/English, and Computer knowledge.",
         points: ["Co-operative Act Coverage", "Exam-Oriented Approach", "Daily Quizzes"],
-        image: "https://picsum.photos/seed/kmf/1920/1080",
+        image: placeholderImages.hero.kmf,
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -68,7 +70,7 @@ const carouselSlides = [
         headline: <>Wear the Khaki with Pride: <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">PSI & PC</span></>,
         subheadline: "Rigorous training for Karnataka State Police recruitment. Master both Physical and Written challenges with our expert guidance.",
         points: ["Physical Training Guidance", "Bilingual Classes", "Weekly Mock Tests"],
-        image: "https://picsum.photos/seed/ksp_police/1920/1080",
+        image: placeholderImages.hero.police,
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -81,7 +83,7 @@ const carouselSlides = [
         headline: <>Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">UPSC CSE</span> with Confidence</>,
         subheadline: "An integrated Prelims-to-Interview roadmap designed for beginners. Build a rock-solid foundation with personal mentorship.",
         points: ["NCERT to Advanced Level", "Daily Answer Writing", "Current Affairs Magazine"],
-        image: "https://picsum.photos/seed/upsc/1920/1080",
+        image: placeholderImages.hero.upsc,
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -277,6 +279,10 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
+      <SEOHead 
+        title="Encourage India IAS Academy - Top Coaching Institute in Bengaluru"
+        description="Top coaching institute in Bengaluru for UPSC, KAS, PSI, PC, KEA, and Judiciary exams. Expert mentorship, bilingual classes (English/Kannada), and comprehensive test series."
+      />
       {/* Inject global styles for this page to hide scrollbars cleanly and add animations */}
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {

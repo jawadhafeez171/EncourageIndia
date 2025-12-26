@@ -1,14 +1,11 @@
 
 export const submitToGoogleSheet = async (data: Record<string, string>) => {
-  // INSTRUCTIONS:
-  // 1. Create a Google Sheet
-  // 2. Go to Extensions > Apps Script
-  // 3. Paste the code provided in the chat response
-  // 4. Deploy as Web App (Execute as: Me, Who has access: Anyone)
-  // 5. Paste the Web App URL below
-  const GOOGLE_SCRIPT_URL: string = 'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec';
+  // Get Google Script URL from environment variable
+  // Fallback to default if not set (for development)
+  const GOOGLE_SCRIPT_URL: string = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 
+    'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec';
   
-  if (GOOGLE_SCRIPT_URL === 'INSERT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
+  if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'INSERT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
       console.warn("Google Script URL is not configured. Data:", data);
       // Simulate network delay
       return new Promise((resolve) => setTimeout(resolve, 1500));
