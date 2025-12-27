@@ -28,6 +28,7 @@ import GroupCPage from './pages/courses/GroupCPage';
 import KpscTechPage from './pages/courses/KpscTechPage';
 import KpclPage from './pages/courses/KpclPage';
 import KsetPage from './pages/courses/KsetPage';
+import DcetPage from './pages/courses/DcetPage';
 import KeaTechPage from './pages/courses/KeaTechPage';
 import KeaGroupBCPage from './pages/courses/KeaGroupBCPage';
 import ShimulPage from './pages/courses/ShimulPage';
@@ -82,8 +83,9 @@ const App: React.FC = () => {
               <Route path="/courses/psi-pc" element={<PsiPcPage />} />
               <Route path="/courses/kpcl" element={<KpclPage />} />
               <Route path="/courses/k-set" element={<KsetPage />} />
+              <Route path="/courses/d-cet" element={<DcetPage />} />
               <Route path="/courses/kea-tech" element={<KeaTechPage />} />
-              <Route path="/courses/kea-group-b-c" element={<KeaGroupBCPage />} />
+              <Route path="/courses/kea-group-b-c-d" element={<KeaGroupBCPage />} />
               <Route path="/courses/kmf-shimul" element={<ShimulPage />} />
               <Route path="/courses/ae-je-technical" element={<AeJeTechnicalPage />} />
 

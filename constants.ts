@@ -55,7 +55,8 @@ export const secondaryNavLinks = [
       name: 'KEA', 
       dropdown: [
         { name: 'K-SET', path: '/courses/k-set' },
-        { name: 'Other Group B & C', path: '/courses/kea-group-b-c' }
+        { name: 'D CET', path: '/courses/d-cet' },
+        { name: 'Other Group B, C & D', path: '/courses/kea-group-b-c-d' }
       ]
     },
     { 
@@ -250,10 +251,16 @@ export const coursesData = [
         path: '/courses/k-set',
       },
       {
-        title: 'KEA Group B & C (Non-Tech)',
-        description: 'Coaching for administrative and assistant posts in various boards.',
-        features: ['Communication Papers', 'GK & Current Affairs', 'Reasoning'],
-        path: '/courses/kea-group-b-c',
+        title: 'D CET (Lateral Entry)',
+        description: 'Specialized coaching for Diploma CET for lateral entry into B.E/B.Tech courses.',
+        features: ['Applied Math & Science', 'Core Technical Concepts', 'Revision Tests'],
+        path: '/courses/d-cet',
+      },
+      {
+        title: 'KEA Group B, C & D (Non-Tech)',
+        description: 'Coaching for Village Administrative Officer (VAO) and other administrative posts.',
+        features: ['Communication Papers', 'GK & Current Affairs', 'VAO Specific Modules'],
+        path: '/courses/kea-group-b-c-d',
       },
       {
         title: 'KMF SHIMUL Recruitment',

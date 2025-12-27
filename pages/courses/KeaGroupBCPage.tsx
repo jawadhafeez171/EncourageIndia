@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { UsersIcon, BriefcaseIcon, PencilAltIcon, CheckCircleIcon } from '../../components/Icons';
@@ -23,13 +24,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const KeaGroupBCPage: React.FC = () => {
     return (
         <div>
-            <PageHeader title="KEA - Other Group B & C Exams" />
+            <PageHeader title="KEA - Other Group B, C & D Exams" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
-                    <Section title="About KEA Group B & C Recruitment">
+                    <Section title="About KEA Group B, C & D Recruitment">
                         <div className="flex items-start">
                             <UsersIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
-                            <p>Besides specific technical recruitments, the Karnataka Examination Authority (KEA) is the nodal agency for conducting examinations for a multitude of Group B and Group C non-technical posts. These recruitments happen for various government corporations, boards, and societies. These roles are vital for the operational and administrative functioning of these state bodies.</p>
+                            <p>Besides specific technical recruitments, the Karnataka Examination Authority (KEA) is the nodal agency for conducting examinations for a multitude of Group B, Group C, and Group D non-technical posts. These recruitments happen for various government corporations, boards, societies, and local administrative bodies. These roles are vital for the operational and administrative functioning of these state bodies.</p>
                         </div>
                     </Section>
 
@@ -39,11 +40,12 @@ const KeaGroupBCPage: React.FC = () => {
                             <div>
                                 <p>This category includes a diverse range of posts, such as:</p>
                                 <ul className="list-disc list-inside mt-2 space-y-2">
+                                    <li className="font-bold text-empower-blue">Village Administrative Officer (VAO)</li>
                                     <li>Junior Assistants / Clerks</li>
                                     <li>Account Assistants</li>
                                     <li>Administrative Assistants</li>
                                     <li>Supervisors in various departments.</li>
-                                    <li><strong>Eligibility:</strong> Educational qualifications typically range from PUC/12th Standard to a Bachelor's degree (like B.A, B.Com, B.Sc) depending on the specific post.</li>
+                                    <li><strong>Eligibility:</strong> Educational qualifications typically range from SSLC/PUC/12th Standard to a Bachelor's degree (like B.A, B.Com, B.Sc) depending on the specific post.</li>
                                     <li><strong>Age Limit:</strong> The standard age criteria of 18-35 years usually apply, with relaxations as per government rules.</li>
                                 </ul>
                             </div>
