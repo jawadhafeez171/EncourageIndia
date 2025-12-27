@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
-import { ScaleIcon, BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon } from '../../components/Icons';
+import { ScaleIcon, BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon, ClipboardListIcon, BookOpenIcon, ClockIcon } from '../../components/Icons';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -14,7 +14,7 @@ const PageHeader = ({ title }: { title: string }) => (
 const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
-        <div className="space-y-4 text-charcoal-gray/80">
+        <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
             {children}
         </div>
     </div>
@@ -23,67 +23,108 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const DistrictJudgePage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
-            <PageHeader title="District Judge (HJS) Coaching" />
+            <PageHeader title="Higher Judicial Services (District Judge)" />
+            
             <div className="py-20">
-                <div className="container mx-auto px-8 max-w-4xl">
-                    <Section title="Higher Judicial Services (HJS)">
-                        <div className="flex items-start">
-                            <ScaleIcon className="w-12 h-12 text-sunrise-orange mr-4 flex-shrink-0" />
-                            <p className="text-lg">The recruitment for the post of District Judge is conducted for direct recruitment from the Bar. It is a highly prestigious role that requires not just legal knowledge, but mature judicial temperament and extensive practice experience.</p>
+                <div className="container mx-auto px-8 max-w-5xl">
+                    
+                    <Section title="Role of a District Judge">
+                        <div className="flex flex-col md:flex-row gap-10 items-center">
+                            <div className="flex-1">
+                                <p className="text-lg leading-relaxed mb-4">
+                                    Recruitment to the cadre of <strong>District Judges</strong> (Direct Recruitment) is intended for seasoned legal practitioners. As the highest judicial officer in the district, the role demands exceptional legal mastery, impartiality, and leadership.
+                                </p>
+                                <p className="text-sm opacity-80">
+                                    Our coaching program is specifically designed for practicing advocates, focusing on high-level legal analysis and complex judgment writing.
+                                </p>
+                            </div>
+                            <div className="flex-shrink-0">
+                                <div className="bg-soft-gray dark:bg-slate-800 p-8 rounded-full border-4 border-empower-blue/20">
+                                    <ScaleIcon className="w-24 h-24 text-sunrise-orange" />
+                                </div>
+                            </div>
                         </div>
                     </Section>
 
                     <Section title="Eligibility Criteria">
-                        <ul className="space-y-4">
-                            <li className="flex items-start">
-                                <div className="bg-blue-100 p-2 rounded-full mr-4"><CheckCircleIcon className="w-5 h-5 text-blue-600" /></div>
-                                <div>
-                                    <h4 className="font-bold">Practice Requirement</h4>
-                                    <p className="text-sm">Must be a practicing Advocate for a continuous period of not less than seven years.</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start">
-                                <div className="bg-blue-100 p-2 rounded-full mr-4"><CheckCircleIcon className="w-5 h-5 text-blue-600" /></div>
-                                <div>
-                                    <h4 className="font-bold">Age Limit</h4>
-                                    <p className="text-sm">Minimum 35 years and Maximum 45 years (relaxable by 3 years for SC/ST/OBC).</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </Section>
-
-                    <Section title="Selection Framework">
-                        <div className="grid md:grid-cols-3 gap-4 text-center">
-                            <div className="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md">
-                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
-                                <h4 className="font-bold mb-2">Prelims</h4>
-                                <p className="text-xs">Objective test on Law subjects and Aptitude.</p>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                                <h4 className="font-bold text-empower-blue dark:text-blue-400 mb-2 flex items-center">
+                                    <BriefcaseIcon className="w-5 h-5 mr-2" /> Practice Requirement
+                                </h4>
+                                <p className="text-sm">Must be a practicing Advocate for a continuous period of not less than <strong>seven years</strong> on the date of notification.</p>
                             </div>
-                            <div className="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md">
-                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
-                                <h4 className="font-bold mb-2">Mains</h4>
-                                <p className="text-xs">Descriptive papers on Civil and Criminal law.</p>
-                            </div>
-                            <div className="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md">
-                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
-                                <h4 className="font-bold mb-2">Viva</h4>
-                                <p className="text-xs">Personal interview for suitability assessment.</p>
+                            <div className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                                <h4 className="font-bold text-empower-blue dark:text-blue-400 mb-2 flex items-center">
+                                    <ClockIcon className="w-5 h-5 mr-2" /> Age Limit
+                                </h4>
+                                <p className="text-sm">Candidates must have attained <strong>35 years</strong> and must not have attained <strong>45 years</strong> (relaxations for SC/ST apply).</p>
                             </div>
                         </div>
                     </Section>
 
-                    <Section title="Specialized Batch Highlights">
-                        <p>Our District Judge batch is tailored for busy advocates:</p>
-                        <ul className="list-disc list-inside space-y-2 text-sm ml-4">
-                            <li>Focus on Landmark Judgments and Constitutional Developments.</li>
-                            <li>Advanced Judgment Writing and Framing of Issues/Charges.</li>
-                            <li>Evening and Weekend batches to accommodate court practice.</li>
-                            <li>Personalized feedback on descriptive answers.</li>
-                        </ul>
+                    <Section title="Examination Pattern">
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-4">
+                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+                                <div className="flex-1">
+                                    <h4 className="font-bold">Preliminary Exam (Objective)</h4>
+                                    <p className="text-sm opacity-80">Screening test on Civil Law, Criminal Law, and General Knowledge.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+                                <div className="flex-1">
+                                    <h4 className="font-bold">Main Written Exam (Descriptive)</h4>
+                                    <p className="text-sm opacity-80">Includes Translation, Law Paper I (Civil), Law Paper II (Criminal), and Law Paper III (Judgments).</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <div className="bg-empower-blue text-white w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+                                <div className="flex-1">
+                                    <h4 className="font-bold">Viva-Voce (Interview)</h4>
+                                    <p className="text-sm opacity-80">Testing suitability, personality, and grasp of legal principles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Section>
+
+                    <Section title="Core Syllabus Highlights">
+                        <div className="bg-soft-gray/30 dark:bg-slate-800 p-8 rounded-2xl border border-dashed border-gray-300 dark:border-gray-600">
+                            <div className="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 className="font-bold mb-3 flex items-center">
+                                        <BookOpenIcon className="w-5 h-5 mr-2 text-sunrise-orange" /> Substantive & Procedural Law
+                                    </h4>
+                                    <ul className="text-sm space-y-2">
+                                        <li>• Constitution of India</li>
+                                        <li>• CPC & CrPC (BNSS)</li>
+                                        <li>• Evidence Act (BSA)</li>
+                                        <li>• IPC (BNS) & Local Laws</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-3 flex items-center">
+                                        <PencilAltIcon className="w-5 h-5 mr-2 text-sunrise-orange" /> Judgment Writing
+                                    </h4>
+                                    <ul className="text-sm space-y-2">
+                                        <li>• Framing of Issues & Charges</li>
+                                        <li>• Analysis of Evidence</li>
+                                        <li>• Writing Intermediate & Final Orders</li>
+                                        <li>• Recent Landmark Judgments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p className="mt-6 text-xs text-center font-semibold text-encourage-red italic">
+                                *All subjects updated as per the latest 2024-25 notification guidelines including New Criminal Laws.
+                            </p>
+                        </div>
                     </Section>
 
                     <div className="text-center mt-16">
-                        <CTAButton requiresAuth variant="primary" className="text-lg px-12">Apply for HJS Batch</CTAButton>
+                        <CTAButton requiresAuth variant="primary" className="text-lg px-12 shadow-orange-500/20">
+                            Join HJS Specialized Batch
+                        </CTAButton>
                     </div>
                 </div>
             </div>
