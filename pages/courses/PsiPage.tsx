@@ -31,7 +31,7 @@ const PsiPage: React.FC = () => {
                     </Section>
 
                     <Section title="Selection Process">
-                        <p>The selection process for Sub-Inspectors is a multi-stage process designed to test both physical fitness and mental aptitude.</p>
+                        <p>The selection process for Sub-Inspectors is designed to test both physical fitness and mental aptitude.</p>
                         <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-0">
                             {/* Stage 1 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
@@ -47,15 +47,6 @@ const PsiPage: React.FC = () => {
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Exam</h3>
                                 <p className="text-sm">Two papers: Paper 1 (Descriptive) and Paper 2 (Objective MCQs).</p>
-                            </div>
-
-                            <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
-
-                            {/* Stage 3 */}
-                            <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
-                                <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Medical & Viva</h3>
-                                <p className="text-sm">Health check-up and personality assessment.</p>
                             </div>
                         </div>
                         <div className="mt-8 p-6 bg-soft-gray/50 rounded-lg">

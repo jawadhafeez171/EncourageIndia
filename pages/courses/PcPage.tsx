@@ -1,6 +1,7 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
-import { ShieldCheckIcon, PencilAltIcon, BeakerIcon, ChevronRightIcon } from '../../components/Icons';
+import { ShieldCheckIcon, PencilAltIcon, ChevronRightIcon } from '../../components/Icons';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -30,7 +31,7 @@ const PcPage: React.FC = () => {
                     </Section>
 
                     <Section title="Selection Process">
-                        <p>The selection for the post of Police Constable is a rigorous process focused on physical fitness and basic academic knowledge.</p>
+                        <p>The selection for the post of Police Constable is a focused process testing physical fitness and basic academic knowledge.</p>
                         <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-0">
                             {/* Stage 1 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
@@ -46,15 +47,6 @@ const PcPage: React.FC = () => {
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Exam</h3>
                                 <p className="text-sm">An objective MCQ test to assess general knowledge and mental ability.</p>
-                            </div>
-
-                            <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
-
-                            {/* Stage 3 */}
-                            <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
-                                <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Medical Exam</h3>
-                                <p className="text-sm">Final check-up to ensure candidates are medically fit for duty.</p>
                             </div>
                         </div>
                         <div className="mt-8 p-6 bg-soft-gray/50 rounded-lg">
@@ -74,10 +66,6 @@ const PcPage: React.FC = () => {
                                     <li>Arithmetic and Mental Ability</li>
                                     </ul>
                                     <p className="mt-2">The final selection is based on the marks obtained in this written test.</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><BeakerIcon className="w-5 h-5 mr-2"/>Medical Examination</h3>
-                                    <p>Finally, shortlisted candidates undergo a medical examination to ensure they are medically fit for the demanding duties of a police constable.</p>
                                 </div>
                             </div>
                         </div>
