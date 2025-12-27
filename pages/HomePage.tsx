@@ -230,6 +230,7 @@ const HomePage: React.FC = () => {
     const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const touchStartX = useRef<number | null>(null);
     const SLIDE_DURATION = 6000;
 
     useEffect(() => {
@@ -245,6 +246,25 @@ const HomePage: React.FC = () => {
 
     const prevSlide = () => {
       setCurrentSlide((prev) => (prev === 0 ? carouselSlides.length - 1 : prev - 1));
+    };
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartX.current === null) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX.current - touchEndX;
+
+        if (Math.abs(diff) > 50) { // Swipe threshold
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        touchStartX.current = null;
     };
 
     const handleMentorSubmit = async (e: React.FormEvent) => {
@@ -306,7 +326,11 @@ const HomePage: React.FC = () => {
       `}</style>
 
       {/* Cinematic Hero Section */}
-      <section className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900">
+      <section 
+        className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
           {carouselSlides.map((slide, index) => (
               <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                   {/* Background Image with Ken Burns Effect */}
@@ -375,12 +399,12 @@ const HomePage: React.FC = () => {
               </div>
           ))}
 
-            {/* Navigation Arrows */}
-            <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group hidden md:block">
-                <ArrowLeftIcon className="w-6 h-6 group-hover:scale-110 transition-transform"/>
+            {/* Navigation Arrows - Adjusted for better ergonomics on mobile */}
+            <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group">
+                <ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/>
             </button>
-            <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group hidden md:block">
-                <ArrowRightIcon className="w-6 h-6 group-hover:scale-110 transition-transform"/>
+            <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group">
+                <ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/>
             </button>
 
             {/* Bottom Info Bar & Progress */}
@@ -403,17 +427,22 @@ const HomePage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Progress Indicators */}
+                    {/* Interactive Progress Indicators */}
                     <div className="flex space-x-2">
                         {carouselSlides.map((_, index) => (
-                            <div key={index} className="relative h-1 w-12 bg-gray-600 rounded-full overflow-hidden">
+                            <button 
+                                key={index} 
+                                onClick={() => setCurrentSlide(index)}
+                                className="relative h-1.5 w-10 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none"
+                                aria-label={`Go to slide ${index + 1}`}
+                            >
                                 <div 
                                     className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${
                                         index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'
                                     }`}
                                     style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}
                                 ></div>
-                            </div>
+                            </button>
                         ))}
                     </div>
                 </div>
