@@ -1,6 +1,5 @@
 
 import { TelegramIcon, InstagramIcon, YouTubeIcon, FacebookIcon, WhatsAppIcon, XIcon } from './components/Icons';
-import { placeholderImages } from './utils/placeholders';
 
 export const navLinks = [
   { name: 'Home', path: '/' },
@@ -15,38 +14,54 @@ export const navLinks = [
 export const secondaryNavLinks = [
     { name: 'UPSC CSE', path: '/courses/upsc-cse' },
     { 
-      name: 'KMF', 
-      dropdown: [
-        { name: 'SHIMUL', path: '/courses/kmf-shimul' },
-      ]
-    },
-    { name: 'Karnataka Judiciary', path: '/courses/karnataka-judiciary' },
-    { 
       name: 'KPSC', 
       dropdown: [
         { name: 'KAS', path: '/courses/kas' },
         { name: 'AC-SAAD', path: '/courses/ac-saad' },
-        { name: 'ACF', path: '/courses/acf' },
+        { name: 'ACF/RFO/DRFO', path: '/courses/acf' },
         { name: 'Agriculture Officer (AO/AAO)', path: '/courses/kpsc-ao-aao'},
         { name: 'Group B Posts', path: '/courses/group-b' },
-        { name: 'Technical Exams (AE/AEE)', path: '/courses/kpsc-tech' },
-        { name: 'FDA/SDA', path: '/courses/fda-sda' }
-      ]
-    },
-    { 
-      name: 'KEA', 
-      dropdown: [
-        { name: 'KPCL', path: '/courses/kpcl' },
-        { name: 'K-SET', path: '/courses/k-set' },
-        { name: 'Technical Exams', path: '/courses/kea-tech' },
-        { name: 'Other Group B & C', path: '/courses/kea-group-b-c' }
+        { name: 'Group C Exams (FDA/SDA)', path: '/courses/group-c' }
       ]
     },
     { 
       name: 'Police Exams', 
       dropdown: [
-        { name: 'PSI', path: '/courses/psi' },
-        { name: 'PC', path: '/courses/pc' }
+        { name: 'PSI/ESI', path: '/courses/psi' },
+        { name: 'PC', path: '/courses/pc' },
+        { name: 'Integrated PSI/PC', path: '/courses/psi-pc' }
+      ]
+    },
+    { 
+      name: 'Judiciary', 
+      dropdown: [
+        { name: 'Civil Judge', path: '/courses/civil-judge' },
+        { name: 'District Judge', path: '/courses/district-judge' },
+        { name: 'CLAT', path: '/courses/clat' },
+        { name: 'AIBE', path: '/courses/aibe' }
+      ]
+    },
+    { 
+      name: 'AE/JE (Technical)', 
+      path: '/courses/ae-je-technical',
+      dropdown: [
+        { name: 'Overview', path: '/courses/ae-je-technical' },
+        { name: 'KPSC Technical (AE/AEE)', path: '/courses/kpsc-tech' },
+        { name: 'KEA Technical Exams', path: '/courses/kea-tech' },
+        { name: 'KPCL (AE/JE)', path: '/courses/kpcl' }
+      ]
+    },
+    { 
+      name: 'KEA', 
+      dropdown: [
+        { name: 'K-SET', path: '/courses/k-set' },
+        { name: 'Other Group B & C', path: '/courses/kea-group-b-c' }
+      ]
+    },
+    { 
+      name: 'KMF', 
+      dropdown: [
+        { name: 'SHIMUL', path: '/courses/kmf-shimul' },
       ]
     },
     { name: 'Physical Training', path: '/physical-training' },
@@ -66,19 +81,19 @@ export const testimonials = [
     name: 'Priya Sharma',
     achievement: 'UPSC CSE, AIR 45',
     quote: 'The personalized mentorship and structured curriculum at Encourage India were instrumental in my success. The faculty is incredibly supportive.',
-    image: placeholderImages.testimonials.priya,
+    image: 'https://picsum.photos/seed/priya/100/100',
   },
   {
     name: 'Arjun Singh',
     achievement: 'Karnataka Civil Judge, Rank 5',
     quote: "Encourage India's focus on answer writing and mock interviews gave me the confidence I needed to crack the judicial services exam.",
-    image: placeholderImages.testimonials.arjun,
+    image: 'https://picsum.photos/seed/arjun/100/100',
   },
   {
     name: 'Sneha Reddy',
     achievement: 'KPSC, Deputy Superintendent',
     quote: 'The current affairs coverage and test series are top-notch. I highly recommend Encourage India to all state PSC aspirants.',
-    image: placeholderImages.testimonials.sneha,
+    image: 'https://picsum.photos/seed/sneha/100/100',
   },
 ];
 
@@ -125,6 +140,62 @@ export const coursesData = [
     ]
   },
   {
+    id: 'aeje',
+    title: 'AE/JE (Technical) Exams',
+    shortTitle: 'AE/JE',
+    courses: [
+      {
+        title: 'Comprehensive Technical Program',
+        description: 'Unified coaching for KPSC AE/AEE, KEA Technical, and KPCL AE/JE posts.',
+        features: ['Core Civil/Mech/Elec Subjects', 'General Studies Integrated', 'Technical Mock Tests'],
+        path: '/courses/ae-je-technical',
+      },
+      {
+        title: 'KPSC AE/AEE (PWD/WRD)',
+        description: 'Focused coaching for Assistant Engineer posts in Karnataka PWD and Water Resources Department.',
+        features: ['Specialized PWD Syllabus', 'Previous Year QP Analysis', 'GS Paper Module'],
+        path: '/courses/kpsc-tech',
+      },
+      {
+        title: 'KEA Technical (JE/AE)',
+        description: 'Targeted batches for various Board & Corporation technical recruitments conducted by KEA.',
+        features: ['JE Level Focus', 'Computer Literacy', 'General English'],
+        path: '/courses/kea-tech',
+      }
+    ]
+  },
+  {
+    id: 'judiciary',
+    title: 'Judicial & Law Services',
+    shortTitle: 'Law',
+    courses: [
+       {
+        title: 'Civil Judge Foundation',
+        description: 'A complete course for aspiring Civil Judges covering all law subjects and procedural laws.',
+        features: ['Bare Act Analysis', 'Judgment Writing Practice', 'Mock Interviews'],
+        path: '/courses/civil-judge',
+      },
+      {
+        title: 'District Judge Preparation',
+        description: 'Specialized batch for practicing advocates aiming for Higher Judicial Services.',
+        features: ['Higher Law Standards', 'Case Law Updates', 'Descriptive Paper Focus'],
+        path: '/courses/district-judge',
+      },
+      {
+        title: 'CLAT Entrance Batch',
+        description: 'Targeted coaching for UG and PG Law entrance examinations for NLUs.',
+        features: ['Legal Reasoning', 'Logical Ability', 'English Proficiency'],
+        path: '/courses/clat',
+      },
+      {
+        title: 'AIBE Certification Course',
+        description: 'Short-term crash course to clear the All India Bar Examination.',
+        features: ['Open Book Strategy', 'Quick Law Revision', 'PYQ Coverage'],
+        path: '/courses/aibe',
+      }
+    ]
+  },
+  {
     id: 'kpsc',
     title: 'Other KPSC Exams',
     shortTitle: 'KPSC',
@@ -136,7 +207,7 @@ export const coursesData = [
         path: '/courses/ac-saad',
       },
       {
-        title: 'Assistant Conservator of Forests (ACF)',
+        title: 'ACF / RFO / DRFO',
         description: 'Specialized coaching for the prestigious Karnataka Forest Service examination.',
         features: ['Forestry & Environment', 'General Science Focus', 'Aptitude Training'],
         path: '/courses/acf',
@@ -154,16 +225,10 @@ export const coursesData = [
         path: '/courses/group-b',
       },
       {
-        title: 'Technical Exams (AE/AEE)',
-        description: 'For Engineering graduates (Civil/Mech/Elec) aspiring for PWD, WRD, and RDPR roles.',
-        features: ['Core Engineering Subjects', 'General Studies', 'Previous Year QPs'],
-        path: '/courses/kpsc-tech',
-      },
-      {
-        title: 'FDA / SDA',
-        description: 'Focused preparation for First and Second Division Assistant recruitment.',
+        title: 'Group C (FDA / SDA / PDO)',
+        description: 'Focused preparation for various Group C recruitment examinations.',
         features: ['General Kannada/English', 'General Knowledge', 'Mental Ability'],
-        path: '/courses/fda-sda',
+        path: '/courses/group-c',
       },
     ],
   },
@@ -185,12 +250,6 @@ export const coursesData = [
         path: '/courses/k-set',
       },
       {
-        title: 'KEA Technical Exams',
-        description: 'For various board/corporation technical recruitments conducted by KEA.',
-        features: ['JE / AE Syllabus', 'Computer Literacy', 'General English'],
-        path: '/courses/kea-tech',
-      },
-      {
         title: 'KEA Group B & C (Non-Tech)',
         description: 'Coaching for administrative and assistant posts in various boards.',
         features: ['Communication Papers', 'GK & Current Affairs', 'Reasoning'],
@@ -210,15 +269,9 @@ export const coursesData = [
     shortTitle: 'Police',
     courses: [
       {
-        title: 'PSI & PC Integrated Program',
-        description: 'Comprehensive coaching for both Police Sub-Inspector and Constable exams.',
-        features: ['Physical Training Guide', 'Translation (PSI)', 'Mental Ability (PC)'],
-        path: '/courses/psi-pc',
-      },
-      {
-        title: 'Police Sub-Inspector (PSI)',
-        description: 'Focused preparation for the PSI written examination and physical tests.',
-        features: ['Essay & Translation', 'General Studies', 'Current Events'],
+        title: 'PSI / ESI Integrated',
+        description: 'Comprehensive coaching for both Police Sub-Inspector and Excise Sub-Inspector exams.',
+        features: ['Physical Training Guide', 'Translation', 'General Studies'],
         path: '/courses/psi',
       },
       {
@@ -227,25 +280,13 @@ export const coursesData = [
         features: ['General Knowledge', 'Psychology', 'Indian Constitution'],
         path: '/courses/pc',
       },
+      {
+        title: 'Integrated PSI/PC Batch',
+        description: 'Foundation batch covering multiple police-grade examinations.',
+        features: ['Holistic Prep', 'Weekly Tests', 'Physical Mentorship'],
+        path: '/courses/psi-pc',
+      }
     ]
-  },
-  {
-    id: 'judiciary',
-    title: 'Karnataka Judiciary',
-    shortTitle: 'Judiciary',
-    courses: [
-       {
-        title: 'Civil Judge Foundation Course',
-        description: 'A complete course for aspiring Civil Judges covering all law subjects and procedural laws.',
-        features: ['Expert Faculty (Judges)', 'Bare Act Analysis', 'Judgment Writing Practice'],
-        path: '/courses/karnataka-judiciary',
-      },
-       {
-        title: 'Judiciary Mains Test Series',
-        description: 'Simulate the real exam environment with our mains test series, evaluated by experts.',
-        features: ['10 Full-Length Tests', 'Model Answers Provided', 'Detailed Evaluation'],
-      },
-    ],
   },
   {
     id: 'others',
@@ -267,17 +308,17 @@ export const coursesData = [
 ];
 
 export const achievers = [
-    { name: 'Amit Kumar', rank: 'UPSC CSE, AIR 22', photo: placeholderImages.achievers.amit, quote: 'Consistent guidance and high-quality test series were the key factors in my success.' },
-    { name: 'Sunita Patil', rank: 'Karnataka Civil Judge, Rank 3', photo: placeholderImages.achievers.sunita, quote: 'The mentorship for judgment writing was invaluable. I am grateful to the entire team.' },
-    { name: 'Ravi Gowda', rank: 'KPSC KAS, Rank 8', photo: placeholderImages.achievers.ravi, quote: 'Excellent coverage of Karnataka-specific topics and current affairs.' },
-    { name: 'Deepa Iyer', rank: 'UPSC CSE, AIR 98', photo: placeholderImages.achievers.deepa, quote: 'The one-on-one sessions helped me identify and work on my weak areas effectively.' },
-    { name: 'Kiran Kumar', rank: 'PSI, Karnataka Police', photo: placeholderImages.achievers.kiran, quote: 'The holistic preparation, including physical guidance, was a game-changer for me.' },
-    { name: 'Megha Desai', rank: 'UPSC CSE, AIR 150', photo: placeholderImages.achievers.megha, quote: 'I could always count on the faculty for doubt clearing and motivation.' },
+    { name: 'Amit Kumar', rank: 'UPSC CSE, AIR 22', photo: 'https://picsum.photos/seed/amit/400/400', quote: 'Consistent guidance and high-quality test series were the key factors in my success.' },
+    { name: 'Sunita Patil', rank: 'Karnataka Civil Judge, Rank 3', photo: 'https://picsum.photos/seed/sunita/400/400', quote: 'The mentorship for judgment writing was invaluable. I am grateful to the entire team.' },
+    { name: 'Ravi Gowda', rank: 'KPSC KAS, Rank 8', photo: 'https://picsum.photos/seed/ravi/400/400', quote: 'Excellent coverage of Karnataka-specific topics and current affairs.' },
+    { name: 'Deepa Iyer', rank: 'UPSC CSE, AIR 98', photo: 'https://picsum.photos/seed/deepa/400/400', quote: 'The one-on-one sessions helped me identify and work on my weak areas effectively.' },
+    { name: 'Kiran Kumar', rank: 'PSI, Karnataka Police', photo: 'https://picsum.photos/seed/kiran/400/400', quote: 'The holistic preparation, including physical guidance, was a game-changer for me.' },
+    { name: 'Megha Desai', rank: 'UPSC CSE, AIR 150', photo: 'https://picsum.photos/seed/megha/400/400', quote: 'I could always count on the faculty for doubt clearing and motivation.' },
 ];
 
 export const mentors = [
-    { name: 'Rajesh Gupta', role: 'Chief Mentor, UPSC', photo: placeholderImages.mentors.mentor1, message: 'Our mission is to democratize quality education. We believe every determined student deserves a chance to serve the nation.' },
-    { name: 'Anjali Menon', role: 'Lead Mentor, Judiciary', photo: placeholderImages.mentors.mentor2, message: 'The path to the judiciary demands precision and perseverance. We are here to help you at every step of this noble journey.' },
+    { name: 'Rajesh Gupta', role: 'Chief Mentor, UPSC', photo: 'https://picsum.photos/seed/mentor1/200/200', message: 'Our mission is to democratize quality education. We believe every determined student deserves a chance to serve the nation.' },
+    { name: 'Anjali Menon', role: 'Lead Mentor, Judiciary', photo: 'https://picsum.photos/seed/mentor2/200/200', message: 'The path to the judiciary demands precision and perseverance. We are here to help you at every step of this noble journey.' },
 ];
 
 export const downloadCategories = [

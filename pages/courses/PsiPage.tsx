@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ShieldCheckIcon, PencilAltIcon, UsersIcon, ChevronRightIcon } from '../../components/Icons';
@@ -22,21 +23,21 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const PsiPage: React.FC = () => {
     return (
         <div>
-            <PageHeader title="Police Sub-Inspector (PSI) Exam" />
+            <PageHeader title="PSI / ESI Examination" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
-                    <Section title="About the PSI Exam">
-                        <p>The Police Sub-Inspector (PSI) examination is conducted by the Karnataka State Police (KSP) recruitment board. It is a highly competitive exam for recruiting capable and dynamic individuals into the police force. A career as a PSI is challenging yet rewarding, offering a chance to uphold law and order and ensure the safety of citizens.</p>
+                    <Section title="About the PSI/ESI Exam">
+                        <p>The Police Sub-Inspector (PSI) and Excise Sub-Inspector (ESI) examinations are conducted by their respective recruitment boards in Karnataka. These exams recruit capable and dynamic individuals for leadership roles in law enforcement and regulatory enforcement. A career as a PSI or ESI offers a chance to uphold law and order and ensure state safety and compliance.</p>
                     </Section>
 
                     <Section title="Selection Process">
-                        <p>The selection process for PSI is a multi-stage process designed to test both physical fitness and mental aptitude.</p>
+                        <p>The selection process for Sub-Inspectors is a multi-stage process designed to test both physical fitness and mental aptitude.</p>
                         <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-0">
                             {/* Stage 1 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Physical Test (PST/ET)</h3>
-                                <p className="text-sm">Candidates must qualify in physical standards and endurance events.</p>
+                                <p className="text-sm">Mandatory qualification in physical standards and endurance events.</p>
                             </div>
                             
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
@@ -45,7 +46,7 @@ const PsiPage: React.FC = () => {
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Exam</h3>
-                                <p className="text-sm">A descriptive and an objective paper to test language and general knowledge.</p>
+                                <p className="text-sm">Two papers: Paper 1 (Descriptive) and Paper 2 (Objective MCQs).</p>
                             </div>
 
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
@@ -53,39 +54,27 @@ const PsiPage: React.FC = () => {
                             {/* Stage 3 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Medical & Viva-Voce</h3>
-                                <p className="text-sm">Final check-up and a personality interview to assess overall suitability.</p>
+                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Medical & Viva</h3>
+                                <p className="text-sm">Health check-up and personality assessment.</p>
                             </div>
                         </div>
                         <div className="mt-8 p-6 bg-soft-gray/50 rounded-lg">
                             <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Physical Standard & Endurance Test (PST/ET)</h3>
-                                    <p>Candidates must first qualify in the physical tests, which include height, weight, and chest measurements, followed by endurance events like running and long/high jump.</p>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Paper 1: Descriptive Skills</h3>
+                                    <p>Includes Essay Writing, Translation (Kannada to English and vice-versa), and Precis writing. This paper tests communication and analytical depth.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Written Examination</h3>
-                                    <p>Candidates who clear the physical tests are eligible for the written exam, which consists of two papers:</p>
-                                    <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
-                                        <li><strong>Paper I (Descriptive):</strong> This paper tests language skills and includes an Essay, Translation (English to Kannada & vice-versa), and Precis Writing. It is qualifying in nature.</li>
-                                        <li><strong>Paper II (Objective - MCQs):</strong> This paper covers General Studies, Current Affairs, and General Mental Ability. The marks from this paper are considered for the final merit list.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2"/>Medical Examination & Viva-Voce</h3>
-                                    <p>The final stages include a thorough medical check-up and an interview (viva-voce) to assess the candidate's overall personality and suitability for a career in the police force.</p>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Paper 2: General Knowledge</h3>
+                                    <p>Covers Current Affairs, Indian Constitution, History, Geography, and Mental Ability. This objective paper is the primary merit decider.</p>
                                 </div>
                             </div>
                         </div>
                     </Section>
 
-                    <Section title="Syllabus Focus">
-                        <p>The syllabus requires a strong focus on current events, Indian history and geography, the Indian Constitution, mental ability and logical reasoning, and proficiency in both English and Kannada for the descriptive paper. Our coaching program is designed to cover all these aspects comprehensively.</p>
-                    </Section>
-
                     <div className="text-center mt-16">
-                        <CTAButton requiresAuth variant="primary" className="text-lg">Start PSI Preparation</CTAButton>
+                        <CTAButton requiresAuth variant="primary" className="text-lg">Start PSI/ESI Preparation</CTAButton>
                     </div>
                 </div>
             </div>

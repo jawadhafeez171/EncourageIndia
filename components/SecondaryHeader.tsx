@@ -14,10 +14,17 @@ const SecondaryHeader: React.FC = () => {
             <li key={link.name} className="relative group">
               {link.dropdown ? (
                 <>
-                  <button className="flex items-center space-x-1 py-1 px-2 hover:bg-sunrise-orange rounded-md transition-colors duration-200 cursor-default">
-                    <span>{link.name}</span>
-                    <ChevronDownIcon className="w-4 h-4" />
-                  </button>
+                  {link.path ? (
+                    <Link to={link.path} className="flex items-center space-x-1 py-1 px-2 hover:bg-sunrise-orange rounded-md transition-colors duration-200">
+                        <span>{link.name}</span>
+                        <ChevronDownIcon className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <button className="flex items-center space-x-1 py-1 px-2 hover:bg-sunrise-orange rounded-md transition-colors duration-200 cursor-default">
+                        <span>{link.name}</span>
+                        <ChevronDownIcon className="w-4 h-4" />
+                    </button>
+                  )}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-slate-800 text-charcoal-gray dark:text-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
                     <ul className="py-2">
                       {link.dropdown.map(item => (

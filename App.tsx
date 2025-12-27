@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -13,27 +14,31 @@ import NotFoundPage from './pages/NotFoundPage';
 import { EnrollmentProvider } from './contexts/EnrollmentContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import AnalyticsTracker from './components/AnalyticsTracker';
-import ErrorBoundary from './components/ErrorBoundary';
 
-// New Exam Pages
+// Course Pages
 import KasPage from './pages/courses/KasPage';
 import AcSaadPage from './pages/courses/AcSaadPage';
 import PsiPage from './pages/courses/PsiPage';
 import PcPage from './pages/courses/PcPage';
 import PsiPcPage from './pages/courses/PsiPcPage';
 import UPSCPage from './pages/courses/UPSCPage';
-import JudiciaryPage from './pages/courses/JudiciaryPage';
 import AcfPage from './pages/courses/AcfPage';
 import GroupBPage from './pages/courses/GroupBPage';
+import GroupCPage from './pages/courses/GroupCPage';
 import KpscTechPage from './pages/courses/KpscTechPage';
-import FdaSdaPage from './pages/courses/FdaSdaPage';
 import KpclPage from './pages/courses/KpclPage';
 import KsetPage from './pages/courses/KsetPage';
 import KeaTechPage from './pages/courses/KeaTechPage';
 import KeaGroupBCPage from './pages/courses/KeaGroupBCPage';
 import ShimulPage from './pages/courses/ShimulPage';
 import AgricultureOfficerPage from './pages/courses/AgricultureOfficerPage';
+import AeJeTechnicalPage from './pages/courses/AeJeTechnicalPage';
 
+// Judiciary Pages
+import CivilJudgePage from './pages/courses/CivilJudgePage';
+import DistrictJudgePage from './pages/courses/DistrictJudgePage';
+import ClatPage from './pages/courses/ClatPage';
+import AibePage from './pages/courses/AibePage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,15 +52,13 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <ErrorBoundary>
-      <ThemeProvider>
-        <EnrollmentProvider>
-          <HashRouter>
-            <AnalyticsTracker />
-            <ScrollToTop />
-            <Layout>
-              <ErrorBoundary>
-                <Routes>
+    <ThemeProvider>
+      <EnrollmentProvider>
+        <HashRouter>
+          <AnalyticsTracker />
+          <ScrollToTop />
+          <Layout>
+            <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/courses" element={<CoursesPage />} />
@@ -67,14 +70,13 @@ const App: React.FC = () => {
 
               {/* Dedicated Exam Page Routes */}
               <Route path="/courses/upsc-cse" element={<UPSCPage />} />
-              <Route path="/courses/karnataka-judiciary" element={<JudiciaryPage />} />
               <Route path="/courses/kas" element={<KasPage />} />
               <Route path="/courses/ac-saad" element={<AcSaadPage />} />
               <Route path="/courses/acf" element={<AcfPage />} />
               <Route path="/courses/kpsc-ao-aao" element={<AgricultureOfficerPage />} />
               <Route path="/courses/group-b" element={<GroupBPage />} />
+              <Route path="/courses/group-c" element={<GroupCPage />} />
               <Route path="/courses/kpsc-tech" element={<KpscTechPage />} />
-              <Route path="/courses/fda-sda" element={<FdaSdaPage />} />
               <Route path="/courses/psi" element={<PsiPage />} />
               <Route path="/courses/pc" element={<PcPage />} />
               <Route path="/courses/psi-pc" element={<PsiPcPage />} />
@@ -83,16 +85,21 @@ const App: React.FC = () => {
               <Route path="/courses/kea-tech" element={<KeaTechPage />} />
               <Route path="/courses/kea-group-b-c" element={<KeaGroupBCPage />} />
               <Route path="/courses/kmf-shimul" element={<ShimulPage />} />
+              <Route path="/courses/ae-je-technical" element={<AeJeTechnicalPage />} />
+
+              {/* Judiciary Related */}
+              <Route path="/courses/civil-judge" element={<CivilJudgePage />} />
+              <Route path="/courses/district-judge" element={<DistrictJudgePage />} />
+              <Route path="/courses/clat" element={<ClatPage />} />
+              <Route path="/courses/aibe" element={<AibePage />} />
 
               {/* 404 Route */}
               <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-              </ErrorBoundary>
-            </Layout>
-          </HashRouter>
-        </EnrollmentProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+            </Routes>
+          </Layout>
+        </HashRouter>
+      </EnrollmentProvider>
+    </ThemeProvider>
   );
 };
 

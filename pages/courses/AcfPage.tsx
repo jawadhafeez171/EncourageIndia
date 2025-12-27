@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, ShieldCheckIcon, CalendarIcon, GlobeAltIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ChevronRightIcon } from '../../components/Icons';
@@ -23,13 +24,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const AcfPage: React.FC = () => {
     return (
         <div>
-            <PageHeader title="KPSC - Assistant Conservator of Forests (ACF)" />
+            <PageHeader title="KPSC - ACF / RFO / DRFO Exams" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-6xl">
-                    <Section title="About the ACF Exam">
+                    <Section title="About the Forest Service Exams">
                        <div className="flex items-start">
                             <GlobeAltIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
-                            <p>The Assistant Conservator of Forests (ACF) exam, conducted by KPSC, is for recruitment into the Karnataka Forest Service. It is a prestigious Group-A service for individuals passionate about environmental conservation, wildlife management, and sustainable forestry. The role involves significant field responsibilities and administrative duties related to managing the state's forest resources.</p>
+                            <p>The Assistant Conservator of Forests (ACF), Range Forest Officer (RFO), and Deputy Range Forest Officer (DRFO) exams, conducted by KPSC, are for recruitment into the prestigious Karnataka Forest Service. These roles are for individuals passionate about environmental conservation, wildlife management, and sustainable forestry. These positions involve significant field responsibilities and administrative duties related to managing the state's natural resources.</p>
                        </div>
                     </Section>
 
@@ -39,82 +40,62 @@ const AcfPage: React.FC = () => {
                                 <AcademicCapIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Educational Qualification</h4>
-                                    <p>Must possess a Bachelor's degree in a science or engineering discipline, typically including subjects like Agriculture, Forestry, Botany, Zoology, or Environmental Science.</p>
+                                    <p>Varies by post: ACF typically requires a Master's or Bachelor's degree in science/engineering disciplines. RFO and DRFO generally require a Bachelor's degree in science or related fields (Agriculture, Forestry, Botany, Zoology, etc.).</p>
                                 </div>
                             </div>
                              <div className="flex items-start">
                                 <ShieldCheckIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Physical Standards</h4>
-                                    <p>Candidates must meet specific physical fitness standards for height, chest, and physical endurance as prescribed by the forest department.</p>
+                                    <p>Candidates must meet mandatory physical fitness standards for height, chest, and physical endurance (walking tests) as prescribed by the Forest Department.</p>
                                 </div>
                             </div>
                             <div className="flex items-start">
                                 <CalendarIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Age Limit</h4>
-                                    <p>Typically between 18 to 30 years, with relaxations for reserved categories.</p>
+                                    <p>Typically between 18 to 30 years (extendable for certain posts), with relaxations for reserved categories.</p>
                                 </div>
                             </div>
                         </div>
                     </Section>
 
-                    <Section title="Exam Pattern">
-                        <p>The ACF selection process is a comprehensive, multi-stage examination:</p>
+                    <Section title="Exam Pattern Overview">
+                        <p>The Forest Service selection process is comprehensive and includes several elimination rounds:</p>
                         <div className="mt-8 flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-4 lg:gap-0">
                             {/* Stage 1 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Preliminary Exam</h3>
-                                <p className="text-sm">Objective-type screening test with GS and optional papers.</p>
+                                <p className="text-sm">Objective-type screening test with GS and Science papers.</p>
                             </div>
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 lg:rotate-0" />
                             {/* Stage 2 */}
                              <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Main Exam</h3>
-                                <p className="text-sm">Descriptive written exam with language and optional subject papers.</p>
+                                <p className="text-sm">Descriptive written exam with optional subjects and language papers.</p>
                             </div>
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 lg:rotate-0" />
                             {/* Stage 3 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Physical & Walking Test</h3>
-                                <p className="text-sm">Rigorous fitness tests to ensure candidates are fit for forest duty.</p>
-                            </div>
-                            <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 lg:rotate-0" />
-                            {/* Stage 4 */}
-                            <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
-                                <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">4</div>
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Interview</h3>
-                                <p className="text-sm">Final personality test to assess suitability for the Forest Service.</p>
+                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Physical Test</h3>
+                                <p className="text-sm">Walking tests (25km for men, 16km for women) and fitness checks.</p>
                             </div>
                         </div>
                         <div className="mt-8 p-6 bg-soft-gray/50 rounded-lg">
-                            <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
-                            <div className="space-y-6">
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Preliminary Examination</h3>
-                                    <p>An objective-type screening test similar to the KAS prelims, consisting of a General Studies paper and an optional subject paper.</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Main Examination</h3>
-                                    <p>A descriptive written exam including papers on General English, General Kannada, and two optional subjects chosen from a list of science and forestry-related disciplines.</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Physical Fitness Test & Walking Test</h3>
-                                    <p>Candidates who clear the Mains must undergo rigorous physical tests, including a walking test covering a distance of 25 km for male candidates and 16 km for female candidates within four hours.</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2"/>Interview/Personality Test</h3>
-                                    <p>The final stage assesses the candidate's personality, leadership qualities, and knowledge of forestry and environmental issues.</p>
-                                </div>
+                            <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Post-wise Focus:</h4>
+                            <div className="space-y-4">
+                                <p><strong>ACF:</strong> Heavy emphasis on specialized forestry and environment subjects in Mains.</p>
+                                <p><strong>RFO:</strong> Focused on General Science, Aptitude, and basic forestry concepts.</p>
+                                <p><strong>DRFO:</strong> Objective pattern with a strong focus on secondary and higher secondary science level.</p>
                             </div>
                         </div>
                     </Section>
 
                     <div className="text-center mt-16">
-                        <CTAButton requiresAuth variant="primary" className="text-lg">Enroll for ACF Coaching</CTAButton>
+                        <CTAButton requiresAuth variant="primary" className="text-lg">Enroll for Forest Service Coaching</CTAButton>
                     </div>
                 </div>
             </div>
