@@ -46,7 +46,7 @@ export const secondaryNavLinks = [
       path: '/courses/ae-je-technical',
       dropdown: [
         { name: 'Overview', path: '/courses/ae-je-technical' },
-        { name: 'KPSC Technical (AE/AEE)', path: '/courses/kpsc-tech' },
+        { name: 'KPSC Technical (AEE/AE)', path: '/courses/kpsc-tech' },
         { name: 'KEA Technical Exams', path: '/courses/kea-tech' },
         { name: 'KPCL (AE/JE)', path: '/courses/kpcl' }
       ]
@@ -147,13 +147,13 @@ export const coursesData = [
     courses: [
       {
         title: 'Comprehensive Technical Program',
-        description: 'Unified coaching for KPSC AE/AEE, KEA Technical, and KPCL AE/JE posts.',
+        description: 'Unified coaching for KPSC AEE/AE, KEA Technical, and KPCL AE/JE posts.',
         features: ['Core Civil/Mech/Elec Subjects', 'General Studies Integrated', 'Technical Mock Tests'],
         path: '/courses/ae-je-technical',
       },
       {
-        title: 'KPSC AE/AEE (PWD/WRD)',
-        description: 'Focused coaching for Assistant Engineer posts in Karnataka PWD and Water Resources Department.',
+        title: 'KPSC AEE/AE (PWD/WRD)',
+        description: 'Focused coaching for Assistant Executive Engineer and Assistant Engineer posts in Karnataka PWD and WRD.',
         features: ['Specialized PWD Syllabus', 'Previous Year QP Analysis', 'GS Paper Module'],
         path: '/courses/kpsc-tech',
       },

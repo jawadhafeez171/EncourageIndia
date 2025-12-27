@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, ChatAlt2Icon, PencilAltIcon, CogIcon, CheckCircleIcon } from '../../components/Icons';
@@ -22,13 +23,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const KpscTechPage: React.FC = () => {
     return (
         <div>
-            <PageHeader title="KPSC - Technical Exams (AE/AEE)" />
+            <PageHeader title="KPSC - Technical Exams (AEE/AE)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
-                    <Section title="About AE/AEE Exams">
+                    <Section title="About AEE/AE Exams">
                          <div className="flex items-start">
                             <CogIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
-                            <p>KPSC recruits Assistant Engineers (AE) and Assistant Executive Engineers (AEE) for various engineering departments of the Karnataka government, such as the Public Works Department (PWD), Water Resources Department (WRD), and Rural Development & Panchayat Raj (RDPR). These roles are critical for the planning, design, and execution of the state's infrastructure projects.</p>
+                            <p>KPSC recruits Assistant Executive Engineers (AEE) and Assistant Engineers (AE) for various engineering departments of the Karnataka government, such as the Public Works Department (PWD), Water Resources Department (WRD), and Rural Development & Panchayat Raj (RDPR). These roles are critical for the planning, design, and execution of the state's infrastructure projects.</p>
                         </div>
                     </Section>
 
@@ -85,7 +86,7 @@ const KpscTechPage: React.FC = () => {
                     </Section>
 
                     <div className="text-center mt-16">
-                        <CTAButton requiresAuth variant="primary" className="text-lg">Enroll in AE/AEE Coaching</CTAButton>
+                        <CTAButton requiresAuth variant="primary" className="text-lg">Enroll in AEE/AE Coaching</CTAButton>
                     </div>
                 </div>
             </div>

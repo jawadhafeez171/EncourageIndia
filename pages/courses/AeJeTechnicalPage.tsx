@@ -1,7 +1,6 @@
 
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
-// Fix: Added missing ClipboardListIcon to the import list
 import { CogIcon, BriefcaseIcon, PencilAltIcon, CheckCircleIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, UsersIcon, ClipboardListIcon } from '../../components/Icons';
 
 const PageHeader = ({ title }: { title: string }) => (
@@ -34,7 +33,7 @@ const AeJeTechnicalPage: React.FC = () => {
                         <div className="flex flex-col md:flex-row gap-10 items-center">
                             <div className="flex-1">
                                 <p className="text-lg leading-relaxed mb-6">
-                                    Engineering graduates and diploma holders play a vital role in building the backbone of Karnataka's infrastructure. Whether it's power generation, irrigation, or urban planning, the state offers prestigious opportunities for technical minds through exams like <strong>KPSC AE/AEE</strong>, <strong>KEA Technical</strong>, and <strong>KPCL AE/JE</strong>.
+                                    Engineering graduates and diploma holders play a vital role in building the backbone of Karnataka's infrastructure. Whether it's power generation, irrigation, or urban planning, the state offers prestigious opportunities for technical minds through exams like <strong>KPSC AEE/AE</strong>, <strong>KEA Technical</strong>, and <strong>KPCL AE/JE</strong>.
                                 </p>
                                 <p className="text-lg leading-relaxed">
                                     At Encourage India, our dedicated Technical Batch provides an integrated approach to master both the <strong>Domain Subjects (Civil, Mech, Elec, etc.)</strong> and the <strong>General Studies</strong> paper, ensuring you don't just qualify, but secure a top rank.
@@ -53,7 +52,7 @@ const AeJeTechnicalPage: React.FC = () => {
                                 <div className="bg-empower-blue/10 dark:bg-blue-900/30 p-4 rounded-full w-fit mb-6 group-hover:scale-110 transition-transform">
                                     <CogIcon className="w-8 h-8 text-empower-blue dark:text-blue-400" />
                                 </div>
-                                <h3 className="text-xl font-bold font-montserrat text-charcoal-gray dark:text-white mb-4">KPSC AE/AEE</h3>
+                                <h3 className="text-xl font-bold font-montserrat text-charcoal-gray dark:text-white mb-4">KPSC AEE/AE</h3>
                                 <p className="text-sm mb-6">Recruitment for PWD, Water Resources (WRD), and RDPR departments. Highly prestigious Group-B roles.</p>
                                 <CTAButton to="/courses/kpsc-tech" variant="secondary-blue" className="w-full text-sm">Exam Details</CTAButton>
                             </div>
