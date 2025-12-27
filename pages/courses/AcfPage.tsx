@@ -54,7 +54,7 @@ const AcfPage: React.FC = () => {
                                 <CalendarIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Age Limit</h4>
-                                    <p>Typically between 18 to 30 years (extendable for certain posts), with relaxations for reserved categories.</p>
+                                    <p>The age limit is 21 to 35 years, with relaxations for reserved categories as per state government rules.</p>
                                 </div>
                             </div>
                         </div>

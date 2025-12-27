@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, CheckCircleIcon } from '../../components/Icons';
@@ -35,14 +36,14 @@ const AgricultureOfficerPage: React.FC = () => {
                                 <AcademicCapIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Educational Qualification</h4>
-                                    <p>Candidates must possess a Bachelor's degree in Agriculture (B.Sc. Agriculture) from a recognized university.</p>
+                                    <p>Candidates must possess a Bachelor's degree in Agriculture (B.Sc. Agriculture)(85%) and Farm Science (15%) from a recognized university.</p>
                                 </div>
                             </div>
                             <div className="flex items-start">
                                 <CalendarIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-charcoal-gray text-lg">Age Limit</h4>
-                                    <p>The typical age limit is between 18 to 35 years, with standard age relaxations for reserved categories as per KPSC norms.</p>
+                                    <p>The age limit is 21 to 35 years, with standard age relaxations for reserved categories as per KPSC norms.</p>
                                 </div>
                             </div>
                         </div>

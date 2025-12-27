@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
-import { BriefcaseIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, BookOpenIcon } from '../../components/Icons';
+import { BriefcaseIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, BookOpenIcon, ClockIcon } from '../../components/Icons';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -49,20 +49,40 @@ const GroupCPage: React.FC = () => {
 
                     <Section title="Common Selection Pattern">
                         <div className="bg-soft-gray/30 dark:bg-slate-800 p-8 rounded-2xl">
-                            <h4 className="font-bold text-xl mb-4">Written Examination (Objective)</h4>
-                            <div className="space-y-4">
-                                <div className="flex items-start">
-                                    <div className="bg-sunrise-orange text-white p-2 rounded-lg mr-4 mt-1"><BookOpenIcon className="w-5 h-5" /></div>
-                                    <div>
-                                        <h5 className="font-bold">Paper 1: General Kannada / General English</h5>
-                                        <p className="text-sm">Grammar, vocabulary, and linguistic ability (100 marks).</p>
+                            <h4 className="font-bold text-xl mb-6 flex items-center">
+                                <PencilAltIcon className="w-6 h-6 mr-2 text-sunrise-orange" />
+                                Written Examination (Objective)
+                            </h4>
+                            <div className="space-y-6">
+                                <div className="bg-white dark:bg-slate-700 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600">
+                                    <div className="flex items-start">
+                                        <div className="bg-sunrise-orange text-white p-2 rounded-lg mr-4 mt-1"><BookOpenIcon className="w-5 h-5" /></div>
+                                        <div className="flex-1">
+                                            <h5 className="font-bold text-lg text-empower-blue dark:text-blue-400">Paper 1: Communication Paper</h5>
+                                            <p className="text-sm font-medium text-charcoal-gray dark:text-gray-300 mt-1">Consisting of General Kannada, General English, and Computer Knowledge.</p>
+                                            <div className="flex flex-wrap gap-4 mt-3">
+                                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold">100 Marks</span>
+                                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 text-xs font-bold">
+                                                    <ClockIcon className="w-3 h-3 mr-1" /> 1.5 Hours
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="flex items-start">
-                                    <div className="bg-sunrise-orange text-white p-2 rounded-lg mr-4 mt-1"><UsersIcon className="w-5 h-5" /></div>
-                                    <div>
-                                        <h5 className="font-bold">Paper 2: General Knowledge</h5>
-                                        <p className="text-sm">Current Affairs, Indian Constitution, Mental Ability, and State GK (100 marks).</p>
+
+                                <div className="bg-white dark:bg-slate-700 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600">
+                                    <div className="flex items-start">
+                                        <div className="bg-sunrise-orange text-white p-2 rounded-lg mr-4 mt-1"><UsersIcon className="w-5 h-5" /></div>
+                                        <div className="flex-1">
+                                            <h5 className="font-bold text-lg text-empower-blue dark:text-blue-400">Paper 2: General Studies</h5>
+                                            <p className="text-sm font-medium text-charcoal-gray dark:text-gray-300 mt-1">Current Affairs, Indian Constitution, Mental Ability, and State-specific GK.</p>
+                                            <div className="flex flex-wrap gap-4 mt-3">
+                                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold">100 Marks</span>
+                                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 text-xs font-bold">
+                                                    <ClockIcon className="w-3 h-3 mr-1" /> 1.5 Hours
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
