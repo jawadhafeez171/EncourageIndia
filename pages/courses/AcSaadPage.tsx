@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import CTAButton from '../../components/CTAButton';
-import { AcademicCapIcon, ClipboardListIcon, ChevronRightIcon, BookOpenIcon, DownloadIcon, ChevronDownIcon } from '../../components/Icons';
+import { AcademicCapIcon, ClipboardListIcon, ChevronRightIcon, BookOpenIcon, DownloadIcon, ChevronDownIcon, CheckCircleIcon } from '../../components/Icons';
 import { downloadCategories } from '../../constants';
 
 const PageHeader = ({ title }: { title: string }) => (
@@ -70,20 +71,20 @@ const mainsSyllabus = {
     paper7: {
         title: "Paper VII – Corporate Finance, Business Economics & Taxation",
         sections: [
-            { title: "M) Corporate Finance", topics: ["Goal of the Firm", "Basics of Capital Budgeting", "Cost of Capital", "Capital Structure Theories", "Working Capital Management and Finance"] },
-            { title: "N) Business Management", topics: ["Business as a Social System", "Economic Structure of India", "Monetary and Fiscal Systems of India", "Indian Society, Culture, and Politics", "International Business Environment"] },
-            { title: "O) Business Law and Practice", topics: ["Laws Pertaining to Regulation of Industries", "Company Law", "Patents and Trademarks Act", "Security Market Laws", "Environmental Protection Act"] },
-            { title: "P) Business Economics", topics: ["Macro Economics", "Consumption Function", "Investment Function", "Concepts of Multiplier", "Money and Monetary System", "Economic Growth", "Public Finance", "Balance of Payments", "Foreign Exchange"] },
-            { title: "Q) Advanced Business Taxation", topics: ["Indian Tax System", "Taxation in India", "Direct Tax", "Indirect Tax", "State Government Tax", "Corporate Tax Law and Planning", "Computation of Taxable Income", "Computing Tax Liability", "Tax Planning", "Procedure for Assessment"] }
+            { title: "J) Corporate Finance", topics: ["Goal of the Firm", "Basics of Capital Budgeting", "Cost of Capital", "Capital Structure Theories", "Working Capital Management and Finance"] },
+            { title: "K) Business Management", topics: ["Business as a Social System", "Economic Structure of India", "Monetary and Fiscal Systems of India", "Indian Society, Culture, and Politics", "International Business Environment"] },
+            { title: "L) Business Law and Practice", topics: ["Laws Pertaining to Regulation of Industries", "Company Law", "Patents and Trademarks Act", "Security Market Laws", "Environmental Protection Act"] },
+            { title: "M) Business Economics", topics: ["Macro Economics", "Consumption Function", "Investment Function", "Concepts of Multiplier", "Money and Monetary System", "Economic Growth", "Public Finance", "Balance of Payments", "Foreign Exchange"] },
+            { title: "N) Advanced Business Taxation", topics: ["Indian Tax System", "Taxation in India", "Direct Tax", "Indirect Tax", "State Government Tax", "Corporate Tax Law and Planning", "Computation of Taxable Income", "Computing Tax Liability", "Tax Planning", "Procedure for Assessment"] }
         ]
     },
     paper8: {
         title: "Paper VIII – Auditing, Computer Concepts, E-Commerce & MIS",
         sections: [
-            { title: "R) Principles and Practice of Auditing", topics: ["Introduction to Auditing", "Internal Check", "Verification and Valuation", "Audit of Different Organizations", "Audit under Computerized Environment"] },
-            { title: "S) Computer Fundamental Concepts", topics: ["Introduction", "Operations Research Problems", "Managerial Accounting Applications", "Project Management Tools", "Stock Analysis"] },
-            { title: "T) E-Commerce", topics: ["Introduction to E-Commerce", "Web Server Hardware and Software", "Customer-Centric E-Commerce Applications", "Security in E-Commerce"] },
-            { title: "U) Management Information Systems", topics: ["Basic Concepts", "Processing Technology", "Systems Development", "Application Technologies", "Web Publishing"] }
+            { title: "O) Principles and Practice of Auditing", topics: ["Introduction to Auditing", "Internal Check", "Verification and Valuation", "Audit of Different Organizations", "Audit under Computerized Environment"] },
+            { title: "P) Computer Fundamental Concepts", topics: ["Introduction", "Operations Research Problems", "Managerial Accounting Applications", "Project Management Tools", "Stock Analysis"] },
+            { title: "Q) E-Commerce", topics: ["Introduction to E-Commerce", "Web Server Hardware and Software", "Customer-Centric E-Commerce Applications", "Security in E-Commerce"] },
+            { title: "R) Management Information Systems", topics: ["Basic Concepts", "Processing Technology", "Systems Development", "Application Technologies", "Web Publishing"] }
         ]
     }
 };
@@ -106,7 +107,7 @@ const AcSaadPage: React.FC = () => {
                     {/* Main Content */}
                     <main className="lg:w-2/3">
                         <Section title="About the AC-SAAD Exam">
-                            <p>The recruitment for Assistant Controller (AC) in the State Accounts Department (K-SAAD) is a prestigious examination conducted by the KPSC for Group-A posts. This role is vital for the financial administration of the state, involving auditing, accounting, and managing the finances of various government departments.</p>
+                            <p>The recruitment for Assistant Controller (AC) (Group A) in the State Accounts Department (K-SAAD) and Audit Officer (AO) (Group B) is a prestigious examination conducted by the KPSC for Group-A posts. This role is vital for the financial administration of the state, involving auditing, accounting, and managing the finances of various government departments.</p>
                         </Section>
 
                         <Section title="Eligibility Criteria">
@@ -114,8 +115,25 @@ const AcSaadPage: React.FC = () => {
                                 <div className="flex items-start">
                                     <AcademicCapIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-bold text-charcoal-gray text-lg">Educational Qualification</h4>
-                                        <p>Candidates must possess a Master's Degree in Commerce (M.Com) OR be a holder of an MBA with a specialization in Finance.</p>
+                                        <h4 className="font-bold text-charcoal-gray text-xl mb-4">Educational Qualification</h4>
+                                        <p className="mb-4 font-medium text-charcoal-gray">As per the official notification, candidates must fulfill one of the following qualifications:</p>
+                                        
+                                        <div className="grid gap-4">
+                                            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-empower-blue shadow-sm">
+                                                <h5 className="font-bold text-empower-blue mb-1">Commerce & Management Masters</h5>
+                                                <p className="text-sm">Must be a holder of Master's degree in Commerce (M.Com.) or must be holder of M.B.A (Finance) / M.B.A (Financial Management) / M.B.A. or M.Com (Financial Analysis).</p>
+                                            </div>
+
+                                            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-sunrise-orange shadow-sm">
+                                                <h5 className="font-bold text-sunrise-orange mb-1">UGC Recognized Finance Degree</h5>
+                                                <p className="text-sm">Any other Master's degree notified by University Grants Commission (UGC) with 'Finance' as one of the subjects from a University established by Law in India.</p>
+                                            </div>
+
+                                            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-encourage-red shadow-sm">
+                                                <h5 className="font-bold text-encourage-red mb-1">Professional Memberships</h5>
+                                                <p className="text-sm">A member of the Institute of Chartered Accountants of India (ICAI) or an Associate member of the Institute of Cost Accountants of India.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,11 +190,13 @@ const AcSaadPage: React.FC = () => {
                                             <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper I</td><td className="py-2 px-4 border-b">Kannada (Qualifying)</td><td className="py-2 px-4 border-b text-center">150</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
                                             <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper II</td><td className="py-2 px-4 border-b">English (Qualifying)</td><td className="py-2 px-4 border-b text-center">150</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
                                             <tr className="hover:bg-soft-gray/50 font-bold"><td className="py-2 px-4 border-b text-center" colSpan={4}>Merit Papers</td></tr>
-                                            <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper III & IV</td><td className="py-2 px-4 border-b">General Studies</td><td className="py-2 px-4 border-b text-center">300 each</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
+                                            <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper III</td><td className="py-2 px-4 border-b">General Studies</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
+                                            <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper IV</td><td className="py-2 px-4 border-b">General Studies</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
                                             <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper V</td><td className="py-2 px-4 border-b">Financial Accounting, Management & Analysis</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
                                             <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper VI</td><td className="py-2 px-4 border-b">Principles of Management, Organization Behaviour, etc.</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
                                             <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper VII</td><td className="py-2 px-4 border-b">Corporate Finance, Business Economics & Taxation</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
-                                            <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4">Paper VIII</td><td className="py-2 px-4">Auditing, Computer Concepts & e-Commerce, MIS</td><td className="py-2 px-4 text-center">300</td><td className="py-2 px-4 text-center">3 hrs</td></tr>
+                                            <tr className="hover:bg-soft-gray/50"><td className="py-2 px-4 border-b">Paper VIII</td><td className="py-2 px-4 border-b">Auditing, Computer Concepts & e-Commerce, MIS</td><td className="py-2 px-4 border-b text-center">300</td><td className="py-2 px-4 border-b text-center">3 hrs</td></tr>
+                                            <tr className="bg-gray-100 font-bold"><td className="py-3 px-4 text-right border-t" colSpan={2}>Total Merit Marks</td><td className="py-3 px-4 text-center border-t">1800</td><td className="py-3 px-4 border-t"></td></tr>
                                         </tbody>
                                     </table>
                                 </div>
