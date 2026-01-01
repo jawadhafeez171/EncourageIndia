@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, BriefcaseIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ScaleIcon, ChevronRightIcon, DesktopComputerIcon, BookOpenIcon } from '../../components/Icons';
@@ -32,10 +31,10 @@ const CivilJudgePage: React.FC = () => {
                     <div className="mb-12 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-empower-blue p-6 rounded-r-xl">
                         <div className="flex items-center mb-2">
                             <ScaleIcon className="w-6 h-6 text-empower-blue dark:text-blue-400 mr-2" />
-                            <h3 className="font-bold text-lg text-charcoal-gray dark:text-white">Notification No. HCRB/CJR-1/2024</h3>
+                            <h3 className="font-bold text-lg text-charcoal-gray dark:text-white">Notification No. HCRB/CJR-1/2026-27</h3>
                         </div>
                         <p className="text-sm">
-                            Direct recruitment for 158 posts of Civil Judges. <strong>Last date for application: 12th March, 2025.</strong>
+                            Direct recruitment for 158 posts of Civil Judges. <strong>Last date for application: 12th March, 2027.</strong>
                             <br />
                             <strong>Scale of Pay:</strong> Rs. 77,840 – 1,36,520
                         </p>
@@ -54,7 +53,7 @@ const CivilJudgePage: React.FC = () => {
                                 <div className="flex items-start">
                                     <CalendarIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                                     <div>
-                                        <h4 className="font-bold text-charcoal-gray dark:text-white text-lg">Age Limit (Direct)</h4>
+                                        <h4 className="font-bold text-charcoal-gray dark:text-white text-lg">Age Limit</h4>
                                         <ul className="text-sm list-disc list-inside space-y-1">
                                             <li><strong>General:</strong> 35 Years</li>
                                             <li><strong>OBC (IIA/IIB/IIIA/IIIB):</strong> 38 Years</li>
@@ -149,9 +148,9 @@ const CivilJudgePage: React.FC = () => {
 
                     <div className="text-center mt-16 bg-empower-blue p-10 rounded-2xl text-white shadow-xl">
                         <h3 className="text-2xl font-bold mb-4">Start Your Judicial Journey</h3>
-                        <p className="mb-8 opacity-90">Comprehensive batch covering the updated 2025 syllabus, including intensive training for Judgment Writing and Translation.</p>
+                        <p className="mb-8 opacity-90">Comprehensive batch covering the updated 2026-27 syllabus, including intensive training for Judgment Writing and Translation.</p>
                         <CTAButton requiresAuth variant="primary" className="text-lg px-12 bg-white !text-empower-blue hover:bg-soft-gray border-none shadow-lg">
-                            Join Foundation Batch
+                            Join Foundation Batch for 2026-27
                         </CTAButton>
                     </div>
                 </div>

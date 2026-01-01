@@ -180,7 +180,7 @@ const CoursesPage: React.FC = () => {
                             <h2 className="text-2xl md:text-5xl font-black font-montserrat mb-4 md:mb-6 leading-tight">Need help <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">choosing a path?</span></h2>
                             <p className="text-sm md:text-lg text-blue-100/80 mb-8 md:mb-10 max-w-lg">Our academy counselors have helped 10,000+ students map their career paths. Get a free profile evaluation.</p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <CTAButton requiresAuth className="px-8 py-4 !bg-white !text-empower-blue font-black rounded-2xl shadow-xl">Schedule Call</CTAButton>
+                                <CTAButton requiresAuth className="px-8 py-4 !bg-white !text-empower-blue font-black rounded-2xl shadow-xl">Enroll Now for 2026-27</CTAButton>
                                 <a href="tel:+919611621195" className="flex items-center justify-center px-8 py-4 border-2 border-white/30 rounded-2xl font-bold text-sm">
                                     <PhoneIcon className="w-5 h-5 mr-3" /> Call Desk
                                 </a>

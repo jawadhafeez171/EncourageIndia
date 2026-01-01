@@ -1,44 +1,44 @@
-
 export const submitToGoogleSheet = async (data: Record<string, string>) => {
-  // Get Google Script URL from environment variable
-  // Fallback to default if not set (for development)
-  const GOOGLE_SCRIPT_URL: string = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 
-    'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec';
+  // INSTRUCTIONS:
+  // 1. Create a Google Sheet
+  // 2. Go to Extensions > Apps Script
+  // 3. Paste the following code into the script editor:
+  /*
+    function doPost(e) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+      var nextRow = sheet.getLastRow() + 1;
+      var newRow = headers.map(function(header) {
+        return e.parameter[header] || "";
+      });
+      sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+      return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+    }
+  */
+  // 4. Deploy as Web App (Execute as: Me, Who has access: Anyone)
+  // 5. Paste the Web App URL below
+  const GOOGLE_SCRIPT_URL: string = 'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec';
   
-  if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'INSERT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
-      console.warn("Google Script URL is not configured. Data:", data);
-      // Simulate network delay
-      return new Promise((resolve) => setTimeout(resolve, 1500));
+  if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec' || GOOGLE_SCRIPT_URL.includes('YOUR_GOOGLE_SCRIPT_URL')) {
+      // Logic for testing or if user hasn't updated yet
   }
 
-  const formData = new FormData();
+  // Using URLSearchParams ensures the data is sent as application/x-www-form-urlencoded
+  // which Google Apps Script parses into e.parameter automatically.
+  const params = new URLSearchParams();
   for (const key in data) {
-    formData.append(key, data[key]);
+    params.append(key, data[key]);
   }
   
   // Append timestamp
-  formData.append('SubmissionDate', new Date().toLocaleString());
+  params.append('SubmissionDate', new Date().toLocaleString());
 
-  try {
-    // Using no-cors mode because Google Apps Script redirects often cause CORS issues in browsers
-    // This means we won't get a readable response, but the request will go through.
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors'
-    });
-    
-    // Log for debugging (response will be opaque in no-cors mode)
-    console.log('Form submitted to Google Sheets:', {
-      url: GOOGLE_SCRIPT_URL,
-      data: Object.fromEntries(formData.entries()),
-      timestamp: new Date().toISOString()
-    });
-    
-    return response;
-  } catch (error) {
-    console.error('Error submitting to Google Sheets:', error);
-    // Still throw error so calling code can handle it
-    throw error;
-  }
+  // Using no-cors mode because Google Apps Script redirects often cause CORS issues in browsers.
+  // Note: headers cannot be customized in no-cors mode, but URLSearchParams body 
+  // automatically sets the correct Content-Type.
+  return fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    body: params,
+    mode: 'no-cors'
+  });
 };

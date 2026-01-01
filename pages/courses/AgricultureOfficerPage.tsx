@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, CheckCircleIcon, ClipboardListIcon, ClockIcon, ShieldCheckIcon } from '../../components/Icons';

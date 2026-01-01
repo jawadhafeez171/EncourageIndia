@@ -77,7 +77,7 @@ const carouselSlides = [
         cta3Link: { to: '/courses/psi' },
     },
     {
-        badge: "Foundation Batch 2026",
+        badge: "Foundation Batch 2026-27",
         headline: <>Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">UPSC CSE</span> with Confidence</>,
         subheadline: "An integrated Prelims-to-Interview roadmap designed for beginners. Build a rock-solid foundation with personal mentorship.",
         points: ["NCERT to Advanced Level", "Daily Answer Writing", "Current Affairs Magazine"],
@@ -179,8 +179,6 @@ const HomePage: React.FC = () => {
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(1deg); } 100% { transform: translateY(0px) rotate(0deg); } }
         .animate-float { animation: float 5.3s ease-in-out infinite; }
-        @keyframes scan { 0% { transform: translateY(-10px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(110px); opacity: 0; } }
-        .animate-scan { animation: scan 3s ease-in-out infinite; }
         
         @keyframes ticker {
           0% { transform: translateX(0); }
@@ -188,9 +186,6 @@ const HomePage: React.FC = () => {
         }
         .animate-ticker {
           animation: ticker 18s linear infinite;
-        }
-        .animate-ticker:hover {
-          animation-play-state: paused;
         }
 
         .animation-delay-200 { animation-delay: 0.2s; }
@@ -257,7 +252,7 @@ const HomePage: React.FC = () => {
             </div>
       </section>
 
-      {/* Featured Courses Section */}
+      {/* Flagship Programs Section */}
       <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -266,17 +261,15 @@ const HomePage: React.FC = () => {
             <div className="text-center mb-16 relative">
                 <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
                     <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
-                    <span>Admissions Open 2025</span>
+                    <span>Admissions Open 2026-27</span>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black font-montserrat text-charcoal-gray dark:text-white mb-6 tracking-tight">Our Flagship Programs</h2>
                 <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
             </div>
 
-            {/* Grid Container - Added pt-12 to fix tag visibility */}
             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-12 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {featuredPrograms.map((course, index) => (
-                    <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center">
-                        {/* Status Tag - Re-styled for visibility */}
+                    <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center group">
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-700">
                              <p className="text-[10px] font-black uppercase tracking-[0.15em] text-sunrise-orange">{course.tag}</p>
                         </div>
@@ -293,7 +286,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* High-Velocity Exam Ticker Strip */}
+      {/* Exam Ticker Strip */}
       <section className="bg-gradient-to-r from-empower-blue via-blue-900 to-empower-blue py-10 overflow-hidden relative border-y border-white/20 shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
           <div className="flex whitespace-nowrap animate-ticker group">
@@ -310,7 +303,7 @@ const HomePage: React.FC = () => {
           <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-empower-blue to-transparent z-10"></div>
       </section>
 
-      {/* Why Choose Encourage India? */}
+      {/* Why Choose Section */}
       <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
         <div className="container mx-auto px-4">
             <div className="text-center mb-10">
@@ -331,7 +324,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
          <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
@@ -353,7 +346,7 @@ const HomePage: React.FC = () => {
          </div>
       </section>
       
-      {/* Talk to a Mentor */}
+      {/* Mentor Section */}
       <section className="bg-empower-blue text-white py-20">
         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
@@ -375,72 +368,85 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Advanced App Hub */}
-      <section className="py-24 bg-[#0a0f1d] overflow-hidden relative transition-colors duration-300">
-        <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-empower-blue/20 to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-sunrise-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <div className="grid lg:grid-cols-12 gap-16 items-center">
-                <div className="lg:col-span-6 space-y-10">
-                    <div className="space-y-6">
-                        <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sunrise-orange text-xs font-black uppercase tracking-[0.2em]"><span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span><span>App Experience Hub</span></div>
-                        <h2 className="text-4xl md:text-6xl font-extrabold font-montserrat text-white leading-[1.1]">Your Classroom, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-sunrise-orange via-orange-400 to-yellow-300">Redefined.</span></h2>
-                        <p className="text-lg text-gray-400 leading-relaxed max-w-xl">The <span className="text-white font-bold">encourageINDIAIAS</span> app is more than a tool—it's a high-performance environment designed to maximize every minute of your study time.</p>
+      {/* Downgraded App Section - Standard Clean Layout */}
+      <section className="py-20 bg-slate-50 dark:bg-slate-900 overflow-hidden border-y border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-6 md:px-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                    <div className="space-y-4">
+                        <div className="inline-block px-3 py-1 bg-sunrise-orange/10 text-sunrise-orange text-xs font-bold uppercase tracking-widest rounded">
+                            Learn on the Go
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-bold font-montserrat text-charcoal-gray dark:text-white leading-tight">
+                            Download our app for access to free test series (PYQ + monthly current affairs based), free video lectures & more right at your fingertips.
+                        </h2>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-4">
+
+                    <div className="space-y-4">
                         {[
-                            { icon: <DownloadIcon className="w-5 h-5" />, title: "Smart Downloads", desc: "Adaptive video quality for offline learning." },
-                            { icon: <LightningBoltIcon className="w-5 h-5" />, title: "Live Doubt Engine", desc: "Ask questions during live streams directly." },
-                            { icon: <RefreshIcon className="w-5 h-5" />, title: "Seamless Sync", desc: "Resume exactly where you left off on any device." },
-                            { icon: <StarIcon className="w-5 h-5" />, title: "Performance AI", desc: "Analytics to identify your syllabus weak spots." }
+                            "PYQ Test Series (UPSC / KAS / AC SAAD / ACF / PSI / PC and other)",
+                            "Monthly current affairs based test series",
+                            "High quality video lectures."
                         ].map((feat, i) => (
-                            <div key={i} className="group flex flex-col p-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300">
-                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-empower-blue to-blue-600 flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform">{feat.icon}</div>
-                                <h4 className="font-bold text-white mb-1">{feat.title}</h4>
-                                <p className="text-xs text-gray-500 leading-relaxed">{feat.desc}</p>
+                            <div key={i} className="flex items-start">
+                                <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                                <span className="text-gray-700 dark:text-gray-300 font-medium">{feat}</span>
                             </div>
                         ))}
                     </div>
-                </div>
-                <div className="lg:col-span-6 relative">
-                    <div className="relative z-20 flex justify-center items-center">
-                        <div className="animate-float relative">
-                            <div className="absolute inset-0 bg-blue-500/20 blur-[120px] rounded-full scale-150"></div>
-                            <div className="relative border-[8px] border-[#1e2330] rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] bg-slate-900 overflow-hidden w-[280px] md:w-[320px]">
-                                <img src="/app-mockup-playstore.png" alt="App Interface" className="w-full h-auto" />
+
+                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
+                        <a 
+                          href="https://play.google.com/store/apps/details?id=co.barney.yflbb" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex items-center bg-charcoal-gray text-white px-8 py-4 rounded-lg hover:bg-black transition-colors shadow-lg active:scale-95"
+                        >
+                            <GooglePlayIcon className="w-8 h-8 mr-3" />
+                            <div className="flex flex-col items-start">
+                                <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">Get it on</span>
+                                <span className="text-lg font-bold">Google Play</span>
                             </div>
-                            <div className="absolute -right-12 top-[15%] hidden md:block animate-bounce animation-delay-200">
-                                <div className="bg-[#161b2e]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center"><div className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div></div>
-                                    <div><p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Current Score</p><p className="text-lg font-bold text-white">88% <span className="text-xs text-green-400">+12%</span></p></div>
-                                </div>
+                        </a>
+
+                        <div className="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-12 h-12 rounded"/>
+                            <div className="text-left">
+                                <p className="text-[10px] font-bold text-charcoal-gray dark:text-gray-300 uppercase tracking-wider">Quick Scan</p>
+                                <p className="text-[9px] text-gray-500 leading-tight">Use camera to download</p>
                             </div>
                         </div>
                     </div>
-                    <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 relative z-30">
-                        <a href="https://play.google.com/store/apps/details?id=co.barney.yflbb" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center bg-white text-charcoal-gray px-8 py-4 rounded-2xl hover:bg-soft-gray transition-all shadow-xl active:scale-95">
-                            <GooglePlayIcon className="w-10 h-10 mr-4 text-black" />
-                            <div className="flex flex-col items-start"><span className="text-[10px] uppercase font-black tracking-widest opacity-50">Download for</span><span className="text-xl font-bold font-sans rendering-tight">Android Device</span></div>
-                        </a>
-                        <div className="flex items-center space-x-5 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
-                             <div className="relative">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-20 h-20 rounded-lg p-1 bg-white"/>
-                                <div className="absolute inset-0 w-full h-[2px] bg-sunrise-orange/60 animate-scan"></div>
-                             </div>
-                             <div className="max-w-[100px]"><p className="text-xs font-black text-white leading-tight uppercase mb-1">Instant Scan</p><p className="text-[10px] text-gray-500 leading-tight">Camera scan to download instantly</p></div>
-                        </div>
+                </div>
+
+                <div className="hidden lg:flex justify-center relative">
+                    <div className="w-[300px] rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden bg-white">
+                        <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
+                    </div>
+                    {/* Simplified floating badge */}
+                    <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3">
+                        <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center"><StarIcon className="w-5 h-5 text-sunrise-orange" /></div>
+                        <div><p className="text-[10px] text-gray-500 font-bold uppercase">Rating</p><p className="text-lg font-black dark:text-white">4.9/5.0</p></div>
                     </div>
                 </div>
             </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-empower-blue text-white py-20">
+      {/* Downgraded Final CTA Section - Clean Professional Standard */}
+      <section className="bg-slate-900 text-white py-20 border-t border-white/5">
         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Ready to Start Your Success Story?</h2>
-            <p className="mt-4 max-w-2xl mx-auto">Join thousands of successful aspirants who trusted Encourage India to guide them.</p>
-            <CTAButton requiresAuth variant="primary" className="mt-8 text-lg">Enroll in a Program Today</CTAButton>
+            <h2 className="text-3xl md:text-5xl font-bold font-montserrat mb-6">Ready to start your success story?</h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Join thousands of successful aspirants who trusted Encourage India to brighten their future.
+            </p>
+            <CTAButton 
+                requiresAuth 
+                variant="primary" 
+                className="text-lg px-12 py-4 shadow-xl !rounded-lg"
+            >
+                Enroll Now for 2026-27
+            </CTAButton>
         </div>
       </section>
     </div>

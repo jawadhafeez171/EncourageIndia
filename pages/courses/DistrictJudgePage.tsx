@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ScaleIcon, BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon, ClipboardListIcon, BookOpenIcon, ClockIcon } from '../../components/Icons';
@@ -116,14 +115,14 @@ const DistrictJudgePage: React.FC = () => {
                                 </div>
                             </div>
                             <p className="mt-6 text-xs text-center font-semibold text-encourage-red italic">
-                                *All subjects updated as per the latest 2024-25 notification guidelines including New Criminal Laws.
+                                *All subjects updated as per the latest 2026-27 notification guidelines including New Criminal Laws.
                             </p>
                         </div>
                     </Section>
 
                     <div className="text-center mt-16">
                         <CTAButton requiresAuth variant="primary" className="text-lg px-12 shadow-orange-500/20">
-                            Join HJS Specialized Batch
+                            Join HJS Specialized Batch for 2026-27
                         </CTAButton>
                     </div>
                 </div>

@@ -11,9 +11,21 @@ interface CTAButtonProps {
   type?: 'button' | 'submit' | 'reset';
   to?: string;
   requiresAuth?: boolean;
+  // Added optional disabled prop
+  disabled?: boolean;
 }
 
-const CTAButton: React.FC<CTAButtonProps> = ({ children, onClick, variant = 'primary', className = '', type = 'button', to, requiresAuth = false }) => {
+const CTAButton: React.FC<CTAButtonProps> = ({ 
+  children, 
+  onClick, 
+  variant = 'primary', 
+  className = '', 
+  type = 'button', 
+  to, 
+  requiresAuth = false,
+  // Default disabled to false
+  disabled = false
+}) => {
   const { openModal } = useEnrollment();
   
   const baseClasses = "font-montserrat font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out inline-block text-center";
@@ -36,6 +48,8 @@ const CTAButton: React.FC<CTAButtonProps> = ({ children, onClick, variant = 'pri
           openModal();
         }}
         className={combinedClasses}
+        // Apply disabled state to button
+        disabled={disabled}
       >
         {children}
       </button>
@@ -44,7 +58,12 @@ const CTAButton: React.FC<CTAButtonProps> = ({ children, onClick, variant = 'pri
 
   if (to) {
     return (
-      <Link to={to} className={combinedClasses}>
+      <Link 
+        to={to} 
+        className={combinedClasses}
+        // For Links, we simulate disabled behavior if necessary
+        style={disabled ? { pointerEvents: 'none', opacity: 0.5 } : {}}
+      >
         {children}
       </Link>
     );
@@ -55,6 +74,8 @@ const CTAButton: React.FC<CTAButtonProps> = ({ children, onClick, variant = 'pri
       type={type}
       onClick={onClick}
       className={combinedClasses}
+      // Apply disabled state to standard button elements
+      disabled={disabled}
     >
       {children}
     </button>

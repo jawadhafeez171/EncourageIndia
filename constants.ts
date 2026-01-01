@@ -1,4 +1,3 @@
-
 import { TelegramIcon, InstagramIcon, YouTubeIcon, FacebookIcon, WhatsAppIcon, XIcon } from './components/Icons';
 
 export const navLinks = [
@@ -70,11 +69,11 @@ export const secondaryNavLinks = [
 
 export const socialLinks = [
   { name: 'Telegram', href: 'https://t.me/encourage_INDIAIAS', icon: TelegramIcon },
-  { name: 'Instagram', href: 'https://www.instagram.com/encourageindiaias/?utm_source=qr&r=nametag', icon: InstagramIcon },
+  { name: 'Instagram', href: 'https://www.instagram.com/encourage_india_ias?igsh=MWlyb2Nzc3p0OHc3Ng==', icon: InstagramIcon },
   { name: 'YouTube', href: 'https://youtube.com/@encourage_india_ias?si=hxuXWNFGTXPfQm0y', icon: YouTubeIcon },
-  { name: 'Facebook', href: '#', icon: FacebookIcon },
+  { name: 'Facebook', href: 'https://www.facebook.com/share/1DYZKpFDKq/', icon: FacebookIcon },
   { name: 'WhatsApp', href: 'https://wa.me/919611621195', icon: WhatsAppIcon },
-  { name: 'X', href: '#', icon: XIcon },
+  { name: 'X', href: 'https://x.com/encourage_INDIA', icon: XIcon },
 ];
 
 export const testimonials = [
@@ -355,7 +354,7 @@ export const downloadCategories = [
         items: [
             {
                 title: "UPSC Mains Detailed Syllabus",
-                description: "Comprehensive, paper-wise breakdown of the UPSC Mains syllabus (2026 Edition).",
+                description: "Comprehensive, paper-wise breakdown of the UPSC Mains syllabus (2026-27 Edition).",
                 fileUrl: "/downloads/upsc-mains-detailed-syllabus.pdf"
             },
             {
@@ -380,7 +379,7 @@ export const downloadCategories = [
             },
             {
                 title: "UPSC Optional Subjects List",
-                description: "The official list of optional subjects available for the UPSC Mains Examination (2025).",
+                description: "The official list of optional subjects available for the UPSC Mains Examination (2026-27).",
                 fileUrl: "/downloads/upsc-optional-subjects-list.pdf"
             },
             {
@@ -439,9 +438,9 @@ export const downloadCategories = [
                 fileUrl: "/downloads/kpsc-mains-detailed-syllabus.pdf"
             },
             {
-                title: "KPSC Mains Exam Pattern (2025)",
+                title: "KPSC Mains Exam Pattern (2026-27)",
                 description: "An overview of the KAS Mains exam pattern, subjects, and marks distribution.",
-                fileUrl: "/downloads/kpsc-mains-exam-pattern-2025.pdf"
+                fileUrl: "/downloads/kpsc-mains-exam-pattern-2026.pdf"
             },
             {
                 title: "KPSC Mains vs. UPSC Mains Comparison",
@@ -454,9 +453,9 @@ export const downloadCategories = [
                 fileUrl: "/downloads/kpsc-mains-comprehensive-overview.pdf"
             },
             {
-                title: "KPSC Mains 2025 Timetable",
-                description: "The official timetable for the KPSC Gazetted Probationers Main Examination 2025.",
-                fileUrl: "/downloads/kpsc-mains-2025-timetable.pdf"
+                title: "KPSC Mains 2026-27 Timetable",
+                description: "The official timetable for the KPSC Gazetted Probationers Main Examination 2026-27.",
+                fileUrl: "/downloads/kpsc-mains-2026-timetable.pdf"
             },
         ]
     },

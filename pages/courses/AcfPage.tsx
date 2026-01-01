@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, ShieldCheckIcon, CalendarIcon, GlobeAltIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ChevronRightIcon, CheckCircleIcon, ClockIcon, BookOpenIcon, StarIcon } from '../../components/Icons';
@@ -282,7 +281,7 @@ const AcfPage: React.FC = () => {
                     </Section>
 
                     <div className="text-center mt-16 bg-gradient-to-r from-empower-blue to-blue-800 p-10 rounded-2xl text-white shadow-xl">
-                        <h3 className="text-3xl font-bold mb-4">ACF Specialized Batch</h3>
+                        <h3 className="text-3xl font-bold mb-4">ACF Specialized Batch 2026-27</h3>
                         <p className="mb-8 opacity-90 max-w-2xl mx-auto">Join the most comprehensive coaching for Karnataka Forest Services. We provide expert mentorship for both Optional Science subjects and GS papers, along with guidance for physical standards.</p>
                         <CTAButton requiresAuth variant="primary" className="text-lg px-12 bg-white !text-empower-blue hover:bg-soft-gray border-none shadow-lg transform hover:scale-105 transition-all">
                             Enroll in ACF Program

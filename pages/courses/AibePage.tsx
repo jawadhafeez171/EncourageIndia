@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ScaleIcon, BriefcaseIcon, CheckCircleIcon, DocumentTextIcon, UsersIcon, CalendarIcon, ClipboardListIcon, ClockIcon } from '../../components/Icons';
@@ -56,7 +55,7 @@ const AibePage: React.FC = () => {
                             <h3 className="font-bold text-lg text-charcoal-gray dark:text-white">Latest Update: AIBE-XX Notification</h3>
                         </div>
                         <p className="text-sm">
-                            As per the BCI notification dated <strong>27.09.2025</strong>, registration for AIBE-XX begins on <strong>29th September 2025</strong>. The exam includes the new criminal laws (BNS, BNSS, BSA).
+                            As per the BCI notification dated <strong>27.09.2026</strong>, registration for AIBE-XX begins on <strong>29th September 2026</strong>. The exam includes the new criminal laws (BNS, BNSS, BSA).
                         </p>
                     </div>
 
