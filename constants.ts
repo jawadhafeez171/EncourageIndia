@@ -101,216 +101,237 @@ export const testimonials = [
 export const coursesData = [
   {
     id: 'upsc',
-    title: 'UPSC Civil Services',
+    title: 'UPSC CSE-IAS EXAM',
     shortTitle: 'UPSC',
     courses: [
       {
         title: 'UPSC CSE Foundation Program',
-        description: 'A comprehensive 2-year program for undergraduates, covering the entire syllabus from scratch.',
-        features: ['Integrated Prelims & Mains', 'Personalized Mentorship', 'Daily Answer Writing'],
+        description: 'A comprehensive 6-months program for undergraduates, covering the entire syllabus from scratch.',
+        features: ['Classroom Program', 'Sectional + Full Length Test Series (FLT)', 'Doubt Solving & Mentorship Sessions', 'Separate Test Series for Outstation Students'],
         path: '/courses/upsc-cse',
+        duration: '6 Months',
+        eligibility: 'Degree/Undergrad',
+        medium: 'English/Kannada'
       },
       {
-        title: 'UPSC Prelims Test Series',
-        description: 'An extensive test series designed to cover the entire prelims syllabus with detailed explanations.',
-        features: ['40+ Sectional & Full Tests', 'Performance Analysis', 'All India Ranking'],
+        title: 'UPSC CSE Mains Program',
+        description: 'Our Mains program is a vast, multilayered written assessment preparation initiative through which we empower students with knowledge, analytical skills, expression, and integrity.',
+        features: ['Classroom Program', 'Sectional + Full Length Test Series (FLT)', 'Guidance & Mentorship Sessions', 'Test Series for Outstation Students'],
+        path: '/courses/upsc-cse',
+        duration: '4-5 Months',
+        eligibility: 'Mains Qualified',
+        medium: 'English'
       },
-       {
-        title: 'UPSC Mains Mentorship',
-        description: 'A dedicated program for mains preparation with focus on answer writing and ethics.',
-        features: ['Daily Writing Targets', 'One-on-One Feedback', 'Essay & Ethics Classes'],
+      {
+        title: 'UPSC CSE Integrated Program',
+        description: 'Parallel preparation for Prelims & Mains through focusing on both objective & subjective knowledge of the student.',
+        features: ['Classroom Program', 'Integrated Pre + Mains Test Series', 'Doubt Solving + Mentorship + Guidance Program', 'Test Series for Outstation Students'],
+        path: '/courses/upsc-cse',
+        duration: '1 Year',
+        eligibility: 'Graduate',
+        medium: 'English/Kannada'
       },
     ],
   },
   {
-    id: 'kas',
-    title: 'KPSC - KAS',
-    shortTitle: 'KAS',
+    id: 'kpsc-cse',
+    title: 'KPSC CSE-KAS/AC-SAAD/ACF EXAM',
+    shortTitle: 'KPSC CSE',
     courses: [
        {
-        title: 'KPSC KAS Foundation',
-        description: 'An integrated program for Karnataka Administrative Service (KAS) covering all papers for Prelims and Mains.',
-        features: ['Karnataka Specific GK', 'Kannada Language Paper', 'Interview Guidance', 'Economic Survey Analysis'],
+        title: 'KAS Program',
+        description: 'A comprehensive 6 months program for UG students, facilitated by subject experts, serving and former bureaucrats.',
+        features: ['Pre + Mains Classroom Program', 'Pre + Mains Integrated Program', 'High Quality Study Material', 'SEC + FLT Test Series for Outstation Students'],
         path: '/courses/kas',
+        duration: '6 Months',
+        eligibility: 'Degree/Undergrad',
+        medium: 'English/Kannada'
       },
       {
-        title: 'KAS Prelims Crash Course',
-        description: 'A fast-track course focusing on high-yield topics and revision for the upcoming KAS Prelims.',
-        features: ['Subject-wise Revision', 'Mock Tests', 'Current Affairs Capsule'],
+        title: 'AC SAAD Program',
+        description: 'The program, specially designed for M.Com, MBA and CA graduates, will be taught by subject experts in Commerce, Management, CA and Technical fields.',
+        features: ['Pre + Mains Classroom Program', 'GS, Commerce, Management and CA Focused', 'High Quality Study Material', 'SEC + FLT Test Series for Outstation Students'],
+        path: '/courses/ac-saad',
+        duration: '6 Months',
+        eligibility: 'M.Com/MBA/CA',
+        medium: 'English'
+      },
+      {
+        title: 'ACF / RFO / DRFO Program',
+        description: 'The program is specially designed with the expertise of Forestry, Agriculture and subject-domain specialists to provide focused and result-oriented preparation.',
+        features: ['Pre + Mains Classroom Program', 'GS + Forestry + Technical Domain Focused', 'High Quality Study Material', 'SEC + FLT Test Series for Outstation Students'],
+        path: '/courses/acf',
+        duration: '6 Months',
+        eligibility: 'Science/Engg Degree',
+        medium: 'English/Kannada'
+      },
+    ]
+  },
+  {
+    id: 'other-comp-1',
+    title: 'OTHER COMPETITIVE EXAMS',
+    shortTitle: 'Police & Co-op',
+    courses: [
+      {
+        title: 'POLICE EXAMS – PSI / ESI / PC / Physical Training Program',
+        description: 'A rigorous Physical Training + Classroom Program designed to build both academic competence and physical endurance.',
+        features: ['Classroom Program', 'Coverage of both Paper 1 & Paper 2', 'Essay and Translation Practice', 'Physical and Endurance Training', 'Guidance by Subject Experts and Serving Officers'],
+        path: '/courses/psi-pc',
+        duration: '4-5 Months',
+        eligibility: '12th/Degree',
+        medium: 'Kannada/English'
+      },
+      {
+        title: 'KMF & Co-operative (DCC) Bank Exams Program',
+        description: 'A comprehensive short-term program designed for aspirants seeking entry into the co-operative sector.',
+        features: ['Classroom Program', 'Comprehensive Coverage of Syllabus', 'High Quality Study Material', 'Subject-wise and Full Length Mock Tests', 'Guidance by Subject Experts and Serving Officers'],
+        path: '/courses/kmf-shimul',
+        duration: '3-4 Months',
+        eligibility: 'Degree (B.Com/Others)',
+        medium: 'Kannada/English'
+      },
+      {
+        title: 'K-SET Exam Program',
+        description: 'State-level examination conducted to determine eligibility for Assistant Professor in Universities and Colleges across Karnataka.',
+        features: ['Classroom Program', 'Coverage of both Paper 1 & Paper 2', 'High Quality Study Material', 'Subject-wise & Full Length Mock Tests', 'Subjects: Commerce, Management, History, Political Science, etc.'],
+        path: '/courses/k-set',
+        duration: '3 Months',
+        eligibility: 'Post Graduate',
+        medium: 'English/Kannada'
       }
     ]
   },
   {
-    id: 'aeje',
-    title: 'AE/JE (Technical) Exams',
-    shortTitle: 'AE/JE',
+    id: 'technical',
+    title: 'ENGINEERING & DIPLOMA TECHNICAL EXAMS',
+    shortTitle: 'Technical',
     courses: [
       {
-        title: 'Comprehensive Technical Program',
-        description: 'Unified coaching for KPSC AEE/AE, KEA Technical, and KPCL AE/JE posts.',
-        features: ['Core Civil/Mech/Elec Subjects', 'General Studies Integrated', 'Technical Mock Tests'],
+        title: 'D-CET Exam',
+        description: 'State-level entrance examination for diploma holders seeking lateral entry into BE / B.Tech programs.',
+        features: ['Classroom Program', 'Comprehensive Coverage of Syllabus', 'High Quality Study Material', 'Regular Mock Tests', 'Expert and Experienced Faculty'],
+        path: '/courses/d-cet',
+        duration: '3-4 Months',
+        eligibility: 'Diploma Holders',
+        medium: 'English'
+      },
+      {
+        title: 'AEE / AE / JE Exam',
+        description: 'A one-stop solution for all major technical competitive examinations (KPSC, KEA, KPCL, etc.).',
+        features: ['Coverage: KPSC, KEA, KPCL, KPTCL, BWSSB, PWD, RDWS', 'Streams: Civil, Electrical and Mechanical', 'Classroom Program (Pre+Mains)', 'High Quality Study Material', 'Regular Mock Tests', 'Expert and Experienced Faculty'],
         path: '/courses/ae-je-technical',
+        duration: '6 Months',
+        eligibility: 'BE/B.Tech/Diploma',
+        medium: 'English'
       },
-      {
-        title: 'KPSC AEE/AE (PWD/WRD)',
-        description: 'Focused coaching for Assistant Executive Engineer and Assistant Engineer posts in Karnataka PWD and WRD.',
-        features: ['Specialized PWD Syllabus', 'Previous Year QP Analysis', 'GS Paper Module'],
-        path: '/courses/kpsc-tech',
-      },
-      {
-        title: 'KEA Technical (JE/AE)',
-        description: 'Targeted batches for various Board & Corporation technical recruitments conducted by KEA.',
-        features: ['JE Level Focus', 'Computer Literacy', 'General English'],
-        path: '/courses/kea-tech',
-      }
     ]
   },
   {
     id: 'judiciary',
-    title: 'Judicial & Law Services',
-    shortTitle: 'Law',
+    title: 'JUDICIARY EXAMS',
+    shortTitle: 'Judiciary',
     courses: [
        {
-        title: 'Civil Judge Foundation',
-        description: 'A complete course for aspiring Civil Judges covering all law subjects and procedural laws.',
-        features: ['Bare Act Analysis', 'Judgment Writing Practice', 'Mock Interviews'],
-        path: '/courses/civil-judge',
-      },
-      {
-        title: 'District Judge Preparation',
-        description: 'Specialized batch for practicing advocates aiming for Higher Judicial Services.',
-        features: ['Higher Law Standards', 'Case Law Updates', 'Descriptive Paper Focus'],
-        path: '/courses/district-judge',
-      },
-      {
-        title: 'CLAT Entrance Batch',
-        description: 'Targeted coaching for UG and PG Law entrance examinations for NLUs.',
-        features: ['Legal Reasoning', 'Logical Ability', 'English Proficiency'],
+        title: 'CLAT (Common Law Admission Test)',
+        description: 'India’s leading national-level entrance examination for admission into UG and PG Law Programs.',
+        features: ['Classroom Program', 'Comprehensive Coverage of all 5 Sections', 'High Quality Study Material', 'Regular Mock Tests', 'Expert and Experienced Faculty (Including Retired Judges)'],
         path: '/courses/clat',
+        duration: '1 Year/Crash',
+        eligibility: '12th/Law Grad',
+        medium: 'English'
       },
       {
-        title: 'AIBE Certification Course',
-        description: 'Short-term crash course to clear the All India Bar Examination.',
-        features: ['Open Book Strategy', 'Quick Law Revision', 'PYQ Coverage'],
+        title: 'AIBE (All India Bar Exam)',
+        description: 'National-level certification examination conducted by the Bar Council of India for law graduates seeking professional practice.',
+        features: ['Classroom Program', 'Coverage of Major Law Areas and Core Concepts', 'High Quality Study Material', 'Regular Mock Tests', 'Expert and Experienced Faculty (Including Retired Judges)'],
         path: '/courses/aibe',
-      }
+        duration: '2-3 Months',
+        eligibility: 'Law Graduates',
+        medium: 'English'
+      },
+      {
+        title: 'Civil & District Judge Exam',
+        description: 'A complete course for aspiring Civil & District Judges covering all Old & New Laws.',
+        features: ['Prelims + Mains Classroom Program', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Expert & Experienced Faculty (Retired Judges)', 'Comprehensive Interview Guidance'],
+        path: '/courses/civil-judge',
+        duration: '6-8 Months',
+        eligibility: 'Law Graduates',
+        medium: 'English/Kannada'
+      },
     ]
   },
   {
-    id: 'kpsc',
-    title: 'Other KPSC Exams',
-    shortTitle: 'KPSC',
+    id: 'other-comp-2',
+    title: 'STATE LEVEL COMPETITIVE EXAMS',
+    shortTitle: 'KPSC & KEA',
     courses: [
       {
-        title: 'KPSC AC-SAAD',
-        description: 'Targeted preparation for Assistant Controller in State Accounts Department.',
-        features: ['Commerce & Management Focus', 'Paper 2 Specialization', 'General Studies Coverage'],
-        path: '/courses/ac-saad',
-      },
-      {
-        title: 'ACF / RFO / DRFO',
-        description: 'Specialized coaching for the prestigious Karnataka Forest Service examination.',
-        features: ['Forestry & Environment', 'General Science Focus', 'Aptitude Training'],
-        path: '/courses/acf',
-      },
-      {
-        title: 'Agriculture Officer (AO/AAO)',
-        description: 'Comprehensive course for Agriculture graduates aspiring for AO/AAO posts.',
-        features: ['Subject Matter Experts', 'B.Sc Agri Syllabus', 'GK Paper Coverage'],
-        path: '/courses/kpsc-ao-aao',
-      },
-      {
-        title: 'Group B Posts',
-        description: 'Coaching for various Group B technical and non-technical posts.',
-        features: ['Specific Paper Guidance', 'General Knowledge', 'Test Series'],
+        title: 'KPSC Group B/C, FDA/SDA Exam',
+        description: 'A Comprehensive Program for Technical & Non-Technical Exams.',
+        features: ['AD / ASO / CTI / Co-operative Inspector / Revenue Inspector / Accounts Assistant (SAAD)', 'Classroom Program', 'Regular Mock Tests', 'High-Quality Study Material', 'Expert & Experienced Technical & GS Faculty'],
         path: '/courses/group-b',
+        duration: '5 Months',
+        eligibility: 'Degree/PUC',
+        medium: 'Kannada/English'
       },
       {
-        title: 'Group C (FDA / SDA / PDO)',
-        description: 'Focused preparation for various Group C recruitment examinations.',
-        features: ['General Kannada/English', 'General Knowledge', 'Mental Ability'],
-        path: '/courses/group-c',
+        title: 'KEA Group B/C/D, FDA/SDA Exam',
+        description: 'A Comprehensive Program for Technical & Non-Technical Exams.',
+        features: ['Classroom Program', 'Regular Mock Tests', 'High-Quality Study Material', 'Expert & Experienced Technical & GS Faculty'],
+        path: '/courses/kea-group-b-c-d',
+        duration: '5 Months',
+        eligibility: 'Degree/PUC/10th',
+        medium: 'Kannada/English'
+      },
+      {
+        title: 'AHO / SEO / AO / AAO / VO & Allied Sciences Exam',
+        description: 'Well-Structured Agri & Allied Sciences Courses by subject experts from IARI / ICAR / KVAFSU / UASB.',
+        features: ['Classroom Program', 'Regular Mock Tests', 'High-Quality Study Material', 'Expert & Experienced Technical & GS Faculty'],
+        path: '/courses/kpsc-ao-aao',
+        duration: '6 Months',
+        eligibility: 'Agri/Allied Degree',
+        medium: 'English/Kannada'
       },
     ],
   },
   {
-    id: 'kea',
-    title: 'KEA Examinations',
-    shortTitle: 'KEA',
+    id: 'banking',
+    title: 'BANKING EXAMS',
+    shortTitle: 'Banking',
     courses: [
        {
-        title: 'KPCL Recruitment',
-        description: 'Coaching for Assistant Engineer, Junior Engineer, and other posts in Karnataka Power Corporation Ltd.',
-        features: ['Technical & Non-Tech', 'General Awareness', 'Kannada Language'],
-        path: '/courses/kpcl',
+        title: 'SBI–PO / Clerk / SO Exam',
+        description: 'The Comprehensive Program for all Three Stages of the Exam.',
+        features: ['Classroom Program', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        duration: '4-5 Months',
+        eligibility: 'Graduate',
+        medium: 'English'
       },
       {
-        title: 'Karnataka SET (K-SET)',
-        description: 'Preparation for Assistant Professor eligibility test.',
-        features: ['Paper 1 (General)', 'Paper 2 (Subject)', 'Teaching Aptitude'],
-        path: '/courses/k-set',
+        title: 'IBPS – PO / Clerk / SO / RRB Exam',
+        description: 'Autonomous body recruiting for various Public Sector Banks & RRBs.',
+        features: ['Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        duration: '4-5 Months',
+        eligibility: 'Graduate',
+        medium: 'English'
       },
       {
-        title: 'D CET (Lateral Entry)',
-        description: 'Specialized coaching for Diploma CET for lateral entry into B.E/B.Tech courses.',
-        features: ['Applied Math & Science', 'Core Technical Concepts', 'Revision Tests'],
-        path: '/courses/d-cet',
+        title: 'RBI – Grade B / Assistant Exam',
+        description: 'Highly Prestigious Exam in the Indian Banking Sector.',
+        features: ['Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        duration: '6 Months',
+        eligibility: 'Graduate (60%+)',
+        medium: 'English'
       },
       {
-        title: 'KEA Group B, C & D (Non-Tech)',
-        description: 'Coaching for Village Administrative Officer (VAO) and other administrative posts.',
-        features: ['Communication Papers', 'GK & Current Affairs', 'VAO Specific Modules'],
-        path: '/courses/kea-group-b-c-d',
-      },
-      {
-        title: 'KMF SHIMUL Recruitment',
-        description: 'Dedicated batch for SHIMUL and other milk union recruitments.',
-        features: ['Co-operative Laws', 'Computer Knowledge', 'General Syllabus'],
-        path: '/courses/kmf-shimul',
+        title: 'NABARD – Grade A & B Exam',
+        description: 'The Exam Focusing on Rural & Agricultural Sector Development.',
+        features: ['Agriculture & Rural Development–Focused Coverage', 'Economic & Social Issues–Focused Modules', 'Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material'],
+        duration: '6 Months',
+        eligibility: 'Graduate',
+        medium: 'English'
       }
     ],
-  },
-  {
-    id: 'police',
-    title: 'Police Examinations',
-    shortTitle: 'Police',
-    courses: [
-      {
-        title: 'PSI / ESI Integrated',
-        description: 'Comprehensive coaching for both Police Sub-Inspector and Excise Sub-Inspector exams.',
-        features: ['Physical Training Guide', 'Translation', 'General Studies'],
-        path: '/courses/psi',
-      },
-      {
-        title: 'Police Constable (PC)',
-        description: 'Dedicated batch for Police Constable recruitment.',
-        features: ['General Knowledge', 'Psychology', 'Indian Constitution'],
-        path: '/courses/pc',
-      },
-      {
-        title: 'Integrated PSI/PC Batch',
-        description: 'Foundation batch covering multiple police-grade examinations.',
-        features: ['Holistic Prep', 'Weekly Tests', 'Physical Mentorship'],
-        path: '/courses/psi-pc',
-      }
-    ]
-  },
-  {
-    id: 'others',
-    title: 'Other Programs',
-    shortTitle: 'Others',
-    courses: [
-        {
-            title: 'Personal Mentorship Program',
-            description: 'One-on-one guidance for students who need strategic intervention in their preparation.',
-            features: ['Weekly Progress Check', 'Strategy Planning', 'Doubt Resolution'],
-        },
-        {
-            title: 'Interview Guidance Program',
-            description: 'Specialized sessions for candidates who have cleared Mains and are appearing for the interview.',
-            features: ['Mock Interviews', 'DAF Analysis', 'Personality Grooming'],
-        }
-    ]
   }
 ];
 

@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import CTAButton from '../components/CTAButton';
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon, HashtagIcon } from '../components/Icons';
 import { testimonials } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
@@ -91,120 +91,59 @@ const carouselSlides = [
     },
 ];
 
-// Data for Flagship Programs to ensure consistent beautiful styling
 const flagshipPrograms = [
     {
         title: "UPSC Civil Services",
         description: "Premier foundation course covering Prelims to Interview with expert mentorship.",
-        icon: <AcademicCapIcon className="w-6 h-6 text-white" />,
-        meta: {
-            duration: "12-15 Months",
-            mode: "Offline & Online",
-            batch: "June 2025"
-        },
-        tags: [
-            { text: "English Medium", color: "bg-blue-500/20 text-blue-100" },
-            { text: "Prelims + Mains", color: "bg-green-500/20 text-green-100" },
-             { text: "Test Series", color: "bg-red-500/20 text-red-100" }
-        ],
-        features: [
-            "Integrated Prep",
-            "Daily Answer Writing",
-            "1-on-1 Mentorship",
-            "CSAT & Ethics Focus",
-            "NCERT Foundation",
-            "Comp. Test Series"
-        ],
+        icon: <AcademicCapIcon />,
+        meta: { duration: "12-15 Months", mode: "Offline & Online" },
+        tags: [{ text: "Integrated", color: "bg-blue-500/20 text-blue-100" }],
         link: "/courses/upsc-cse",
         syllabusUrl: "/downloads/upsc-mains-detailed-syllabus.pdf",
-        gradient: "from-blue-600 to-blue-800",
+        gradient: "from-blue-600 via-blue-700 to-indigo-900",
         popular: true,
-        live: true
+        features: ["Daily Answer Writing", "1-on-1 Mentorship", "NCERT Foundation"]
     },
     {
         title: "KPSC KAS Foundation",
         description: "Holistic coaching with specific focus on Karnataka history, geography & economy.",
-        icon: <BookOpenIcon className="w-6 h-6 text-white" />,
-        meta: {
-            duration: "10-12 Months",
-            mode: "Offline & Online",
-            batch: "July 2025"
-        },
-        tags: [
-            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
-            { text: "State Focus", color: "bg-yellow-500/20 text-yellow-100" },
-            { text: "Test Series", color: "bg-red-500/20 text-red-100" }
-        ],
-        features: [
-            "Prelims-Mains-Interview",
-            "Economic Survey",
-            "State History/Geog",
-            "Essay Workshops",
-            "Mental Ability",
-            "Full Mock Tests"
-        ],
+        icon: <BookOpenIcon />,
+        meta: { duration: "10-12 Months", mode: "Hybrid Mode" },
+        tags: [{ text: "Bilingual", color: "bg-purple-500/20 text-purple-100" }],
         link: "/courses/kas",
         syllabusUrl: "/downloads/kpsc-prelims-syllabus.pdf",
-        gradient: "from-red-600 to-red-800",
+        gradient: "from-red-600 via-rose-700 to-red-900",
         popular: false,
-        live: true
+        features: ["State Focus Modules", "Economic Survey", "Mains Mini Tests"]
     },
     {
         title: "KPSC AC-SAAD",
         description: "Targeted preparation for Assistant Controller in State Accounts Department.",
-        icon: <LightningBoltIcon className="w-6 h-6 text-white" />,
-        meta: {
-            duration: "5-6 Months",
-            mode: "Online Live",
-            batch: "Admissions Open"
-        },
-        tags: [
-            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
-            { text: "Commerce Special", color: "bg-orange-500/20 text-orange-100" },
-            { text: "Test Series", color: "bg-red-500/20 text-red-100" }
-        ],
-        features: [
-            "Commerce Expert Faculty",
-            "Papers V-VIII Focus",
-            "PYQ Analysis",
-            "Accounts Terminology",
-            "General Studies",
-            "Subject Test Series"
-        ],
+        icon: <LightningBoltIcon />,
+        meta: { duration: "5-6 Months", mode: "Online Live" },
+        tags: [{ text: "Specialized", color: "bg-orange-500/20 text-orange-100" }],
         link: "/courses/ac-saad",
         syllabusUrl: "/downloads/kpsc-ac-saad-prelims-pattern-syllabus.pdf",
-        gradient: "from-orange-500 to-orange-700",
+        gradient: "from-orange-500 via-amber-600 to-orange-800",
         popular: false,
-        live: true
+        features: ["Commerce Experts", "Accounts Terminology", "Paper V-VIII Focus"]
     },
     {
         title: "PSI & PC Program",
         description: "Rigorous training for Police Sub-Inspector & Constable exams with physical guidance.",
-        icon: <ShieldCheckIcon className="w-6 h-6 text-white" />,
-        meta: {
-            duration: "4-6 Months",
-            mode: "Offline + Ground",
-            batch: "New Batch Soon"
-        },
-        tags: [
-            { text: "English / ಕನ್ನಡ", color: "bg-purple-500/20 text-purple-100" },
-            { text: "Physical Training", color: "bg-teal-500/20 text-teal-100" },
-            { text: "Test Series", color: "bg-red-500/20 text-red-100" }
-        ],
-        features: [
-            "Translation & Essay",
-            "Mental Ability",
-            "Physical Guidance",
-            "Dept Exam Focus",
-            "Weekly Full Mocks",
-            "Test Series Included"
-        ],
+        icon: <ShieldCheckIcon />,
+        meta: { duration: "4-6 Months", mode: "Offline + Ground" },
+        tags: [{ text: "Physical Training", color: "bg-teal-500/20 text-teal-100" }],
         link: "/courses/psi-pc",
         syllabusUrl: "/downloads/psi-pc-syllabus.pdf",
-        gradient: "from-gray-700 to-gray-900",
+        gradient: "from-gray-700 via-slate-800 to-black",
         popular: false,
-        live: true
+        features: ["Translation Practice", "Mental Ability", "Ground Support"]
     }
+];
+
+const allExamsList = [
+    "UPSC CSE", "KPSC KAS", "PSI / ESI", "Police Constable", "AC-SAAD", "ACF / RFO / DRFO", "Agriculture Officer", "Group B Posts", "FDA / SDA", "PDO", "KEA Technical", "KPCL AE/JE", "KPSC Technical", "Village Admin Officer", "Civil Judge", "District Judge", "CLAT", "AIBE", "K-SET", "D-CET", "KMF SHIMUL", "Banking IBPS", "SSC CGL", "RRB NTPC"
 ];
 
 const courseFeatures = [
@@ -228,53 +167,43 @@ const HomePage: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [mentorForm, setMentorForm] = useState({ name: '', phone: '' });
     const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [activeCardIndex, setActiveCardIndex] = useState(0);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const touchStartX = useRef<number | null>(null);
     const SLIDE_DURATION = 6000;
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev === carouselSlides.length - 1 ? 0 : prev + 1));
-        }, SLIDE_DURATION);
-        return () => clearInterval(timer);
+    const nextSlide = useCallback(() => {
+        setCurrentSlide((prev) => (prev === carouselSlides.length - 1 ? 0 : prev + 1));
     }, []);
 
-    const nextSlide = () => {
-      setCurrentSlide((prev) => (prev === carouselSlides.length - 1 ? 0 : prev + 1));
-    };
+    const prevSlide = useCallback(() => {
+        setCurrentSlide((prev) => (prev === 0 ? carouselSlides.length - 1 : prev - 1));
+    }, []);
 
-    const prevSlide = () => {
-      setCurrentSlide((prev) => (prev === 0 ? carouselSlides.length - 1 : prev - 1));
-    };
+    // Main Hero Carousel Timer
+    useEffect(() => {
+        const timer = setInterval(nextSlide, SLIDE_DURATION);
+        return () => clearInterval(timer);
+    }, [nextSlide]);
 
     const handleTouchStart = (e: React.TouchEvent) => {
-        touchStartX.current = e.touches[0].clientX;
+        (e as any).touchStartX = e.touches[0].clientX;
     };
 
     const handleTouchEnd = (e: React.TouchEvent) => {
-        if (touchStartX.current === null) return;
+        const touchStartX = (e as any).touchStartX;
+        if (touchStartX === undefined) return;
         const touchEndX = e.changedTouches[0].clientX;
-        const diff = touchStartX.current - touchEndX;
+        const diff = touchStartX - touchEndX;
 
-        if (Math.abs(diff) > 50) { // Swipe threshold
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextSlide();
+            else prevSlide();
         }
-        touchStartX.current = null;
     };
 
     const handleMentorSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setMentorStatus('loading');
         try {
-            await submitToGoogleSheet({
-                FormType: 'Talk to Mentor',
-                ...mentorForm
-            });
+            await submitToGoogleSheet({ FormType: 'Talk to Mentor', ...mentorForm });
             setMentorStatus('success');
             setMentorForm({ name: '', phone: '' });
             setTimeout(() => setMentorStatus('idle'), 5000);
@@ -284,164 +213,82 @@ const HomePage: React.FC = () => {
         }
     };
 
-    const handleScroll = () => {
-        if (scrollContainerRef.current) {
-            const container = scrollContainerRef.current;
-            const scrollLeft = container.scrollLeft;
-            const cardWidth = container.offsetWidth * 0.85; // Approximate card width for 85vw
-            const index = Math.round(scrollLeft / cardWidth);
-            setActiveCardIndex(Math.min(Math.max(index, 0), flagshipPrograms.length - 1));
-        }
-    };
-
-
   return (
     <div>
-      {/* Inject global styles for this page to hide scrollbars cleanly and add animations */}
       <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        .animate-ken-burns { animation: kenburns 10s ease-out infinite alternate; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(1deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        .animate-float { animation: float 5.3s ease-in-out infinite; }
+        @keyframes scan { 0% { transform: translateY(-10px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(110px); opacity: 0; } }
+        .animate-scan { animation: scan 3s ease-in-out infinite; }
+        
+        /* Accelerated Exam Ticker Animation */
+        @keyframes ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        .scrollbar-hide {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+        .animate-ticker {
+          animation: ticker 18s linear infinite;
         }
-        @keyframes kenburns {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        .animate-ticker:hover {
+          animation-play-state: paused;
         }
-        .animate-ken-burns {
-            animation: kenburns 10s ease-out infinite alternate;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+
         .animation-delay-200 { animation-delay: 0.2s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-600 { animation-delay: 0.6s; }
       `}</style>
 
       {/* Cinematic Hero Section */}
-      <section 
-        className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+      <section className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           {carouselSlides.map((slide, index) => (
               <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                  {/* Background Image with Ken Burns Effect */}
                   <div className="absolute inset-0 overflow-hidden">
-                      <img 
-                        src={slide.image} 
-                        alt={slide.badge} 
-                        className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} 
-                      />
+                      <img src={slide.image} alt={slide.badge} className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} />
                   </div>
-                  
-                  {/* Gradient Overlay - Better visibility for text */}
                   <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
-                  
-                  {/* Content Container */}
                   <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
-                      {/* Added pb-24 to prevent overlap with bottom bar on small screens */}
                       <div className="max-w-3xl space-y-6 pl-2 md:pl-0 pb-24 md:pb-0">
-                          {/* Animated Badge & Language Tag */}
                           <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">
-                                  {slide.badge}
-                              </span>
-                              {/* Conditionally render medium tag */}
-                              {slide.medium && (
-                                <span className="bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">
-                                    {slide.medium}
-                                </span>
-                              )}
+                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
+                              {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
                           </div>
-
-                          {/* Animated Headline */}
-                          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>
-                              {slide.headline}
-                          </h1>
-
-                          {/* Animated Subheadline */}
-                          <p className={`text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>
-                              {slide.subheadline}
-                          </p>
-
-                          {/* Animated Bullet Points (Desktop only for cleanliness) */}
+                          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
+                          <p className={`text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
                           <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
                             {slide.points.map(point => (
                                 <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
-                                    <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2"/>
-                                    <span className="text-sm font-semibold">{point}</span>
+                                    <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2"/><span className="text-sm font-semibold">{point}</span>
                                 </li>
                             ))}
                           </ul>
-
-                          {/* Animated Buttons - Flex Wrap for Mobile */}
                           <div className={`flex flex-wrap gap-3 pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
                               <CTAButton variant="primary" className="shadow-orange-500/30 shadow-lg" {...slide.cta1Link}>{slide.cta1}</CTAButton>
                               <CTAButton variant="secondary" className="backdrop-blur-sm hover:bg-white/10" {...slide.cta2Link}>{slide.cta2}</CTAButton>
-                              <CTAButton 
-                                {...slide.cta3Link}
-                                className="flex items-center font-montserrat font-semibold text-white/90 hover:text-sunrise-orange transition-colors px-4 py-3"
-                              >
-                                {slide.cta3}
-                                <ChevronRightIcon className="w-4 h-4 ml-1" />
-                              </CTAButton>
+                              <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-semibold text-white/90 hover:text-sunrise-orange transition-colors px-4 py-3">{slide.cta3}<ChevronRightIcon className="w-4 h-4 ml-1" /></CTAButton>
                           </div>
                       </div>
                   </div>
               </div>
           ))}
-
-            {/* Navigation Arrows - Adjusted for better ergonomics on mobile */}
-            <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group">
-                <ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/>
-            </button>
-            <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group">
-                <ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/>
-            </button>
-
-            {/* Bottom Info Bar & Progress */}
+            <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/></button>
+            <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/></button>
             <div className="absolute bottom-0 left-0 w-full z-20 bg-black/60 backdrop-blur-md border-t border-white/10">
                 <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-3 text-xs md:text-sm text-gray-300">
-                    
-                    {/* Quick Stats */}
                     <div className="flex space-x-6 mb-2 md:mb-0">
-                        <div className="flex items-center">
-                            <UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
-                            <span><strong className="text-white">Trusted</strong> by Aspirants</span>
-                        </div>
-                        <div className="flex items-center">
-                            <AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
-                            <span><strong className="text-white">50+</strong> Expert Faculty</span>
-                        </div>
-                        <div className="flex items-center hidden sm:flex">
-                            <GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/>
-                            <span>Online & Offline</span>
-                        </div>
+                        <div className="flex items-center"><UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">Trusted</strong> by Aspirants</span></div>
+                        <div className="flex items-center"><AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">50+</strong> Expert Faculty</span></div>
+                        <div className="flex items-center hidden sm:flex"><GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span>Online & Offline</span></div>
                     </div>
-
-                    {/* Interactive Progress Indicators */}
                     <div className="flex space-x-2">
                         {carouselSlides.map((_, index) => (
-                            <button 
-                                key={index} 
-                                onClick={() => setCurrentSlide(index)}
-                                className="relative h-1.5 w-10 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none"
-                                aria-label={`Go to slide ${index + 1}`}
-                            >
-                                <div 
-                                    className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${
-                                        index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'
-                                    }`}
-                                    style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}
-                                ></div>
+                            <button key={index} onClick={() => setCurrentSlide(index)} className="relative h-1.5 w-10 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
+                                <div className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'}`} style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}></div>
                             </button>
                         ))}
                     </div>
@@ -449,163 +296,125 @@ const HomePage: React.FC = () => {
             </div>
       </section>
 
-      {/* Flagship Programs - Compact & Beautified */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-        <div className="container mx-auto px-4 md:px-4">
-            
-            {/* Improved Header Section */}
-            <div className="text-center mb-12 relative">
-                 <span className="bg-empower-blue/10 dark:bg-blue-900/30 text-empower-blue dark:text-blue-300 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block border border-empower-blue/20">
-                    Excellence in Education
-                </span>
-                
-                <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-empower-blue to-blue-700 dark:from-blue-400 dark:to-blue-200 mb-4">
-                    Our Flagship Programs
-                </h2>
-                
-                {/* Styled Divider */}
-                <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="h-0.5 w-12 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
-                    <StarIcon className="w-5 h-5 text-sunrise-orange" />
-                    <div className="h-0.5 w-12 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+      {/* Featured Courses Section */}
+      <section className="py-24 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-16 relative">
+                <span className="bg-empower-blue/10 dark:bg-blue-900/30 text-empower-blue dark:text-blue-300 text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest mb-4 inline-block border border-empower-blue/20">Premier Exam Prep</span>
+                <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat text-charcoal-gray dark:text-white mb-6">Our Featured Programs</h2>
+                <div className="flex items-center justify-center gap-4">
+                    <div className="h-0.5 w-16 bg-gradient-to-r from-transparent to-sunrise-orange rounded-full"></div>
+                    <StarIcon className="w-6 h-6 text-sunrise-orange" />
+                    <div className="h-0.5 w-16 bg-gradient-to-l from-transparent to-sunrise-orange rounded-full"></div>
                 </div>
-
-                <p className="max-w-3xl mx-auto text-lg text-charcoal-gray/80 dark:text-gray-300 leading-relaxed font-medium">
-                    Join our <span className="text-empower-blue dark:text-blue-400 font-bold">high-yield courses</span> meticulously crafted by industry veterans. 
-                    From foundation to final selection, we provide the edge you need.
-                </p>
             </div>
 
-            {/* Grid for Desktop, Horizontal Scroll for Mobile */}
-            <div 
-                ref={scrollContainerRef}
-                onScroll={handleScroll}
-                className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible px-4 md:px-0 -mx-4 md:mx-0 scrollbar-hide"
-            >
+            {/* Carousel on Mobile, Grid on Desktop */}
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 scroll-smooth snap-x scrollbar-hide px-2 md:px-0">
                 {flagshipPrograms.map((program, index) => (
-                    <div key={index} className="min-w-[85vw] md:min-w-0 snap-center group relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-                        {/* Live Batch Badge */}
-                        {program.live && (
-                             <div className="absolute top-4 left-4 z-20">
-                                <span className="bg-green-500/90 backdrop-blur-sm text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md flex items-center shadow-sm tracking-wide">
-                                    <span className="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse"></span>
-                                    Open
-                                </span>
-                            </div>
-                        )}
-                         {/* Popular Badge */}
-                         {program.popular && (
-                            <div className="absolute top-4 right-4 z-20">
-                                <span className="bg-white/20 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/30 shadow-sm flex items-center tracking-wide">
-                                    <StarIcon className="w-3 h-3 mr-1 text-yellow-300" /> Top
-                                </span>
-                            </div>
-                        )}
-
-                        {/* Enhanced Header */}
-                        <div className={`bg-gradient-to-r ${program.gradient} p-5 relative`}>
-                            <div className="flex items-start space-x-3 pt-6">
-                                <div className="bg-white/20 p-2.5 rounded-xl backdrop-blur-sm shadow-inner flex-shrink-0 mt-1">
-                                    {program.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold font-montserrat text-white leading-tight mb-2 shadow-sm">{program.title}</h3>
-                                     {/* Inline Tags - Better spacing and readability */}
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {program.tags.map((tag, i) => (
-                                            <span key={i} className={`bg-black/30 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded shadow-sm`}>
-                                                {tag.text}
-                                            </span>
-                                        ))}
+                    <div key={index} className="flex-shrink-0 w-[85%] sm:w-[320px] md:w-auto snap-center">
+                        <div className="flex flex-col h-full bg-white dark:bg-slate-800 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 dark:border-gray-700 relative overflow-hidden">
+                            {/* Decorative Header with Gradient and Glassmorphism Badge */}
+                            <div className={`bg-gradient-to-br ${program.gradient} p-8 relative h-56 flex flex-col justify-end overflow-hidden`}>
+                                {/* Abstract Background Effect */}
+                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+                                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
+                                
+                                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                                    {program.popular && (
+                                        <span className="bg-white/20 backdrop-blur-md text-[10px] font-black text-white px-3 py-1 rounded-full border border-white/20 uppercase tracking-tighter">Top Choice</span>
+                                    )}
+                                    <div className="bg-white/20 backdrop-blur-lg p-3 rounded-2xl border border-white/20 w-fit shadow-lg animate-float">
+                                        {React.cloneElement(program.icon as React.ReactElement<any>, { className: "w-8 h-8 text-white drop-shadow-md" })}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* Card Body */}
-                        <div className="p-5 flex-grow flex flex-col">
-                            
-                            {/* Readability Improved Stats Row */}
-                            <div className="flex items-center justify-between text-xs font-semibold text-charcoal-gray dark:text-gray-300 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                                <div className="flex items-center" title="Duration">
-                                    <ClockIcon className="w-4 h-4 mr-1.5 text-empower-blue dark:text-blue-400" />
-                                    <span>{program.meta.duration}</span>
-                                </div>
-                                <div className="flex items-center" title="Mode">
-                                    <DesktopComputerIcon className="w-4 h-4 mr-1.5 text-empower-blue dark:text-blue-400" />
-                                    <span>{program.meta.mode}</span>
-                                </div>
+                                
+                                <h3 className="text-2xl font-black font-montserrat text-white leading-tight drop-shadow-lg group-hover:translate-x-1 transition-transform">{program.title}</h3>
                             </div>
 
-                            <p className="text-gray-700 dark:text-gray-300 text-sm mb-5 leading-relaxed font-medium">
-                                {program.description}
-                            </p>
-
-                            {/* 2-Column Feature Grid - Increased spacing and text size */}
-                            <div className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 flex-grow">
-                                {program.features.map((feature, idx) => (
-                                    <div key={idx} className="flex items-start">
-                                        <CheckCircleIcon className="w-4 h-4 text-sunrise-orange mr-2 mt-0.5 flex-shrink-0" />
-                                        <span className="text-[13px] font-semibold text-charcoal-gray dark:text-gray-200 leading-snug">{feature}</span>
+                            {/* Content Body */}
+                            <div className="p-8 flex flex-col flex-grow relative">
+                                {/* Metadata Badges */}
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="flex items-center text-[11px] font-bold text-gray-400 bg-gray-50 dark:bg-slate-700/50 px-3 py-1.5 rounded-full border border-gray-100 dark:border-gray-600 transition-colors">
+                                        <ClockIcon className="w-3.5 h-3.5 mr-1.5 text-empower-blue" />
+                                        <span>{program.meta.duration}</span>
                                     </div>
-                                ))}
-                            </div>
+                                    <div className="flex items-center text-[11px] font-bold text-gray-400 bg-gray-50 dark:bg-slate-700/50 px-3 py-1.5 rounded-full border border-gray-100 dark:border-gray-600 transition-colors">
+                                        <DesktopComputerIcon className="w-3.5 h-3.5 mr-1.5 text-empower-blue" />
+                                        <span>{program.meta.mode}</span>
+                                    </div>
+                                </div>
 
-                            <div className="mt-auto space-y-3">
-                                <CTAButton to={program.link} variant="secondary-blue" className="w-full text-sm font-bold py-2.5 border-empower-blue text-empower-blue hover:bg-empower-blue hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
-                                    View Details
-                                </CTAButton>
-                                <a 
-                                    href={program.syllabusUrl} 
-                                    download 
-                                    className="flex items-center justify-center text-[11px] uppercase font-bold tracking-wide text-gray-500 dark:text-gray-400 hover:text-sunrise-orange dark:hover:text-sunrise-orange transition-colors group/link py-1"
-                                >
-                                    <DownloadIcon className="w-4 h-4 mr-1.5 group-hover/link:animate-bounce" />
-                                    Download Syllabus
-                                </a>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm font-medium mb-8 leading-relaxed italic line-clamp-3">"{program.description}"</p>
+                                
+                                {/* Features List with Icons */}
+                                <div className="space-y-4 mb-8 flex-grow">
+                                    {program.features.map((feat, i) => (
+                                        <div key={i} className="flex items-start group/feat">
+                                            <div className="bg-sunrise-orange/10 p-1 rounded-md mr-3 mt-0.5 group-hover/feat:bg-sunrise-orange transition-colors">
+                                                <CheckCircleIcon className="w-3.5 h-3.5 text-sunrise-orange group-hover/feat:text-white" />
+                                            </div>
+                                            <span className="text-xs font-bold text-charcoal-gray dark:text-gray-200 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors">{feat}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="space-y-4 pt-4 border-t border-gray-50 dark:border-gray-700">
+                                    <CTAButton to={program.link} variant="primary" className="w-full py-4 text-sm font-black tracking-wide shadow-xl group-hover:shadow-empower-blue/20">
+                                        View Full Course Details
+                                    </CTAButton>
+                                    <a href={program.syllabusUrl} download className="flex items-center justify-center w-full py-3 text-gray-500 dark:text-gray-400 hover:text-charcoal-gray dark:hover:text-white text-[11px] font-black uppercase tracking-widest transition-all">
+                                        <DownloadIcon className="w-4 h-4 mr-2" /> Download Syllabus PDF
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-
-            {/* Mobile Pagination Dots */}
-            <div className="flex justify-center mt-4 md:hidden gap-2">
-                {flagshipPrograms.map((_, index) => (
-                    <div 
-                        key={index} 
-                        className={`h-2 rounded-full transition-all duration-300 ${activeCardIndex === index ? 'w-6 bg-sunrise-orange' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
-                    />
+            
+            {/* Mobile Scroll Indicator */}
+            <div className="md:hidden flex justify-center gap-2 mt-8">
+                {flagshipPrograms.map((_, i) => (
+                    <div key={i} className="h-1.5 w-4 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
                 ))}
             </div>
         </div>
       </section>
 
-      {/* Why Choose Encourage India? - Compact Tile Layout */}
-      <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
-        <div className="container mx-auto px-4 md:px-4">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-extrabold font-montserrat text-charcoal-gray dark:text-white">
-                    Why Choose Encourage India?
-                </h2>
-            </div>
+      {/* High-Velocity Exam Ticker Strip */}
+      <section className="bg-gradient-to-r from-empower-blue via-blue-900 to-empower-blue py-10 overflow-hidden relative border-y border-white/20 shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+          <div className="flex whitespace-nowrap animate-ticker group">
+              {[...allExamsList, ...allExamsList, ...allExamsList, ...allExamsList].map((exam, i) => (
+                  <div key={i} className="flex items-center mx-12">
+                      <StarIcon className="w-5 h-5 text-sunrise-orange mr-5 opacity-80" />
+                      <span className="text-2xl md:text-4xl font-black font-montserrat text-white tracking-tighter uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                          {exam}
+                      </span>
+                  </div>
+              ))}
+          </div>
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-empower-blue to-transparent z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-empower-blue to-transparent z-10"></div>
+      </section>
 
+      {/* Why Choose Encourage India? */}
+      <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-extrabold font-montserrat text-charcoal-gray dark:text-white">Why Choose Encourage India?</h2>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                 {courseFeatures.map((feature, index) => (
-                    <div 
-                        key={index} 
-                        className="flex items-center p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-slate-700/50 border border-gray-100 dark:border-gray-700 hover:border-empower-blue/50 hover:shadow-md transition-all duration-300 group cursor-default"
-                        title={feature.description} // Native tooltip for details
-                    >
+                    <div key={index} className="flex items-center p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-slate-700/50 border border-gray-100 dark:border-gray-700 hover:border-empower-blue/50 hover:shadow-md transition-all duration-300 group cursor-default" title={feature.description}>
                         <div className="flex-shrink-0 mr-3">
-                            <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                                {feature.icon}
-                            </div>
+                            <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">{feature.icon}</div>
                         </div>
                         <div className="flex-1 min-w-0">
-                            <h3 className="text-xs md:text-sm font-bold text-charcoal-gray dark:text-gray-100 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors leading-snug">
-                                {feature.title}
-                            </h3>
+                            <h3 className="text-xs md:text-sm font-bold text-charcoal-gray dark:text-gray-100 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors leading-snug">{feature.title}</h3>
                         </div>
                     </div>
                 ))}
@@ -615,7 +424,7 @@ const HomePage: React.FC = () => {
 
       {/* Testimonials */}
       <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
-         <div className="container mx-auto px-4 md:px-4 text-center">
+         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
                 {testimonials.map((testimonial) => (
@@ -637,10 +446,9 @@ const HomePage: React.FC = () => {
       
       {/* Talk to a Mentor */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-4 md:px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
             <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
-            
             {mentorStatus === 'success' ? (
                 <div className="mt-8 bg-white/10 border border-white/20 rounded-lg p-6 max-w-lg mx-auto animate-fade-in">
                     <CheckCircleIcon className="w-12 h-12 text-green-400 mx-auto mb-2" />
@@ -649,84 +457,83 @@ const HomePage: React.FC = () => {
                 </div>
             ) : (
                 <form onSubmit={handleMentorSubmit} className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-                    <input 
-                        type="text" 
-                        placeholder="Your Name" 
-                        className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200"
-                        value={mentorForm.name}
-                        onChange={(e) => setMentorForm({...mentorForm, name: e.target.value})}
-                        required
-                        disabled={mentorStatus === 'loading'}
-                    />
-                    <input 
-                        type="tel" 
-                        placeholder="Phone Number" 
-                        className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200"
-                        value={mentorForm.phone}
-                        onChange={(e) => setMentorForm({...mentorForm, phone: e.target.value})}
-                        pattern="[0-9]{10}"
-                        required
-                        disabled={mentorStatus === 'loading'}
-                    />
-                    <CTAButton 
-                        type="submit" 
-                        variant="primary" 
-                        className={`shrink-0 ${mentorStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
-                    >
-                        {mentorStatus === 'loading' ? 'Sending...' : 'Request a Call'}
-                    </CTAButton>
+                    <input type="text" placeholder="Your Name" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.name} onChange={(e) => setMentorForm({...mentorForm, name: e.target.value})} required disabled={mentorStatus === 'loading'} />
+                    <input type="tel" placeholder="Phone Number" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.phone} onChange={(e) => setMentorForm({...mentorForm, phone: e.target.value})} pattern="[0-9]{10}" required disabled={mentorStatus === 'loading'} />
+                    <CTAButton type="submit" variant="primary" className={`shrink-0 ${mentorStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}>{mentorStatus === 'loading' ? 'Sending...' : 'Request a Call'}</CTAButton>
                 </form>
             )}
              {mentorStatus === 'error' && <p className="mt-2 text-red-300">Something went wrong. Please try again.</p>}
         </div>
       </section>
 
-      {/* App Promotion */}
-      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
-        <div className="container mx-auto px-4 md:px-4 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-                <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">Learn on the Go</h2>
-                <p className="mt-4 text-charcoal-gray/80 dark:text-gray-300">Download our app for access to daily quizzes, current affairs, video lectures, and more, right at your fingertips.</p>
-                <ul className="mt-6 space-y-2 text-charcoal-gray dark:text-gray-200">
-                    <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> Daily Current Affairs Updates</li>
-                    <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> Interactive Quizzes & Tests</li>
-                    <li className="flex items-center"><CheckCircleIcon className="w-6 h-6 text-sunrise-orange mr-2"/> High-Quality Video Lectures</li>
-                </ul>
-                <div className="mt-8 flex items-center gap-6">
-                    <a 
-                        href="https://play.google.com/store/apps/details?id=co.barney.yflbb" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center bg-black text-white px-4 py-2 rounded-lg transition-transform hover:scale-105 border border-gray-700"
-                    >
-                        <GooglePlayIcon className="w-8 h-8 mr-3 text-white" />
-                        <div className="flex flex-col items-start">
-                            <span className="text-[10px] uppercase font-sans leading-none">Get it on</span>
-                            <span className="text-xl font-bold font-sans leading-none">Google Play</span>
-                        </div>
-                    </a>
-                    <img 
-                        src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" 
-                        alt="QR Code for App"
-                        className="hidden md:block rounded-lg bg-white p-1" 
-                    />
+      {/* Advanced App Hub */}
+      <section className="py-24 bg-[#0a0f1d] overflow-hidden relative transition-colors duration-300">
+        <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-empower-blue/20 to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-sunrise-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <div className="grid lg:grid-cols-12 gap-16 items-center">
+                <div className="lg:col-span-6 space-y-10">
+                    <div className="space-y-6">
+                        <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sunrise-orange text-xs font-black uppercase tracking-[0.2em]"><span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span><span>App Experience Hub</span></div>
+                        <h2 className="text-4xl md:text-6xl font-extrabold font-montserrat text-white leading-[1.1]">Your Classroom, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-sunrise-orange via-orange-400 to-yellow-300">Redefined.</span></h2>
+                        <p className="text-lg text-gray-400 leading-relaxed max-w-xl">The <span className="text-white font-bold">encourageINDIAIAS</span> app is more than a tool—it's a high-performance environment designed to maximize every minute of your study time.</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                        {[
+                            { icon: <DownloadIcon className="w-5 h-5" />, title: "Smart Downloads", desc: "Adaptive video quality for offline learning." },
+                            { icon: <LightningBoltIcon className="w-5 h-5" />, title: "Live Doubt Engine", desc: "Ask questions during live streams directly." },
+                            { icon: <RefreshIcon className="w-5 h-5" />, title: "Seamless Sync", desc: "Resume exactly where you left off on any device." },
+                            { icon: <StarIcon className="w-5 h-5" />, title: "Performance AI", desc: "Analytics to identify your syllabus weak spots." }
+                        ].map((feat, i) => (
+                            <div key={i} className="group flex flex-col p-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300">
+                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-empower-blue to-blue-600 flex items-center justify-center text-white mb-4 shadow-lg group-hover:scale-110 transition-transform">{feat.icon}</div>
+                                <h4 className="font-bold text-white mb-1">{feat.title}</h4>
+                                <p className="text-xs text-gray-500 leading-relaxed">{feat.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img src="/app-mockup-playstore.png" alt="Encourage India App Mockup" className="w-2/3 md:w-full md:max-w-sm mx-auto"/>
+                <div className="lg:col-span-6 relative">
+                    <div className="relative z-20 flex justify-center items-center">
+                        <div className="animate-float relative">
+                            <div className="absolute inset-0 bg-blue-500/20 blur-[120px] rounded-full scale-150"></div>
+                            <div className="relative border-[8px] border-[#1e2330] rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] bg-slate-900 overflow-hidden w-[280px] md:w-[320px]">
+                                <img src="/app-mockup-playstore.png" alt="App Interface" className="w-full h-auto" />
+                            </div>
+                            <div className="absolute -right-12 top-[15%] hidden md:block animate-bounce animation-delay-200">
+                                <div className="bg-[#161b2e]/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center space-x-4">
+                                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center"><div className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div></div>
+                                    <div><p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Current Score</p><p className="text-lg font-bold text-white">88% <span className="text-xs text-green-400">+12%</span></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 relative z-30">
+                        <a href="https://play.google.com/store/apps/details?id=co.barney.yflbb" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center bg-white text-charcoal-gray px-8 py-4 rounded-2xl hover:bg-soft-gray transition-all shadow-xl active:scale-95">
+                            <GooglePlayIcon className="w-10 h-10 mr-4 text-black" />
+                            <div className="flex flex-col items-start"><span className="text-[10px] uppercase font-black tracking-widest opacity-50">Download for</span><span className="text-xl font-bold font-sans leading-tight">Android Device</span></div>
+                        </a>
+                        <div className="flex items-center space-x-5 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
+                             <div className="relative">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-20 h-20 rounded-lg p-1 bg-white"/>
+                                <div className="absolute inset-0 w-full h-[2px] bg-sunrise-orange/60 animate-scan"></div>
+                             </div>
+                             <div className="max-w-[100px]"><p className="text-xs font-black text-white leading-tight uppercase mb-1">Instant Scan</p><p className="text-[10px] text-gray-500 leading-tight">Camera scan to download instantly</p></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-4 md:px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Ready to Start Your Success Story?</h2>
             <p className="mt-4 max-w-2xl mx-auto">Join thousands of successful aspirants who trusted Encourage India to guide them.</p>
             <CTAButton requiresAuth variant="primary" className="mt-8 text-lg">Enroll in a Program Today</CTAButton>
         </div>
       </section>
-
     </div>
   );
 };

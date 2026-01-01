@@ -1,147 +1,159 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import CourseCard from '../components/CourseCard';
 import CTAButton from '../components/CTAButton';
 import { coursesData } from '../constants';
-import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, LightningBoltIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon } from '../components/Icons';
+// Fixed error: Removed unused FilterIcon from imports as it was not exported from Icons.tsx and is not used in this file.
+import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, LightningBoltIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon, CogIcon, BookOpenIcon, XIcon } from '../components/Icons';
 
 // Helper to map category IDs to icons
 const getCategoryIcon = (id: string) => {
     switch (id) {
         case 'upsc': return <AcademicCapIcon className="w-5 h-5" />;
-        case 'kas': return <StarIcon className="w-5 h-5" />;
+        case 'kpsc-cse': return <BookOpenIcon className="w-5 h-5" />;
+        case 'other-comp-1': return <ShieldCheckIcon className="w-5 h-5" />;
+        case 'technical': return <CogIcon className="w-5 h-5" />;
         case 'judiciary': return <ScaleIcon className="w-5 h-5" />;
-        case 'kpsc': return <BriefcaseIcon className="w-5 h-5" />;
-        case 'kea': return <LightningBoltIcon className="w-5 h-5" />;
-        case 'police': return <ShieldCheckIcon className="w-5 h-5" />;
-        case 'others': return <GlobeAltIcon className="w-5 h-5" />;
-        default: return <AcademicCapIcon className="w-5 h-5" />;
+        case 'other-comp-2': return <BriefcaseIcon className="w-5 h-5" />;
+        case 'banking': return <GlobeAltIcon className="w-5 h-5" />;
+        default: return <StarIcon className="w-5 h-5" />;
     }
 };
 
 const CoursesPage: React.FC = () => {
     const location = useLocation();
-    const [activeSection, setActiveSection] = useState<string>('');
+    const [activeSection, setActiveSection] = useState<string>('all');
     const [searchTerm, setSearchTerm] = useState('');
-
-    // Handle Scroll Spy for Active Section
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = coursesData.map(cat => document.getElementById(cat.id));
-            const scrollPosition = window.scrollY + 200; // Offset
-
-            sections.forEach(section => {
-                if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                    setActiveSection(section.id);
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const coursesGridRef = useRef<HTMLDivElement>(null);
 
     // Handle Hash Navigation on Load
     useEffect(() => {
         if (location.hash) {
             const id = location.hash.replace('#', '');
-            scrollToSection(id);
+            handleFilterClick(id);
         }
     }, [location]);
 
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            const headerOffset = 180; // Adjusted for double header + nav
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-            setActiveSection(id);
+    const handleFilterClick = (id: string) => {
+        setActiveSection(id);
+        
+        // Scroll to the courses grid container
+        if (coursesGridRef.current) {
+            const offset = window.innerWidth < 768 ? 180 : 210;
+            const top = coursesGridRef.current.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: "smooth" });
         }
     };
 
-    // Filter courses based on search
-    const filteredCategories = coursesData.map(cat => ({
-        ...cat,
-        courses: cat.courses.filter(c => 
-            c.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-            c.description.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    })).filter(cat => cat.courses.length > 0);
+    // Filter courses based on search and category
+    const filteredCategories = useMemo(() => {
+        return coursesData.map(cat => ({
+            ...cat,
+            courses: cat.courses.filter(c => 
+                c.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                c.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                (c.eligibility && c.eligibility.toLowerCase().includes(searchTerm.toLowerCase()))
+            )
+        })).filter(cat => cat.courses.length > 0 && (activeSection === 'all' || activeSection === cat.id));
+    }, [searchTerm, activeSection]);
 
     return (
-        <div className="bg-gray-50 dark:bg-slate-900 transition-colors duration-300 min-h-screen">
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen pb-20">
             
-            {/* 1. Enhanced Hero Section */}
-            <div className="relative bg-gradient-to-br from-empower-blue to-blue-900 text-white py-20 px-4 overflow-hidden">
-                {/* Background Pattern */}
+            {/* 1. Header Hero - Refined for Mobile Height */}
+            <div className="relative bg-empower-blue text-white pt-16 pb-20 md:py-24 px-4 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-empower-blue via-blue-900 to-indigo-900"></div>
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
                 
-                <div className="container mx-auto relative z-10 text-center max-w-4xl">
-                    <span className="text-sunrise-orange font-bold tracking-widest uppercase text-sm mb-2 block">Excellence in Education</span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold font-montserrat mb-6 leading-tight">
-                        Find Your Path to <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">Success</span>
+                <div className="container mx-auto relative z-10 text-center max-w-4xl px-2">
+                    <h1 className="text-3xl md:text-7xl font-black font-montserrat mb-4 md:mb-6 tracking-tight leading-tight">
+                        Find Your <span className="text-sunrise-orange">Future.</span>
                     </h1>
-                    <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-                        Explore our comprehensive range of courses designed by experts to help you crack the toughest competitive exams in India.
+                    <p className="text-sm md:text-xl text-blue-100/80 mb-8 md:mb-10 max-w-2xl mx-auto font-medium">
+                        Search across our 7 rows of elite preparation programs.
                     </p>
 
-                    {/* Search Bar */}
-                    <div className="relative max-w-xl mx-auto">
+                    <div className="relative max-w-2xl mx-auto group">
                         <input 
                             type="text" 
-                            placeholder="Search for courses (e.g., KAS, PSI, UPSC)..." 
+                            placeholder="Search exam or eligibility..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full py-4 pl-12 pr-4 rounded-full text-charcoal-gray focus:outline-none focus:ring-4 focus:ring-sunrise-orange/50 shadow-xl transition-all"
+                            className="w-full py-4 md:py-5 pl-12 md:pl-14 pr-10 rounded-2xl text-charcoal-gray bg-white/95 backdrop-blur-sm focus:outline-none focus:ring-4 focus:ring-sunrise-orange/30 shadow-2xl transition-all font-semibold text-sm md:text-base"
                         />
-                        <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
+                        <SearchIcon className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 text-gray-400 group-focus-within:text-sunrise-orange transition-colors" />
+                        {searchTerm && (
+                            <button onClick={() => setSearchTerm('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-charcoal-gray">
+                                <XIcon className="w-5 h-5" />
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
 
-            {/* 2. Sticky Category Navigation */}
-            <div className="sticky top-[115px] md:top-[132px] z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-gray-200 dark:border-gray-700 py-3 transition-all duration-300">
+            {/* 2. Interactive Navigation Bar - Mobile-First Pills */}
+            <div className="sticky top-[115px] md:top-[132px] z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-md border-b border-gray-100 dark:border-gray-800 py-3 md:py-4 transition-all duration-300">
                 <div className="container mx-auto px-4">
-                    <div className="flex space-x-2 overflow-x-auto scrollbar-hide md:justify-center pb-1">
+                    <div className="flex space-x-2 overflow-x-auto scrollbar-hide pb-1">
+                        <button
+                            onClick={() => handleFilterClick('all')}
+                            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
+                                activeSection === 'all' 
+                                ? 'bg-sunrise-orange text-white shadow-lg shadow-orange-500/30' 
+                                : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
+                            }`}
+                        >
+                            <span>View All</span>
+                        </button>
                         {coursesData.map((category) => (
                             <button
                                 key={category.id}
-                                onClick={() => scrollToSection(category.id)}
-                                className={`flex items-center space-x-2 px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-300 ${
+                                onClick={() => handleFilterClick(category.id)}
+                                className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
                                     activeSection === category.id 
-                                    ? 'bg-empower-blue text-white shadow-lg transform scale-105' 
+                                    ? 'bg-empower-blue text-white shadow-lg shadow-blue-500/30' 
                                     : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
                                 }`}
                             >
                                 {getCategoryIcon(category.id)}
                                 <span>{category.shortTitle}</span>
+                                <span className={`ml-1.5 px-1.5 py-0.5 rounded-full text-[9px] ${activeSection === category.id ? 'bg-white/20' : 'bg-gray-200 dark:bg-slate-700'}`}>
+                                    {category.courses.length}
+                                </span>
                             </button>
                         ))}
                     </div>
                 </div>
             </div>
 
-            {/* 3. Course Listings */}
-            <div className="py-16 container mx-auto px-4 md:px-8 space-y-20">
+            {/* 3. Dynamic Course Grid - Improved Spacing for Mobile */}
+            <div ref={coursesGridRef} className="py-12 md:py-16 container mx-auto px-4 md:px-8 space-y-16 md:space-y-24">
                 {filteredCategories.length > 0 ? (
                     filteredCategories.map(category => (
-                        <section key={category.id} id={category.id} className="scroll-mt-48">
-                            <div className="flex items-center mb-8">
-                                <div className="p-3 rounded-xl bg-empower-blue/10 dark:bg-blue-900/20 text-empower-blue dark:text-blue-400 mr-4">
-                                    {getCategoryIcon(category.id)}
+                        <section key={category.id} id={category.id} className="animate-fade-in scroll-mt-20">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 border-b border-gray-100 dark:border-gray-800 pb-5 md:pb-6">
+                                <div className="flex items-center">
+                                    <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-empower-blue text-white mr-4 md:mr-5 shadow-lg shadow-blue-500/20">
+                                        {getCategoryIcon(category.id)}
+                                    </div>
+                                    <div>
+                                        <p className="text-[9px] md:text-[10px] font-black text-sunrise-orange uppercase tracking-[0.2em] mb-0.5 md:mb-1">Row Category</p>
+                                        <h2 className="text-xl md:text-4xl font-extrabold font-montserrat text-charcoal-gray dark:text-white uppercase tracking-tight leading-tight">
+                                            {category.title}
+                                        </h2>
+                                    </div>
                                 </div>
-                                <h2 className="text-3xl font-bold font-montserrat text-charcoal-gray dark:text-white">
-                                    {category.title}
-                                </h2>
+                                <div className="flex items-center mt-4 md:mt-0">
+                                     <span className="text-gray-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mr-3">
+                                        {category.courses.length} Results
+                                    </span>
+                                    {activeSection !== 'all' && (
+                                        <button onClick={() => handleFilterClick('all')} className="text-sunrise-orange text-[10px] font-black uppercase hover:underline">Reset</button>
+                                    )}
+                                </div>
                             </div>
                             
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                                 {category.courses.map((course, index) => (
                                     <CourseCard key={index} course={course} index={index} />
                                 ))}
@@ -149,52 +161,73 @@ const CoursesPage: React.FC = () => {
                         </section>
                     ))
                 ) : (
-                    <div className="text-center py-20">
-                        <div className="bg-gray-100 dark:bg-slate-800 inline-block p-6 rounded-full mb-4">
-                            <SearchIcon className="w-12 h-12 text-gray-400" />
+                    <div className="text-center py-20 md:py-32">
+                        <div className="bg-soft-gray/30 dark:bg-slate-800 inline-block p-8 md:p-10 rounded-full mb-6">
+                            <SearchIcon className="w-12 h-12 md:w-16 md:h-16 text-gray-300" />
                         </div>
-                        <h3 className="text-xl font-bold text-charcoal-gray dark:text-gray-200">No courses found</h3>
-                        <p className="text-gray-500 dark:text-gray-400">Try adjusting your search terms.</p>
+                        <h3 className="text-xl md:text-2xl font-bold text-charcoal-gray dark:text-gray-200 mb-2">No matching courses</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-8 px-4">Try searching for generic terms like "Degree" or "12th".</p>
+                        <button onClick={() => { setSearchTerm(''); setActiveSection('all'); }} className="text-empower-blue font-bold hover:underline">Show all programs</button>
                     </div>
                 )}
             </div>
 
-            {/* 4. "Need Help?" CTA Section */}
-            <section className="bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 py-16 transition-colors duration-300">
-                <div className="container mx-auto px-8">
-                    <div className="bg-gradient-to-r from-sunrise-orange to-orange-600 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
-                        {/* Decorative Circles */}
-                        <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-                        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-black/10 rounded-full blur-3xl pointer-events-none"></div>
+            {/* 4. Mobile Sticky Enrollment Helper (Optional Visual) */}
+            <div className="md:hidden fixed bottom-20 left-4 right-4 z-40">
+                 {/* This space intentionally left for mobile nav or contextual actions if needed */}
+            </div>
 
-                        <div className="relative z-10 text-white text-center md:text-left mb-10 md:mb-0 max-w-2xl">
-                            <h2 className="text-3xl md:text-4xl font-extrabold font-montserrat mb-4 flex items-center justify-center md:justify-start leading-tight">
-                                <LightBulbIcon className="w-8 h-8 mr-3 text-yellow-300 flex-shrink-0" />
-                                Confused about which course to pick?
-                            </h2>
-                            <p className="text-lg text-orange-50 font-medium leading-relaxed">
-                                Our expert mentors are here to guide you. Get a free profile evaluation and a personalized preparation roadmap.
-                            </p>
+            {/* 5. Counselor Support Card */}
+            <section className="container mx-auto px-4 md:px-8 pb-12 md:pb-24">
+                <div className="bg-gradient-to-br from-empower-blue to-blue-900 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-16 shadow-3xl text-white relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-10 opacity-5 md:opacity-10 pointer-events-none">
+                        <LightBulbIcon className="w-48 h-48 md:w-64 md:h-64 rotate-12" />
+                    </div>
+                    <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+                        <div>
+                            <span className="bg-sunrise-orange text-white text-[9px] md:text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">Free Counseling</span>
+                            <h2 className="text-2xl md:text-5xl font-black font-montserrat mb-4 md:mb-6 leading-tight">Need help <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">choosing a path?</span></h2>
+                            <p className="text-sm md:text-lg text-blue-100/80 mb-8 md:mb-10 max-w-lg">Our academy counselors have helped 10,000+ students map their career paths. Get a free profile evaluation.</p>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <CTAButton requiresAuth className="px-8 py-4 !bg-white !text-empower-blue font-black rounded-2xl shadow-xl">Schedule Call</CTAButton>
+                                <a href="tel:+919611621195" className="flex items-center justify-center px-8 py-4 border-2 border-white/30 rounded-2xl font-bold text-sm">
+                                    <PhoneIcon className="w-5 h-5 mr-3" /> Call Desk
+                                </a>
+                            </div>
                         </div>
-
-                        <div className="relative z-10 flex flex-col gap-4 w-full md:w-auto">
-                            <CTAButton 
-                                requiresAuth 
-                                className="bg-white !text-empower-blue hover:bg-gray-50 border-none shadow-xl hover:shadow-2xl px-10 py-4 text-xl font-extrabold transform hover:-translate-y-1 transition-all duration-300 w-full md:w-auto text-center"
-                            >
-                                Talk to a Mentor
-                            </CTAButton>
-                            <a 
-                                href="tel:+919611621195" 
-                                className="flex items-center justify-center bg-transparent text-white border-2 border-white hover:bg-white hover:text-orange-600 px-10 py-4 rounded-lg text-xl font-bold transition-all duration-300 w-full md:w-auto shadow-md"
-                            >
-                                <PhoneIcon className="w-6 h-6 mr-3" />
-                                +91 96116 21195
-                            </a>
+                        <div className="hidden md:block">
+                            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                                <h4 className="text-xl font-bold mb-6">Course Quick Finder</h4>
+                                <div className="space-y-4">
+                                    {[
+                                        { l: "UPSC Integrated", d: "Best for beginners" },
+                                        { l: "Technical Batch", d: "For B.E/Diploma students" },
+                                        { l: "PSI/PC Regular", d: "Focus on uniform services" },
+                                        { l: "Banking Mastery", d: "Short-term focused prep" }
+                                    ].map((f, i) => (
+                                        <div key={i} className="flex justify-between items-center p-3 bg-black/20 rounded-xl">
+                                            <span className="font-bold text-sm">{f.l}</span>
+                                            <span className="text-[10px] opacity-60 uppercase font-black">{f.d}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <style>{`
+                .scrollbar-hide::-webkit-scrollbar { display: none; }
+                .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+                @keyframes fade-in {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fade-in {
+                    animation: fade-in 0.5s ease-out forwards;
+                }
+            `}</style>
         </div>
     );
 };
