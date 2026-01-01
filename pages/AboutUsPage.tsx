@@ -1,9 +1,6 @@
-
 import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
 import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon, CheckCircleIcon, StarIcon, LightBulbIcon, LightningBoltIcon, ShieldCheckIcon } from '../components/Icons';
-import { placeholderImages } from '../utils/placeholders';
-import { SEOHead } from '../components/SEOHead';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -136,7 +133,7 @@ const AboutUsPage: React.FC = () => {
                     </div>
                     <div className="relative">
                         <div className="absolute inset-0 bg-empower-blue/10 rounded-lg transform translate-x-4 translate-y-4"></div>
-                        <img src={placeholderImages.mission} alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
+                        <img src="https://picsum.photos/seed/mission/600/400" alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
                     </div>
                 </div>
             </section>
@@ -216,59 +213,58 @@ const AboutUsPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Why Wait? - Beautified CTA Section */}
+            {/* Why Wait? - Beautified CTA Section updated as per user request image */}
             <section className="py-24 relative overflow-hidden bg-slate-900 text-white text-center">
                 {/* Background Gradient & Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-empower-blue to-blue-900 opacity-90"></div>
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-empower-blue/50 to-indigo-900 opacity-90"></div>
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 0.8px, transparent 0.8px)', backgroundSize: '40px 40px' }}></div>
                 
-                {/* Decorative Blobs */}
-                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sunrise-orange/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
-
                 <div className="container mx-auto px-8 relative z-10">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-4xl md:text-6xl font-extrabold font-montserrat mb-8 leading-tight tracking-tight">
-                            Why Wait? <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-sunrise-orange filter drop-shadow-lg">
-                                Your Journey Begins Here.
-                            </span>
+                        <h2 className="text-3xl md:text-5xl font-black font-montserrat mb-12 tracking-tight opacity-90">
+                            Your Journey to Success <br />
+                            <span className="text-sunrise-orange">Starts Right Now.</span>
                         </h2>
-                        
-                        <p className="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed font-light max-w-3xl mx-auto">
-                            Don't let hesitation hold you back. Seize the opportunity to be mentored by experts and achieve your dreams.
-                        </p>
 
-                        {/* Feature Pills */}
-                        <div className="flex flex-wrap justify-center gap-4 mb-12">
-                            {["Expert Mentorship", "Updated Study Material", "Real-time Mocks", "Unwavering Support"].map((item, index) => (
-                                <span key={index} className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center shadow-lg hover:bg-white/20 transition-colors cursor-default">
-                                    <CheckCircleIcon className="w-5 h-5 text-green-400 mr-2" />
-                                    {item}
-                                </span>
-                            ))}
+                        {/* Centered Glass Card based on provided image */}
+                        <div className="relative group max-w-2xl mx-auto mb-16">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                            
+                            <div className="relative bg-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 md:p-14 shadow-2xl">
+                                {/* The Quote from the image */}
+                                <div className="mb-10">
+                                    <p className="text-3xl md:text-5xl font-black font-montserrat text-white leading-relaxed drop-shadow-xl">
+                                        "<span className="text-sunrise-orange">ಪ್ರೇರಣೆಯಿಂದ ಪ್ರಗತಿಯ ಕಡೆಗೆ</span>"
+                                    </p>
+                                </div>
+
+                                {/* The Button from the image sketch */}
+                                <div className="flex flex-col items-center">
+                                    <CTAButton 
+                                        requiresAuth 
+                                        variant="primary" 
+                                        className="w-full md:w-auto text-base md:text-lg font-black px-10 py-5 !bg-white !text-empower-blue hover:!bg-blue-50 border-none shadow-[0_20px_40px_rgba(0,0,0,0.3)] transform hover:-translate-y-1.5 transition-all duration-300 !rounded-2xl"
+                                    >
+                                        <div className="flex flex-col items-center space-y-1">
+                                            <span className="uppercase tracking-wider">Start your preparation now</span>
+                                            <span className="text-[11px] font-bold opacity-60 uppercase tracking-[0.3em]">By clicking here</span>
+                                        </div>
+                                    </CTAButton>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 mb-10 inline-block shadow-2xl">
-                            <p className="text-2xl md:text-3xl font-serif italic text-white/90">
-                                "<span className="text-sunrise-orange font-bold not-italic">ಪ್ರೇರಣೆಯಿಂದ ಪ್ರಗತಿ</span>"
-                            </p>
-                        </div>
-
-                        <div>
-                            <CTAButton 
-                                requiresAuth 
-                                variant="primary" 
-                                className="text-lg font-bold px-12 py-4 !bg-white !text-empower-blue hover:!bg-blue-50 border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transform hover:-translate-y-1 transition-all duration-300"
-                            >
-                                Start Your Preparation Now
-                            </CTAButton>
+                        {/* Reassurance text */}
+                        <div className="flex flex-wrap justify-center gap-8 text-blue-200/60 font-black uppercase text-[10px] tracking-[0.4em]">
+                            <span className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-400" /> Expert Faculty</span>
+                            <span className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-400" /> Proven Results</span>
+                            <span className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-400" /> Personalized Mentor</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-             {/* FAQs - Kept as they are relevant */}
+             {/* FAQs */}
              <section className="py-20 bg-soft-gray dark:bg-slate-800 transition-colors duration-300">
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-12 text-center">Frequently Asked Questions</h2>
