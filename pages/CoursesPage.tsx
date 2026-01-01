@@ -3,8 +3,7 @@ import { useLocation } from 'react-router-dom';
 import CourseCard from '../components/CourseCard';
 import CTAButton from '../components/CTAButton';
 import { coursesData } from '../constants';
-// Fixed error: Removed unused FilterIcon from imports as it was not exported from Icons.tsx and is not used in this file.
-import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, LightningBoltIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon, CogIcon, BookOpenIcon, XIcon } from '../components/Icons';
+import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon, CogIcon, BookOpenIcon, XIcon } from '../components/Icons';
 
 // Helper to map category IDs to icons
 const getCategoryIcon = (id: string) => {
@@ -60,7 +59,7 @@ const CoursesPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen pb-20">
             
-            {/* 1. Header Hero - Refined for Mobile Height */}
+            {/* Header Hero */}
             <div className="relative bg-empower-blue text-white pt-16 pb-20 md:py-24 px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-empower-blue via-blue-900 to-indigo-900"></div>
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
@@ -70,7 +69,7 @@ const CoursesPage: React.FC = () => {
                         Find Your <span className="text-sunrise-orange">Future.</span>
                     </h1>
                     <p className="text-sm md:text-xl text-blue-100/80 mb-8 md:mb-10 max-w-2xl mx-auto font-medium">
-                        Search across our 7 rows of elite preparation programs.
+                        Search across our elite preparation programs.
                     </p>
 
                     <div className="relative max-w-2xl mx-auto group">
@@ -79,7 +78,7 @@ const CoursesPage: React.FC = () => {
                             placeholder="Search exam or eligibility..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full py-4 md:py-5 pl-12 md:pl-14 pr-10 rounded-2xl text-charcoal-gray bg-white/95 backdrop-blur-sm focus:outline-none focus:ring-4 focus:ring-sunrise-orange/30 shadow-2xl transition-all font-semibold text-sm md:text-base"
+                            className="w-full py-4 md:py-5 pl-12 md:pl-14 pr-10 rounded-2xl text-charcoal-gray bg-white shadow-2xl focus:outline-none focus:ring-4 focus:ring-sunrise-orange/30 transition-all font-semibold text-sm md:text-base"
                         />
                         <SearchIcon className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 text-gray-400 group-focus-within:text-sunrise-orange transition-colors" />
                         {searchTerm && (
@@ -91,7 +90,7 @@ const CoursesPage: React.FC = () => {
                 </div>
             </div>
 
-            {/* 2. Interactive Navigation Bar - Mobile-First Pills */}
+            {/* Sticky Navigation Bar */}
             <div className="sticky top-[115px] md:top-[132px] z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-md border-b border-gray-100 dark:border-gray-800 py-3 md:py-4 transition-all duration-300">
                 <div className="container mx-auto px-4">
                     <div className="flex space-x-2 overflow-x-auto scrollbar-hide pb-1">
@@ -126,18 +125,18 @@ const CoursesPage: React.FC = () => {
                 </div>
             </div>
 
-            {/* 3. Dynamic Course Grid - Improved Spacing for Mobile */}
+            {/* Dynamic Course Grid */}
             <div ref={coursesGridRef} className="py-12 md:py-16 container mx-auto px-4 md:px-8 space-y-16 md:space-y-24">
                 {filteredCategories.length > 0 ? (
                     filteredCategories.map(category => (
-                        <section key={category.id} id={category.id} className="animate-fade-in scroll-mt-20">
+                        <section key={category.id} id={category.id} className="scroll-mt-20">
+                            {/* Simplified Section Header */}
                             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 border-b border-gray-100 dark:border-gray-800 pb-5 md:pb-6">
                                 <div className="flex items-center">
-                                    <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-empower-blue text-white mr-4 md:mr-5 shadow-lg shadow-blue-500/20">
+                                    <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-empower-blue text-white mr-4 md:mr-5 shadow-lg">
                                         {getCategoryIcon(category.id)}
                                     </div>
                                     <div>
-                                        <p className="text-[9px] md:text-[10px] font-black text-sunrise-orange uppercase tracking-[0.2em] mb-0.5 md:mb-1">Row Category</p>
                                         <h2 className="text-xl md:text-4xl font-extrabold font-montserrat text-charcoal-gray dark:text-white uppercase tracking-tight leading-tight">
                                             {category.title}
                                         </h2>
@@ -145,11 +144,8 @@ const CoursesPage: React.FC = () => {
                                 </div>
                                 <div className="flex items-center mt-4 md:mt-0">
                                      <span className="text-gray-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mr-3">
-                                        {category.courses.length} Results
+                                        {category.courses.length} Available Programs
                                     </span>
-                                    {activeSection !== 'all' && (
-                                        <button onClick={() => handleFilterClick('all')} className="text-sunrise-orange text-[10px] font-black uppercase hover:underline">Reset</button>
-                                    )}
                                 </div>
                             </div>
                             
@@ -172,15 +168,10 @@ const CoursesPage: React.FC = () => {
                 )}
             </div>
 
-            {/* 4. Mobile Sticky Enrollment Helper (Optional Visual) */}
-            <div className="md:hidden fixed bottom-20 left-4 right-4 z-40">
-                 {/* This space intentionally left for mobile nav or contextual actions if needed */}
-            </div>
-
-            {/* 5. Counselor Support Card */}
+            {/* Bottom Support Section */}
             <section className="container mx-auto px-4 md:px-8 pb-12 md:pb-24">
-                <div className="bg-gradient-to-br from-empower-blue to-blue-900 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-16 shadow-3xl text-white relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-10 opacity-5 md:opacity-10 pointer-events-none">
+                <div className="bg-gradient-to-br from-empower-blue to-blue-900 rounded-[2.5rem] p-8 md:p-16 shadow-3xl text-white relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
                         <LightBulbIcon className="w-48 h-48 md:w-64 md:h-64 rotate-12" />
                     </div>
                     <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
@@ -195,24 +186,6 @@ const CoursesPage: React.FC = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="hidden md:block">
-                            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                                <h4 className="text-xl font-bold mb-6">Course Quick Finder</h4>
-                                <div className="space-y-4">
-                                    {[
-                                        { l: "UPSC Integrated", d: "Best for beginners" },
-                                        { l: "Technical Batch", d: "For B.E/Diploma students" },
-                                        { l: "PSI/PC Regular", d: "Focus on uniform services" },
-                                        { l: "Banking Mastery", d: "Short-term focused prep" }
-                                    ].map((f, i) => (
-                                        <div key={i} className="flex justify-between items-center p-3 bg-black/20 rounded-xl">
-                                            <span className="font-bold text-sm">{f.l}</span>
-                                            <span className="text-[10px] opacity-60 uppercase font-black">{f.d}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -220,13 +193,6 @@ const CoursesPage: React.FC = () => {
             <style>{`
                 .scrollbar-hide::-webkit-scrollbar { display: none; }
                 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-                @keyframes fade-in {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.5s ease-out forwards;
-                }
             `}</style>
         </div>
     );

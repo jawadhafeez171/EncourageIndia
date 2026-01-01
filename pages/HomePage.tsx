@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import CTAButton from '../components/CTAButton';
 import CourseCard from '../components/CourseCard';
-// Fixed error: Removed unused and non-existent FireIcon from imports as it was not exported from Icons.tsx.
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon, HashtagIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon } from '../components/Icons';
 import { testimonials, coursesData } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
@@ -119,12 +118,11 @@ const HomePage: React.FC = () => {
     const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const SLIDE_DURATION = 6000;
 
-    // Enhanced Program Selection - AC-SAAD is the Flagship Course
     const featuredPrograms = [
-        { ...coursesData[0].courses[0], tag: "New Batch", accent: "blue" }, // UPSC Foundation
-        { ...coursesData[1].courses[0], tag: "Top Rated", accent: "red" }, // KAS Program
-        { ...coursesData[1].courses[1], tag: "Flagship", accent: "purple" }, // AC-SAAD Program
-        { ...coursesData[2].courses[0], tag: "Popular", accent: "teal" }, // PSI/PC Program
+        { ...coursesData[0].courses[0], tag: "New Batch", isFlagship: true }, // UPSC Foundation
+        { ...coursesData[1].courses[0], tag: "Top Rated", isFlagship: true }, // KAS Program
+        { ...coursesData[1].courses[1], tag: "Flagship", isFlagship: true }, // AC-SAAD Program
+        { ...coursesData[2].courses[0], tag: "Popular", isFlagship: true }, // PSI/PC Program
     ];
 
     const nextSlide = useCallback(() => {
@@ -135,7 +133,6 @@ const HomePage: React.FC = () => {
         setCurrentSlide((prev) => (prev === 0 ? carouselSlides.length - 1 : prev - 1));
     }, []);
 
-    // Main Hero Carousel Timer
     useEffect(() => {
         const timer = setInterval(nextSlide, SLIDE_DURATION);
         return () => clearInterval(timer);
@@ -185,7 +182,6 @@ const HomePage: React.FC = () => {
         @keyframes scan { 0% { transform: translateY(-10px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(110px); opacity: 0; } }
         .animate-scan { animation: scan 3s ease-in-out infinite; }
         
-        /* Accelerated Exam Ticker Animation */
         @keyframes ticker {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -261,14 +257,12 @@ const HomePage: React.FC = () => {
             </div>
       </section>
 
-      {/* Featured Courses Section - Horizontal Scroll on Mobile */}
+      {/* Featured Courses Section */}
       <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-            {/* Statistics Bar removed as per previous request */}
-
             <div className="text-center mb-16 relative">
                 <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
                     <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
@@ -278,12 +272,13 @@ const HomePage: React.FC = () => {
                 <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
             </div>
 
-            {/* Grid Container - Flex Scroll on Mobile, Grid on Desktop */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-8 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {/* Grid Container - Added pt-12 to fix tag visibility */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-12 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {featuredPrograms.map((course, index) => (
                     <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center">
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-1.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-700">
-                             <p className="text-[9px] font-black uppercase tracking-widest text-sunrise-orange">{course.tag}</p>
+                        {/* Status Tag - Re-styled for visibility */}
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-700">
+                             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-sunrise-orange">{course.tag}</p>
                         </div>
                         <CourseCard course={course} index={index} />
                     </div>
@@ -425,7 +420,7 @@ const HomePage: React.FC = () => {
                     <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 relative z-30">
                         <a href="https://play.google.com/store/apps/details?id=co.barney.yflbb" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center bg-white text-charcoal-gray px-8 py-4 rounded-2xl hover:bg-soft-gray transition-all shadow-xl active:scale-95">
                             <GooglePlayIcon className="w-10 h-10 mr-4 text-black" />
-                            <div className="flex flex-col items-start"><span className="text-[10px] uppercase font-black tracking-widest opacity-50">Download for</span><span className="text-xl font-bold font-sans leading-tight">Android Device</span></div>
+                            <div className="flex flex-col items-start"><span className="text-[10px] uppercase font-black tracking-widest opacity-50">Download for</span><span className="text-xl font-bold font-sans rendering-tight">Android Device</span></div>
                         </a>
                         <div className="flex items-center space-x-5 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
                              <div className="relative">
