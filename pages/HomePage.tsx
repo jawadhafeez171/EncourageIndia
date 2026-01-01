@@ -1,8 +1,9 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import CTAButton from '../components/CTAButton';
+import CourseCard from '../components/CourseCard';
+// Fixed error: Removed unused and non-existent FireIcon from imports as it was not exported from Icons.tsx.
 import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, ArrowRightIcon as SwipeIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon, HashtagIcon } from '../components/Icons';
-import { testimonials } from '../constants';
+import { testimonials, coursesData } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
 const carouselSlides = [
@@ -91,57 +92,6 @@ const carouselSlides = [
     },
 ];
 
-const flagshipPrograms = [
-    {
-        title: "UPSC Civil Services",
-        description: "Premier foundation course covering Prelims to Interview with expert mentorship.",
-        icon: <AcademicCapIcon />,
-        meta: { duration: "12-15 Months", mode: "Offline & Online" },
-        tags: [{ text: "Integrated", color: "bg-blue-500/20 text-blue-100" }],
-        link: "/courses/upsc-cse",
-        syllabusUrl: "/downloads/upsc-mains-detailed-syllabus.pdf",
-        gradient: "from-blue-600 via-blue-700 to-indigo-900",
-        popular: true,
-        features: ["Daily Answer Writing", "1-on-1 Mentorship", "NCERT Foundation"]
-    },
-    {
-        title: "KPSC KAS Foundation",
-        description: "Holistic coaching with specific focus on Karnataka history, geography & economy.",
-        icon: <BookOpenIcon />,
-        meta: { duration: "10-12 Months", mode: "Hybrid Mode" },
-        tags: [{ text: "Bilingual", color: "bg-purple-500/20 text-purple-100" }],
-        link: "/courses/kas",
-        syllabusUrl: "/downloads/kpsc-prelims-syllabus.pdf",
-        gradient: "from-red-600 via-rose-700 to-red-900",
-        popular: false,
-        features: ["State Focus Modules", "Economic Survey", "Mains Mini Tests"]
-    },
-    {
-        title: "KPSC AC-SAAD",
-        description: "Targeted preparation for Assistant Controller in State Accounts Department.",
-        icon: <LightningBoltIcon />,
-        meta: { duration: "5-6 Months", mode: "Online Live" },
-        tags: [{ text: "Specialized", color: "bg-orange-500/20 text-orange-100" }],
-        link: "/courses/ac-saad",
-        syllabusUrl: "/downloads/kpsc-ac-saad-prelims-pattern-syllabus.pdf",
-        gradient: "from-orange-500 via-amber-600 to-orange-800",
-        popular: false,
-        features: ["Commerce Experts", "Accounts Terminology", "Paper V-VIII Focus"]
-    },
-    {
-        title: "PSI & PC Program",
-        description: "Rigorous training for Police Sub-Inspector & Constable exams with physical guidance.",
-        icon: <ShieldCheckIcon />,
-        meta: { duration: "4-6 Months", mode: "Offline + Ground" },
-        tags: [{ text: "Physical Training", color: "bg-teal-500/20 text-teal-100" }],
-        link: "/courses/psi-pc",
-        syllabusUrl: "/downloads/psi-pc-syllabus.pdf",
-        gradient: "from-gray-700 via-slate-800 to-black",
-        popular: false,
-        features: ["Translation Practice", "Mental Ability", "Ground Support"]
-    }
-];
-
 const allExamsList = [
     "UPSC CSE", "KPSC KAS", "PSI / ESI", "Police Constable", "AC-SAAD", "ACF / RFO / DRFO", "Agriculture Officer", "Group B Posts", "FDA / SDA", "PDO", "KEA Technical", "KPCL AE/JE", "KPSC Technical", "Village Admin Officer", "Civil Judge", "District Judge", "CLAT", "AIBE", "K-SET", "D-CET", "KMF SHIMUL", "Banking IBPS", "SSC CGL", "RRB NTPC"
 ];
@@ -168,6 +118,14 @@ const HomePage: React.FC = () => {
     const [mentorForm, setMentorForm] = useState({ name: '', phone: '' });
     const [mentorStatus, setMentorStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const SLIDE_DURATION = 6000;
+
+    // Enhanced Program Selection - AC-SAAD is the Flagship Course
+    const featuredPrograms = [
+        { ...coursesData[0].courses[0], tag: "New Batch", accent: "blue" }, // UPSC Foundation
+        { ...coursesData[1].courses[0], tag: "Top Rated", accent: "red" }, // KAS Program
+        { ...coursesData[1].courses[1], tag: "Flagship", accent: "purple" }, // AC-SAAD Program
+        { ...coursesData[2].courses[0], tag: "Popular", accent: "teal" }, // PSI/PC Program
+    ];
 
     const nextSlide = useCallback(() => {
         setCurrentSlide((prev) => (prev === carouselSlides.length - 1 ? 0 : prev + 1));
@@ -242,6 +200,13 @@ const HomePage: React.FC = () => {
         .animation-delay-200 { animation-delay: 0.2s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-600 { animation-delay: 0.6s; }
+
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 0 0 0 rgba(247, 127, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(247, 127, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(247, 127, 0, 0); }
+        }
+        .animate-pulse-soft { animation: pulse-soft 2s infinite; }
       `}</style>
 
       {/* Cinematic Hero Section */}
@@ -296,90 +261,39 @@ const HomePage: React.FC = () => {
             </div>
       </section>
 
-      {/* Featured Courses Section */}
-      <section className="py-24 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
-        <div className="container mx-auto px-4">
+      {/* Featured Courses Section - Horizontal Scroll on Mobile */}
+      <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+            {/* Statistics Bar removed as per previous request */}
+
             <div className="text-center mb-16 relative">
-                <span className="bg-empower-blue/10 dark:bg-blue-900/30 text-empower-blue dark:text-blue-300 text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest mb-4 inline-block border border-empower-blue/20">Premier Exam Prep</span>
-                <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat text-charcoal-gray dark:text-white mb-6">Our Featured Programs</h2>
-                <div className="flex items-center justify-center gap-4">
-                    <div className="h-0.5 w-16 bg-gradient-to-r from-transparent to-sunrise-orange rounded-full"></div>
-                    <StarIcon className="w-6 h-6 text-sunrise-orange" />
-                    <div className="h-0.5 w-16 bg-gradient-to-l from-transparent to-sunrise-orange rounded-full"></div>
+                <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
+                    <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
+                    <span>Admissions Open 2025</span>
                 </div>
+                <h2 className="text-4xl md:text-6xl font-black font-montserrat text-charcoal-gray dark:text-white mb-6 tracking-tight">Our Flagship Programs</h2>
+                <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
             </div>
 
-            {/* Carousel on Mobile, Grid on Desktop */}
-            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 scroll-smooth snap-x scrollbar-hide px-2 md:px-0">
-                {flagshipPrograms.map((program, index) => (
-                    <div key={index} className="flex-shrink-0 w-[85%] sm:w-[320px] md:w-auto snap-center">
-                        <div className="flex flex-col h-full bg-white dark:bg-slate-800 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-100 dark:border-gray-700 relative overflow-hidden">
-                            {/* Decorative Header with Gradient and Glassmorphism Badge */}
-                            <div className={`bg-gradient-to-br ${program.gradient} p-8 relative h-56 flex flex-col justify-end overflow-hidden`}>
-                                {/* Abstract Background Effect */}
-                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
-                                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '16px 16px' }}></div>
-                                
-                                <div className="absolute top-6 left-6 flex flex-col gap-2">
-                                    {program.popular && (
-                                        <span className="bg-white/20 backdrop-blur-md text-[10px] font-black text-white px-3 py-1 rounded-full border border-white/20 uppercase tracking-tighter">Top Choice</span>
-                                    )}
-                                    <div className="bg-white/20 backdrop-blur-lg p-3 rounded-2xl border border-white/20 w-fit shadow-lg animate-float">
-                                        {React.cloneElement(program.icon as React.ReactElement<any>, { className: "w-8 h-8 text-white drop-shadow-md" })}
-                                    </div>
-                                </div>
-                                
-                                <h3 className="text-2xl font-black font-montserrat text-white leading-tight drop-shadow-lg group-hover:translate-x-1 transition-transform">{program.title}</h3>
-                            </div>
-
-                            {/* Content Body */}
-                            <div className="p-8 flex flex-col flex-grow relative">
-                                {/* Metadata Badges */}
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="flex items-center text-[11px] font-bold text-gray-400 bg-gray-50 dark:bg-slate-700/50 px-3 py-1.5 rounded-full border border-gray-100 dark:border-gray-600 transition-colors">
-                                        <ClockIcon className="w-3.5 h-3.5 mr-1.5 text-empower-blue" />
-                                        <span>{program.meta.duration}</span>
-                                    </div>
-                                    <div className="flex items-center text-[11px] font-bold text-gray-400 bg-gray-50 dark:bg-slate-700/50 px-3 py-1.5 rounded-full border border-gray-100 dark:border-gray-600 transition-colors">
-                                        <DesktopComputerIcon className="w-3.5 h-3.5 mr-1.5 text-empower-blue" />
-                                        <span>{program.meta.mode}</span>
-                                    </div>
-                                </div>
-
-                                <p className="text-gray-600 dark:text-gray-300 text-sm font-medium mb-8 leading-relaxed italic line-clamp-3">"{program.description}"</p>
-                                
-                                {/* Features List with Icons */}
-                                <div className="space-y-4 mb-8 flex-grow">
-                                    {program.features.map((feat, i) => (
-                                        <div key={i} className="flex items-start group/feat">
-                                            <div className="bg-sunrise-orange/10 p-1 rounded-md mr-3 mt-0.5 group-hover/feat:bg-sunrise-orange transition-colors">
-                                                <CheckCircleIcon className="w-3.5 h-3.5 text-sunrise-orange group-hover/feat:text-white" />
-                                            </div>
-                                            <span className="text-xs font-bold text-charcoal-gray dark:text-gray-200 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors">{feat}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Action Buttons */}
-                                <div className="space-y-4 pt-4 border-t border-gray-50 dark:border-gray-700">
-                                    <CTAButton to={program.link} variant="primary" className="w-full py-4 text-sm font-black tracking-wide shadow-xl group-hover:shadow-empower-blue/20">
-                                        View Full Course Details
-                                    </CTAButton>
-                                    <a href={program.syllabusUrl} download className="flex items-center justify-center w-full py-3 text-gray-500 dark:text-gray-400 hover:text-charcoal-gray dark:hover:text-white text-[11px] font-black uppercase tracking-widest transition-all">
-                                        <DownloadIcon className="w-4 h-4 mr-2" /> Download Syllabus PDF
-                                    </a>
-                                </div>
-                            </div>
+            {/* Grid Container - Flex Scroll on Mobile, Grid on Desktop */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-8 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                {featuredPrograms.map((course, index) => (
+                    <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-4 py-1.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-700">
+                             <p className="text-[9px] font-black uppercase tracking-widest text-sunrise-orange">{course.tag}</p>
                         </div>
+                        <CourseCard course={course} index={index} />
                     </div>
                 ))}
             </div>
             
-            {/* Mobile Scroll Indicator */}
-            <div className="md:hidden flex justify-center gap-2 mt-8">
-                {flagshipPrograms.map((_, i) => (
-                    <div key={i} className="h-1.5 w-4 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
-                ))}
+            <div className="text-center mt-16">
+                <CTAButton to="/courses" variant="secondary-blue" className="text-xs px-12 py-4 uppercase font-black tracking-[0.2em] shadow-xl hover:shadow-empower-blue/20">
+                    Explore All Our Courses
+                </CTAButton>
             </div>
         </div>
       </section>

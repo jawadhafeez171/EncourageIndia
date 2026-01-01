@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from './CTAButton';
 import { CheckCircleIcon, ArrowRightIcon, AcademicCapIcon, ClockIcon, UserIcon, GlobeAltIcon } from './Icons';
@@ -44,9 +43,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index = 0 }) => {
         </div>
         
         <div className="relative z-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[9px] md:text-[10px] font-black uppercase tracking-widest border border-white/10">
-                {course.duration ? 'Premium Program' : 'Short Course'}
-            </span>
+            {/* Generic label removed to prevent clashing with status tags */}
         </div>
       </div>
 
