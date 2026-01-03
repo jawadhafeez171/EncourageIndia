@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import CTAButton from '../components/CTAButton';
 import CourseCard from '../components/CourseCard';
@@ -201,8 +200,8 @@ const HomePage: React.FC = () => {
         .animate-pulse-soft { animation: pulse-soft 2s infinite; }
       `}</style>
 
-      {/* Cinematic Hero Section */}
-      <section className="relative h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      {/* Cinematic Hero Section - Fixed Height and Centering */}
+      <section className="relative min-h-[650px] md:h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           {carouselSlides.map((slide, index) => (
               <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                   <div className="absolute inset-0 overflow-hidden">
@@ -210,13 +209,13 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
                   <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
-                      <div className="max-w-3xl space-y-6 pl-2 md:pl-0 pb-24 md:pb-0">
+                      <div className="max-w-3xl space-y-4 md:space-y-6 pl-2 md:pl-0 pb-20 md:pb-0">
                           <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
-                              {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
+                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
+                              {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
                           </div>
-                          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
-                          <p className={`text-lg md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
+                          <h1 className={`text-3xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
+                          <p className={`text-base md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
                           <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
                             {slide.points.map(point => (
                                 <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
@@ -224,10 +223,14 @@ const HomePage: React.FC = () => {
                                 </li>
                             ))}
                           </ul>
-                          <div className={`flex flex-wrap gap-3 pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-                              <CTAButton variant="primary" className="shadow-orange-500/30 shadow-lg" {...slide.cta1Link}>{slide.cta1}</CTAButton>
-                              <CTAButton variant="secondary" className="backdrop-blur-sm hover:bg-white/10" {...slide.cta2Link}>{slide.cta2}</CTAButton>
-                              <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-semibold text-white/90 hover:text-sunrise-orange transition-colors px-4 py-3">{slide.cta3}<ChevronRightIcon className="w-4 h-4 ml-1" /></CTAButton>
+                          {/* Improved Button Layout for Mobile */}
+                          <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-3 pt-6 md:pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                              <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-4 md:!py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
+                              <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-4 md:!py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+                              <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-3 group/info">
+                                  {slide.cta3}
+                                  <ChevronRightIcon className="w-4 h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
+                              </CTAButton>
                           </div>
                       </div>
                   </div>
@@ -237,14 +240,14 @@ const HomePage: React.FC = () => {
             <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/></button>
             <div className="absolute bottom-0 left-0 w-full z-20 bg-black/60 backdrop-blur-md border-t border-white/10">
                 <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-3 text-xs md:text-sm text-gray-300">
-                    <div className="flex space-x-6 mb-2 md:mb-0">
-                        <div className="flex items-center"><UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">Trusted</strong> by Aspirants</span></div>
-                        <div className="flex items-center"><AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">50+</strong> Expert Faculty</span></div>
-                        <div className="flex items-center hidden sm:flex"><GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span>Online & Offline</span></div>
+                    <div className="flex space-x-6 mb-2 md:mb-0 overflow-x-auto scrollbar-hide w-full md:w-auto pb-1 md:pb-0">
+                        <div className="flex items-center whitespace-nowrap"><UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">Trusted</strong> by Aspirants</span></div>
+                        <div className="flex items-center whitespace-nowrap"><AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">50+</strong> Expert Faculty</span></div>
+                        <div className="flex items-center whitespace-nowrap hidden sm:flex"><GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span>Online & Offline</span></div>
                     </div>
                     <div className="flex space-x-2">
                         {carouselSlides.map((_, index) => (
-                            <button key={index} onClick={() => setCurrentSlide(index)} className="relative h-1.5 w-10 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
+                            <button key={index} onClick={() => setCurrentSlide(index)} className="relative h-1.5 w-8 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
                                 <div className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'}`} style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}></div>
                             </button>
                         ))}
