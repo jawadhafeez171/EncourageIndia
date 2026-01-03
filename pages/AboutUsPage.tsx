@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
-import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon, CheckCircleIcon, StarIcon, LightBulbIcon, LightningBoltIcon, ShieldCheckIcon } from '../components/Icons';
+import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon, CheckCircleIcon, StarIcon, LightBulbIcon, LightningBoltIcon, ShieldCheckIcon, ArrowRightIcon } from '../components/Icons';
 
 const PageHeader = ({ title, tagline }: { title: string, tagline?: string }) => (
     <div className="bg-empower-blue py-20 text-center text-white relative overflow-hidden">
@@ -21,7 +21,9 @@ const PageHeader = ({ title, tagline }: { title: string, tagline?: string }) => 
         </div>
         <style>{`
             @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
             .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+            .animate-shimmer { animation: shimmer 2s infinite; }
         `}</style>
     </div>
 );
@@ -268,13 +270,17 @@ const AboutUsPage: React.FC = () => {
                             </p>
                         </div>
 
-                        <div>
+                        <div className="mt-4">
                             <CTAButton 
                                 requiresAuth 
                                 variant="primary" 
-                                className="text-lg font-bold px-12 py-4 !bg-white !text-empower-blue hover:!bg-blue-50 border-none shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transform hover:-translate-y-1 transition-all duration-300"
+                                className="group relative text-lg md:text-xl font-black px-10 py-5 !bg-encourage-red !text-white hover:!bg-red-700 shadow-[0_15px_35px_-12px_rgba(230,57,70,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(230,57,70,0.7)] transform hover:-translate-y-1.5 transition-all duration-500 !rounded-2xl flex items-center justify-center gap-3 overflow-hidden mx-auto"
                             >
-                                Start your preparation now By clicking here
+                                <span className="relative z-10 uppercase tracking-tight">
+                                    Start your preparation now <span className="opacity-80 text-sm md:text-lg font-bold">By clicking here</span>
+                                </span>
+                                <ArrowRightIcon className="w-6 h-6 relative z-10 transform group-hover:translate-x-2 transition-transform duration-300 shrink-0" />
+                                <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer pointer-events-none"></div>
                             </CTAButton>
                         </div>
                     </div>
