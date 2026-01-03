@@ -157,83 +157,77 @@ const AcfPage: React.FC = () => {
                                     <div className="bg-soft-gray/30 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
                                         <h5 className="font-bold text-charcoal-gray dark:text-white mb-4 flex items-center">
                                             <ShieldCheckIcon className="w-5 h-5 mr-2 text-encourage-red" />
-                                            Compulsory Qualifying Papers
+                                            ಕಡ್ಡಾಯ ಪತ್ರಿಕೆಗಳು (ಅರ್ಹತಾದಾಯಕ) / Compulsory Papers (Qualifying)
                                         </h5>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm">
-                                                <h6 className="font-bold text-sm">Paper I: Kannada</h6>
-                                                <p className="text-xs mt-1">150 Marks | Descriptive</p>
+                                                <h6 className="font-bold text-sm">ಕನ್ನಡ / Kannada</h6>
+                                                <p className="text-xs mt-1 text-empower-blue font-black">100 Marks</p>
                                             </div>
                                             <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm">
-                                                <h6 className="font-bold text-sm">Paper II: English</h6>
-                                                <p className="text-xs mt-1">150 Marks | Descriptive</p>
+                                                <h6 className="font-bold text-sm">ಇಂಗ್ಲಿಷ್ / English</h6>
+                                                <p className="text-xs mt-1 text-empower-blue font-black">100 Marks</p>
                                             </div>
                                         </div>
-                                        <p className="text-[11px] mt-4 text-encourage-red font-bold uppercase tracking-wider">Minimum 35% marks required in each paper to qualify.</p>
+                                        <p className="text-[11px] mt-4 text-encourage-red font-bold uppercase tracking-wider">ಕನಿಷ್ಠ 35% / Minimum 35% marks required in each paper to qualify.</p>
                                     </div>
 
                                     {/* Merit Papers */}
                                     <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-empower-blue/10 shadow-sm">
                                         <h5 className="font-bold text-empower-blue dark:text-blue-400 mb-4 flex items-center">
                                             <StarIcon className="w-5 h-5 mr-2" />
-                                            Papers for Final Merit (600 Total Marks)
+                                            ಇಚ್ಛಿಕ ಪತ್ರಿಕೆಗಳು / Optional papers (Merit)
                                         </h5>
                                         <div className="overflow-x-auto">
                                             <table className="min-w-full text-sm">
                                                 <thead className="bg-gray-50 dark:bg-slate-700">
                                                     <tr>
-                                                        <th className="py-3 px-4 text-left font-bold">Paper No. / Group</th>
-                                                        <th className="py-3 px-4 text-left font-bold">Subject</th>
-                                                        <th className="py-3 px-4 text-center font-bold">Marks</th>
-                                                        <th className="py-3 px-4 text-center font-bold">Duration</th>
+                                                        <th className="py-3 px-4 text-left font-bold">ಪತ್ರಿಕೆ / Paper</th>
+                                                        <th className="py-3 px-4 text-left font-bold">ವಿಷಯ / Subject</th>
+                                                        <th className="py-3 px-4 text-center font-bold">ಅಂಕಗಳು / Marks</th>
+                                                        <th className="py-3 px-4 text-center font-bold">ಅವಧಿ / Duration</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                                                    <tr className="bg-gray-50/50 dark:bg-slate-700/50">
-                                                        <td className="py-3 px-4 font-bold">Paper III</td>
-                                                        <td className="py-3 px-4">General Knowledge</td>
-                                                        <td className="py-3 px-4 text-center font-bold">400</td>
-                                                        <td className="py-3 px-4 text-center">3 Hours</td>
-                                                    </tr>
                                                     <tr className="bg-blue-50/30 dark:bg-blue-900/10">
                                                         <td colSpan={4} className="py-2 px-4 font-black text-[10px] uppercase tracking-widest text-empower-blue dark:text-blue-400">
                                                             Forestry Graduates (Optional Papers)
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper IV</td>
-                                                        <td className="py-3 px-4">Forestry Paper – 1</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">ಪತ್ರಿಕೆ-1 / Paper I</td>
+                                                        <td className="py-3 px-4">Forestry - Paper I</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper V</td>
-                                                        <td className="py-3 px-4">Forestry Paper – 2</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">ಪತ್ರಿಕೆ-2 / Paper II</td>
+                                                        <td className="py-3 px-4">Forestry - Paper II</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                     <tr className="bg-orange-50/30 dark:bg-orange-900/10">
                                                         <td colSpan={4} className="py-2 px-4 font-black text-[10px] uppercase tracking-widest text-sunrise-orange">
-                                                            Non-Forestry Graduates (Optional Papers)
+                                                            Other Graduates (Any TWO out of 8 subjects)
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper IV</td>
-                                                        <td className="py-3 px-4">Optional Paper – 1</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">ಪತ್ರಿಕೆ-1 / Paper I</td>
+                                                        <td className="py-3 px-4">Optional Subject - 1</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper V</td>
-                                                        <td className="py-3 px-4">Optional Paper – 2</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">ಪತ್ರಿಕೆ-2 / Paper II</td>
+                                                        <td className="py-3 px-4">Optional Subject - 2</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                 </tbody>
                                                 <tfoot className="bg-gray-100 dark:bg-slate-700">
-                                                    <tr>
-                                                        <td colSpan={2} className="py-3 px-4 text-right font-black uppercase tracking-wider text-xs">Total Written Merit Marks</td>
-                                                        <td className="py-3 px-4 text-center font-black text-lg text-empower-blue dark:text-blue-400">600</td>
+                                                     <tr>
+                                                        <td colSpan={2} className="py-3 px-4 text-right font-black uppercase tracking-wider text-xs">Total Optional Marks</td>
+                                                        <td className="py-3 px-4 text-center font-black text-lg text-empower-blue dark:text-blue-400">200</td>
                                                         <td></td>
                                                     </tr>
                                                 </tfoot>
@@ -245,24 +239,26 @@ const AcfPage: React.FC = () => {
                                     <div className="bg-gray-50 dark:bg-slate-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
                                         <h5 className="font-bold mb-4 flex items-center">
                                             <BookOpenIcon className="w-5 h-5 mr-2 text-sunrise-orange" />
-                                            Available Optional Subjects
+                                            Available Optional Subjects (100 Marks Each)
                                         </h5>
-                                        <p className="text-xs mb-4 opacity-75">Candidates must select any <strong>TWO</strong> subjects from the list below. Certain combinations (like Agriculture and Forestry) may be restricted.</p>
-                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 text-xs font-medium">
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Agriculture</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Botany</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Chemistry</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Civil Engineering</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Geology</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Mathematics</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Physics</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Statistics</div>
-                                            <div className="flex items-center"><ChevronRightIcon className="w-3 h-3 mr-1 text-empower-blue" /> Zoology</div>
-                                            <div className="flex items-center font-bold text-empower-blue"><ChevronRightIcon className="w-3 h-3 mr-1" /> Forestry</div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm">
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(a)</span> ಸಸ್ಯಶಾಸ್ತ್ರ / Botany</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(e)</span> ಭೌತಶಾಸ್ತ್ರ / Physics</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(b)</span> ಪ್ರಾಣಿಶಾಸ್ತ್ರ / Zoology</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(f)</span> ಕೃಷಿ / Agriculture</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(c)</span> ಗಣಿತಶಾಸ್ತ್ರ / Mathematics</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(g)</span> ಸಿವಿಲ್ ಇಂಜಿನಿಯರಿಂಗ್ / Civil Engineering</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(d)</span> ರಸಾಯನಶಾಸ್ತ್ರ / Chemistry</div>
+                                            <div className="flex items-center"><span className="w-8 font-black text-empower-blue">(h)</span> ಪಶು ಸಂಗೋಪನೆ ಮತ್ತು ಪಶು ವೈದ್ಯ ವಿಜ್ಞಾನ / Animal Husbandry & Veterinary Science</div>
                                         </div>
-                                        <p className="text-[10px] mt-4 italic text-charcoal-gray/60 dark:text-gray-400">
-                                            *CRITICAL: Candidates with a B.Sc (Forestry) degree <strong>MUST</strong> select Forestry as one of their optional subjects. They are restricted from choosing other combinations.
-                                        </p>
+                                        <div className="mt-8 p-4 bg-white dark:bg-slate-900 border-l-4 border-encourage-red rounded shadow-sm">
+                                            <p className="text-sm font-bold text-charcoal-gray dark:text-gray-200">
+                                                ಬಿ.ಎಸ್ಸಿ (ಫಾರೆಸ್ಟ್ರಿ) ಪದವೀಧರರಿಗೆ ಮಾತ್ರ ಫಾರೆಸ್ಟ್ರಿ ಪತ್ರಿಕೆ-1 ಮತ್ತು 2 ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳುವ ಅವಕಾಶ ಇರುತ್ತದೆ.
+                                            </p>
+                                            <p className="text-xs text-gray-500 mt-1">
+                                                Option to select Forestry Paper I & II is restricted to B.Sc., (Forestry) graduates only.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +270,7 @@ const AcfPage: React.FC = () => {
                                     3. Personality Test (Interview)
                                 </h4>
                                 <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-2xl border border-sunrise-orange/20">
-                                    <p className="text-sm font-bold text-sunrise-orange mb-2">Final Hurdle: 25 Marks</p>
+                                    <p className="text-sm font-bold text-sunrise-orange mb-2">Final Evaluation</p>
                                     <p className="text-sm opacity-90">
                                         Candidates are called for interview in a 1:5 ratio based on their Main exam scores. The board evaluates the candidate's personality, alertness, leadership qualities, and physical suitability for a demanding career in the forest services.
                                     </p>
@@ -285,7 +281,7 @@ const AcfPage: React.FC = () => {
 
                     <div className="text-center mt-16 bg-gradient-to-r from-empower-blue to-blue-800 p-10 rounded-2xl text-white shadow-xl">
                         <h3 className="text-3xl font-bold mb-4">ACF Specialized Batch 2026-27</h3>
-                        <p className="mb-8 opacity-90 max-w-2xl mx-auto">Join the most comprehensive coaching for Karnataka Forest Services. We provide expert mentorship for both Optional Science subjects and GS papers, along with guidance for physical standards.</p>
+                        <p className="mb-8 opacity-90 max-w-2xl mx-auto">Join the most comprehensive coaching for Karnataka Forest Services. We provide expert-led modules for all Optional Science subjects listed above, along with thorough training for the mandatory language papers.</p>
                         <CTAButton requiresAuth variant="primary" className="text-lg px-12 bg-white !text-empower-blue hover:bg-soft-gray border-none shadow-lg transform hover:scale-105 transition-all">
                             Enroll in ACF Program
                         </CTAButton>
