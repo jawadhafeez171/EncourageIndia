@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ShieldCheckIcon, PencilAltIcon, UsersIcon, ChevronRightIcon } from '../../components/Icons';
@@ -46,18 +45,18 @@ const PsiPage: React.FC = () => {
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Exam</h3>
-                                <p className="text-sm">Two papers: Paper 1 (Descriptive) and Paper 2 (Objective MCQs).</p>
+                                <p className="text-sm">Two papers: Paper 1 (50 Marks) and Paper 2 (150 Marks).</p>
                             </div>
                         </div>
                         <div className="mt-8 p-6 bg-soft-gray/50 rounded-lg">
                             <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Paper 1: Descriptive Skills</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Paper 1: Descriptive Skills (50 Marks)</h3>
                                     <p>Includes Essay Writing, Translation (Kannada to English and vice-versa), and Precis writing. This paper tests communication and analytical depth.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Paper 2: General Knowledge</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Paper 2: General Knowledge (150 Marks)</h3>
                                     <p>Covers Current Affairs, Indian Constitution, History, Geography, and Mental Ability. This objective paper is the primary merit decider.</p>
                                 </div>
                             </div>

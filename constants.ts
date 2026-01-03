@@ -1,3 +1,4 @@
+
 import { TelegramIcon, InstagramIcon, YouTubeIcon, FacebookIcon, WhatsAppIcon, XIcon } from './components/Icons';
 
 export const navLinks = [
@@ -41,7 +42,7 @@ export const secondaryNavLinks = [
       ]
     },
     { 
-      name: 'AE/JE (Technical)', 
+      name: 'AEE/AE/JE (Technical)', 
       path: '/courses/ae-je-technical',
       dropdown: [
         { name: 'Overview', path: '/courses/ae-je-technical' },
@@ -61,7 +62,20 @@ export const secondaryNavLinks = [
     { 
       name: 'KMF', 
       dropdown: [
+        { name: 'CENTRAL KMF', path: '/courses/kmf-shimul' },
         { name: 'SHIMUL', path: '/courses/kmf-shimul' },
+        { name: 'BAMUL', path: '/courses/kmf-shimul' },
+        { name: 'KOMUL', path: '/courses/kmf-shimul' },
+        { name: 'TUMUL', path: '/courses/kmf-shimul' },
+        { name: 'MYMUL', path: '/courses/kmf-shimul' },
+        { name: 'MANMUL', path: '/courses/kmf-shimul' },
+        { name: 'HAMUL', path: '/courses/kmf-shimul' },
+        { name: 'CHAMUL', path: '/courses/kmf-shimul' },
+        { name: 'DKMUL', path: '/courses/kmf-shimul' },
+        { name: 'DAMUL', path: '/courses/kmf-shimul' },
+        { name: 'BEMUL', path: '/courses/kmf-shimul' },
+        { name: 'VIMUL', path: '/courses/kmf-shimul' },
+        { name: 'CHIMUL', path: '/courses/kmf-shimul' },
       ]
     },
     { name: 'Physical Training', path: '/physical-training' },
@@ -153,7 +167,7 @@ export const coursesData = [
         path: '/courses/ac-saad',
         duration: '6 Months',
         eligibility: 'M.Com/MBA/CA',
-        medium: 'English'
+        medium: 'English/Kannada'
       },
       {
         title: 'ACF / RFO / DRFO Program',

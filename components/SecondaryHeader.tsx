@@ -25,11 +25,12 @@ const SecondaryHeader: React.FC = () => {
                         <ChevronDownIcon className="w-4 h-4" />
                     </button>
                   )}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white dark:bg-slate-800 text-charcoal-gray dark:text-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                    <ul className="py-2">
+                  {/* Dynamic width and grid for large dropdowns like KMF */}
+                  <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 ${link.dropdown.length > 7 ? 'w-[320px]' : 'w-48'} bg-white dark:bg-slate-800 text-charcoal-gray dark:text-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50`}>
+                    <ul className={`py-2 ${link.dropdown.length > 7 ? 'grid grid-cols-2' : ''}`}>
                       {link.dropdown.map(item => (
                         <li key={item.name}>
-                          <Link to={item.path} className="block px-4 py-2 hover:bg-soft-gray dark:hover:bg-slate-700 hover:text-empower-blue dark:hover:text-blue-400 transition-colors duration-200">
+                          <Link to={item.path} className="block px-4 py-2 hover:bg-soft-gray dark:hover:bg-slate-700 hover:text-empower-blue dark:hover:text-blue-400 transition-colors duration-200 text-xs md:text-sm">
                             {item.name}
                           </Link>
                         </li>

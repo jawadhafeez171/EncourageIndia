@@ -23,7 +23,7 @@ const Section: React.FC<{title: string; children: React.ReactNode; className?: s
 const AeJeTechnicalPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
-            <PageHeader title="AE/JE (Technical) Exam Hub" />
+            <PageHeader title="AEE/AE/JE (Technical) Exam Hub" />
             
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-7xl">

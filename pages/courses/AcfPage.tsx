@@ -29,22 +29,8 @@ const AcfPage: React.FC = () => {
                        <div className="flex items-start">
                             <GlobeAltIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                             <div>
-                                <p className="mb-4">The Assistant Conservator of Forests (ACF), Range Forest Officer (RFO), and Deputy Range Forest Officer (DRFO) exams are conducted by the Karnataka Public Service Commission (KPSC) to recruit officers for the Karnataka Forest Department.</p>
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    <div className="bg-soft-gray/20 dark:bg-slate-800 p-4 rounded-lg border-l-4 border-empower-blue">
-                                        <h4 className="font-bold text-empower-blue">Vacancy Overview (ACF)</h4>
-                                        <p className="text-sm">Total Posts: 24</p>
-                                        <ul className="text-xs list-disc list-inside mt-1 opacity-80">
-                                            <li>B.Sc Forestry Graduates: 11 + 02 (Backlog)</li>
-                                            <li>Other Science/Engg Graduates: 11</li>
-                                        </ul>
-                                    </div>
-                                    <div className="bg-soft-gray/20 dark:bg-slate-800 p-4 rounded-lg border-l-4 border-sunrise-orange">
-                                        <h4 className="font-bold text-sunrise-orange">Remuneration</h4>
-                                        <p className="text-sm font-bold">Scale of Pay: ₹ 28,100 – 50,100</p>
-                                        <p className="text-xs mt-1">Shortlisted candidates undergo a 3-year period including 2 years of Diploma training and 1 year of field work.</p>
-                                    </div>
-                                </div>
+                                <p className="mb-4">The Assistant Conservator of Forests (ACF), Range Forest Officer (RFO), and Deputy Range Forest Officer (DRFO) exams are conducted by the Karnataka Public Service Commission (KPSC) to recruit officers for the Karnataka Forest Department. These roles involve protecting forest resources, managing wildlife habitats, and implementing conservation policies across the state.</p>
+                                <p className="text-sm">Candidates undergo rigorous selection involving written tests and physical endurance evaluations to ensure they are fit for the demanding field-oriented nature of the job.</p>
                             </div>
                        </div>
                     </Section>
@@ -73,7 +59,7 @@ const AcfPage: React.FC = () => {
                                 <ul className="text-xs space-y-2 list-disc list-inside opacity-90">
                                     <li>B.Sc. in Forestry from a recognized university.</li>
                                     <li>Bachelor's degree in Agriculture, Horticulture, or Veterinary Science.</li>
-                                    <li>B.Sc. with 2+ subjects: Maths, Physics, Chemistry, Zoology, Botany, Bio-Chem, Micro-Bio, Bio-Tech.</li>
+                                    <li>B.Sc. with only 2 subjects from the following: Maths, Physics, Chemistry, Zoology, Botany, Bio-Chem, Micro-Bio, Bio-Tech.</li>
                                     <li>Bachelor of Engineering (B.E./B.Tech) in any recognized University.</li>
                                 </ul>
                             </div>
@@ -164,7 +150,7 @@ const AcfPage: React.FC = () => {
                                     <PencilAltIcon className="w-7 h-7 mr-2" /> 
                                     2. Main Exam (Descriptive)
                                 </h4>
-                                <p className="text-sm mb-6">Candidates qualifying the Preliminary exam in a 1:20 ratio are invited for the Main exam. This stage decides the final merit ranking.</p>
+                                <p className="text-sm mb-6">Candidates qualifying the Preliminary exam in a 1:10 ratio are invited for the Main exam. This stage decides the final merit ranking.</p>
                                 
                                 <div className="space-y-6">
                                     {/* Compulsory Papers */}
@@ -196,44 +182,61 @@ const AcfPage: React.FC = () => {
                                             <table className="min-w-full text-sm">
                                                 <thead className="bg-gray-50 dark:bg-slate-700">
                                                     <tr>
-                                                        <th className="py-3 px-4 text-left font-bold">Paper No.</th>
+                                                        <th className="py-3 px-4 text-left font-bold">Paper No. / Group</th>
                                                         <th className="py-3 px-4 text-left font-bold">Subject</th>
                                                         <th className="py-3 px-4 text-center font-bold">Marks</th>
                                                         <th className="py-3 px-4 text-center font-bold">Duration</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                                                    <tr>
-                                                        <td className="py-3 px-4">Paper III</td>
+                                                    <tr className="bg-gray-50/50 dark:bg-slate-700/50">
+                                                        <td className="py-3 px-4 font-bold">Paper III</td>
                                                         <td className="py-3 px-4">General Knowledge</td>
-                                                        <td className="py-3 px-4 text-center font-bold">200</td>
+                                                        <td className="py-3 px-4 text-center font-bold">400</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
+                                                    <tr className="bg-blue-50/30 dark:bg-blue-900/10">
+                                                        <td colSpan={4} className="py-2 px-4 font-black text-[10px] uppercase tracking-widest text-empower-blue dark:text-blue-400">
+                                                            Forestry Graduates (Optional Papers)
+                                                        </td>
+                                                    </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4">Paper IV</td>
-                                                        <td className="py-3 px-4">Optional Subject 1 (Paper I)</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper IV</td>
+                                                        <td className="py-3 px-4">Forestry Paper – 1</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4">Paper V</td>
-                                                        <td className="py-3 px-4">Optional Subject 1 (Paper II)</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper V</td>
+                                                        <td className="py-3 px-4">Forestry Paper – 2</td>
+                                                        <td className="py-3 px-4 text-center font-bold">100</td>
+                                                        <td className="py-3 px-4 text-center">3 Hours</td>
+                                                    </tr>
+                                                    <tr className="bg-orange-50/30 dark:bg-orange-900/10">
+                                                        <td colSpan={4} className="py-2 px-4 font-black text-[10px] uppercase tracking-widest text-sunrise-orange">
+                                                            Non-Forestry Graduates (Optional Papers)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper IV</td>
+                                                        <td className="py-3 px-4">Optional Paper – 1</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="py-3 px-4">Paper VI</td>
-                                                        <td className="py-3 px-4">Optional Subject 2 (Paper I)</td>
-                                                        <td className="py-3 px-4 text-center font-bold">100</td>
-                                                        <td className="py-3 px-4 text-center">3 Hours</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td className="py-3 px-4">Paper VII</td>
-                                                        <td className="py-3 px-4">Optional Subject 2 (Paper II)</td>
+                                                        <td className="py-3 px-4 pl-8 text-xs italic opacity-70">Paper V</td>
+                                                        <td className="py-3 px-4">Optional Paper – 2</td>
                                                         <td className="py-3 px-4 text-center font-bold">100</td>
                                                         <td className="py-3 px-4 text-center">3 Hours</td>
                                                     </tr>
                                                 </tbody>
+                                                <tfoot className="bg-gray-100 dark:bg-slate-700">
+                                                    <tr>
+                                                        <td colSpan={2} className="py-3 px-4 text-right font-black uppercase tracking-wider text-xs">Total Written Merit Marks</td>
+                                                        <td className="py-3 px-4 text-center font-black text-lg text-empower-blue dark:text-blue-400">600</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
@@ -271,9 +274,9 @@ const AcfPage: React.FC = () => {
                                     3. Personality Test (Interview)
                                 </h4>
                                 <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-2xl border border-sunrise-orange/20">
-                                    <p className="text-sm font-bold text-sunrise-orange mb-2">Final Hurdle: 50 Marks</p>
+                                    <p className="text-sm font-bold text-sunrise-orange mb-2">Final Hurdle: 25 Marks</p>
                                     <p className="text-sm opacity-90">
-                                        Candidates are called for interview in a 1:3 ratio based on their Main exam scores. The board evaluates the candidate's personality, alertness, leadership qualities, and physical suitability for a demanding career in the forest services.
+                                        Candidates are called for interview in a 1:5 ratio based on their Main exam scores. The board evaluates the candidate's personality, alertness, leadership qualities, and physical suitability for a demanding career in the forest services.
                                     </p>
                                 </div>
                             </div>

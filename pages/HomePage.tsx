@@ -1,24 +1,25 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import CTAButton from '../components/CTAButton';
 import CourseCard from '../components/CourseCard';
-import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon } from '../components/Icons';
+import { StarIcon, QuoteIcon, CheckCircleIcon, ArrowLeftIcon, ArrowRightIcon, GooglePlayIcon, AcademicCapIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, CalendarIcon, ClockIcon, DesktopComputerIcon, DownloadIcon, UsersIcon, GlobeAltIcon, ChevronRightIcon, VideoCameraIcon, ChatAlt2Icon, DocumentTextIcon, LightBulbIcon, RefreshIcon, UserIcon, ClipboardListIcon, CogIcon, XIcon } from '../components/Icons';
 import { testimonials, coursesData } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
 
 const carouselSlides = [
     {
-        badge: "Recruitment Alert",
+        badge: "Technical Hub",
         medium: "English / ಕನ್ನಡ",
-        headline: <>Power Your Career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">KPCL AE/JE</span></>,
-        subheadline: "Comprehensive coaching for Assistant & Junior Engineer posts. Master technical concepts with Karnataka's top engineering faculty.",
-        points: ["Complete Technical Syllabus", "General Awareness Module", "Mock Tests & Analysis"],
-        image: "https://picsum.photos/seed/kpcl/1920/1080",
+        headline: <>Master the <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Technical AEE/AE/JE Exams</span></>,
+        subheadline: "Complete coaching for KPSC (PWD/WRD), KEA, and KPCL recruitments. Integrated approach for Domain Subjects and General Studies Paper-1.",
+        points: ["Civil, Mech, Elec Streams", "GS Paper-1 Specialist", "Technical Mock Series"],
+        image: "https://picsum.photos/seed/engineering_hero/1920/1080",
         cta1: "Enroll Now",
         cta2: "Course Details",
-        cta3: "About the Exam",
+        cta3: "View Exam Info",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kpcl' },
-        cta3Link: { to: '/courses/kpcl' },
+        cta2Link: { to: '/courses' },
+        cta3Link: { to: '/courses/ae-je-technical' },
     },
     {
         badge: "Multiple Vacancies",
@@ -28,25 +29,25 @@ const carouselSlides = [
         points: ["Technical & Non-Tech Batches", "General Kannada/English", "Subject Experts"],
         image: "https://picsum.photos/seed/kea_hero/1920/1080",
         cta1: "Enroll Now",
-        cta2: "Technical Courses",
+        cta2: "Course Details",
         cta3: "Non-Technical Courses",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kea-tech' },
+        cta2Link: { to: '/courses' },
         cta3Link: { to: '/courses/kea-group-b-c-d' },
     },
     {
         badge: "Admissions Open",
         medium: "English / ಕನ್ನಡ",
-        headline: <>Cultivate Success in <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 whitespace-nowrap">Agriculture (AO/AAO)</span></>,
-        subheadline: "Specialized program for KPSC Agriculture Officer posts. Detailed coverage of B.Sc (Agri) syllabus and GK paper.",
-        points: ["Expert Agriculture Faculty", "Bilingual Study Material", "Focused Test Series"],
-        image: "https://picsum.photos/seed/agriculture/1920/1080",
+        headline: <>STATES TOP SERVICES <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 whitespace-nowrap">KAS/AC-SAAD/ACF</span></>,
+        subheadline: "Become part of states top level bureaucratic circle with elite preparation strategies.",
+        points: ["Subject expert faculty", "Quality material", "Enriched Test series (Pre+Mains)"],
+        image: "https://picsum.photos/seed/kpsc_top/1920/1080",
         cta1: "Enroll Now",
         cta2: "Course Details",
-        cta3: "About the Exam",
+        cta3: "AC-SAAD Details",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kpsc-ao-aao' },
-        cta3Link: { to: '/courses/kpsc-ao-aao' },
+        cta2Link: { to: '/courses' },
+        cta3Link: { to: '/courses/ac-saad' },
     },
     {
         badge: "Mass Recruitment",
@@ -59,7 +60,7 @@ const carouselSlides = [
         cta2: "Course Details",
         cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/kmf-shimul' },
+        cta2Link: { to: '/courses' },
         cta3Link: { to: '/courses/kmf-shimul' },
     },
     {
@@ -73,7 +74,7 @@ const carouselSlides = [
         cta2: "Course Details",
         cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/psi' },
+        cta2Link: { to: '/courses' },
         cta3Link: { to: '/courses/psi' },
     },
     {
@@ -86,7 +87,7 @@ const carouselSlides = [
         cta2: "Course Details",
         cta3: "About the Exam",
         cta1Link: { requiresAuth: true },
-        cta2Link: { to: '/courses/upsc-cse' },
+        cta2Link: { to: '/courses' },
         cta3Link: { to: '/courses/upsc-cse' },
     },
 ];
@@ -121,7 +122,7 @@ const HomePage: React.FC = () => {
     const featuredPrograms = [
         { ...coursesData[0].courses[0], tag: "New Batch", isFlagship: true }, // UPSC Foundation
         { ...coursesData[1].courses[0], tag: "Top Rated", isFlagship: true }, // KAS Program
-        { ...coursesData[1].courses[1], tag: "Flagship", isFlagship: true }, // AC-SAAD Program
+        { ...coursesData[1].courses[1], tag: "English/Kannada", isFlagship: true }, // AC-SAAD Program - updated tag
         { ...coursesData[2].courses[0], tag: "Popular", isFlagship: true }, // PSI/PC Program
     ];
 
