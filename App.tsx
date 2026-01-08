@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -31,9 +30,15 @@ import KsetPage from './pages/courses/KsetPage';
 import DcetPage from './pages/courses/DcetPage';
 import KeaTechPage from './pages/courses/KeaTechPage';
 import KeaGroupBCPage from './pages/courses/KeaGroupBCPage';
-import ShimulPage from './pages/courses/ShimulPage';
+import KmfUnitPage from './pages/courses/KmfUnitPage'; // Replacing static Shimul with Dynamic Page
 import AgricultureOfficerPage from './pages/courses/AgricultureOfficerPage';
 import AeJeTechnicalPage from './pages/courses/AeJeTechnicalPage';
+
+// Banking Pages
+import SbiExamPage from './pages/courses/SbiExamPage';
+import IbpsExamPage from './pages/courses/IbpsExamPage';
+import RbiExamPage from './pages/courses/RbiExamPage';
+import NabardExamPage from './pages/courses/NabardExamPage';
 
 // Judiciary Pages
 import CivilJudgePage from './pages/courses/CivilJudgePage';
@@ -86,7 +91,18 @@ const App: React.FC = () => {
               <Route path="/courses/d-cet" element={<DcetPage />} />
               <Route path="/courses/kea-tech" element={<KeaTechPage />} />
               <Route path="/courses/kea-group-b-c-d" element={<KeaGroupBCPage />} />
-              <Route path="/courses/kmf-shimul" element={<ShimulPage />} />
+              
+              {/* Banking Routes */}
+              <Route path="/courses/banking/sbi" element={<SbiExamPage />} />
+              <Route path="/courses/banking/ibps" element={<IbpsExamPage />} />
+              <Route path="/courses/banking/rbi" element={<RbiExamPage />} />
+              <Route path="/courses/banking/nabard" element={<NabardExamPage />} />
+              
+              {/* Dynamic KMF Routes */}
+              <Route path="/courses/kmf/:unitId" element={<KmfUnitPage />} />
+              {/* Legacy fallback */}
+              <Route path="/courses/kmf-shimul" element={<KmfUnitPage />} />
+
               <Route path="/courses/ae-je-technical" element={<AeJeTechnicalPage />} />
 
               {/* Judiciary Related */}

@@ -1,4 +1,3 @@
-
 import { TelegramIcon, InstagramIcon, YouTubeIcon, FacebookIcon, WhatsAppIcon, XIcon } from './components/Icons';
 
 export const navLinks = [
@@ -60,22 +59,31 @@ export const secondaryNavLinks = [
       ]
     },
     { 
+      name: 'Banking', 
+      dropdown: [
+        { name: 'SBI PO/Clerk/SO', path: '/courses/banking/sbi' },
+        { name: 'IBPS PO/Clerk/SO', path: '/courses/banking/ibps' },
+        { name: 'RBI Grade B/Asst', path: '/courses/banking/rbi' },
+        { name: 'NABARD Grade A/B', path: '/courses/banking/nabard' }
+      ]
+    },
+    { 
       name: 'KMF', 
       dropdown: [
-        { name: 'CENTRAL KMF', path: '/courses/kmf-shimul' },
-        { name: 'SHIMUL', path: '/courses/kmf-shimul' },
-        { name: 'BAMUL', path: '/courses/kmf-shimul' },
-        { name: 'KOMUL', path: '/courses/kmf-shimul' },
-        { name: 'TUMUL', path: '/courses/kmf-shimul' },
-        { name: 'MYMUL', path: '/courses/kmf-shimul' },
-        { name: 'MANMUL', path: '/courses/kmf-shimul' },
-        { name: 'HAMUL', path: '/courses/kmf-shimul' },
-        { name: 'CHAMUL', path: '/courses/kmf-shimul' },
-        { name: 'DKMUL', path: '/courses/kmf-shimul' },
-        { name: 'DAMUL', path: '/courses/kmf-shimul' },
-        { name: 'BEMUL', path: '/courses/kmf-shimul' },
-        { name: 'VIMUL', path: '/courses/kmf-shimul' },
-        { name: 'CHIMUL', path: '/courses/kmf-shimul' },
+        { name: 'CENTRAL KMF', path: '/courses/kmf/central' },
+        { name: 'SHIMUL', path: '/courses/kmf/shimul' },
+        { name: 'BAMUL', path: '/courses/kmf/bamul' },
+        { name: 'KOMUL', path: '/courses/kmf/komul' },
+        { name: 'TUMUL', path: '/courses/kmf/tumul' },
+        { name: 'MYMUL', path: '/courses/kmf/mymul' },
+        { name: 'MANMUL', path: '/courses/kmf/manmul' },
+        { name: 'HAMUL', path: '/courses/kmf/hamul' },
+        { name: 'CHAMUL', path: '/courses/kmf/chamul' },
+        { name: 'DKMUL', path: '/courses/kmf/dkmul' },
+        { name: 'DAMUL', path: '/courses/kmf/damul' },
+        { name: 'BEMUL', path: '/courses/kmf/bemul' },
+        { name: 'VIMUL', path: '/courses/kmf/vimul' },
+        { name: 'CHIMUL', path: '/courses/kmf/chimul' },
       ]
     },
     { name: 'Physical Training', path: '/physical-training' },
@@ -198,7 +206,7 @@ export const coursesData = [
         title: 'KMF & Co-operative (DCC) Bank Exams Program',
         description: 'A comprehensive short-term program designed for aspirants seeking entry into the co-operative sector.',
         features: ['Classroom Program', 'Comprehensive Coverage of Syllabus', 'High Quality Study Material', 'Subject-wise and Full Length Mock Tests', 'Guidance by Subject Experts and Serving Officers'],
-        path: '/courses/kmf-shimul',
+        path: '/courses/kmf/central',
         duration: '3-4 Months',
         eligibility: 'Degree (B.Com/Others)',
         medium: 'Kannada/English'
@@ -316,6 +324,7 @@ export const coursesData = [
         title: 'SBI–PO / Clerk / SO Exam',
         description: 'The Comprehensive Program for all Three Stages of the Exam.',
         features: ['Classroom Program', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        path: '/courses/banking/sbi',
         duration: '4-5 Months',
         eligibility: 'Graduate',
         medium: 'English'
@@ -324,6 +333,7 @@ export const coursesData = [
         title: 'IBPS – PO / Clerk / SO / RRB Exam',
         description: 'Autonomous body recruiting for various Public Sector Banks & RRBs.',
         features: ['Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        path: '/courses/banking/ibps',
         duration: '4-5 Months',
         eligibility: 'Graduate',
         medium: 'English'
@@ -332,6 +342,7 @@ export const coursesData = [
         title: 'RBI – Grade B / Assistant Exam',
         description: 'Highly Prestigious Exam in the Indian Banking Sector.',
         features: ['Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material', 'Experienced Technical & GS Faculty'],
+        path: '/courses/banking/rbi',
         duration: '6 Months',
         eligibility: 'Graduate (60%+)',
         medium: 'English'
@@ -340,6 +351,7 @@ export const coursesData = [
         title: 'NABARD – Grade A & B Exam',
         description: 'The Exam Focusing on Rural & Agricultural Sector Development.',
         features: ['Agriculture & Rural Development–Focused Coverage', 'Economic & Social Issues–Focused Modules', 'Classroom Program (Prelims + Mains + Interview)', 'Sectional & Full-Length Mock Tests', 'High-Quality Study Material'],
+        path: '/courses/banking/nabard',
         duration: '6 Months',
         eligibility: 'Graduate',
         medium: 'English'
