@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { socialLinks } from '../constants';
@@ -23,15 +22,15 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-montserrat font-bold mb-4 border-b-2 border-sunrise-orange pb-2 inline-block">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <LocationPinIcon className="w-6 h-6 mt-1 text-sunrise-orange" />
-                <span>123, Example Road, Koramangala, Bengaluru, Karnataka 560034</span>
+                <LocationPinIcon className="w-6 h-6 mt-1 text-sunrise-orange flex-shrink-0" />
+                <span>Near Al-ameen towers, Hosur Main Road, Lal Bagh Main Rd, Behind, Sudhama Nagar, Bengaluru, Karnataka 560027</span>
               </li>
               <li className="flex items-center space-x-3">
-                <PhoneIcon className="w-5 h-5 text-sunrise-orange" />
+                <PhoneIcon className="w-5 h-5 text-sunrise-orange flex-shrink-0" />
                 <a href="tel:+919611621195" className="hover:underline">+91 96116 21195</a>
               </li>
               <li className="flex items-center space-x-3">
-                <MailIcon className="w-5 h-5 text-sunrise-orange" />
+                <MailIcon className="w-5 h-5 text-sunrise-orange flex-shrink-0" />
                 <a href="mailto:info@encourageindia.com" className="hover:underline">info@encourageindia.com</a>
               </li>
             </ul>
@@ -42,11 +41,11 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-montserrat font-bold mb-4 border-b-2 border-sunrise-orange pb-2 inline-block">Follow Us</h3>
             <div className="flex items-center space-x-4 mt-4">
               {socialLinks.map((social) => (
-                <a 
-                  key={social.name} 
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white/10 p-3 rounded-full hover:bg-sunrise-orange transition-colors duration-300"
                   aria-label={social.name}
                 >
