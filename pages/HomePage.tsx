@@ -200,8 +200,8 @@ const HomePage: React.FC = () => {
         .animate-pulse-soft { animation: pulse-soft 2s infinite; }
       `}</style>
 
-            {/* Cinematic Hero Section - Fixed Height and Centering */}
-            <section className="relative min-h-[650px] md:h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+            {/* Cinematic Hero Section - Optimized Compact Height */}
+            <section className="relative min-h-[500px] md:h-[65vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                 {carouselSlides.map((slide, index) => (
                     <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                         <div className="absolute inset-0 overflow-hidden">
@@ -209,25 +209,25 @@ const HomePage: React.FC = () => {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
                         <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
-                            <div className="max-w-3xl space-y-4 md:space-y-6 pl-2 md:pl-0 pb-20 md:pb-0">
+                            <div className="max-w-3xl space-y-3 md:space-y-5 pl-2 md:pl-0 pb-10 md:pb-0">
                                 <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
                                     <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
                                     {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
                                 </div>
-                                <h1 className={`text-3xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
-                                <p className={`text-base md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
-                                <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                                <h1 className={`text-2xl md:text-5xl lg:text-6xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
+                                <p className={`text-sm md:text-lg text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
+                                <ul className={`hidden md:flex flex-wrap gap-3 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
                                     {slide.points.map(point => (
-                                        <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
-                                            <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2" /><span className="text-sm font-semibold">{point}</span>
+                                        <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-3 py-1 border border-white/10">
+                                            <CheckCircleIcon className="w-3 h-3 text-green-400 mr-2" /><span className="text-xs font-semibold">{point}</span>
                                         </li>
                                     ))}
                                 </ul>
-                                {/* Improved Button Layout for Mobile */}
-                                <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-3 pt-6 md:pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-                                    <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-4 md:!py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
-                                    <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-4 md:!py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
-                                    <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-3 group/info">
+                                {/* Optimized Button Layout */}
+                                <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 pt-4 md:pt-2 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                                    <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
+                                    <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+                                    <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-2 group/info text-sm">
                                         {slide.cta3}
                                         <ChevronRightIcon className="w-4 h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
                                     </CTAButton>
@@ -257,21 +257,21 @@ const HomePage: React.FC = () => {
             </section>
 
             {/* Flagship Programs Section */}
-            <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+            <section className="py-12 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
                 <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
                 <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="text-center mb-16 relative">
+                    <div className="text-center mb-8 relative">
                         <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
                             <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
                             <span>Admissions Open 2026-27</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black font-montserrat text-charcoal-gray dark:text-white mb-6 tracking-tight">Our Flagship Programs</h2>
-                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
+                        <h2 className="text-3xl md:text-5xl font-black font-montserrat text-charcoal-gray dark:text-white mb-4 tracking-tight">Our Flagship Programs</h2>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-xs md:text-sm px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
                     </div>
 
-                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-12 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-8 pt-8 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {featuredPrograms.map((course, index) => (
                             <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center group">
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-700">
@@ -282,7 +282,7 @@ const HomePage: React.FC = () => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-16">
+                    <div className="text-center mt-10">
                         <CTAButton to="/courses" variant="secondary-blue" className="text-xs px-12 py-4 uppercase font-black tracking-[0.2em] shadow-xl hover:shadow-empower-blue/20">
                             Explore All Our Courses
                         </CTAButton>
