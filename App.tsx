@@ -56,67 +56,71 @@ const ScrollToTop = () => {
   return null;
 };
 
+import ErrorBoundary from './components/ErrorBoundary';
+
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <EnrollmentProvider>
-        <HashRouter>
-          <AnalyticsTracker />
-          <ScrollToTop />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutUsPage />} />
-              <Route path="/courses" element={<CoursesPage />} />
-              <Route path="/physical-training" element={<PhysicalTrainingPage />} />
-              <Route path="/current-affairs" element={<CurrentAffairsPage />} />
-              <Route path="/downloads" element={<DownloadsPage />} />
-              <Route path="/results" element={<ResultsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
+      <ErrorBoundary>
+        <EnrollmentProvider>
+          <HashRouter>
+            <AnalyticsTracker />
+            <ScrollToTop />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutUsPage />} />
+                <Route path="/courses" element={<CoursesPage />} />
+                <Route path="/physical-training" element={<PhysicalTrainingPage />} />
+                <Route path="/current-affairs" element={<CurrentAffairsPage />} />
+                <Route path="/downloads" element={<DownloadsPage />} />
+                <Route path="/results" element={<ResultsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
 
-              {/* Dedicated Exam Page Routes */}
-              <Route path="/courses/upsc-cse" element={<UPSCPage />} />
-              <Route path="/courses/kas" element={<KasPage />} />
-              <Route path="/courses/ac-saad" element={<AcSaadPage />} />
-              <Route path="/courses/acf" element={<AcfPage />} />
-              <Route path="/courses/kpsc-ao-aao" element={<AgricultureOfficerPage />} />
-              <Route path="/courses/group-b" element={<GroupBPage />} />
-              <Route path="/courses/group-c" element={<GroupCPage />} />
-              <Route path="/courses/kpsc-tech" element={<KpscTechPage />} />
-              <Route path="/courses/psi" element={<PsiPage />} />
-              <Route path="/courses/pc" element={<PcPage />} />
-              <Route path="/courses/psi-pc" element={<PsiPcPage />} />
-              <Route path="/courses/kpcl" element={<KpclPage />} />
-              <Route path="/courses/k-set" element={<KsetPage />} />
-              <Route path="/courses/d-cet" element={<DcetPage />} />
-              <Route path="/courses/kea-tech" element={<KeaTechPage />} />
-              <Route path="/courses/kea-group-b-c-d" element={<KeaGroupBCPage />} />
-              
-              {/* Banking Routes */}
-              <Route path="/courses/banking/sbi" element={<SbiExamPage />} />
-              <Route path="/courses/banking/ibps" element={<IbpsExamPage />} />
-              <Route path="/courses/banking/rbi" element={<RbiExamPage />} />
-              <Route path="/courses/banking/nabard" element={<NabardExamPage />} />
-              
-              {/* Dynamic KMF Routes */}
-              <Route path="/courses/kmf/:unitId" element={<KmfUnitPage />} />
-              {/* Legacy fallback */}
-              <Route path="/courses/kmf-shimul" element={<KmfUnitPage />} />
+                {/* Dedicated Exam Page Routes */}
+                <Route path="/courses/upsc-cse" element={<UPSCPage />} />
+                <Route path="/courses/kas" element={<KasPage />} />
+                <Route path="/courses/ac-saad" element={<AcSaadPage />} />
+                <Route path="/courses/acf" element={<AcfPage />} />
+                <Route path="/courses/kpsc-ao-aao" element={<AgricultureOfficerPage />} />
+                <Route path="/courses/group-b" element={<GroupBPage />} />
+                <Route path="/courses/group-c" element={<GroupCPage />} />
+                <Route path="/courses/kpsc-tech" element={<KpscTechPage />} />
+                <Route path="/courses/psi" element={<PsiPage />} />
+                <Route path="/courses/pc" element={<PcPage />} />
+                <Route path="/courses/psi-pc" element={<PsiPcPage />} />
+                <Route path="/courses/kpcl" element={<KpclPage />} />
+                <Route path="/courses/k-set" element={<KsetPage />} />
+                <Route path="/courses/d-cet" element={<DcetPage />} />
+                <Route path="/courses/kea-tech" element={<KeaTechPage />} />
+                <Route path="/courses/kea-group-b-c-d" element={<KeaGroupBCPage />} />
 
-              <Route path="/courses/ae-je-technical" element={<AeJeTechnicalPage />} />
+                {/* Banking Routes */}
+                <Route path="/courses/banking/sbi" element={<SbiExamPage />} />
+                <Route path="/courses/banking/ibps" element={<IbpsExamPage />} />
+                <Route path="/courses/banking/rbi" element={<RbiExamPage />} />
+                <Route path="/courses/banking/nabard" element={<NabardExamPage />} />
 
-              {/* Judiciary Related */}
-              <Route path="/courses/civil-judge" element={<CivilJudgePage />} />
-              <Route path="/courses/district-judge" element={<DistrictJudgePage />} />
-              <Route path="/courses/clat" element={<ClatPage />} />
-              <Route path="/courses/aibe" element={<AibePage />} />
+                {/* Dynamic KMF Routes */}
+                <Route path="/courses/kmf/:unitId" element={<KmfUnitPage />} />
+                {/* Legacy fallback */}
+                <Route path="/courses/kmf-shimul" element={<KmfUnitPage />} />
 
-              {/* 404 Route */}
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Layout>
-        </HashRouter>
-      </EnrollmentProvider>
+                <Route path="/courses/ae-je-technical" element={<AeJeTechnicalPage />} />
+
+                {/* Judiciary Related */}
+                <Route path="/courses/civil-judge" element={<CivilJudgePage />} />
+                <Route path="/courses/district-judge" element={<DistrictJudgePage />} />
+                <Route path="/courses/clat" element={<ClatPage />} />
+                <Route path="/courses/aibe" element={<AibePage />} />
+
+                {/* 404 Route */}
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Layout>
+          </HashRouter>
+        </EnrollmentProvider>
+      </ErrorBoundary>
     </ThemeProvider>
   );
 };

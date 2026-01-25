@@ -16,11 +16,11 @@ export const submitToGoogleSheet = async (data: Record<string, string>) => {
     }
   */
   // 4. Deploy as Web App (Execute as: Me, Who has access: Anyone)
-  // 5. Paste the Web App URL below
-  const GOOGLE_SCRIPT_URL: string = 'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec';
-  
-  if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbyLMwE5ligHUeusL8mVIF9rWFjnPvRbLiN9AC9D-geMS2dyN-3GSjhDGPj4H1ZNuiAl4Q/exec' || GOOGLE_SCRIPT_URL.includes('YOUR_GOOGLE_SCRIPT_URL')) {
-      // Logic for testing or if user hasn't updated yet
+  // 5. Paste the Web App URL in your .env file as VITE_GOOGLE_SCRIPT_URL
+  const GOOGLE_SCRIPT_URL: string = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+
+  if (!GOOGLE_SCRIPT_URL) {
+    console.error('Google Script URL is missing. Please set VITE_GOOGLE_SCRIPT_URL in your .env file.');
   }
 
   // Using URLSearchParams ensures the data is sent as application/x-www-form-urlencoded
@@ -29,7 +29,7 @@ export const submitToGoogleSheet = async (data: Record<string, string>) => {
   for (const key in data) {
     params.append(key, data[key]);
   }
-  
+
   // Append timestamp
   params.append('SubmissionDate', new Date().toLocaleString());
 
