@@ -377,65 +377,87 @@ const HomePage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Downgraded App Section - Standard Clean Layout */}
-            <section className="py-20 bg-slate-50 dark:bg-slate-900 overflow-hidden border-y border-gray-200 dark:border-gray-800">
-                <div className="container mx-auto px-6 md:px-12">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-8">
-                            <div className="space-y-4">
-                                <div className="inline-block px-3 py-1 bg-sunrise-orange/10 text-sunrise-orange text-xs font-bold uppercase tracking-widest rounded">
-                                    Learn on the Go
+            {/* Sleek App Download Section - Compact & Mobile Optimized */}
+            <section className="py-12 relative overflow-hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 transition-colors duration-300">
+                <div className="container mx-auto px-4 md:px-8 relative z-10">
+                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-[2rem] p-6 md:p-10 border border-gray-100 dark:border-gray-700 shadow-lg relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-empower-blue/5 to-transparent pointer-events-none"></div>
+
+                        <div className="grid lg:grid-cols-2 gap-10 items-center">
+                            <div className="space-y-6">
+                                <div className="space-y-4">
+                                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-sunrise-orange/10 text-sunrise-orange text-[10px] font-black uppercase tracking-[0.2em] rounded">
+                                        <span>Learn on the Go</span>
+                                    </div>
+                                    <h2 className="text-2xl md:text-4xl font-black font-montserrat text-charcoal-gray dark:text-white leading-tight tracking-tight">
+                                        Your <span className="text-empower-blue dark:text-blue-400">Classroom</span>, Everywhere.
+                                    </h2>
+                                    <p className="text-base text-charcoal-gray/70 dark:text-gray-300 font-medium leading-relaxed max-w-xl">
+                                        Download our app for access to free test series (PYQ + monthly current affairs based), free video lectures & more right at your fingertips.
+                                    </p>
                                 </div>
-                                <h2 className="text-2xl md:text-4xl font-bold font-montserrat text-charcoal-gray dark:text-white leading-tight">
-                                    Download our app for access to free test series (PYQ + monthly current affairs based), free video lectures & more right at your fingertips.
-                                </h2>
-                            </div>
 
-                            <div className="space-y-4">
-                                {[
-                                    "PYQ Test Series (UPSC / KAS / AC SAAD / ACF / PSI / PC and other)",
-                                    "Monthly current affairs based test series",
-                                    "High quality video lectures."
-                                ].map((feat, i) => (
-                                    <div key={i} className="flex items-start">
-                                        <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
-                                        <span className="text-gray-700 dark:text-gray-300 font-medium">{feat}</span>
-                                    </div>
-                                ))}
-                            </div>
+                                <div className="space-y-3">
+                                    {[
+                                        "PYQ Test Series (UPSC / KPSC / Police / Judiciary)",
+                                        "Monthly current affairs based test series",
+                                        "High quality video lectures."
+                                    ].map((feat, i) => (
+                                        <div key={i} className="flex items-start">
+                                            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center mr-3 mt-0.5">
+                                                <CheckCircleIcon className="w-3 h-3 text-green-500" />
+                                            </div>
+                                            <span className="text-charcoal-gray dark:text-gray-200 font-bold text-sm md:text-base">{feat}</span>
+                                        </div>
+                                    ))}
+                                </div>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-                                <a
-                                    href="https://play.google.com/store/apps/details?id=co.barney.yflbb"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center bg-charcoal-gray text-white px-8 py-4 rounded-lg hover:bg-black transition-colors shadow-lg active:scale-95"
-                                >
-                                    <GooglePlayIcon className="w-8 h-8 mr-3" />
-                                    <div className="flex flex-col items-start">
-                                        <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">Get it on</span>
-                                        <span className="text-lg font-bold">Google Play</span>
-                                    </div>
-                                </a>
+                                <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=co.barney.yflbb"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full sm:w-auto flex items-center justify-center bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-black transition-all shadow-md active:scale-95 group/btn"
+                                    >
+                                        <GooglePlayIcon className="w-6 h-6 mr-3" />
+                                        <div className="flex flex-col items-start leading-none">
+                                            <span className="text-[9px] uppercase font-bold tracking-widest opacity-60 mb-0.5">Get it on</span>
+                                            <span className="text-base font-bold">Google Play</span>
+                                        </div>
+                                    </a>
 
-                                <div className="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-12 h-12 rounded" />
-                                    <div className="text-left">
-                                        <p className="text-[10px] font-bold text-charcoal-gray dark:text-gray-300 uppercase tracking-wider">Quick Scan</p>
-                                        <p className="text-[9px] text-gray-500 leading-tight">Use camera to download</p>
+                                    <div className="flex items-center gap-3 p-2.5 bg-white dark:bg-slate-700 border border-gray-100 dark:border-gray-600 rounded-xl shadow-sm">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-10 h-10 rounded shadow-xs" />
+                                        <div className="text-left leading-tight">
+                                            <p className="text-[9px] font-black text-sunrise-orange uppercase tracking-wider">Quick Scan</p>
+                                            <p className="text-[10px] text-gray-400 font-medium">Instant Access</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="hidden lg:flex justify-center relative">
-                            <div className="w-[300px] rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden bg-white">
-                                <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
-                            </div>
-                            {/* Simplified floating badge */}
-                            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3">
-                                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center"><StarIcon className="w-5 h-5 text-sunrise-orange" /></div>
-                                <div><p className="text-[10px] text-gray-500 font-bold uppercase">Rating</p><p className="text-lg font-black dark:text-white">4.9/5.0</p></div>
+                            <div className="flex justify-center relative mt-8 lg:mt-0">
+                                <div className="relative">
+                                    <div className="w-[200px] md:w-[250px] relative rounded-[2rem] border-[6px] border-slate-900 shadow-xl overflow-hidden bg-white">
+                                        <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
+                                    </div>
+
+                                    {/* Compact Vertical Badges */}
+                                    <div className="absolute top-4 -right-10 md:-right-12 space-y-3">
+                                        <div className="bg-white dark:bg-slate-700 p-3 rounded-xl shadow-lg border border-gray-50 dark:border-gray-600 flex flex-col items-center animate-float">
+                                            <div className="flex text-sunrise-orange mb-0.5">
+                                                {[1, 2, 3, 4, 5].map(s => <StarIcon key={s} className="w-2 h-2" />)}
+                                            </div>
+                                            <p className="text-[14px] font-black text-slate-900 dark:text-white leading-none">4.9</p>
+                                            <p className="text-[7px] text-gray-400 font-bold uppercase mt-0.5">Rating</p>
+                                        </div>
+
+                                        <div className="bg-white dark:bg-slate-700 p-3 rounded-xl shadow-lg border border-gray-50 dark:border-gray-600 flex flex-col items-center animate-float" style={{ animationDelay: '1.5s' }}>
+                                            <p className="text-[14px] font-black text-empower-blue leading-none">10K+</p>
+                                            <p className="text-[7px] text-gray-400 font-bold uppercase mt-0.5">Users</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

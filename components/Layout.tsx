@@ -16,12 +16,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-grow">
         {children}
       </main>
-      
+
       {/* Branding Banner */}
-      <div className="bg-soft-gray dark:bg-slate-800 py-16 w-full overflow-hidden select-none flex justify-center items-center px-4 transition-colors duration-300">
-         <span className="font-montserrat font-extrabold text-2xl sm:text-4xl md:text-6xl uppercase text-empower-blue/20 dark:text-white/10 tracking-widest text-center cursor-default break-words">
-            Encourage India IAS
-         </span>
+      <div className="bg-soft-gray dark:bg-slate-800 py-16 w-full overflow-hidden select-none flex flex-col justify-center items-center px-4 transition-colors duration-300">
+        <span className="font-montserrat font-extrabold text-2xl sm:text-4xl md:text-6xl uppercase text-empower-blue/20 dark:text-white/10 tracking-widest text-center cursor-default break-words">
+          Encourage India IAS
+        </span>
+        <span className="mt-4 font-bold text-lg sm:text-2xl md:text-3xl text-sunrise-orange/30 dark:text-sunrise-orange/10 tracking-wide text-center">
+          ಪ್ರೇರಣೆಯಿಂದ ಪ್ರಗತಿಯ ಕಡೆಗೆ
+        </span>
       </div>
 
       <Footer />
