@@ -168,9 +168,9 @@ const HomePage: React.FC = () => {
         }
     };
 
-  return (
-    <div>
-      <style>{`
+    return (
+        <div>
+            <style>{`
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
@@ -200,261 +200,266 @@ const HomePage: React.FC = () => {
         .animate-pulse-soft { animation: pulse-soft 2s infinite; }
       `}</style>
 
-      {/* Cinematic Hero Section - Fixed Height and Centering */}
-      <section className="relative min-h-[650px] md:h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-          {carouselSlides.map((slide, index) => (
-              <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                  <div className="absolute inset-0 overflow-hidden">
-                      <img src={slide.image} alt={slide.badge} className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
-                  <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
-                      <div className="max-w-3xl space-y-4 md:space-y-6 pl-2 md:pl-0 pb-20 md:pb-0">
-                          <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                              <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
-                              {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
-                          </div>
-                          <h1 className={`text-3xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
-                          <p className={`text-base md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
-                          <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-                            {slide.points.map(point => (
-                                <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
-                                    <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2"/><span className="text-sm font-semibold">{point}</span>
-                                </li>
+            {/* Cinematic Hero Section - Fixed Height and Centering */}
+            <section className="relative min-h-[650px] md:h-[85vh] w-full overflow-hidden text-white bg-slate-900" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+                {carouselSlides.map((slide, index) => (
+                    <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+                        <div className="absolute inset-0 overflow-hidden">
+                            <img src={slide.image} alt={slide.badge} className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
+                        <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
+                            <div className="max-w-3xl space-y-4 md:space-y-6 pl-2 md:pl-0 pb-20 md:pb-0">
+                                <div className={`flex flex-wrap items-center gap-3 ${index === currentSlide ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                                    <span className="bg-sunrise-orange/90 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg border border-white/20">{slide.badge}</span>
+                                    {slide.medium && <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] md:text-sm font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-md">{slide.medium}</span>}
+                                </div>
+                                <h1 className={`text-3xl md:text-6xl lg:text-7xl font-extrabold font-montserrat leading-tight drop-shadow-lg ${index === currentSlide ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>{slide.headline}</h1>
+                                <p className={`text-base md:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow-md ${index === currentSlide ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>{slide.subheadline}</p>
+                                <ul className={`hidden md:flex flex-wrap gap-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                                    {slide.points.map(point => (
+                                        <li key={point} className="flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/10">
+                                            <CheckCircleIcon className="w-4 h-4 text-green-400 mr-2" /><span className="text-sm font-semibold">{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                {/* Improved Button Layout for Mobile */}
+                                <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-3 pt-6 md:pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                                    <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-4 md:!py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
+                                    <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-4 md:!py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+                                    <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-3 group/info">
+                                        {slide.cta3}
+                                        <ChevronRightIcon className="w-4 h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
+                                    </CTAButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" /></button>
+                <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" /></button>
+                <div className="absolute bottom-0 left-0 w-full z-20 bg-black/60 backdrop-blur-md border-t border-white/10">
+                    <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-3 text-xs md:text-sm text-gray-300">
+                        <div className="flex space-x-6 mb-2 md:mb-0 overflow-x-auto scrollbar-hide w-full md:w-auto pb-1 md:pb-0">
+                            <div className="flex items-center whitespace-nowrap"><UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange" /><span><strong className="text-white">Trusted</strong> by Aspirants</span></div>
+                            <div className="flex items-center whitespace-nowrap"><AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange" /><span><strong className="text-white">50+</strong> Expert Faculty</span></div>
+                            <div className="flex items-center whitespace-nowrap hidden sm:flex"><GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange" /><span>Online & Offline</span></div>
+                        </div>
+                        <div className="flex space-x-2">
+                            {carouselSlides.map((_, index) => (
+                                <button key={index} onClick={() => setCurrentSlide(index)} className="relative h-1.5 w-8 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
+                                    <div className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'}`} style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}></div>
+                                </button>
                             ))}
-                          </ul>
-                          {/* Improved Button Layout for Mobile */}
-                          <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-3 pt-6 md:pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-                              <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-4 md:!py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
-                              <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-4 md:!py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
-                              <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-3 group/info">
-                                  {slide.cta3}
-                                  <ChevronRightIcon className="w-4 h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
-                              </CTAButton>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          ))}
-            <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowLeftIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/></button>
-            <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-black/20 hover:bg-black/50 backdrop-blur-sm rounded-full text-white transition-all z-20 border border-white/10 group"><ArrowRightIcon className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform"/></button>
-            <div className="absolute bottom-0 left-0 w-full z-20 bg-black/60 backdrop-blur-md border-t border-white/10">
-                <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-3 text-xs md:text-sm text-gray-300">
-                    <div className="flex space-x-6 mb-2 md:mb-0 overflow-x-auto scrollbar-hide w-full md:w-auto pb-1 md:pb-0">
-                        <div className="flex items-center whitespace-nowrap"><UsersIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">Trusted</strong> by Aspirants</span></div>
-                        <div className="flex items-center whitespace-nowrap"><AcademicCapIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span><strong className="text-white">50+</strong> Expert Faculty</span></div>
-                        <div className="flex items-center whitespace-nowrap hidden sm:flex"><GlobeAltIcon className="w-4 h-4 mr-2 text-sunrise-orange"/><span>Online & Offline</span></div>
-                    </div>
-                    <div className="flex space-x-2">
-                        {carouselSlides.map((_, index) => (
-                            <button key={index} onClick={() => setCurrentSlide(index)} className="relative h-1.5 w-8 md:w-12 bg-gray-600 rounded-full overflow-hidden hover:bg-gray-500 transition-colors focus:outline-none" aria-label={`Go to slide ${index + 1}`}>
-                                <div className={`absolute top-0 left-0 h-full bg-sunrise-orange transition-all duration-300 ease-linear ${index === currentSlide ? 'w-full' : index < currentSlide ? 'w-full opacity-50' : 'w-0'}`} style={{ transitionDuration: index === currentSlide ? `${SLIDE_DURATION}ms` : '300ms' }}></div>
-                            </button>
-                        ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-      </section>
+            </section>
 
-      {/* Flagship Programs Section */}
-      <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
+            {/* Flagship Programs Section */}
+            <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+                <div className="absolute top-1/4 left-0 w-96 h-96 bg-empower-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
+                <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-sunrise-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-16 relative">
-                <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
-                    <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
-                    <span>Admissions Open 2026-27</span>
-                </div>
-                <h2 className="text-4xl md:text-6xl font-black font-montserrat text-charcoal-gray dark:text-white mb-6 tracking-tight">Our Flagship Programs</h2>
-                <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
-            </div>
-
-            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-12 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                {featuredPrograms.map((course, index) => (
-                    <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center group">
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-700">
-                             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-sunrise-orange">{course.tag}</p>
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="text-center mb-16 relative">
+                        <div className="inline-flex items-center space-x-2 bg-sunrise-orange/10 dark:bg-orange-500/20 text-sunrise-orange text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 border border-sunrise-orange/20 animate-pulse-soft">
+                            <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-orange opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-sunrise-orange"></span></span>
+                            <span>Admissions Open 2026-27</span>
                         </div>
-                        <CourseCard course={course} index={index} />
-                    </div>
-                ))}
-            </div>
-            
-            <div className="text-center mt-16">
-                <CTAButton to="/courses" variant="secondary-blue" className="text-xs px-12 py-4 uppercase font-black tracking-[0.2em] shadow-xl hover:shadow-empower-blue/20">
-                    Explore All Our Courses
-                </CTAButton>
-            </div>
-        </div>
-      </section>
-
-      {/* Exam Ticker Strip */}
-      <section className="bg-gradient-to-r from-empower-blue via-blue-900 to-empower-blue py-10 overflow-hidden relative border-y border-white/20 shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
-          <div className="flex whitespace-nowrap animate-ticker group">
-              {[...allExamsList, ...allExamsList, ...allExamsList, ...allExamsList].map((exam, i) => (
-                  <div key={i} className="flex items-center mx-12">
-                      <StarIcon className="w-5 h-5 text-sunrise-orange mr-5 opacity-80" />
-                      <span className="text-2xl md:text-4xl font-black font-montserrat text-white tracking-tighter uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-                          {exam}
-                      </span>
-                  </div>
-              ))}
-          </div>
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-empower-blue to-transparent z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-empower-blue to-transparent z-10"></div>
-      </section>
-
-      {/* Why Choose Section */}
-      <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
-        <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-extrabold font-montserrat text-charcoal-gray dark:text-white">Why Choose Encourage India?</h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-                {courseFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-center p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-slate-700/50 border border-gray-100 dark:border-gray-700 hover:border-empower-blue/50 hover:shadow-md transition-all duration-300 group cursor-default" title={feature.description}>
-                        <div className="flex-shrink-0 mr-3">
-                            <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">{feature.icon}</div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                            <h3 className="text-xs md:text-sm font-bold text-charcoal-gray dark:text-gray-100 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors leading-snug">{feature.title}</h3>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
-         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-                {testimonials.map((testimonial) => (
-                    <div key={testimonial.name} className="bg-soft-gray dark:bg-slate-800 p-8 rounded-lg text-left relative transition-colors duration-300">
-                        <QuoteIcon className="w-16 h-16 text-empower-blue/10 dark:text-white/10 absolute top-4 right-4" />
-                        <p className="text-charcoal-gray/90 dark:text-gray-200 italic">"{testimonial.quote}"</p>
-                        <div className="mt-6 flex items-center">
-                            <img src={testimonial.image} alt={testimonial.name} className="w-14 h-14 rounded-full object-cover mr-4"/>
-                            <div>
-                                <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-white">{testimonial.name}</h4>
-                                <p className="text-sm text-sunrise-orange">{testimonial.achievement}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-         </div>
-      </section>
-      
-      {/* Mentor Section */}
-      <section className="bg-empower-blue text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
-            <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
-            {mentorStatus === 'success' ? (
-                <div className="mt-8 bg-white/10 border border-white/20 rounded-lg p-6 max-w-lg mx-auto animate-fade-in">
-                    <CheckCircleIcon className="w-12 h-12 text-green-400 mx-auto mb-2" />
-                    <h3 className="text-xl font-bold">Request Received!</h3>
-                    <p className="text-soft-gray">Our mentor will call you shortly.</p>
-                </div>
-            ) : (
-                <form onSubmit={handleMentorSubmit} className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-                    <input type="text" placeholder="Your Name" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.name} onChange={(e) => setMentorForm({...mentorForm, name: e.target.value})} required disabled={mentorStatus === 'loading'} />
-                    <input type="tel" placeholder="Phone Number" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.phone} onChange={(e) => setMentorForm({...mentorForm, phone: e.target.value})} pattern="[0-9]{10}" required disabled={mentorStatus === 'loading'} />
-                    <CTAButton type="submit" variant="primary" className={`shrink-0 ${mentorStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}>{mentorStatus === 'loading' ? 'Sending...' : 'Request a Call'}</CTAButton>
-                </form>
-            )}
-             {mentorStatus === 'error' && <p className="mt-2 text-red-300">Something went wrong. Please try again.</p>}
-        </div>
-      </section>
-
-      {/* Downgraded App Section - Standard Clean Layout */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900 overflow-hidden border-y border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-6 md:px-12">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                    <div className="space-y-4">
-                        <div className="inline-block px-3 py-1 bg-sunrise-orange/10 text-sunrise-orange text-xs font-bold uppercase tracking-widest rounded">
-                            Learn on the Go
-                        </div>
-                        <h2 className="text-2xl md:text-4xl font-bold font-montserrat text-charcoal-gray dark:text-white leading-tight">
-                            Download our app for access to free test series (PYQ + monthly current affairs based), free video lectures & more right at your fingertips.
-                        </h2>
+                        <h2 className="text-4xl md:text-6xl font-black font-montserrat text-charcoal-gray dark:text-white mb-6 tracking-tight">Our Flagship Programs</h2>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium text-sm md:text-base px-2">Elite preparation strategies designed by former bureaucrats and subject domain experts.</p>
                     </div>
 
-                    <div className="space-y-4">
-                        {[
-                            "PYQ Test Series (UPSC / KAS / AC SAAD / ACF / PSI / PC and other)",
-                            "Monthly current affairs based test series",
-                            "High quality video lectures."
-                        ].map((feat, i) => (
-                            <div key={i} className="flex items-start">
-                                <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
-                                <span className="text-gray-700 dark:text-gray-300 font-medium">{feat}</span>
+                    <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-12 pt-12 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                        {featuredPrograms.map((course, index) => (
+                            <div key={index} className="relative flex-shrink-0 w-[290px] sm:w-auto snap-center group">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-700">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.15em] text-sunrise-orange">{course.tag}</p>
+                                </div>
+                                <CourseCard course={course} index={index} />
                             </div>
                         ))}
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-                        <a 
-                          href="https://play.google.com/store/apps/details?id=co.barney.yflbb" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="flex items-center bg-charcoal-gray text-white px-8 py-4 rounded-lg hover:bg-black transition-colors shadow-lg active:scale-95"
-                        >
-                            <GooglePlayIcon className="w-8 h-8 mr-3" />
-                            <div className="flex flex-col items-start">
-                                <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">Get it on</span>
-                                <span className="text-lg font-bold">Google Play</span>
-                            </div>
-                        </a>
+                    <div className="text-center mt-16">
+                        <CTAButton to="/courses" variant="secondary-blue" className="text-xs px-12 py-4 uppercase font-black tracking-[0.2em] shadow-xl hover:shadow-empower-blue/20">
+                            Explore All Our Courses
+                        </CTAButton>
+                    </div>
+                </div>
+            </section>
 
-                        <div className="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-12 h-12 rounded"/>
-                            <div className="text-left">
-                                <p className="text-[10px] font-bold text-charcoal-gray dark:text-gray-300 uppercase tracking-wider">Quick Scan</p>
-                                <p className="text-[9px] text-gray-500 leading-tight">Use camera to download</p>
+            {/* Exam Ticker Strip */}
+            <section className="bg-gradient-to-r from-empower-blue via-blue-900 to-empower-blue py-10 overflow-hidden relative border-y border-white/20 shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+                <div className="flex whitespace-nowrap animate-ticker group">
+                    {[...allExamsList, ...allExamsList, ...allExamsList, ...allExamsList].map((exam, i) => (
+                        <div key={i} className="flex items-center mx-12">
+                            <StarIcon className="w-5 h-5 text-sunrise-orange mr-5 opacity-80" />
+                            <span className="text-2xl md:text-4xl font-black font-montserrat text-white tracking-tighter uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                                {exam}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-empower-blue to-transparent z-10"></div>
+                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-empower-blue to-transparent z-10"></div>
+            </section>
+
+            {/* Why Choose Section */}
+            <section className="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-10">
+                        <h2 className="text-2xl md:text-3xl font-extrabold font-montserrat text-charcoal-gray dark:text-white">Why Choose Encourage India?</h2>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                        {courseFeatures.map((feature, index) => (
+                            <div key={index} className="flex items-center p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-slate-700/50 border border-gray-100 dark:border-gray-700 hover:border-empower-blue/50 hover:shadow-md transition-all duration-300 group cursor-default" title={feature.description}>
+                                <div className="flex-shrink-0 mr-3">
+                                    <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <h3 className="text-xs md:text-sm font-bold text-charcoal-gray dark:text-gray-100 group-hover:text-empower-blue dark:group-hover:text-blue-300 transition-colors leading-snug">{feature.title}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
+                    <div className="grid md:grid-cols-3 gap-8 mt-12">
+                        {testimonials.map((testimonial) => (
+                            <div key={testimonial.name} className="bg-soft-gray dark:bg-slate-800 p-8 rounded-lg text-left relative transition-colors duration-300">
+                                <QuoteIcon className="w-16 h-16 text-empower-blue/10 dark:text-white/10 absolute top-4 right-4" />
+                                <p className="text-charcoal-gray/90 dark:text-gray-200 italic">"{testimonial.quote}"</p>
+                                <div className="mt-6 flex items-center">
+                                    <img src={testimonial.image} alt={testimonial.name} className="w-14 h-14 rounded-full object-cover mr-4" />
+                                    <div>
+                                        <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-white">{testimonial.name}</h4>
+                                        <p className="text-sm text-sunrise-orange">{testimonial.achievement}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-12">
+                        <CTAButton to="/results" variant="secondary-blue" className="text-xs px-10 py-3 uppercase font-black tracking-widest">
+                            View All Results & Testimonials
+                        </CTAButton>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mentor Section */}
+            <section className="bg-empower-blue text-white py-20">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold font-montserrat">Talk to a Mentor</h2>
+                    <p className="mt-4 max-w-2xl mx-auto">Get your doubts cleared and receive expert guidance for your preparation journey.</p>
+                    {mentorStatus === 'success' ? (
+                        <div className="mt-8 bg-white/10 border border-white/20 rounded-lg p-6 max-w-lg mx-auto animate-fade-in">
+                            <CheckCircleIcon className="w-12 h-12 text-green-400 mx-auto mb-2" />
+                            <h3 className="text-xl font-bold">Request Received!</h3>
+                            <p className="text-soft-gray">Our mentor will call you shortly.</p>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleMentorSubmit} className="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                            <input type="text" placeholder="Your Name" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.name} onChange={(e) => setMentorForm({ ...mentorForm, name: e.target.value })} required disabled={mentorStatus === 'loading'} />
+                            <input type="tel" placeholder="Phone Number" className="flex-grow p-3 rounded-lg text-charcoal-gray focus:outline-none focus:ring-2 focus:ring-sunrise-orange disabled:bg-gray-200" value={mentorForm.phone} onChange={(e) => setMentorForm({ ...mentorForm, phone: e.target.value })} pattern="[0-9]{10}" required disabled={mentorStatus === 'loading'} />
+                            <CTAButton type="submit" variant="primary" className={`shrink-0 ${mentorStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}>{mentorStatus === 'loading' ? 'Sending...' : 'Request a Call'}</CTAButton>
+                        </form>
+                    )}
+                    {mentorStatus === 'error' && <p className="mt-2 text-red-300">Something went wrong. Please try again.</p>}
+                </div>
+            </section>
+
+            {/* Downgraded App Section - Standard Clean Layout */}
+            <section className="py-20 bg-slate-50 dark:bg-slate-900 overflow-hidden border-y border-gray-200 dark:border-gray-800">
+                <div className="container mx-auto px-6 md:px-12">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-8">
+                            <div className="space-y-4">
+                                <div className="inline-block px-3 py-1 bg-sunrise-orange/10 text-sunrise-orange text-xs font-bold uppercase tracking-widest rounded">
+                                    Learn on the Go
+                                </div>
+                                <h2 className="text-2xl md:text-4xl font-bold font-montserrat text-charcoal-gray dark:text-white leading-tight">
+                                    Download our app for access to free test series (PYQ + monthly current affairs based), free video lectures & more right at your fingertips.
+                                </h2>
+                            </div>
+
+                            <div className="space-y-4">
+                                {[
+                                    "PYQ Test Series (UPSC / KAS / AC SAAD / ACF / PSI / PC and other)",
+                                    "Monthly current affairs based test series",
+                                    "High quality video lectures."
+                                ].map((feat, i) => (
+                                    <div key={i} className="flex items-start">
+                                        <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                                        <span className="text-gray-700 dark:text-gray-300 font-medium">{feat}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=co.barney.yflbb"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center bg-charcoal-gray text-white px-8 py-4 rounded-lg hover:bg-black transition-colors shadow-lg active:scale-95"
+                                >
+                                    <GooglePlayIcon className="w-8 h-8 mr-3" />
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-[10px] uppercase font-bold tracking-widest opacity-70">Get it on</span>
+                                        <span className="text-lg font-bold">Google Play</span>
+                                    </div>
+                                </a>
+
+                                <div className="flex items-center gap-4 p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-12 h-12 rounded" />
+                                    <div className="text-left">
+                                        <p className="text-[10px] font-bold text-charcoal-gray dark:text-gray-300 uppercase tracking-wider">Quick Scan</p>
+                                        <p className="text-[9px] text-gray-500 leading-tight">Use camera to download</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="hidden lg:flex justify-center relative">
+                            <div className="w-[300px] rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden bg-white">
+                                <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
+                            </div>
+                            {/* Simplified floating badge */}
+                            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3">
+                                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center"><StarIcon className="w-5 h-5 text-sunrise-orange" /></div>
+                                <div><p className="text-[10px] text-gray-500 font-bold uppercase">Rating</p><p className="text-lg font-black dark:text-white">4.9/5.0</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div className="hidden lg:flex justify-center relative">
-                    <div className="w-[300px] rounded-[2.5rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden bg-white">
-                        <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
-                    </div>
-                    {/* Simplified floating badge */}
-                    <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3">
-                        <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center"><StarIcon className="w-5 h-5 text-sunrise-orange" /></div>
-                        <div><p className="text-[10px] text-gray-500 font-bold uppercase">Rating</p><p className="text-lg font-black dark:text-white">4.9/5.0</p></div>
-                    </div>
+            {/* Downgraded Final CTA Section - Clean Professional Standard */}
+            <section className="bg-slate-900 text-white py-20 border-t border-white/5">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold font-montserrat mb-6">Ready to start your success story?</h2>
+                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Join thousands of successful aspirants who trusted Encourage India to brighten their future.
+                    </p>
+                    <CTAButton
+                        requiresAuth
+                        variant="primary"
+                        className="text-lg px-12 py-4 shadow-xl !rounded-lg"
+                    >
+                        Enroll Now for 2026-27
+                    </CTAButton>
                 </div>
-            </div>
+            </section>
         </div>
-      </section>
-
-      {/* Downgraded Final CTA Section - Clean Professional Standard */}
-      <section className="bg-slate-900 text-white py-20 border-t border-white/5">
-        <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold font-montserrat mb-6">Ready to start your success story?</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Join thousands of successful aspirants who trusted Encourage India to brighten their future.
-            </p>
-            <CTAButton 
-                requiresAuth 
-                variant="primary" 
-                className="text-lg px-12 py-4 shadow-xl !rounded-lg"
-            >
-                Enroll Now for 2026-27
-            </CTAButton>
-        </div>
-      </section>
-    </div>
-  );
+    );
 };
 
 export default HomePage;
