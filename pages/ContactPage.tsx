@@ -79,7 +79,7 @@ const ContactPage: React.FC = () => {
                                     <MailIcon className="w-7 h-7 text-sunrise-orange mt-1 flex-shrink-0" />
                                     <div>
                                         <h3 className="font-semibold text-lg">Email</h3>
-                                        <a href="mailto:info@encourageindia.com" className="hover:text-sunrise-orange">info@encourageindia.com</a>
+                                        <a href="mailto:encourageindiaias@gmail.com" className="hover:text-sunrise-orange">encourageindiaias@gmail.com</a>
                                     </div>
                                 </div>
                             </div>

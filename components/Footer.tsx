@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MailIcon className="w-5 h-5 text-sunrise-orange flex-shrink-0" />
-                <a href="mailto:info@encourageindia.com" className="hover:underline">info@encourageindia.com</a>
+                <a href="mailto:encourageindiaias@gmail.com" className="hover:underline">encourageindiaias@gmail.com</a>
               </li>
             </ul>
           </div>
