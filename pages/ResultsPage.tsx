@@ -1,6 +1,7 @@
 import React from 'react';
 import { QuoteIcon, StarIcon } from '../components/Icons';
 import { achievers, mentors } from '../constants';
+import CTAButton from '../components/CTAButton';
 
 const PageHeader = ({ title, subtitle }: { title: string, subtitle: string }) => (
     <div className="bg-gradient-to-br from-empower-blue to-blue-900 py-16 text-center text-white relative overflow-hidden">
@@ -108,9 +109,9 @@ const ResultsPage: React.FC = () => {
                 <div className="container mx-auto px-8 relative z-10">
                     <h2 className="text-3xl md:text-5xl font-black font-montserrat mb-8 uppercase tracking-tighter">Your Name Could Be <span className="text-sunrise-orange">Next.</span></h2>
                     <p className="text-xl text-blue-100/80 mb-10 max-w-2xl mx-auto">Join the league of successful civil servants who built their foundation with Encourage India IAS.</p>
-                    <div className="inline-flex flex-col sm:flex-row gap-4">
-                        <a href="#/contact" className="bg-sunrise-orange hover:bg-orange-600 text-white font-black py-4 px-12 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-widest text-sm">Join the 2026 Batch</a>
-                        <a href="#/courses" className="bg-white/10 hover:bg-white/20 text-white font-black py-4 px-12 rounded-2xl shadow-2xl transition-all backdrop-blur-md border border-white/20 uppercase tracking-widest text-sm">Browse Programs</a>
+                    <div className="inline-flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <CTAButton requiresAuth variant="primary" className="shadow-2xl text-sm px-12 py-4 !rounded-2xl">Join the 2026 Batch</CTAButton>
+                        <CTAButton to="/courses" variant="secondary" className="shadow-2xl text-sm px-12 py-4 !rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border-white/20">Browse Programs</CTAButton>
                     </div>
                 </div>
             </section>
