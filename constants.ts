@@ -103,19 +103,19 @@ export const testimonials = [
     name: 'Vishal Hosmani (IFS)',
     achievement: 'AIR-122',
     quote: 'As an Indian Forest Service Officer who once walked the path of an aspirant, I find the Green Book to be the perfect companion for upcoming exams related to Agricultural Sciences. It blends depth with clarity — a must-have for anyone serious about excelling.',
-    image: 'https://picsum.photos/seed/vishal/100/100',
+    image: '/images/results/vishal.jpg',
   },
   {
     name: 'Hanamanth Nandi',
     achievement: 'UPSC 2025 Batch',
     quote: "Stepping into the Lal Bahadur Shastri National Academy of Administration today feels nothing short of magical. Heartfelt thanks to Team encourageINDIAIAS for their constant guidance and unwavering support during my most difficult times.",
-    image: 'https://picsum.photos/seed/hanamanth/100/100',
+    image: '/images/results/hanamanth_nandi.jpg',
   },
   {
     name: 'Sharanayya Hiremath',
     achievement: 'Jailor, Police Department',
     quote: 'As someone serving in the Police Department, I understand the value of precise, well-structured study material. The Green Book stands out as a powerful resource for competitive exams related to agriculture and forest services.',
-    image: 'https://picsum.photos/seed/sharanayya/100/100',
+    image: '/images/results/sharanayya.jpg',
   },
 ];
 
@@ -361,16 +361,16 @@ export const coursesData = [
 ];
 
 export const achievers = [
-  { name: 'Hanamanth Nandi', rank: 'UPSC 2025 Batch, LBSNAA trainee', photo: 'https://picsum.photos/seed/hanamanth/400/400', quote: 'Today I feel blessed to live that dream at LBSNAA. A heartfelt thanks to Team encourageINDIAIAS for their constant guidance and unwavering support.' },
-  { name: 'Vishal Hosmani (IFS)', rank: 'AIR-122', photo: 'https://picsum.photos/seed/vishal/400/400', quote: 'The Green Book is the perfect companion for upcoming agricultural science related exams. Its concise, exam-oriented content makes it invaluable.' },
-  { name: 'Sharanayya Hiremath', rank: 'Jailor (Police Dept), MSc Agriculture', photo: 'https://picsum.photos/seed/sharanayya/400/400', quote: 'The Green Book stands out as a powerful resource for competitive exams including IFS, NABARD, FCI, and others.' },
-  { name: 'Mahadevi', rank: 'Cooperative Inspector, Bengaluru Division', photo: 'https://picsum.photos/seed/mahadevi/400/400', quote: 'Comprehensive, up-to-date, and curated with precision — this magazine (GREEN BOOK) is everything an agriculture student needs.' },
+  { name: 'Hanamanth Nandi', rank: 'UPSC 2025 Batch, LBSNAA trainee', photo: '/images/results/hanamanth_nandi.jpg', quote: 'Today I feel blessed to live that dream at LBSNAA. A heartfelt thanks to Team encourageINDIAIAS for their constant guidance and unwavering support.', isGraphic: true },
+  { name: 'Vishal Hosmani (IFS)', rank: 'AIR-122', photo: '/images/results/vishal.jpg', quote: 'The Green Book is the perfect companion for upcoming agricultural science related exams. Its concise, exam-oriented content makes it invaluable.', isGraphic: true },
+  { name: 'Sharanayya Hiremath', rank: 'Jailor (Police Dept), MSc Agriculture', photo: '/images/results/sharanayya.jpg', quote: 'The Green Book stands out as a powerful resource for competitive exams including IFS, NABARD, FCI, and others.', isGraphic: true },
+  { name: 'Mahadevi', rank: 'Cooperative Inspector, Bengaluru Division', photo: '/images/results/mahadevi.jpg', quote: 'Comprehensive, up-to-date, and curated with precision — this magazine (GREEN BOOK) is everything an agriculture student needs.', isGraphic: true },
 ];
 
 export const mentors = [
-  { name: 'Dr. Manu S. M.', role: 'Assistant Professor (Agronomy), UAS Bangalore', photo: 'https://picsum.photos/seed/manu/200/200', message: 'The Green Book & AO notes offer a well-structured, factually robust, and examination-focused compilation of agricultural current affairs. It is an invaluable resource.' },
-  { name: 'Dr. Dhananjay Hongal', role: 'ARS Scientist, IARI New Delhi', photo: 'https://picsum.photos/seed/dhananjay/200/200', message: 'The magazine (GREEN BOOK) has comprehensively covered every relevant topic. It is well-structured, informative, and highly useful for upcoming AO/AAO exams.' },
-  { name: 'Dr. Vishwanath Chavan', role: 'Asst. Professor (Soil Science), RLB Central Agri Uni', photo: 'https://picsum.photos/seed/vishwanath/200/200', message: 'GREEN BOOK is an exceptionally well-curated resource. It is strategically aligned with the requirements of competitive exams such as UPSC, NABARD, AO, and AAO.' },
+  { name: 'Dr. Manu S. M.', role: 'Assistant Professor (Agronomy), UAS Bangalore', photo: '/images/results/manu_sm.png', message: 'The Green Book & AO notes offer a well-structured, factually robust, and examination-focused compilation of agricultural current affairs. It is an invaluable resource.', isGraphic: true },
+  { name: 'Dr. Dhananjay Hongal', role: 'ARS Scientist, IARI New Delhi', photo: '/images/results/dhananjay_hongal.png', message: 'The magazine (GREEN BOOK) has comprehensively covered every relevant topic. It is well-structured, informative, and highly useful for upcoming AO/AAO exams.', isGraphic: true },
+  { name: 'Dr. Vishwanath Chavan', role: 'Asst. Professor (Soil Science), RLB Central Agri Uni', photo: '/images/results/vishwanath_chavan.jpg', message: 'GREEN BOOK is an exceptionally well-curated resource. It is strategically aligned with the requirements of competitive exams such as UPSC, NABARD, AO, and AAO.', isGraphic: true },
 ];
 
 export const downloadCategories = [
