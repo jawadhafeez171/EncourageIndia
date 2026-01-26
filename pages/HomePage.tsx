@@ -92,7 +92,7 @@ const carouselSlides = [
 ];
 
 const allExamsList = [
-    "UPSC CSE", "KPSC KAS", "PSI / ESI", "Police Constable", "AC-SAAD", "ACF / RFO / DRFO", "Agriculture Officer", "Group B Posts", "FDA / SDA", "PDO", "KEA Technical", "KPCL AE/JE", "KPSC Technical", "Village Admin Officer", "Civil Judge", "District Judge", "CLAT", "AIBE", "K-SET", "D-CET", "KMF SHIMUL", "Banking IBPS", "SSC CGL", "RRB NTPC"
+    "UPSC CSE", "KPSC", "Police Exams", "Judiciary", "AEE/AE/JE (Technical)", "KEA", "Banking", "KMF", "Physical Training", "KAS/AC-SAAD/ACF", "Group B Posts", "FDA / SDA", "Civil Judge", "CLAT", "K-SET", "D-CET", "SBI / IBPS PO", "RRB NTPC"
 ];
 
 const courseFeatures = [
@@ -185,7 +185,13 @@ const HomePage: React.FC = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-ticker {
-          animation: ticker 18s linear infinite;
+          animation: ticker 12s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .animate-ticker {
+            animation: ticker 8s linear infinite;
+          }
         }
 
         .animation-delay-200 { animation-delay: 0.2s; }

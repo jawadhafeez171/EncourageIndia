@@ -102,20 +102,20 @@ export const testimonials = [
   {
     name: 'Vishal Hosmani (IFS)',
     achievement: 'AIR-122',
-    quote: 'As an Indian Forest Service Officer who once walked the path of an aspirant, I find the Green Book to be the perfect companion for upcoming exams related to Agricultural Sciences. It blends depth with clarity — a must-have for anyone serious about excelling.',
-    image: '/images/results/vishal.jpg',
+    quote: "As a former aspirant and now an Indian Forest Service Officer, I truly appreciate the quality of Encourage INDIA study material & IAS/KAS Mains Test series. The content is crisp, well-structured, and exam-oriented.",
+    image: '/images/results/vishal_portrait.jpg',
   },
   {
     name: 'Hanamanth Nandi',
-    achievement: 'UPSC 2025 Batch',
-    quote: "Stepping into the Lal Bahadur Shastri National Academy of Administration today feels nothing short of magical. Heartfelt thanks to Team encourageINDIAIAS for their constant guidance and unwavering support during my most difficult times.",
-    image: '/images/results/hanamanth_nandi.jpg',
+    achievement: 'AIR-910 (UPSC)',
+    quote: "The Encourage INDIA IAS/KAS Mains Test Series and Guidance Classroom Program is designed with a well-defined and comprehensive syllabus coverage, ensuring that all important areas are systematically addressed.",
+    image: '/images/results/hanamantha_portrait.jpg',
   },
   {
     name: 'Sharanayya Hiremath',
-    achievement: 'Jailor, Police Department',
-    quote: 'As someone serving in the Police Department, I understand the value of precise, well-structured study material. The Green Book stands out as a powerful resource for competitive exams related to agriculture and forest services.',
-    image: '/images/results/sharanayya.jpg',
+    achievement: 'Jailor-Karnataka Police',
+    quote: "As someone with a background in Agricultural Sciences and now serving in the Police Department, I understand the value of precise, well-structured study material. The PSI programmes under encourage INDIA IAS are very well organised.",
+    image: '/images/results/sharanayya_portrait.jpg',
   },
 ];
 
@@ -361,10 +361,10 @@ export const coursesData = [
 ];
 
 export const achievers = [
-  { name: 'Hanamanth Nandi', rank: 'UPSC 2025 Batch, LBSNAA trainee', photo: '/images/results/hanamanth_nandi.jpg', quote: 'Today I feel blessed to live that dream at LBSNAA. A heartfelt thanks to Team encourageINDIAIAS for their constant guidance and unwavering support.', isGraphic: true },
-  { name: 'Vishal Hosmani (IFS)', rank: 'AIR-122', photo: '/images/results/vishal.jpg', quote: 'The Green Book is the perfect companion for upcoming agricultural science related exams. Its concise, exam-oriented content makes it invaluable.', isGraphic: true },
-  { name: 'Sharanayya Hiremath', rank: 'Jailor (Police Dept), MSc Agriculture', photo: '/images/results/sharanayya.jpg', quote: 'The Green Book stands out as a powerful resource for competitive exams including IFS, NABARD, FCI, and others.', isGraphic: true },
-  { name: 'Mahadevi', rank: 'Cooperative Inspector, Bengaluru Division', photo: '/images/results/mahadevi.jpg', quote: 'Comprehensive, up-to-date, and curated with precision — this magazine (GREEN BOOK) is everything an agriculture student needs.', isGraphic: true },
+  { name: 'Hanamanth Nandi', rank: 'AIR-910 (UPSC)', photo: '/images/results/hanamantha_new.png', quote: 'The Encourage INDIA IAS/KAS Mains Test Series and Guidance Classroom Program is designed with a well-defined and comprehensive syllabus coverage.', isGraphic: true },
+  { name: 'Vishal Hosmani (IFS)', rank: 'AIR-122', photo: '/images/results/vishal_new.png', quote: 'The content is crisp, well-structured, and exam-oriented, making even complex topics simple and easy to grasp.', isGraphic: true },
+  { name: 'Sharanayya Hiremath', rank: 'Jailor-Karnataka Police', photo: '/images/results/sharanayya_new.png', quote: 'The PSI programmes under encourage INDIA IAS are very well organised and systematically structured for both Paper I and Paper II.', isGraphic: true },
+  { name: 'Mahadevi', rank: 'Cooperative Inspector (Bengaluru Division)', photo: '/images/results/mahadevi_new.jpg', quote: 'The Encourage INDIA IAS/KAS team is providing excellent classroom programmes and a highly well-structured KAS Mains Test Series.', isGraphic: true },
 ];
 
 export const mentors = [
