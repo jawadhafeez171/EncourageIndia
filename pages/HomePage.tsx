@@ -337,7 +337,7 @@ const HomePage: React.FC = () => {
             {/* Testimonials Section */}
             <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Achievers Say</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-empower-blue dark:text-blue-400">What Our Mentors Say</h2>
                     <div className="grid md:grid-cols-3 gap-8 mt-12">
                         {testimonials.map((testimonial) => (
                             <div key={testimonial.name} className="bg-soft-gray dark:bg-slate-800 p-8 rounded-lg text-left relative transition-colors duration-300">

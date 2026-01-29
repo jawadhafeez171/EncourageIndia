@@ -23,7 +23,7 @@ const ResultsPage: React.FC = () => {
                 <div className="container mx-auto px-8 max-w-7xl">
                     <div className="text-center mb-12">
                         <span className="text-xs font-black uppercase tracking-[0.3em] text-sunrise-orange mb-2 inline-block">Real Results</span>
-                        <h2 className="text-3xl md:text-4xl font-extrabold font-montserrat text-empower-blue dark:text-blue-400">Voices of Achievers</h2>
+                        <h2 className="text-3xl md:text-4xl font-extrabold font-montserrat text-empower-blue dark:text-blue-400">Voices of Mentors</h2>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {achievers.map((achiever: any, idx) => (
