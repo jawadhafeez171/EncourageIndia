@@ -7,7 +7,7 @@ const PageHeader = ({ title, tagline }: { title: string, tagline?: string }) => 
         {/* Decorative Background pattern */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/20 to-transparent"></div>
-        
+
         <div className="container mx-auto relative z-10 px-4">
             <h1 className="text-4xl md:text-6xl font-black font-montserrat mb-4 tracking-tight uppercase drop-shadow-md">{title}</h1>
             {tagline && (
@@ -95,7 +95,7 @@ const AboutUsPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
             <PageHeader title="Encourage India IAS Academy" tagline="From Inspiration 2 Progress" />
-            
+
             {/* Introduction */}
             <section className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl text-center">
@@ -151,7 +151,7 @@ const AboutUsPage: React.FC = () => {
                     </div>
                     <div className="relative">
                         <div className="absolute inset-0 bg-empower-blue/10 rounded-lg transform translate-x-4 translate-y-4"></div>
-                        <img src="https://picsum.photos/seed/mission/600/400" alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
+                        <img src="/images/about/about_hero.png" alt="Our Mission" className="rounded-lg shadow-xl relative z-10 w-full" />
                     </div>
                 </div>
             </section>
@@ -159,12 +159,12 @@ const AboutUsPage: React.FC = () => {
             {/* Our Vision (VISIONS) */}
             <section className="py-20 bg-empower-blue text-white overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                     <EyeIcon className="w-full h-full text-white" />
+                    <EyeIcon className="w-full h-full text-white" />
                 </div>
                 <div className="container mx-auto px-8 relative z-10">
                     <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-center mb-4">Our Vision</h2>
                     <p className="text-center text-blue-200 mb-12 text-xl font-bold tracking-[0.5em]">V-I-S-I-O-N-S</p>
-                    
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {visions.map((v, i) => (
                             <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl hover:bg-white/20 transition-all duration-300 relative group overflow-hidden">
@@ -236,7 +236,7 @@ const AboutUsPage: React.FC = () => {
                 {/* Background Gradient & Pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-empower-blue to-blue-900 opacity-90"></div>
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-                
+
                 {/* Decorative Blobs */}
                 <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sunrise-orange/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -249,7 +249,7 @@ const AboutUsPage: React.FC = () => {
                                 Your Journey Begins Here.
                             </span>
                         </h2>
-                        
+
                         <p className="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed font-light max-w-3xl mx-auto">
                             Don't let hesitation hold you back. Seize the opportunity to be mentored by experts and achieve your dreams.
                         </p>
@@ -271,9 +271,9 @@ const AboutUsPage: React.FC = () => {
                         </div>
 
                         <div className="mt-4">
-                            <CTAButton 
-                                requiresAuth 
-                                variant="primary" 
+                            <CTAButton
+                                requiresAuth
+                                variant="primary"
                                 className="group relative text-lg md:text-xl font-black px-10 py-5 !bg-encourage-red !text-white hover:!bg-red-700 shadow-[0_15px_35px_-12px_rgba(230,57,70,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(230,57,70,0.7)] transform hover:-translate-y-1.5 transition-all duration-500 !rounded-2xl flex items-center justify-center gap-3 overflow-hidden mx-auto"
                             >
                                 <span className="relative z-10 uppercase tracking-tight">
@@ -287,8 +287,8 @@ const AboutUsPage: React.FC = () => {
                 </div>
             </section>
 
-             {/* FAQs - Kept as they are relevant */}
-             <section className="py-20 bg-soft-gray dark:bg-slate-800 transition-colors duration-300">
+            {/* FAQs - Kept as they are relevant */}
+            <section className="py-20 bg-soft-gray dark:bg-slate-800 transition-colors duration-300">
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl font-bold font-montserrat text-empower-blue dark:text-blue-400 mb-12 text-center">Frequently Asked Questions?</h2>
                     <div className="max-w-3xl mx-auto">

@@ -16,13 +16,13 @@ const SecondaryHeader: React.FC = () => {
                 <>
                   {link.path ? (
                     <Link to={link.path} className="flex items-center space-x-1 py-1 px-2 hover:bg-sunrise-orange rounded-md transition-colors duration-200">
-                        <span>{link.name}</span>
-                        <ChevronDownIcon className="w-4 h-4" />
+                      <span>{link.name}</span>
+                      <ChevronDownIcon className="w-4 h-4" />
                     </Link>
                   ) : (
                     <button className="flex items-center space-x-1 py-1 px-2 hover:bg-sunrise-orange rounded-md transition-colors duration-200 cursor-default">
-                        <span>{link.name}</span>
-                        <ChevronDownIcon className="w-4 h-4" />
+                      <span>{link.name}</span>
+                      <ChevronDownIcon className="w-4 h-4" />
                     </button>
                   )}
                   {/* Dynamic width and grid for large dropdowns like KMF */}

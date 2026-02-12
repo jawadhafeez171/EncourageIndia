@@ -12,7 +12,7 @@ const carouselSlides = [
         headline: <>Master the <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Technical AEE/AE/JE Exams</span></>,
         subheadline: "Complete coaching for KPSC (PWD/WRD), KEA, and KPCL recruitments. Integrated approach for Domain Subjects and General Studies Paper-1.",
         points: ["Civil, Mech, Elec Streams", "GS Paper-1 Specialist", "Technical Mock Series"],
-        image: "https://picsum.photos/seed/engineering_hero/1920/1080",
+        image: "/images/hero/technical exams.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "View Exam Info",
@@ -26,7 +26,7 @@ const carouselSlides = [
         headline: <>KEA Group <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">A, B, C & D</span> Exams</>,
         subheadline: "One-stop coaching solution for all KEA Technical (AE/JE) and Non-Technical (FDA/SDA/Group-C) posts.",
         points: ["Technical & Non-Tech Batches", "General Kannada/English", "Subject Experts"],
-        image: "https://picsum.photos/seed/kea_hero/1920/1080",
+        image: "/images/hero/kea exams.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "Non-Technical Courses",
@@ -40,7 +40,7 @@ const carouselSlides = [
         headline: <>STATES TOP SERVICES <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 whitespace-nowrap">KAS/AC-SAAD/ACF</span></>,
         subheadline: "Become part of states top level bureaucratic circle with elite preparation strategies.",
         points: ["Subject expert faculty", "Quality material", "Enriched Test series (Pre+Mains)"],
-        image: "https://picsum.photos/seed/kpsc_top/1920/1080",
+        image: "/images/hero/kpsc kas.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "AC-SAAD Details",
@@ -54,7 +54,7 @@ const carouselSlides = [
         headline: <>Secure a Govt Job in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">KMF SHIMUL</span></>,
         subheadline: "Targeting 194+ Vacancies. A focused crash course covering Co-operative Laws, General Kannada/English, and Computer knowledge.",
         points: ["Co-operative Act Coverage", "Exam-Oriented Approach", "Daily Quizzes"],
-        image: "https://picsum.photos/seed/kmf/1920/1080",
+        image: "/images/hero/kmf.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -68,7 +68,7 @@ const carouselSlides = [
         headline: <>Wear the Khaki with Pride: <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-700">PSI & PC</span></>,
         subheadline: "Rigorous training for Karnataka State Police recruitment. Master both Physical and Written challenges with our expert guidance.",
         points: ["Physical Training Guidance", "Bilingual Classes", "Weekly Mock Tests"],
-        image: "https://picsum.photos/seed/ksp_police/1920/1080",
+        image: "/images/hero/police exams.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -81,7 +81,7 @@ const carouselSlides = [
         headline: <>Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">UPSC CSE</span> with Confidence</>,
         subheadline: "An integrated Prelims-to-Interview roadmap designed for beginners. Build a rock-solid foundation with personal mentorship.",
         points: ["NCERT to Advanced Level", "Daily Answer Writing", "Current Affairs Magazine"],
-        image: "https://picsum.photos/seed/upsc/1920/1080",
+        image: "/images/hero/upsc.png",
         cta1: "Enroll Now",
         cta2: "Course Details",
         cta3: "About the Exam",
@@ -230,12 +230,12 @@ const HomePage: React.FC = () => {
                                     ))}
                                 </ul>
                                 {/* Optimized Button Layout */}
-                                <div className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 pt-4 md:pt-2 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-                                    <CTAButton variant="primary" className="w-full sm:w-auto shadow-orange-500/30 shadow-lg !py-3" {...slide.cta1Link}>{slide.cta1}</CTAButton>
-                                    <CTAButton variant="secondary" className="w-full sm:w-auto backdrop-blur-sm hover:bg-white/10 !py-3" {...slide.cta2Link}>{slide.cta2}</CTAButton>
-                                    <CTAButton {...slide.cta3Link} className="flex items-center font-montserrat font-bold text-white/95 hover:text-sunrise-orange transition-colors px-1 py-2 group/info text-sm">
+                                <div className={`flex flex-row flex-wrap items-center gap-3 pt-6 md:pt-4 ${index === currentSlide ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+                                    <CTAButton variant="primary" className="shadow-orange-500/30 shadow-lg !py-3 !px-8 text-sm md:text-base" {...slide.cta1Link}>{slide.cta1}</CTAButton>
+                                    <CTAButton variant="secondary" className="backdrop-blur-sm hover:bg-white/10 !py-1.5 !px-4 md:!py-2 md:!px-6 text-[10px] md:text-sm" {...slide.cta2Link}>{slide.cta2}</CTAButton>
+                                    <CTAButton variant="secondary" {...slide.cta3Link} className="backdrop-blur-sm hover:bg-white/10 !py-1.5 !px-4 md:!py-2 md:!px-6 text-[10px] md:text-xs flex items-center group/info">
                                         {slide.cta3}
-                                        <ChevronRightIcon className="w-4 h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
+                                        <ChevronRightIcon className="w-3 h-3 md:w-4 md:h-4 ml-1.5 transform group-hover/info:translate-x-1 transition-transform" />
                                     </CTAButton>
                                 </div>
                             </div>
