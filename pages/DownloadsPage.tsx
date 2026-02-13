@@ -27,13 +27,13 @@ const DownloadsPage: React.FC = () => {
                                             <h3 className="font-bold font-montserrat text-charcoal-gray dark:text-gray-200">{item.title}</h3>
                                             <p className="text-sm text-charcoal-gray/70 dark:text-gray-400">{item.description}</p>
                                         </div>
-                                        <a 
-                                            href={item.fileUrl} 
-                                            download
+                                        <a
+                                            href={item.fileUrl}
+                                            {...(item.fileUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : { download: true })}
                                             className="flex-shrink-0 font-montserrat font-semibold py-2 px-4 rounded-lg bg-sunrise-orange text-white hover:bg-orange-600 transition-colors duration-300 inline-flex items-center space-x-2 text-sm w-full sm:w-auto justify-center"
                                         >
                                             <DownloadIcon className="w-5 h-5" />
-                                            <span>Download</span>
+                                            <span>{item.fileUrl.startsWith('http') ? 'Open Drive' : 'Download'}</span>
                                         </a>
                                     </li>
                                 ))}
