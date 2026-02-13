@@ -173,7 +173,7 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <SEO
-                title="UPSC, KAS, KPSC, PSI, KMF & Technical Government Exam Coaching in Karnataka | Encourage India IAS"
+                title="Encourage India IAS | UPSC Coaching & IAS Preparation"
                 description="Encourage India IAS offers expert coaching for UPSC, KAS, KPSC Group A, B & C, PSI, KMF, SAAD, Accounts Officer, and Technical & Engineering Government Exams in Karnataka with test series, PYQs, and complete syllabus coverage."
                 keywords="UPSC coaching Karnataka, IAS coaching, KAS coaching, KPSC coaching, PSI coaching, KMF exam coaching, Karnataka government exams coaching, SAAD exam coaching, Accounts officer coaching, technical government exams, engineering govt exams, Group B and C exams Karnataka"
                 omitSiteTitle={true}
