@@ -2,6 +2,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { BriefcaseIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, BookOpenIcon, ClockIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -23,6 +24,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const GroupCPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Group C Government Exam Coaching | FDA, SDA, PDO & Govt Jobs"
+                description="Complete preparation for Karnataka Group C exams including FDA, SDA, PDO, RI and other departmental government recruitment exams."
+                keywords="Group C exam coaching, FDA coaching, SDA coaching, PDO exam coaching, Karnataka govt jobs coaching"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/group-c"
+            />
             <PageHeader title="KPSC Group C (FDA / SDA / PDO)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">

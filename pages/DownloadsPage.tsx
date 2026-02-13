@@ -2,6 +2,7 @@
 import React from 'react';
 import { downloadCategories } from '../constants';
 import { DownloadIcon } from '../components/Icons';
+import SEO from '../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -14,6 +15,11 @@ const PageHeader = ({ title }: { title: string }) => (
 const DownloadsPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Downloads"
+                description="Download free UPSC and KPSC study materials, syllabus copies, previous year question papers, and current affairs magazines."
+                url="https://encourageindia.com/downloads"
+            />
             <PageHeader title="Downloads & Resources" />
             <section className="py-20 bg-gray-50 dark:bg-slate-900">
                 <div className="container mx-auto px-8 space-y-16">

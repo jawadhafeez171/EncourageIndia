@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ShieldCheckIcon, PencilAltIcon, UsersIcon, ChevronRightIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,6 +23,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const PsiPage: React.FC = () => {
     return (
         <div>
+            <SEO
+                title="PSI Coaching in Karnataka | Police Sub Inspector Exam Preparation"
+                description="Specialized PSI exam coaching with syllabus coverage, mock tests, and previous year questions for Karnataka Police Sub Inspector recruitment."
+                keywords="PSI coaching Karnataka, Police Sub Inspector exam coaching, Karnataka police exam, PSI test series, PSI previous year questions"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/psi"
+            />
             <PageHeader title="PSI / ESI Examination" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
@@ -38,9 +46,9 @@ const PsiPage: React.FC = () => {
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Physical Test (PST/ET)</h3>
                                 <p className="text-sm">Mandatory qualification in physical standards and endurance events.</p>
                             </div>
-                            
+
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
-                            
+
                             {/* Stage 2 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
@@ -52,11 +60,11 @@ const PsiPage: React.FC = () => {
                             <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2"/>Paper 1: Descriptive Skills (50 Marks)</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ShieldCheckIcon className="w-5 h-5 mr-2" />Paper 1: Descriptive Skills (50 Marks)</h3>
                                     <p>Includes Essay Writing, Translation (Kannada to English and vice-versa), and Precis writing. This paper tests communication and analytical depth.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Paper 2: General Knowledge (150 Marks)</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2" />Paper 2: General Knowledge (150 Marks)</h3>
                                     <p>Covers Current Affairs, Indian Constitution, History, Geography, and Mental Ability. This objective paper is the primary merit decider.</p>
                                 </div>
                             </div>

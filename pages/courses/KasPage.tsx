@@ -2,6 +2,7 @@ import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { BookOpenIcon, DownloadIcon, AcademicCapIcon, CalendarIcon, ChatAlt2Icon, ChevronRightIcon, ClipboardListIcon, PencilAltIcon, UsersIcon } from '../../components/Icons';
 import { downloadCategories } from '../../constants';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode; className?: string}> = ({title, children, className=""}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; className?: string }> = ({ title, children, className = "" }) => (
     <div className={`mb-12 ${className}`}>
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -27,6 +28,13 @@ const KasPage: React.FC = () => {
 
     return (
         <div>
+            <SEO
+                title="KAS & KPSC Coaching in Karnataka | Group A, B & C Exam Preparation"
+                description="Expert coaching for KAS, KPSC Group A, Group B, and Group C exams including FDA, SDA, PDO, and RI with test series and Karnataka-focused preparation."
+                keywords="KAS coaching, KPSC coaching Karnataka, KPSC Group A exam, KPSC Group B coaching, KPSC Group C coaching, FDA SDA PDO coaching"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/kas"
+            />
             <PageHeader title="KPSC - KAS Examination" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-7xl lg:flex lg:gap-12">
@@ -87,7 +95,7 @@ const KasPage: React.FC = () => {
                                 <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                                 <div className="space-y-6">
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Stage 1: Preliminary Examination (Objective)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2" />Stage 1: Preliminary Examination (Objective)</h3>
                                         <p>This is a screening test consisting of two objective-type papers. The marks are not counted for the final ranking.</p>
                                         <div className="grid md:grid-cols-2 gap-8 mt-4">
                                             <div className="overflow-x-auto">
@@ -101,7 +109,7 @@ const KasPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Stage 2: Main Examination (Descriptive)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2" />Stage 2: Main Examination (Descriptive)</h3>
                                         <p>This is the merit-deciding stage, consisting of descriptive papers that test the depth of knowledge. The final rank is determined by the marks from these papers and the interview.</p>
                                         <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
                                             <li><strong>Qualifying Papers:</strong> Kannada and English language papers (descriptive).</li>
@@ -109,7 +117,7 @@ const KasPage: React.FC = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2"/>Stage 3: Personality Test (Interview)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2" />Stage 3: Personality Test (Interview)</h3>
                                         <p>The final stage where a board assesses the candidate's personality, communication skills, and overall suitability for a career in the state administration.</p>
                                     </div>
                                 </div>
@@ -125,7 +133,7 @@ const KasPage: React.FC = () => {
                                 <div>
                                     <h3 className="text-xl font-semibold font-montserrat text-encourage-red mb-4">Mains Syllabus Structure</h3>
                                     <p>The mains exam covers a wide range of subjects to test a candidate's intellectual depth and understanding.</p>
-                                     <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
                                         <li><strong>Essay Paper:</strong> Tests the candidate's ability to compose a well-argued piece on a given topic.</li>
                                         <li><strong>General Studies I:</strong> Heritage, Culture, History, and Geography of the World and Society with a focus on Karnataka.</li>
                                         <li><strong>General Studies II:</strong> Governance, Constitution, Polity, Social Justice, and International Relations.</li>
@@ -135,7 +143,7 @@ const KasPage: React.FC = () => {
                                 </div>
                             </div>
                         </Section>
-                        
+
                         <Section title="KPSC KAS Prelims Cutoff Comparison">
                             <p className="mb-4">Analyzing previous year cutoff marks is essential to understand the level of competition and set a target score. Here's a comparison of the KAS Prelims cutoff for recent years.</p>
                             <div className="overflow-x-auto">
@@ -171,7 +179,7 @@ const KasPage: React.FC = () => {
                                 <li><strong>Current Affairs:</strong> Dedicate at least 45 minutes daily to newspapers like The Hindu and Prajavani. Make notes on Karnataka-specific schemes and developments.</li>
                             </ul>
                         </Section>
-                        
+
                         <div className="text-center mt-16">
                             <CTAButton requiresAuth variant="primary" className="text-lg">Enroll in KAS Program</CTAButton>
                         </div>
@@ -180,7 +188,7 @@ const KasPage: React.FC = () => {
                     {/* Sidebar */}
                     <aside className="lg:w-1/3 lg:sticky lg:top-[150px] h-fit mt-12 lg:mt-0">
                         <div className="bg-soft-gray/50 p-6 rounded-lg border border-gray-200">
-                             <Section title="KPSC KAS Resources" className="mb-0">
+                            <Section title="KPSC KAS Resources" className="mb-0">
                                 <p className="mb-6 text-sm">
                                     To aid your preparation, we have compiled a comprehensive list of essential resources, categorized by exam stage.
                                 </p>
@@ -193,8 +201,8 @@ const KasPage: React.FC = () => {
                                                     <BookOpenIcon className="w-6 h-6 text-sunrise-orange mr-3 flex-shrink-0" />
                                                     <h4 className="font-bold font-montserrat text-charcoal-gray text-sm leading-tight truncate">{item.title}</h4>
                                                 </div>
-                                                <a 
-                                                    href={item.fileUrl} 
+                                                <a
+                                                    href={item.fileUrl}
                                                     download
                                                     aria-label={`Download ${item.title}`}
                                                     className="flex-shrink-0 p-2 rounded-md bg-empower-blue text-white hover:bg-empower-blue/90 transition-colors duration-300"
@@ -214,8 +222,8 @@ const KasPage: React.FC = () => {
                                                     <BookOpenIcon className="w-6 h-6 text-sunrise-orange mr-3 flex-shrink-0" />
                                                     <h4 className="font-bold font-montserrat text-charcoal-gray text-sm leading-tight truncate">{item.title}</h4>
                                                 </div>
-                                                <a 
-                                                    href={item.fileUrl} 
+                                                <a
+                                                    href={item.fileUrl}
                                                     download
                                                     aria-label={`Download ${item.title}`}
                                                     className="flex-shrink-0 p-2 rounded-md bg-empower-blue text-white hover:bg-empower-blue/90 transition-colors duration-300"

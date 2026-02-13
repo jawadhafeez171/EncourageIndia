@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
 import { editorialSummaries } from '../constants';
 import { submitToGoogleSheet } from '../services/googleSheetService';
-import { 
-  BookOpenIcon, 
-  DownloadIcon, 
-  NewspaperIcon, 
-  CalendarIcon, 
-  ClockIcon, 
-  ChevronRightIcon, 
-  StarIcon,
-  TelegramIcon,
-  SearchIcon,
-  LightBulbIcon,
-  CheckCircleIcon
+import {
+    BookOpenIcon,
+    DownloadIcon,
+    NewspaperIcon,
+    CalendarIcon,
+    ClockIcon,
+    ChevronRightIcon,
+    StarIcon,
+    TelegramIcon,
+    SearchIcon,
+    LightBulbIcon,
+    CheckCircleIcon
 } from '../components/Icons';
+import SEO from '../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="relative bg-gradient-to-br from-empower-blue via-blue-900 to-indigo-900 py-20 overflow-hidden">
@@ -61,6 +62,11 @@ const CurrentAffairsPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen">
+            <SEO
+                title="Current Affairs"
+                description="Stay updated with daily current affairs, monthly magazines, and expert editorials for UPSC and KPSC preparation."
+                url="https://encourageindia.com/current-affairs"
+            />
             <PageHeader title="Current Affairs" />
 
             {/* Tab Navigation */}
@@ -75,11 +81,10 @@ const CurrentAffairsPage: React.FC = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id as any)}
-                                className={`flex items-center space-x-2 py-4 px-4 text-xs md:text-sm font-black uppercase tracking-widest transition-all relative ${
-                                    activeTab === tab.id 
-                                    ? 'text-empower-blue dark:text-blue-400' 
-                                    : 'text-gray-400 hover:text-charcoal-gray dark:hover:text-white'
-                                }`}
+                                className={`flex items-center space-x-2 py-4 px-4 text-xs md:text-sm font-black uppercase tracking-widest transition-all relative ${activeTab === tab.id
+                                        ? 'text-empower-blue dark:text-blue-400'
+                                        : 'text-gray-400 hover:text-charcoal-gray dark:hover:text-white'
+                                    }`}
                             >
                                 {tab.icon}
                                 <span>{tab.label}</span>
@@ -93,7 +98,7 @@ const CurrentAffairsPage: React.FC = () => {
             </div>
 
             <div className="container mx-auto px-4 py-12">
-                
+
                 {/* Daily Snippets Tab */}
                 {activeTab === 'daily' && (
                     <div className="animate-fade-in space-y-12">
@@ -125,7 +130,7 @@ const CurrentAffairsPage: React.FC = () => {
                                     <CTAButton variant="secondary-blue" className="text-xs">View News Archive</CTAButton>
                                 </div>
                             </div>
-                            
+
                             <div className="space-y-8">
                                 <div className="bg-empower-blue rounded-[2rem] p-8 text-white relative overflow-hidden shadow-2xl">
                                     <div className="absolute -top-10 -right-10 opacity-10">
@@ -133,9 +138,9 @@ const CurrentAffairsPage: React.FC = () => {
                                     </div>
                                     <h3 className="text-2xl font-black font-montserrat mb-4 relative z-10">Real-time Updates</h3>
                                     <p className="text-blue-100 mb-6 text-sm relative z-10">Join our exclusive Telegram channel for instant current affairs alerts, daily quizzes, and mind maps.</p>
-                                    <a 
-                                        href="https://t.me/encourage_INDIAIAS" 
-                                        target="_blank" 
+                                    <a
+                                        href="https://t.me/encourage_INDIAIAS"
+                                        target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center justify-center w-full py-4 bg-white text-empower-blue rounded-xl font-black uppercase tracking-widest shadow-xl hover:bg-blue-50 transition-colors"
                                     >
@@ -143,7 +148,7 @@ const CurrentAffairsPage: React.FC = () => {
                                         Join Telegram
                                     </a>
                                 </div>
-                                
+
                                 <div className="bg-soft-gray dark:bg-slate-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
                                     <h4 className="font-bold text-charcoal-gray dark:text-white mb-4">Trending Topics</h4>
                                     <div className="flex flex-wrap gap-2">
@@ -167,10 +172,10 @@ const CurrentAffairsPage: React.FC = () => {
                                 <div className="md:col-span-5 p-12 bg-gray-50 dark:bg-slate-900/50 flex justify-center">
                                     <div className="relative group perspective-1000">
                                         <div className="w-64 h-80 bg-gradient-to-br from-encourage-red to-red-900 rounded-lg shadow-2xl transform transition-transform duration-500 group-hover:rotate-y-12 overflow-hidden relative">
-                                            <img 
-                                                src="https://picsum.photos/seed/magcover/400/500" 
-                                                alt="Magazine Cover" 
-                                                className="w-full h-full object-cover opacity-80 mix-blend-overlay" 
+                                            <img
+                                                src="https://picsum.photos/seed/magcover/400/500"
+                                                alt="Magazine Cover"
+                                                className="w-full h-full object-cover opacity-80 mix-blend-overlay"
                                             />
                                             <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
                                                 <div className="border-t-4 border-white w-12 pt-2">
@@ -234,9 +239,9 @@ const CurrentAffairsPage: React.FC = () => {
                                 Analytical Editorials
                             </h2>
                             <div className="relative group">
-                                <input 
-                                    type="text" 
-                                    placeholder="Filter by topic..." 
+                                <input
+                                    type="text"
+                                    placeholder="Filter by topic..."
                                     className="py-2.5 pl-10 pr-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-empower-blue/30 w-full md:w-64 transition-all"
                                 />
                                 <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-sunrise-orange transition-colors" />
@@ -292,18 +297,18 @@ const CurrentAffairsPage: React.FC = () => {
                                 </h2>
                                 <p className="text-gray-500 dark:text-gray-400 mb-10 text-lg">Join 10,000+ students receiving our weekly current affairs curated newsletter.</p>
                                 <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto" onSubmit={handleSubscribe}>
-                                    <input 
-                                        type="email" 
+                                    <input
+                                        type="email"
                                         required
                                         value={subscriberEmail}
                                         onChange={(e) => setSubscriberEmail(e.target.value)}
-                                        placeholder="Your email address" 
+                                        placeholder="Your email address"
                                         disabled={subscribeStatus === 'loading'}
                                         className="flex-grow px-6 py-4 rounded-2xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-4 focus:ring-sunrise-orange/20 transition-all font-semibold disabled:opacity-50"
                                     />
-                                    <CTAButton 
-                                        type="submit" 
-                                        variant="primary" 
+                                    <CTAButton
+                                        type="submit"
+                                        variant="primary"
                                         disabled={subscribeStatus === 'loading'}
                                         className={`px-8 py-4 rounded-2xl font-black uppercase tracking-widest whitespace-nowrap ${subscribeStatus === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
                                     >
@@ -316,7 +321,7 @@ const CurrentAffairsPage: React.FC = () => {
                     </div>
                 </div>
             </section>
-            
+
             <style>{`
                 .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

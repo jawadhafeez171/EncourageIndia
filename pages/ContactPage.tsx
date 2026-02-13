@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import CTAButton from '../components/CTAButton';
 import { LocationPinIcon, PhoneIcon, MailIcon, WhatsAppIcon, CheckCircleIcon } from '../components/Icons';
 import { submitToGoogleSheet } from '../services/googleSheetService';
+import SEO from '../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -47,6 +48,11 @@ const ContactPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Encourage India IAS Academy. Visit our center in Bengaluru, call us, or email us for admissions and queries."
+                url="https://encourageindia.com/contact"
+            />
             <PageHeader title="Contact Us" />
 
             <section className="py-20">

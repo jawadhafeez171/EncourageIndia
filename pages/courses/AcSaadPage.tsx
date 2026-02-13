@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, ClipboardListIcon, ChevronRightIcon, BookOpenIcon, DownloadIcon, ChevronDownIcon, CheckCircleIcon } from '../../components/Icons';
 import { downloadCategories } from '../../constants';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="relative bg-gradient-to-br from-empower-blue via-blue-900 to-indigo-900 py-16 overflow-hidden">
@@ -12,7 +13,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode; className?: string}> = ({title, children, className=""}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; className?: string }> = ({ title, children, className = "" }) => (
     <div className={`mb-12 ${className}`}>
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -113,6 +114,13 @@ const AcSaadPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen">
+            <SEO
+                title="SAAD, Accounts Officer & AC Exam Coaching in Karnataka"
+                description="Professional coaching for SAAD, Accounts Officer, AC, and Audit-related Karnataka government exams with complete syllabus and test series."
+                keywords="SAAD exam coaching, Accounts officer exam coaching, AC exam Karnataka, audit services exam coaching, Karnataka accounts services preparation"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/ac-saad"
+            />
             <PageHeader title="KPSC - AC (K-SAAD) Exam" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-7xl lg:flex lg:gap-12">
@@ -129,7 +137,7 @@ const AcSaadPage: React.FC = () => {
                                     <div>
                                         <h4 className="font-bold text-charcoal-gray dark:text-white text-xl mb-4">Educational Qualification</h4>
                                         <p className="mb-4 font-medium text-charcoal-gray dark:text-gray-300">As per the official notification, candidates must fulfill one of the following qualifications:</p>
-                                        
+
                                         <div className="grid gap-4">
                                             <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-empower-blue shadow-sm">
                                                 <h5 className="font-bold text-empower-blue dark:text-blue-400 mb-1">Commerce & Management Masters</h5>
@@ -166,9 +174,9 @@ const AcSaadPage: React.FC = () => {
                                     <p className="text-sm dark:text-gray-400">Descriptive written examination for final merit ranking.</p>
                                 </div>
                             </div>
-                            
+
                             <div className="mt-8 p-6 bg-soft-gray/50 dark:bg-slate-800/50 rounded-lg">
-                                <h4 className="font-bold text-xl font-montserrat text-charcoal-gray dark:text-white mb-4 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Prelims Overview</h4>
+                                <h4 className="font-bold text-xl font-montserrat text-charcoal-gray dark:text-white mb-4 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2" />Prelims Overview</h4>
                                 <div className="overflow-x-auto">
                                     <table className="min-w-full bg-white dark:bg-slate-800 border border-soft-gray dark:border-gray-700 rounded-lg shadow-md">
                                         <thead className="bg-empower-blue/10">
@@ -188,8 +196,8 @@ const AcSaadPage: React.FC = () => {
                                 </div>
                             </div>
 
-                             <div className="mt-8 p-6 bg-soft-gray/50 dark:bg-slate-800/50 rounded-lg">
-                                <h4 className="font-bold text-xl font-montserrat text-charcoal-gray dark:text-white mb-4 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Mains Overview</h4>
+                            <div className="mt-8 p-6 bg-soft-gray/50 dark:bg-slate-800/50 rounded-lg">
+                                <h4 className="font-bold text-xl font-montserrat text-charcoal-gray dark:text-white mb-4 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2" />Mains Overview</h4>
                                 <div className="overflow-x-auto">
                                     <table className="min-w-full bg-white dark:bg-slate-800 border border-soft-gray dark:border-gray-700 rounded-lg shadow-md">
                                         <thead className="bg-empower-blue/10">
@@ -250,7 +258,7 @@ const AcSaadPage: React.FC = () => {
 
                                 <div>
                                     <h3 className="text-xl font-black font-montserrat text-encourage-red mb-4 uppercase tracking-tight">Paper 2: Commerce & Management</h3>
-                                    
+
                                     <div className="mb-8">
                                         <div className="inline-flex items-center px-4 py-1 rounded-full bg-empower-blue/10 text-empower-blue dark:text-blue-400 font-black text-[10px] uppercase tracking-[0.2em] mb-3">
                                             I. Commerce
@@ -315,7 +323,7 @@ const AcSaadPage: React.FC = () => {
                         </Section>
 
                         <Section title="Mains Syllabus Overview">
-                             <div className="space-y-2">
+                            <div className="space-y-2">
                                 {Object.entries(mainsSyllabus).map(([key, paper]) => (
                                     <div key={key} className="border-b border-gray-300 dark:border-gray-700">
                                         <button
@@ -345,11 +353,11 @@ const AcSaadPage: React.FC = () => {
                                         </div>
                                     </div>
                                 ))}
-                             </div>
+                            </div>
                         </Section>
 
                         <div className="text-center mt-16 bg-gradient-to-br from-empower-blue to-indigo-900 p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                             <div className="absolute top-0 right-0 p-8 opacity-10">
+                            <div className="absolute top-0 right-0 p-8 opacity-10">
                                 <AcademicCapIcon className="w-48 h-48" />
                             </div>
                             <h3 className="text-2xl md:text-4xl font-black font-montserrat mb-4 relative z-10">Master AC-SAAD for 2026-27</h3>
@@ -374,8 +382,8 @@ const AcSaadPage: React.FC = () => {
                                                     <BookOpenIcon className="w-6 h-6 text-sunrise-orange mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
                                                     <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-gray-200 text-xs leading-tight truncate">{item.title}</h4>
                                                 </div>
-                                                <a 
-                                                    href={item.fileUrl} 
+                                                <a
+                                                    href={item.fileUrl}
                                                     download
                                                     aria-label={`Download ${item.title}`}
                                                     className="flex-shrink-0 p-2.5 rounded-xl bg-empower-blue text-white hover:bg-sunrise-orange transition-colors duration-300 shadow-md active:scale-95"
@@ -395,8 +403,8 @@ const AcSaadPage: React.FC = () => {
                                                     <BookOpenIcon className="w-6 h-6 text-sunrise-orange mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
                                                     <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-gray-200 text-xs leading-tight truncate">{item.title}</h4>
                                                 </div>
-                                                <a 
-                                                    href={item.fileUrl} 
+                                                <a
+                                                    href={item.fileUrl}
                                                     download
                                                     aria-label={`Download ${item.title}`}
                                                     className="flex-shrink-0 p-2.5 rounded-xl bg-empower-blue text-white hover:bg-sunrise-orange transition-colors duration-300 shadow-md active:scale-95"

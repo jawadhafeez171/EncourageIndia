@@ -2,6 +2,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { CogIcon, BriefcaseIcon, PencilAltIcon, CheckCircleIcon, BookOpenIcon, LightningBoltIcon, ShieldCheckIcon, UsersIcon, ClipboardListIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode; className?: string}> = ({title, children, className=""}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; className?: string }> = ({ title, children, className = "" }) => (
     <div className={`mb-12 ${className}`}>
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -23,11 +24,18 @@ const Section: React.FC<{title: string; children: React.ReactNode; className?: s
 const AeJeTechnicalPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Technical & Engineering Government Exam Coaching | AE, JE & Technical Posts"
+                description="Coaching for AE, JE, Technical Assistant, and Engineering Government Exams in Karnataka including departmental and technical recruitment exams."
+                keywords="AE exam coaching, JE exam coaching, engineering government exams Karnataka, technical assistant coaching, diploma engineer govt jobs coaching"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/ae-je-technical"
+            />
             <PageHeader title="AEE/AE/JE (Technical) Exam Hub" />
-            
+
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-7xl">
-                    
+
                     {/* Introduction */}
                     <Section title="Technical Excellence in Public Service">
                         <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -121,7 +129,7 @@ const AeJeTechnicalPage: React.FC = () => {
 
                     {/* Final CTA */}
                     <div className="mt-20 bg-gradient-to-br from-slate-900 to-empower-blue p-10 md:p-16 rounded-3xl text-center text-white relative overflow-hidden shadow-2xl">
-                         <div className="absolute top-0 right-0 p-8 opacity-10">
+                        <div className="absolute top-0 right-0 p-8 opacity-10">
                             <CogIcon className="w-48 h-48 animate-spin-slow" />
                         </div>
                         <h2 className="text-3xl md:text-5xl font-extrabold font-montserrat mb-6 relative z-10">
@@ -137,7 +145,7 @@ const AeJeTechnicalPage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            
+
             <style>{`
                 @keyframes spin-slow {
                     from { transform: rotate(0deg); }

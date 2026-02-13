@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton';
 import { BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon, AcademicCapIcon, CalendarIcon, ChevronRightIcon, StarIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 interface KmfUnitData {
     name: string;
@@ -108,7 +109,7 @@ const PageHeader = ({ title, subtitle }: { title: string, subtitle: string }) =>
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-black font-montserrat text-empower-blue dark:text-blue-400 mb-6 border-l-8 border-sunrise-orange pl-5">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300 leading-relaxed text-lg">
@@ -119,7 +120,7 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const KmfUnitPage: React.FC = () => {
     const { unitId } = useParams<{ unitId: string }>();
-    
+
     // Support legacy route kmf-shimul if unitId is missing
     const activeUnitId = unitId || 'shimul';
     const unit = unitMap[activeUnitId.toLowerCase()];
@@ -130,8 +131,15 @@ const KmfUnitPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KMF Exam Coaching | Karnataka Milk Federation (Nandini) Recruitment Preparation"
+                description="Dedicated KMF exam coaching for Assistant, Technical, Junior Assistant, and Nandini recruitment exams with PYQs, test series, and exam-oriented classes."
+                keywords="KMF exam coaching, Karnataka Milk Federation exam, Nandini recruitment coaching, KMF previous year questions, KMF assistant exam preparation"
+                omitSiteTitle={true}
+                url={`https://encourageindiaias.in/courses/kmf/${activeUnitId}`}
+            />
             <PageHeader title={unit.fullName} subtitle={`"Towards Progress through Cooperatives"`} />
-            
+
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
                     <Section title={`About ${unit.name}`}>
@@ -171,7 +179,7 @@ const KmfUnitPage: React.FC = () => {
                             </div>
                         </div>
                     </Section>
-                    
+
                     <Section title="General Eligibility Criteria">
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="flex items-start bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700">
@@ -203,7 +211,7 @@ const KmfUnitPage: React.FC = () => {
                             <p className="text-sm font-medium mb-8 bg-blue-50 dark:bg-blue-900/30 p-4 rounded-xl border-l-4 border-empower-blue">
                                 The exam assesses both general competence and unit-specific awareness. A minimum qualifying score is required for merit consideration.
                             </p>
-                             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
+                            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
                                 <div className="flex items-start group">
                                     <div className="bg-sunrise-orange/10 p-2 rounded-lg mr-4 group-hover:bg-sunrise-orange group-hover:text-white transition-all">
                                         <ChevronRightIcon className="w-5 h-5" />

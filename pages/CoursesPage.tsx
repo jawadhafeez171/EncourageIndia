@@ -4,6 +4,7 @@ import CourseCard from '../components/CourseCard';
 import CTAButton from '../components/CTAButton';
 import { coursesData } from '../constants';
 import { SearchIcon, AcademicCapIcon, ScaleIcon, BriefcaseIcon, ShieldCheckIcon, LightBulbIcon, PhoneIcon, StarIcon, GlobeAltIcon, CogIcon, BookOpenIcon, XIcon } from '../components/Icons';
+import SEO from '../components/SEO';
 
 // Helper to map category IDs to icons
 const getCategoryIcon = (id: string) => {
@@ -35,7 +36,7 @@ const CoursesPage: React.FC = () => {
 
     const handleFilterClick = (id: string) => {
         setActiveSection(id);
-        
+
         // Scroll to the courses grid container
         if (coursesGridRef.current) {
             const offset = window.innerWidth < 768 ? 180 : 210;
@@ -48,8 +49,8 @@ const CoursesPage: React.FC = () => {
     const filteredCategories = useMemo(() => {
         return coursesData.map(cat => ({
             ...cat,
-            courses: cat.courses.filter(c => 
-                c.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            courses: cat.courses.filter(c =>
+                c.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 c.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 (c.eligibility && c.eligibility.toLowerCase().includes(searchTerm.toLowerCase()))
             )
@@ -58,12 +59,17 @@ const CoursesPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen pb-20">
-            
+            <SEO
+                title="Our Courses"
+                description="Explore our comprehensive courses for UPSC CSE, KPSC KAS, PSI, PC, KEA, Banking, and Judiciary exams. Classroom and online programs available."
+                url="https://encourageindia.com/courses"
+            />
+
             {/* Header Hero */}
             <div className="relative bg-empower-blue text-white pt-16 pb-20 md:py-24 px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-empower-blue via-blue-900 to-indigo-900"></div>
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-                
+
                 <div className="container mx-auto relative z-10 text-center max-w-4xl px-2">
                     <h1 className="text-3xl md:text-7xl font-black font-montserrat mb-4 md:mb-6 tracking-tight leading-tight">
                         Find Your <span className="text-sunrise-orange">Future.</span>
@@ -73,9 +79,9 @@ const CoursesPage: React.FC = () => {
                     </p>
 
                     <div className="relative max-w-2xl mx-auto group">
-                        <input 
-                            type="text" 
-                            placeholder="Search exam or eligibility..." 
+                        <input
+                            type="text"
+                            placeholder="Search exam or eligibility..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full py-4 md:py-5 pl-12 md:pl-14 pr-10 rounded-2xl text-charcoal-gray bg-white shadow-2xl focus:outline-none focus:ring-4 focus:ring-sunrise-orange/30 transition-all font-semibold text-sm md:text-base"
@@ -96,11 +102,10 @@ const CoursesPage: React.FC = () => {
                     <div className="flex space-x-2 overflow-x-auto scrollbar-hide pb-1">
                         <button
                             onClick={() => handleFilterClick('all')}
-                            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-                                activeSection === 'all' 
-                                ? 'bg-sunrise-orange text-white shadow-lg shadow-orange-500/30' 
-                                : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
-                            }`}
+                            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${activeSection === 'all'
+                                    ? 'bg-sunrise-orange text-white shadow-lg shadow-orange-500/30'
+                                    : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
+                                }`}
                         >
                             <span>View All</span>
                         </button>
@@ -108,11 +113,10 @@ const CoursesPage: React.FC = () => {
                             <button
                                 key={category.id}
                                 onClick={() => handleFilterClick(category.id)}
-                                className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-                                    activeSection === category.id 
-                                    ? 'bg-empower-blue text-white shadow-lg shadow-blue-500/30' 
-                                    : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
-                                }`}
+                                className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${activeSection === category.id
+                                        ? 'bg-empower-blue text-white shadow-lg shadow-blue-500/30'
+                                        : 'bg-gray-100 dark:bg-slate-800 text-charcoal-gray dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
+                                    }`}
                             >
                                 {getCategoryIcon(category.id)}
                                 <span>{category.shortTitle}</span>
@@ -143,12 +147,12 @@ const CoursesPage: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-center mt-4 md:mt-0">
-                                     <span className="text-gray-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mr-3">
+                                    <span className="text-gray-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mr-3">
                                         {category.courses.length} Available Programs
                                     </span>
                                 </div>
                             </div>
-                            
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                                 {category.courses.map((course, index) => (
                                     <CourseCard key={index} course={course} index={index} />
@@ -189,7 +193,7 @@ const CoursesPage: React.FC = () => {
                     </div>
                 </div>
             </section>
-            
+
             <style>{`
                 .scrollbar-hide::-webkit-scrollbar { display: none; }
                 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

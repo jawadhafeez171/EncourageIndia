@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CTAButton from '../components/CTAButton';
 import { EyeIcon, TargetIcon, HeartIcon, UsersIcon, BookOpenIcon, ChevronDownIcon, CheckCircleIcon, StarIcon, LightBulbIcon, LightningBoltIcon, ShieldCheckIcon, ArrowRightIcon } from '../components/Icons';
+import SEO from '../components/SEO';
 
 const PageHeader = ({ title, tagline }: { title: string, tagline?: string }) => (
     <div className="bg-empower-blue py-20 text-center text-white relative overflow-hidden">
@@ -94,6 +95,11 @@ const AboutUsPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="About Us"
+                description="Learn about Encourage India IAS Academy's mission, vision, and core values. Meet our expert faculty and mentors dedicated to your success in UPSC and KPSC exams."
+                url="https://encourageindia.com/about"
+            />
             <PageHeader title="Encourage India IAS Academy" tagline="From Inspiration 2 Progress" />
 
             {/* Introduction */}

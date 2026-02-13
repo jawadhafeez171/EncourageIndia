@@ -112,6 +112,8 @@ const courseFeatures = [
     { icon: <GlobeAltIcon className="w-6 h-6 text-sunrise-orange" />, title: "Current Affairs", description: "Free access to our monthly magazine and daily updates." },
 ];
 
+import SEO from '../components/SEO';
+
 const HomePage: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [mentorForm, setMentorForm] = useState({ name: '', phone: '' });
@@ -170,6 +172,28 @@ const HomePage: React.FC = () => {
 
     return (
         <div>
+            <SEO
+                title="UPSC, KAS, KPSC, PSI, KMF & Technical Government Exam Coaching in Karnataka | Encourage India IAS"
+                description="Encourage India IAS offers expert coaching for UPSC, KAS, KPSC Group A, B & C, PSI, KMF, SAAD, Accounts Officer, and Technical & Engineering Government Exams in Karnataka with test series, PYQs, and complete syllabus coverage."
+                keywords="UPSC coaching Karnataka, IAS coaching, KAS coaching, KPSC coaching, PSI coaching, KMF exam coaching, Karnataka government exams coaching, SAAD exam coaching, Accounts officer coaching, technical government exams, engineering govt exams, Group B and C exams Karnataka"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/"
+                ogTitle="Encourage India IAS - UPSC, KAS, KPSC, PSI, KMF & Govt Exam Coaching"
+                ogDescription="Comprehensive coaching for UPSC, KAS, KPSC, PSI, KMF, Accounts, and Technical Government Exams in Karnataka."
+                twitterTitle="UPSC, KAS, KPSC, PSI, KMF Coaching | Encourage India IAS"
+                twitterDescription="Best coaching for UPSC, KAS, KPSC, PSI, KMF and Technical Government Exams in Karnataka."
+                jsonLd={`{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Encourage India IAS",
+  "url": "https://encourageindiaias.in/",
+  "description": "Coaching institute for UPSC, KAS, KPSC, PSI, KMF, SAAD, Accounts, Technical and Engineering Government Exams in Karnataka.",
+  "areaServed": "Karnataka",
+  "sameAs": [
+    "https://encourageindiaias.in/"
+  ]
+}`}
+            />
             <style>{`
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -211,7 +235,7 @@ const HomePage: React.FC = () => {
                 {carouselSlides.map((slide, index) => (
                     <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                         <div className="absolute inset-0 overflow-hidden">
-                            <img src={slide.image} alt={slide.badge} className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} />
+                            <img src={slide.image} alt={slide.badge} className={`w-full h-full object-cover transform origin-center ${index === currentSlide ? 'animate-ken-burns' : ''}`} loading={index === 0 ? "eager" : "lazy"} />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
                         <div className="absolute inset-0 container mx-auto px-4 md:px-8 flex flex-col justify-center h-full">
@@ -344,7 +368,7 @@ const HomePage: React.FC = () => {
                                 <QuoteIcon className="w-16 h-16 text-empower-blue/10 dark:text-white/10 absolute top-4 right-4" />
                                 <p className="text-charcoal-gray/90 dark:text-gray-200 italic">"{testimonial.quote}"</p>
                                 <div className="mt-6 flex items-center">
-                                    <img src={testimonial.image} alt={testimonial.name} className="w-14 h-14 rounded-full object-cover mr-4" />
+                                    <img src={testimonial.image} alt={testimonial.name} className="w-14 h-14 rounded-full object-cover mr-4" loading="lazy" />
                                     <div>
                                         <h4 className="font-bold font-montserrat text-charcoal-gray dark:text-white">{testimonial.name}</h4>
                                         <p className="text-sm text-sunrise-orange">{testimonial.achievement}</p>
@@ -433,7 +457,7 @@ const HomePage: React.FC = () => {
                                     </a>
 
                                     <div className="flex items-center gap-3 p-2.5 bg-white dark:bg-slate-700 border border-gray-100 dark:border-gray-600 rounded-xl shadow-sm">
-                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-10 h-10 rounded shadow-xs" />
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://play.google.com/store/apps/details?id=co.barney.yflbb" alt="QR Code" className="w-10 h-10 rounded shadow-xs" loading="lazy" />
                                         <div className="text-left leading-tight">
                                             <p className="text-[9px] font-black text-sunrise-orange uppercase tracking-wider">Quick Scan</p>
                                             <p className="text-[10px] text-gray-400 font-medium">Instant Access</p>
@@ -445,7 +469,7 @@ const HomePage: React.FC = () => {
                             <div className="flex justify-center relative mt-8 lg:mt-0">
                                 <div className="relative">
                                     <div className="w-[200px] md:w-[250px] relative rounded-[2rem] border-[6px] border-slate-900 shadow-xl overflow-hidden bg-white">
-                                        <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" />
+                                        <img src="/app-mockup-playstore.png" alt="Encourage India App" className="w-full h-auto" loading="lazy" />
                                     </div>
 
                                     {/* Compact Vertical Badges */}

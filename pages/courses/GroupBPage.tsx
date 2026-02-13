@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, BriefcaseIcon, ChevronRightIcon, UsersIcon, CheckCircleIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,6 +23,13 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const GroupBPage: React.FC = () => {
     return (
         <div>
+            <SEO
+                title="Group B Government Exam Coaching in Karnataka"
+                description="Complete preparation for Karnataka Group B exams including departmental and technical government recruitment exams."
+                keywords="Group B exam coaching Karnataka, Group B recruitment, Karnataka Group B gazetted probationers"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/group-b"
+            />
             <PageHeader title="KPSC - Group B Posts" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
@@ -53,16 +61,16 @@ const GroupBPage: React.FC = () => {
 
                     <Section title="Exam Pattern">
                         <p>The selection process for Group B posts usually involves a competitive written examination, which may be followed by an interview for certain posts.</p>
-                         <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-0">
+                        <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-0">
                             {/* Stage 1 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Exam</h3>
                                 <p className="text-sm">An objective MCQ test with General and Specific papers.</p>
                             </div>
-                            
+
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
-                            
+
                             {/* Stage 2 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
@@ -72,11 +80,11 @@ const GroupBPage: React.FC = () => {
                         </div>
                         <div className="mt-8 grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-soft-gray/50 rounded-lg">
-                                <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Paper I (General Paper)</h3>
+                                <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2" />Paper I (General Paper)</h3>
                                 <p className="text-sm">Covers General Knowledge of national and international importance, current affairs, Indian history, geography, polity, and general mental ability.</p>
                             </div>
-                             <div className="p-6 bg-soft-gray/50 rounded-lg">
-                                <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><CheckCircleIcon className="w-5 h-5 mr-2"/>Paper II (Specific Paper)</h3>
+                            <div className="p-6 bg-soft-gray/50 rounded-lg">
+                                <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><CheckCircleIcon className="w-5 h-5 mr-2" />Paper II (Specific Paper)</h3>
                                 <p className="text-sm">This paper tests knowledge related to the specific post. It includes subjects relevant to the role, such as commerce, economics, or a specific technical discipline.</p>
                             </div>
                         </div>

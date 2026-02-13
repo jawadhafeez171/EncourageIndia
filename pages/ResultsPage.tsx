@@ -2,6 +2,7 @@ import React from 'react';
 import { QuoteIcon, StarIcon } from '../components/Icons';
 import { achievers, mentors } from '../constants';
 import CTAButton from '../components/CTAButton';
+import SEO from '../components/SEO';
 
 const PageHeader = ({ title, subtitle }: { title: string, subtitle: string }) => (
     <div className="bg-gradient-to-br from-empower-blue to-blue-900 py-16 text-center text-white relative overflow-hidden">
@@ -16,6 +17,11 @@ const PageHeader = ({ title, subtitle }: { title: string, subtitle: string }) =>
 const ResultsPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Results & Reviews"
+                description="See our hallmark of success. Read testimonials from our successful students and mentors who have cleared UPSC, KAS, and other competitive exams."
+                url="https://encourageindia.com/results"
+            />
             <PageHeader title="Our Hall of Fame" subtitle="Turning Aspirations into Bureaucratic Reality" />
 
             {/* Success Stories Grid */}
@@ -34,6 +40,7 @@ const ResultsPage: React.FC = () => {
                                             src={achiever.photo}
                                             alt={achiever.name}
                                             className={`w-full h-full transition-all duration-700 ${achiever.isGraphic ? 'object-contain p-2' : 'object-cover object-top filter grayscale group-hover:grayscale-0'}`}
+                                            loading="lazy"
                                         />
                                         {!achiever.isGraphic && (
                                             <>
@@ -77,7 +84,7 @@ const ResultsPage: React.FC = () => {
                             <div key={idx} className="bg-white dark:bg-slate-900 overflow-hidden rounded-[2.5rem] shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group hover:border-empower-blue/30 h-full flex flex-col">
                                 {mentor.isGraphic ? (
                                     <div className="flex-grow flex items-center justify-center bg-white dark:bg-slate-900 p-4 min-h-[350px]">
-                                        <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
+                                        <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
                                     </div>
                                 ) : (
                                     <div className="p-10 flex flex-col h-full">
@@ -89,7 +96,7 @@ const ResultsPage: React.FC = () => {
                                         <p className="text-charcoal-gray/80 dark:text-gray-300 italic mb-8 relative z-10 leading-relaxed text-lg">"{mentor.message}"</p>
 
                                         <div className="flex items-center pt-6 border-t border-gray-100 dark:border-gray-800 mt-auto">
-                                            <img src={mentor.photo} alt={mentor.name} className="w-20 h-20 rounded-2xl object-cover mr-5 border-4 border-white dark:border-slate-800 shadow-lg" />
+                                            <img src={mentor.photo} alt={mentor.name} className="w-20 h-20 rounded-2xl object-cover mr-5 border-4 border-white dark:border-slate-800 shadow-lg" loading="lazy" />
                                             <div>
                                                 <h4 className="font-black font-montserrat text-xl text-empower-blue dark:text-blue-400 leading-tight">{mentor.name}</h4>
                                                 <p className="text-xs font-bold text-sunrise-orange uppercase tracking-wider mt-1">{mentor.role}</p>

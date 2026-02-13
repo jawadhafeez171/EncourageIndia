@@ -2,6 +2,7 @@ import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, HashtagIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ChevronRightIcon, BookOpenIcon, DownloadIcon } from '../../components/Icons';
 import { downloadCategories } from '../../constants';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode; className?: string}> = ({title, children, className=""}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; className?: string }> = ({ title, children, className = "" }) => (
     <div className={`mb-12 ${className}`}>
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -25,10 +26,17 @@ const UPSCPage: React.FC = () => {
 
     return (
         <div>
+            <SEO
+                title="UPSC IAS Coaching in Karnataka | Prelims, Mains & Interview Preparation"
+                description="Top UPSC Civil Services coaching for IAS, IPS, IFS with Prelims, Mains, CSAT, answer writing, and interview guidance by Encourage India IAS."
+                keywords="UPSC coaching, IAS coaching Karnataka, UPSC prelims coaching, UPSC mains coaching, civil services coaching India, IAS preparation"
+                omitSiteTitle={true}
+                url="https://encourageindiaias.in/courses/upsc-cse"
+            />
             <PageHeader title="UPSC Civil Services Examination (CSE)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-7xl lg:flex lg:gap-12">
-                    
+
                     {/* Main Content */}
                     <main className="lg:w-2/3">
                         <Section title="About the UPSC CSE">
@@ -86,7 +94,7 @@ const UPSCPage: React.FC = () => {
                                 <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                                 <div className="space-y-6">
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Preliminary Examination (Objective)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2" />Preliminary Examination (Objective)</h3>
                                         <p>This is a screening test consisting of two papers. Marks obtained in this stage are not counted for the final merit list.</p>
                                         <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
                                             <li><strong>Paper I - General Studies (200 Marks):</strong> Covers history, geography, polity, economy, environment, and current events.</li>
@@ -94,15 +102,15 @@ const UPSCPage: React.FC = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Main Examination (Descriptive)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2" />Main Examination (Descriptive)</h3>
                                         <p>This stage is the core of the selection process and tests the depth of a candidate's knowledge. It consists of 9 papers.</p>
                                         <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
-                                        <li><strong>Qualifying Papers:</strong> Paper A (Indian Language) and Paper B (English).</li>
-                                        <li><strong>Merit Papers (250 marks each):</strong> Essay, General Studies I, II, III, IV, and Optional Subject Paper I & II.</li>
+                                            <li><strong>Qualifying Papers:</strong> Paper A (Indian Language) and Paper B (English).</li>
+                                            <li><strong>Merit Papers (250 marks each):</strong> Essay, General Studies I, II, III, IV, and Optional Subject Paper I & II.</li>
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2"/>Personality Test (Interview - 275 Marks)</h3>
+                                        <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2" />Personality Test (Interview - 275 Marks)</h3>
                                         <p>The final stage is the interview, where a board of competent and unbiased observers assesses the candidate's suitability for a career in public service.</p>
                                     </div>
                                 </div>
@@ -139,7 +147,7 @@ const UPSCPage: React.FC = () => {
                                 </div>
                                 <p className="text-xs italic text-charcoal-gray/60 mt-2">"—" indicates the EWS category was not introduced prior to 2019.</p>
                             </div>
-                            
+
                             <div>
                                 <h3 className="text-2xl font-semibold font-montserrat text-encourage-red mb-4">UPSC Mains Cutoff Marks (2015-2024)</h3>
                                 <p className="text-sm mb-4 text-charcoal-gray/70">*Cutoff marks are out of 1,750 marks for the written papers (excluding interview).</p>
@@ -181,7 +189,7 @@ const UPSCPage: React.FC = () => {
                     {/* Sidebar */}
                     <aside className="lg:w-1/3 lg:sticky lg:top-[150px] h-fit mt-12 lg:mt-0">
                         <div className="bg-soft-gray/50 p-6 rounded-lg border border-gray-200">
-                             <Section title="UPSC CSE Resources & Booklist" className="mb-0">
+                            <Section title="UPSC CSE Resources & Booklist" className="mb-0">
                                 <p className="mb-6 text-sm">
                                     To aid your preparation, we have compiled a comprehensive list of essential resources, including detailed syllabus breakdowns and recommended booklists for each General Studies paper.
                                 </p>
@@ -192,8 +200,8 @@ const UPSCPage: React.FC = () => {
                                                 <BookOpenIcon className="w-6 h-6 text-sunrise-orange mr-3 flex-shrink-0" />
                                                 <h4 className="font-bold font-montserrat text-charcoal-gray text-sm leading-tight truncate">{item.title}</h4>
                                             </div>
-                                            <a 
-                                                href={item.fileUrl} 
+                                            <a
+                                                href={item.fileUrl}
                                                 download
                                                 aria-label={`Download ${item.title}`}
                                                 className="flex-shrink-0 p-2 rounded-md bg-empower-blue text-white hover:bg-empower-blue/90 transition-colors duration-300"
