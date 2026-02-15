@@ -106,7 +106,7 @@ const Header: React.FC = () => {
     <header className={`sticky top-0 z-50 bg-white dark:bg-slate-900 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
-          <img src="/logo.png" alt="Encourage India IAS Academy" className="h-12 md:h-16 w-auto" />
+          <img src="/logo.webp" alt="Encourage India IAS Academy" className="h-12 md:h-16 w-auto" />
           <div className="flex flex-col">
             <span className="font-montserrat font-bold text-empower-blue dark:text-blue-400 text-lg md:text-2xl leading-none group-hover:text-sunrise-orange transition-colors duration-300">Encourage India</span>
             <span className="font-lato font-bold text-charcoal-gray dark:text-gray-300 text-xs md:text-sm tracking-wider uppercase">IAS Academy</span>

@@ -20,7 +20,7 @@ const ResultsPage: React.FC = () => {
             <SEO
                 title="Results & Reviews"
                 description="See our hallmark of success. Read testimonials from our successful students and mentors who have cleared UPSC, KAS, and other competitive exams."
-                url="https://encourageindia.com/results"
+                url="https://encourageindiaias.in/results"
             />
             <PageHeader title="Our Hall of Fame" subtitle="Turning Aspirations into Bureaucratic Reality" />
 

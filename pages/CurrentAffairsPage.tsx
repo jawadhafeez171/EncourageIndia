@@ -63,9 +63,9 @@ const CurrentAffairsPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300 min-h-screen">
             <SEO
-                title="Current Affairs"
-                description="Stay updated with daily current affairs, monthly magazines, and expert editorials for UPSC and KPSC preparation."
-                url="https://encourageindia.com/current-affairs"
+                title="Current Affairs & Editorials"
+                description="Stay updated with daily current affairs, monthly magazines, and in-depth editorial analysis for UPSC, KAS, and Karnataka state exams."
+                url="https://encourageindiaias.in/current-affairs"
             />
             <PageHeader title="Current Affairs" />
 
@@ -82,8 +82,8 @@ const CurrentAffairsPage: React.FC = () => {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id as any)}
                                 className={`flex items-center space-x-2 py-4 px-4 text-xs md:text-sm font-black uppercase tracking-widest transition-all relative ${activeTab === tab.id
-                                        ? 'text-empower-blue dark:text-blue-400'
-                                        : 'text-gray-400 hover:text-charcoal-gray dark:hover:text-white'
+                                    ? 'text-empower-blue dark:text-blue-400'
+                                    : 'text-gray-400 hover:text-charcoal-gray dark:hover:text-white'
                                     }`}
                             >
                                 {tab.icon}

@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, ShieldCheckIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, ScaleIcon, BookOpenIcon, ClockIcon, ClipboardListIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-gradient-to-br from-empower-blue to-indigo-900 py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-16">
         <h2 className="text-3xl font-black font-montserrat text-empower-blue dark:text-blue-400 mb-8 border-l-8 border-sunrise-orange pl-5 uppercase tracking-tighter">{title}</h2>
         <div className="space-y-6 text-charcoal-gray/80 dark:text-gray-300">
@@ -23,10 +24,15 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const RbiExamPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="RBI Grade B & Assistant Exam Coaching | Central Bank Careers"
+                description="Expert coaching for RBI Grade B Officers and RBI Assistant recruitment. Comprehensive guidance for ESI, Finance, and Management papers with central banking focus."
+                url="https://encourageindiaias.in/courses/rbi-hub"
+            />
             <PageHeader title="RBI Grade B / Assistant" />
             <div className="py-20">
                 <div className="container mx-auto px-6 max-w-6xl">
-                    
+
                     <Section title="About RBI Examination">
                         <p className="text-lg md:text-xl leading-relaxed font-medium">
                             The RBI Grade B and RBI Assistant exams are national-level recruitment examinations conducted by the Reserve Bank of India to select officers and clerical staff for regulatory, policy, and operational roles in India’s central banking system.
@@ -195,14 +201,14 @@ const RbiExamPage: React.FC = () => {
                         </div>
 
                         <div className="mt-10 bg-soft-gray/30 dark:bg-slate-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
-                             <h4 className="font-black text-lg text-charcoal-gray dark:text-white mb-4">Syllabus – RBI Assistant</h4>
-                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-bold">
-                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500"/> Reasoning: Puzzles, Coding</div>
-                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500"/> Quant: Simplification, DI</div>
-                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500"/> English: RC, Vocabulary</div>
-                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500"/> GA: RBI Functions, Current Affairs</div>
-                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500"/> Computer: Internet, MS Office</div>
-                             </div>
+                            <h4 className="font-black text-lg text-charcoal-gray dark:text-white mb-4">Syllabus – RBI Assistant</h4>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-bold">
+                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" /> Reasoning: Puzzles, Coding</div>
+                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" /> Quant: Simplification, DI</div>
+                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" /> English: RC, Vocabulary</div>
+                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" /> GA: RBI Functions, Current Affairs</div>
+                                <div className="flex items-center"><CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" /> Computer: Internet, MS Office</div>
+                            </div>
                         </div>
                     </Section>
 

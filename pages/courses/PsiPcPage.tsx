@@ -2,6 +2,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ShieldCheckIcon, PencilAltIcon, UsersIcon, ChevronRightIcon, CheckCircleIcon, LightningBoltIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,7 +23,12 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const PsiPcPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="PSI & PC Integrated Coaching | Karnataka Police Recruitment Prep"
+                description="Excel in KSP recruitments with our integrated PSI & PC program. Expert academic classes for Paper I & II combined with physical training guidance."
+                url="https://encourageindiaias.in/courses/psi-pc"
+            />
             <PageHeader title="PSI & PC Integrated Program" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">

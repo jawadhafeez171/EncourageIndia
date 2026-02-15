@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon, AcademicCapIcon, CalendarIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -21,7 +22,12 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const ShimulPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KMF SHIMUL Exam Coaching | Shivamogga Milk Federation Recruitment"
+                description="Expert coaching for KMF SHIMUL recruitment. Specialized training for Extension Officer, Marketing Assistant, and Administrative roles in Karnataka's co-operative sector."
+                url="https://encourageindiaias.in/courses/shimul-kmf"
+            />
             <PageHeader title="KMF - SHIMUL Recruitment 2024" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
@@ -46,7 +52,7 @@ const ShimulPage: React.FC = () => {
                             </div>
                         </div>
                     </Section>
-                    
+
                     <Section title="General Eligibility Criteria">
                         <div className="space-y-6">
                             <div className="flex items-start">
@@ -71,7 +77,7 @@ const ShimulPage: React.FC = () => {
                         <div className="mt-8 p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg">
                             <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2 flex items-center"><PencilAltIcon className="w-6 h-6 mr-2" />Written Examination</h3>
                             <p className="text-sm mb-4">The written test is an objective (MCQ) based examination. The syllabus is designed to evaluate the candidate's proficiency in relevant subjects.</p>
-                             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
                                 <div className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General Knowledge & Current Affairs</span></div>
                                 <div className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General English & General Kannada</span></div>
                                 <div className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>Computer & Co-operative Sector Knowledge</span></div>

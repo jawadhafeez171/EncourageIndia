@@ -38,16 +38,16 @@ VITE_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
 ## ✅ 4. Added SEO Optimizations
 
 **Files Created:**
-- `components/SEOHead.tsx` - Dynamic SEO component with:
+- `components/SEO.tsx` - Dynamic SEO component with:
   - Meta tags (description, Open Graph, Twitter Cards)
   - Structured data (JSON-LD) for EducationalOrganization schema
   - Dynamic title and description per page
 
 **Files Modified:**
-- `pages/HomePage.tsx` - Added SEOHead component
-- `pages/AboutUsPage.tsx` - Ready for SEOHead integration
-- `pages/CurrentAffairsPage.tsx` - Ready for SEOHead integration
-- `pages/ContactPage.tsx` - Ready for SEOHead integration
+- `pages/HomePage.tsx` - Added SEO component
+- `pages/AboutUsPage.tsx` - Ready for SEO integration
+- `pages/CurrentAffairsPage.tsx` - Ready for SEO integration
+- `pages/ContactPage.tsx` - Ready for SEO integration
 
 **Features:**
 - Dynamic meta tags that update per route

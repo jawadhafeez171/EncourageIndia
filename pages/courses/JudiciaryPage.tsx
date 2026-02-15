@@ -1,7 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, BriefcaseIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ScaleIcon, ChevronRightIcon } from '../../components/Icons';
-
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,15 +22,20 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const JudiciaryPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="Karnataka Judiciary Exam Coaching | Civil Judge Recruitment Preparation"
+                description="Join the best judiciary coaching in Karnataka. Specialized training for Civil Judge recruitment covering LLB subjects, English/Kannada translation, and Viva-Voce."
+                url="https://encourageindiaias.in/courses/judiciary"
+            />
             <PageHeader title="Karnataka Judiciary Examination" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
                     <Section title="About the Judiciary Exam">
-                       <div className="flex items-start">
-                           <ScaleIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
-                           <p>The Karnataka Judiciary Examination recruits candidates for the post of Civil Judge. This prestigious examination is conducted by the High Court of Karnataka to select competent individuals for the state's subordinate judiciary. A career as a Civil Judge is one of great responsibility, offering the power to interpret laws, deliver justice, and uphold the constitutional framework of the country.</p>
-                       </div>
+                        <div className="flex items-start">
+                            <ScaleIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
+                            <p>The Karnataka Judiciary Examination recruits candidates for the post of Civil Judge. This prestigious examination is conducted by the High Court of Karnataka to select competent individuals for the state's subordinate judiciary. A career as a Civil Judge is one of great responsibility, offering the power to interpret laws, deliver justice, and uphold the constitutional framework of the country.</p>
+                        </div>
                     </Section>
 
                     <Section title="Eligibility Criteria">
@@ -68,9 +73,9 @@ const JudiciaryPage: React.FC = () => {
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Preliminary Exam</h3>
                                 <p className="text-sm">An objective screening test covering law subjects and general knowledge.</p>
                             </div>
-                            
+
                             <ChevronRightIcon className="w-8 h-8 text-sunrise-orange mx-4 self-center rotate-90 md:rotate-0" />
-                            
+
                             {/* Stage 2 */}
                             <div className="flex-1 text-center p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg w-full">
                                 <div className="bg-empower-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
@@ -91,7 +96,7 @@ const JudiciaryPage: React.FC = () => {
                             <h4 className="font-bold text-xl font-montserrat text-charcoal-gray mb-4">Detailed Breakdown:</h4>
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2"/>Preliminary Examination (Objective - 100 Marks)</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><ClipboardListIcon className="w-5 h-5 mr-2" />Preliminary Examination (Objective - 100 Marks)</h3>
                                     <p>This is a screening test to shortlist candidates for the Main Examination. It covers various law subjects and general knowledge.</p>
                                     <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
                                         <li>Part A: Code of Civil Procedure, Negotiable Instruments Act, etc.</li>
@@ -100,16 +105,16 @@ const JudiciaryPage: React.FC = () => {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2"/>Main Examination (Descriptive)</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><PencilAltIcon className="w-5 h-5 mr-2" />Main Examination (Descriptive)</h3>
                                     <p>This stage consists of written papers to test the candidate's in-depth legal knowledge and writing skills.</p>
                                     <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-sm">
-                                    <li><strong>Translation Paper:</strong> Translation of legal passages from English to Kannada and vice versa.</li>
-                                    <li><strong>Law Paper I & II:</strong> Covering civil and criminal laws in detail.</li>
-                                    <li><strong>Law Paper III:</strong> Focused on specific legal issues and judgment writing.</li>
+                                        <li><strong>Translation Paper:</strong> Translation of legal passages from English to Kannada and vice versa.</li>
+                                        <li><strong>Law Paper I & II:</strong> Covering civil and criminal laws in detail.</li>
+                                        <li><strong>Law Paper III:</strong> Focused on specific legal issues and judgment writing.</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2"/>Viva-Voce (Interview)</h3>
+                                    <h3 className="text-lg font-semibold font-montserrat text-encourage-red mb-2 flex items-center"><UsersIcon className="w-5 h-5 mr-2" />Viva-Voce (Interview)</h3>
                                     <p>The final stage is the interview, where candidates are assessed on their legal knowledge, communication skills, character, and overall suitability for the judicial post.</p>
                                 </div>
                             </div>

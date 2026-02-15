@@ -1,7 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { CogIcon, BriefcaseIcon, PencilAltIcon, CheckCircleIcon } from '../../components/Icons';
-
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,7 +22,12 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const KeaTechPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KEA Technical Exam Coaching | JE & AE Recruitment Preparation"
+                description="Expert coaching for KEA Technical exams including Junior Engineer (JE) and Assistant Engineer (AE) roles. Focused training on core technical syllabus and general ability."
+                url="https://encourageindiaias.in/courses/kea-technical"
+            />
             <PageHeader title="KEA - Technical Examinations" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
@@ -51,26 +56,26 @@ const KeaTechPage: React.FC = () => {
                     <Section title="General Exam Pattern">
                         <p>The exam pattern for KEA technical exams is typically an objective (MCQ) based written test. Selection is often based purely on the marks from this test.</p>
                         <div className="mt-8 p-6 bg-white border-2 border-soft-gray rounded-lg shadow-lg">
-                                <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Examination</h3>
-                                <p className="text-sm mb-4">The test usually comprises two main components, either as separate papers or sections within a single paper.</p>
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <h4 className="font-bold text-charcoal-gray text-lg mb-2">Technical Syllabus</h4>
-                                        <ul className="space-y-2 text-sm">
-                                            <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>The major portion covers core subjects of the specific technical discipline.</span></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-charcoal-gray text-lg mb-2">General Ability</h4>
-                                        <ul className="space-y-2 text-sm">
-                                            <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General Knowledge & Current Affairs</span></li>
-                                            <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General English</span></li>
-                                             <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>Aptitude & Reasoning</span></li>
-                                        </ul>
-                                    </div>
+                            <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">Written Examination</h3>
+                            <p className="text-sm mb-4">The test usually comprises two main components, either as separate papers or sections within a single paper.</p>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 className="font-bold text-charcoal-gray text-lg mb-2">Technical Syllabus</h4>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>The major portion covers core subjects of the specific technical discipline.</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-charcoal-gray text-lg mb-2">General Ability</h4>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General Knowledge & Current Affairs</span></li>
+                                        <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General English</span></li>
+                                        <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>Aptitude & Reasoning</span></li>
+                                    </ul>
                                 </div>
                             </div>
-                         <p className="mt-6 text-center font-semibold">A compulsory Kannada Language test may also be part of the process for some candidates.</p>
+                        </div>
+                        <p className="mt-6 text-center font-semibold">A compulsory Kannada Language test may also be part of the process for some candidates.</p>
                     </Section>
 
                     <div className="text-center mt-16">

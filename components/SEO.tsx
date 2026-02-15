@@ -23,7 +23,7 @@ const SEO: React.FC<SEOProps> = ({
     description,
     keywords = "UPSC, KPSC, IAS, KAS, Competitive Exams, Bangalore, Coaching",
     image = "/images/hero/upsc.png",
-    url = "https://encourageindia.com",
+    url = "https://encourageindiaias.in",
     author = "Encourage India IAS",
     robots = "index, follow",
     ogTitle,

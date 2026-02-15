@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, ClockIcon, BookOpenIcon, GlobeAltIcon, ShieldCheckIcon, ClipboardListIcon, StarIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-gradient-to-br from-empower-blue to-indigo-900 py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-16">
         <h2 className="text-3xl font-black font-montserrat text-empower-blue dark:text-blue-400 mb-8 border-l-8 border-sunrise-orange pl-5 uppercase tracking-tighter">{title}</h2>
         <div className="space-y-6 text-charcoal-gray/80 dark:text-gray-300">
@@ -23,10 +24,15 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const NabardExamPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="NABARD Grade A & B Coaching | Development Banking Prep"
+                description="Expert coaching for NABARD Assistant Manager (Grade A) and Manager (Grade B) exams. Master ESI and ARD modules with our specialized rural finance training."
+                url="https://encourageindiaias.in/courses/nabard-hub"
+            />
             <PageHeader title="NABARD Grade A & B" />
             <div className="py-20">
                 <div className="container mx-auto px-6 max-w-6xl">
-                    
+
                     <Section title="About NABARD Examination">
                         <p className="text-lg md:text-xl leading-relaxed font-medium">
                             The NABARD Grade A and Grade B exams are national-level recruitment examinations conducted by the National Bank for Agriculture and Rural Development to select officers for development banking, rural finance, and policy implementation roles in India.
@@ -159,8 +165,8 @@ const NabardExamPage: React.FC = () => {
                         </div>
 
                         <div className="space-y-12">
-                             {/* Phase I Grade B */}
-                             <div>
+                            {/* Phase I Grade B */}
+                            <div>
                                 <h4 className="font-black text-lg text-charcoal-gray dark:text-white mb-4 flex items-center uppercase tracking-tight">
                                     <span className="w-8 h-8 bg-empower-blue text-white rounded-full flex items-center justify-center mr-3 text-sm">1</span>
                                     Phase-I: Preliminary Examination
@@ -224,8 +230,8 @@ const NabardExamPage: React.FC = () => {
                                 </div>
                             </div>
 
-                             {/* Syllabus Grade B */}
-                             <div className="bg-soft-gray/30 dark:bg-slate-800/50 p-8 rounded-3xl border border-gray-100 dark:border-gray-700">
+                            {/* Syllabus Grade B */}
+                            <div className="bg-soft-gray/30 dark:bg-slate-800/50 p-8 rounded-3xl border border-gray-100 dark:border-gray-700">
                                 <h4 className="font-black text-lg text-charcoal-gray dark:text-white mb-6 uppercase tracking-tight">Syllabus – NABARD Grade B</h4>
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {[

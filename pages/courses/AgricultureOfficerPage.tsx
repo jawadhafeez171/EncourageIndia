@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, CheckCircleIcon, ClipboardListIcon, ClockIcon, ShieldCheckIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -22,6 +23,11 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const AgricultureOfficerPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KPSC Agriculture Officer (AO/AAO) Coaching | Karnataka Agri Exams"
+                description="Specialized coaching for KPSC Assistant Agriculture Officer (AAO) and Agriculture Officer (AO) exams. Expert guidance for Paper I & II with technical Agri focus."
+                url="https://encourageindiaias.in/courses/kpsc-ao-aao"
+            />
             <PageHeader title="KPSC - Agriculture Officer (AO/AAO)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
@@ -53,7 +59,7 @@ const AgricultureOfficerPage: React.FC = () => {
 
                     <Section title="2. Competitive Examination Pattern">
                         <p className="mb-6">As per section 6.2 of the notification, the competitive exam consists of two papers. The marks from these papers are used to calculate the final percentage for recruitment.</p>
-                         
+
                         <div className="grid md:grid-cols-2 gap-8">
                             {/* Paper 1 */}
                             <div className="p-6 bg-white dark:bg-slate-800 border-2 border-soft-gray dark:border-gray-700 rounded-2xl shadow-lg relative overflow-hidden">

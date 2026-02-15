@@ -51,7 +51,7 @@ const ContactPage: React.FC = () => {
             <SEO
                 title="Contact Us"
                 description="Get in touch with Encourage India IAS Academy. Visit our center in Bengaluru, call us, or email us for admissions and queries."
-                url="https://encourageindia.com/contact"
+                url="https://encourageindiaias.in/contact"
             />
             <PageHeader title="Contact Us" />
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ScaleIcon, BriefcaseIcon, PencilAltIcon, UsersIcon, CheckCircleIcon, ClipboardListIcon, BookOpenIcon, ClockIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -22,11 +23,16 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const DistrictJudgePage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="District Judge Exam Coaching | Higher Judicial Service Prep"
+                description="Specialized coaching for seasoned legal practitioners aspiring for District Judge (Higher Judicial Service) roles. Focus on complex judgment writing and legal analysis."
+                url="https://encourageindiaias.in/courses/district-judge"
+            />
             <PageHeader title="Higher Judicial Services (District Judge)" />
-            
+
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
-                    
+
                     <Section title="Role of a District Judge">
                         <div className="flex flex-col md:flex-row gap-10 items-center">
                             <div className="flex-1">

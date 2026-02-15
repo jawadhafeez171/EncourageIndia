@@ -98,7 +98,7 @@ const AboutUsPage: React.FC = () => {
             <SEO
                 title="About Us"
                 description="Learn about Encourage India IAS Academy's mission, vision, and core values. Meet our expert faculty and mentors dedicated to your success in UPSC and KPSC exams."
-                url="https://encourageindia.com/about"
+                url="https://encourageindiaias.in/about"
             />
             <PageHeader title="Encourage India IAS Academy" tagline="From Inspiration 2 Progress" />
 

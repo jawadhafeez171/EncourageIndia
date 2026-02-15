@@ -1,7 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { BriefcaseIcon, PencilAltIcon, LightningBoltIcon, CheckCircleIcon } from '../../components/Icons';
-
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -11,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80">
@@ -22,7 +22,12 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 
 const KpclPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KPCL Assistant & Junior Engineer Exam Coaching | KEA Recruitment"
+                description="Expert coaching for Karnataka Power Corporation Limited (KPCL) recruitment exams for AE, JE, and administrative roles. Focused training on technical and general aptitude."
+                url="https://encourageindiaias.in/courses/kpcl"
+            />
             <PageHeader title="KEA - KPCL Recruitment" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-4xl">
@@ -58,17 +63,17 @@ const KpclPage: React.FC = () => {
                                     <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General Awareness & Aptitude</span></li>
                                 </ul>
                             </div>
-                             <div className="p-6 bg-soft-gray/50 rounded-lg">
+                            <div className="p-6 bg-soft-gray/50 rounded-lg">
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue mb-2">For Non-Technical Posts</h3>
                                 <p className="text-sm mb-4">The test covers a broad range of general subjects.</p>
-                                 <ul className="space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm">
                                     <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General English & Kannada</span></li>
                                     <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>General Knowledge</span></li>
                                     <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>Quantitative Aptitude & Reasoning</span></li>
                                 </ul>
                             </div>
                         </div>
-                         <p className="mt-6 text-center font-semibold">A mandatory Kannada Language Test may be required for some candidates.</p>
+                        <p className="mt-6 text-center font-semibold">A mandatory Kannada Language Test may be required for some candidates.</p>
                     </Section>
 
                     <div className="text-center mt-16">

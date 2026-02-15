@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, PencilAltIcon, CheckCircleIcon, BookOpenIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -36,6 +37,11 @@ const KsetPage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KSET Exam Coaching | Karnataka State Eligibility Test Prep"
+                description="Top-rated coaching for K-SET Assistant Professor eligibility. Comprehensive preparation for Paper I (Aptitude) and major Paper II subjects with expert mentors."
+                url="https://encourageindiaias.in/courses/kset"
+            />
             <PageHeader title="KEA - Karnataka SET (K-SET)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
@@ -61,7 +67,7 @@ const KsetPage: React.FC = () => {
 
                     <Section title="Exam Pattern">
                         <p>The K-SET consists of two objective-type papers, conducted in a single session without any break. There is no negative marking.</p>
-                         <div className="mt-8 grid md:grid-cols-2 gap-8">
+                        <div className="mt-8 grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white dark:bg-slate-800 border-2 border-soft-gray dark:border-gray-700 rounded-lg shadow-lg">
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue dark:text-blue-400 mb-2">Paper I: General Paper</h3>
                                 <p className="font-bold text-sunrise-orange mb-3">100 Marks</p>
@@ -76,7 +82,7 @@ const KsetPage: React.FC = () => {
                                 <h3 className="text-xl font-semibold font-montserrat text-empower-blue dark:text-blue-400 mb-2">Paper II: Specific Subject</h3>
                                 <p className="font-bold text-sunrise-orange mb-3">200 Marks</p>
                                 <p className="text-sm mb-4">This paper is based on the syllabus of the subject selected by the candidate.</p>
-                                 <ul className="space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm">
                                     <li className="flex items-start"><CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" /><span>In-depth knowledge of the chosen post-graduation subject.</span></li>
                                 </ul>
                             </div>

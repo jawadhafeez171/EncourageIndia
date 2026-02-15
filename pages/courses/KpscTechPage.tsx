@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, ChatAlt2Icon, PencilAltIcon, CogIcon, CheckCircleIcon, ClipboardListIcon, UsersIcon, ClockIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -22,11 +23,16 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const KpscTechPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KPSC AEE & AE Technical Exam Coaching | Karnataka Government Jobs"
+                description="Specialized coaching for KPSC Assistant Executive Engineer (AEE) and Assistant Engineer (AE) exams. In-depth preparation for Civil, Mechanical, and Electrical branches."
+                url="https://encourageindiaias.in/courses/kpsc-technical"
+            />
             <PageHeader title="KPSC - Technical Exams (AEE/AE)" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
                     <Section title="About AEE/AE Exams">
-                         <div className="flex items-start">
+                        <div className="flex items-start">
                             <CogIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                             <div>
                                 <p className="mb-4">KPSC recruits Assistant Executive Engineers (AEE) and Assistant Engineers (AE) for various engineering departments of the Karnataka government, such as the Public Works Department (PWD), Water Resources Department (WRD), and Rural Development & Panchayat Raj (RDPR). These roles are critical for the planning, design, and execution of the state's infrastructure projects.</p>
@@ -36,7 +42,7 @@ const KpscTechPage: React.FC = () => {
                     </Section>
 
                     <Section title="Eligibility Criteria">
-                       <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 gap-8">
                             <div className="space-y-6">
                                 <div className="flex items-start">
                                     <AcademicCapIcon className="w-8 h-8 text-sunrise-orange mr-3 flex-shrink-0" />

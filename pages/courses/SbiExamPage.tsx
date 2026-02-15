@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, CalendarIcon, PencilAltIcon, CheckCircleIcon, UsersIcon, ClockIcon, BookOpenIcon, ShieldCheckIcon, ClipboardListIcon, StarIcon, LightBulbIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-gradient-to-br from-empower-blue to-indigo-900 py-16 text-center text-white">
@@ -11,7 +12,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-16">
         <h2 className="text-3xl font-black font-montserrat text-empower-blue dark:text-blue-400 mb-8 border-l-8 border-sunrise-orange pl-5 uppercase tracking-tighter">{title}</h2>
         <div className="space-y-6 text-charcoal-gray/80 dark:text-gray-300">
@@ -23,10 +24,15 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const SbiExamPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="SBI PO, Clerk & SO Exam Coaching | State Bank of India Careers"
+                description="Join our specialized SBI coaching for Probationary Officer (PO), Junior Associate (Clerk), and Specialist Officer (SO) exams. Expert guidance for Prelims, Mains & Interviews."
+                url="https://encourageindiaias.in/courses/sbi-hub"
+            />
             <PageHeader title="SBI PO / Clerk / SO" />
             <div className="py-20">
                 <div className="container mx-auto px-6 max-w-6xl">
-                    
+
                     {/* New Requested Section */}
                     <Section title="About SBI Examination">
                         <p className="text-lg md:text-xl leading-relaxed font-medium border-b border-gray-100 dark:border-gray-800 pb-8">
@@ -111,7 +117,7 @@ const SbiExamPage: React.FC = () => {
                                 Phase-II: Main Examination
                             </h3>
                             <p className="mb-6 text-sm">Combined Objective (200 marks) and Descriptive (50 marks) tests.</p>
-                            
+
                             <h4 className="font-bold text-sm uppercase text-gray-400 mb-4 tracking-widest">Part (i): Objective Test (3 Hours)</h4>
                             <div className="overflow-x-auto mb-8">
                                 <table className="min-w-full text-xs md:text-sm">
@@ -146,7 +152,7 @@ const SbiExamPage: React.FC = () => {
 
                         {/* Phase III */}
                         <div className="grid md:grid-cols-2 gap-8 mb-10">
-                             <div className="bg-soft-gray/30 dark:bg-slate-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700">
+                            <div className="bg-soft-gray/30 dark:bg-slate-800 p-8 rounded-[2rem] border border-gray-100 dark:border-gray-700">
                                 <h3 className="text-xl font-black text-empower-blue mb-4 flex items-center">
                                     <UsersIcon className="w-6 h-6 mr-2 text-sunrise-orange" />
                                     Phase-III: Assessment
@@ -166,7 +172,7 @@ const SbiExamPage: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="bg-orange-50 dark:bg-orange-900/10 p-8 rounded-[2rem] border border-sunrise-orange/20">
                                 <h3 className="text-xl font-black text-sunrise-orange mb-4 flex items-center">
                                     <ShieldCheckIcon className="w-6 h-6 mr-2" />

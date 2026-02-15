@@ -18,7 +18,7 @@ const DownloadsPage: React.FC = () => {
             <SEO
                 title="Downloads"
                 description="Download free UPSC and KPSC study materials, syllabus copies, previous year question papers, and current affairs magazines."
-                url="https://encourageindia.com/downloads"
+                url="https://encourageindiaias.in/downloads"
             />
             <PageHeader title="Downloads & Resources" />
             <section className="py-20 bg-gray-50 dark:bg-slate-900">

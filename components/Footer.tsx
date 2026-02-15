@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Column 1: Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/">
-              <img src="/logo.png" alt="Encourage India IAS Academy" className="h-20 w-auto bg-white p-2 rounded-lg" />
+              <img src="/logo.webp" alt="Encourage India IAS Academy" className="h-20 w-auto bg-white p-2 rounded-lg" />
             </Link>
             <p className="mt-4 text-lg font-montserrat font-semibold">Encourage India IAS Academy</p>
             <p className="text-soft-gray/80 mt-1">Your Journey to Success Begins Here.</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { ScaleIcon, BriefcaseIcon, CheckCircleIcon, DocumentTextIcon, UsersIcon, CalendarIcon, ClipboardListIcon, ClockIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -44,10 +45,15 @@ const AibePage: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="AIBE Exam Coaching | All India Bar Examination Preparation"
+                description="Crack the AIBE XX exam with expert guidance on new criminal laws (BNS, BNSS, BSA) and Bare Act navigation techniques."
+                url="https://encourageindiaias.in/courses/aibe"
+            />
             <PageHeader title="AIBE-XX Preparation & Guidelines" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-5xl">
-                    
+
                     {/* Latest Notification Alert */}
                     <div className="mb-12 bg-orange-50 dark:bg-orange-900/20 border-l-4 border-sunrise-orange p-6 rounded-r-xl">
                         <div className="flex items-center mb-2">

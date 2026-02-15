@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://encourageindia.com/sitemap.xml
+Sitemap: https://encourageindiaias.in/sitemap.xml

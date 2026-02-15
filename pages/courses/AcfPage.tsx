@@ -1,6 +1,7 @@
 import React from 'react';
 import CTAButton from '../../components/CTAButton';
 import { AcademicCapIcon, ShieldCheckIcon, CalendarIcon, GlobeAltIcon, ClipboardListIcon, PencilAltIcon, UsersIcon, ChevronRightIcon, CheckCircleIcon, ClockIcon, BookOpenIcon, StarIcon } from '../../components/Icons';
+import SEO from '../../components/SEO';
 
 const PageHeader = ({ title }: { title: string }) => (
     <div className="bg-empower-blue py-16 text-center text-white">
@@ -10,7 +11,7 @@ const PageHeader = ({ title }: { title: string }) => (
     </div>
 );
 
-const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, children}) => (
+const Section: React.FC<{ title: string; children: React.ReactNode; }> = ({ title, children }) => (
     <div className="mb-12">
         <h2 className="text-3xl font-bold font-montserrat text-empower-blue mb-6 border-l-4 border-sunrise-orange pl-4">{title}</h2>
         <div className="space-y-4 text-charcoal-gray/80 dark:text-gray-300">
@@ -22,17 +23,22 @@ const Section: React.FC<{title: string; children: React.ReactNode;}> = ({title, 
 const AcfPage: React.FC = () => {
     return (
         <div className="bg-white dark:bg-slate-900 transition-colors duration-300">
+            <SEO
+                title="KPSC ACF, RFO & DRFO Coaching | Forest Service Exam Preparation"
+                description="Expert coaching for KPSC Assistant Conservator of Forests (ACF), Range Forest Officer (RFO), and DRFO exams in Karnataka. Physical & written test prep."
+                url="https://encourageindiaias.in/courses/acf"
+            />
             <PageHeader title="KPSC - ACF / RFO / DRFO Exams" />
             <div className="py-20">
                 <div className="container mx-auto px-8 max-w-6xl">
                     <Section title="About the Forest Service Exams">
-                       <div className="flex items-start">
+                        <div className="flex items-start">
                             <GlobeAltIcon className="w-10 h-10 text-sunrise-orange mr-4 flex-shrink-0" />
                             <div>
                                 <p className="mb-4">The Assistant Conservator of Forests (ACF), Range Forest Officer (RFO), and Deputy Range Forest Officer (DRFO) exams are conducted by the Karnataka Public Service Commission (KPSC) to recruit officers for the Karnataka Forest Department. These roles involve protecting forest resources, managing wildlife habitats, and implementing conservation policies across the state.</p>
                                 <p className="text-sm">Candidates undergo rigorous selection involving written tests and physical endurance evaluations to ensure they are fit for the demanding field-oriented nature of the job.</p>
                             </div>
-                       </div>
+                        </div>
                     </Section>
 
                     <Section title="Eligibility Criteria">
@@ -100,7 +106,7 @@ const AcfPage: React.FC = () => {
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border border-gray-100 dark:border-gray-700">
                                 <h4 className="font-bold text-sm mb-2 flex items-center">Vision Standards</h4>
@@ -122,7 +128,7 @@ const AcfPage: React.FC = () => {
                             {/* Preliminary Section */}
                             <div>
                                 <h4 className="font-bold text-xl mb-4 flex items-center text-empower-blue">
-                                    <ClipboardListIcon className="w-7 h-7 mr-2" /> 
+                                    <ClipboardListIcon className="w-7 h-7 mr-2" />
                                     1. Preliminary Exam (Objective Type)
                                 </h4>
                                 <p className="text-sm mb-4 opacity-80 italic">Note: The Prelims is a screening test. Marks are not counted for the final merit.</p>
@@ -147,11 +153,11 @@ const AcfPage: React.FC = () => {
                             {/* Detailed Main Exam Section */}
                             <div>
                                 <h4 className="font-bold text-xl mb-4 flex items-center text-empower-blue">
-                                    <PencilAltIcon className="w-7 h-7 mr-2" /> 
+                                    <PencilAltIcon className="w-7 h-7 mr-2" />
                                     2. Main Exam (Descriptive)
                                 </h4>
                                 <p className="text-sm mb-6">Candidates qualifying the Preliminary exam in a 1:10 ratio are invited for the Main exam. This stage decides the final merit ranking.</p>
-                                
+
                                 <div className="space-y-6">
                                     {/* Compulsory Papers */}
                                     <div className="bg-soft-gray/30 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
@@ -225,7 +231,7 @@ const AcfPage: React.FC = () => {
                                                     </tr>
                                                 </tbody>
                                                 <tfoot className="bg-gray-100 dark:bg-slate-700">
-                                                     <tr>
+                                                    <tr>
                                                         <td colSpan={2} className="py-3 px-4 text-right font-black uppercase tracking-wider text-xs">Total Optional Marks</td>
                                                         <td className="py-3 px-4 text-center font-black text-lg text-empower-blue dark:text-blue-400">200</td>
                                                         <td></td>
@@ -266,7 +272,7 @@ const AcfPage: React.FC = () => {
                             {/* Interview Section */}
                             <div>
                                 <h4 className="font-bold text-xl mb-4 flex items-center text-empower-blue">
-                                    <UsersIcon className="w-7 h-7 mr-2" /> 
+                                    <UsersIcon className="w-7 h-7 mr-2" />
                                     3. Personality Test (Interview)
                                 </h4>
                                 <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-2xl border border-sunrise-orange/20">
