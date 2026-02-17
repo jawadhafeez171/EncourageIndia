@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-center md:text-left">
           <p>&copy; {new Date().getFullYear()} Encourage India IAS Academy. All Rights Reserved.</p>
           <p className="md:text-right">
-            Designed and Developed by <span className="hover:text-sunrise-orange transition-colors cursor-default font-medium">HafeezStudio</span>
+            Designed and Developed by <a href="https://www.hafeezstudio.com" target="_blank" rel="noopener noreferrer" className="hover:text-sunrise-orange transition-colors font-medium">HafeezStudio</a>
           </p>
         </div>
       </div>
